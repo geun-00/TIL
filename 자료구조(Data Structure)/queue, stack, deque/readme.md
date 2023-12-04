@@ -50,8 +50,8 @@
 
 <br>
 
-![Alt text](image.png)
-![Alt text](image-1.png)
+![Alt text](image/image.png)
+![Alt text](image/image-1.png)
 
 - 탐색 시간복잡도 : O(N)
 - 삽입 시간복잡도 : O(1)
@@ -63,7 +63,7 @@
 
 ---
 
-![Alt text](image-6.png)
+![Alt text](image/image-6.png)
 
 > FIFO : **First In First Out**
 >
@@ -79,7 +79,7 @@
 
 ---
 
-![Alt text](image-5.png)
+![Alt text](image/image-5.png)
 
 > LIFO : **Last In First Out**
 >
@@ -145,7 +145,7 @@
 
 ---
 
-![Alt text](image-7.png)
+![Alt text](image/image-7.png)
 
 > 양쪽 끝에서 삽입과 삭제가 모두 가능한 자료 구조의 한 형태이다.
 >
