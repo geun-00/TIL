@@ -7,7 +7,7 @@
 
 ---
 
-![Alt text](image.png)
+![Alt text](image/image.png)
 
 - 정점(Vertex)과 간선(Edge)으로 이루어진 자료구조
 
@@ -26,7 +26,7 @@
 
 ---
 
-![Alt text](image-1.png)
+![Alt text](image/image-1.png)
 
 1. **무방향 그래프** : 간선(Edge)의 방향이 없는 그래프
 2. **방향 그래프** : 방향성이 있는 그래프
@@ -44,7 +44,7 @@
 
 `인접 행렬 방식`
 
-![Alt text](image-2.png)
+![Alt text](image/image-2.png)
 
 2차원 배열을 사용하여 연결 상태를 나타낸다.
 
@@ -62,7 +62,7 @@
 
 `인접 리스트 방식 `
 
-![Alt text](image-3.png)
+![Alt text](image/image-3.png)
 
 연결 리스트를 사용하여 연결 상태를 나타냄
 
@@ -78,7 +78,7 @@
 
 ---
 
-![Alt text](image-5.png)
+![Alt text](image/image-5.png)
 
 > 모든 노드를 탐색하기 위해 간선을 따라 순회하는 것
 
@@ -103,7 +103,7 @@
 
 그래프의 특수 형태로, 계층 구조를 갖고 있는 자료구조
 
-![Alt text](image-6.png)
+![Alt text](image/image-6.png)
 
 - 트리는 항상 루트(root)에서부터 시작된다.
 - 루트는 자식(child)를 가지며, 간선(edge)로 연결되어 있다.
@@ -139,7 +139,7 @@
 - 전위 순회(pre-order traversal) : 자신, 왼쪽 자손, 오른쪽 자손 순서로 방문하는 순회방법.
 - 후위 순회(post-order traversal) : 왼쪽 자손, 오른쪽 자손, 자신 순서로 방문하는 순회방법. -레벨 순서 순회(lever-order traversal) : 너비 우선 순회(BFS)라고도 하며, 노드를 레벨 순서로 방문하는 순회 방법이다. 위의 세 가지 방법은 **스택**을 활용하여 구현할 수 있는 반면 레벨 순서 순회는 **큐**를 활용해 구현할 수 있다.
 
-![Alt text](image-7.png)
+![Alt text](image/image-7.png)
 
 위의 트리를 순회하면 다음과 같다.
 
@@ -152,7 +152,7 @@
 
 #### 이진 탐색 트리(Binary Search Tree)
 
-![Alt text](image-8.png)
+![Alt text](image/image-8.png)
 
 이진 트리의 일종으로, 노드의 왼쪽 가지에는 노드의 값보다 작은 값들만 있고, 오른쪽 가지에는 큰 값들만 있도록 구성되어 있다. 자식 노드들도 동일한 방법으로 정렬되어 있어 이진 탐색 트리의 어느 노드를 잡아도 동일한 규칙으로 정렬되어 있다.
 
