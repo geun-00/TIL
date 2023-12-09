@@ -76,7 +76,7 @@
 
 ---
 
-![Alt text](1-3544f094bd8c3215f1d8f70e0ddef0b1.gif)
+![Alt text](image/1-3544f094bd8c3215f1d8f70e0ddef0b1.gif)
 
 > 모든 노드를 탐색하기 위해 간선을 따라 순회하는 것
 
