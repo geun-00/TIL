@@ -21,7 +21,7 @@
 #### 1. Required
 > Default 전파유형으로 트랜잭션이 이미 있는 경우 현재 메소드가 해당 트랜잭션에 참여한다.
 
-![img.png](img.png)
+![img.png](image/img.png)
 ```java
 @Transactional(propagation = Propagation.REQUIRED)
 public void example(){
@@ -36,7 +36,7 @@ Default값이므로 생략 가능하다.
 
 > 항상 새 트랜잭션을 만든다. 트랜잭션이 이미 존재하는 경우 새 트랜잭션이 완료될 때까지 일시 중단한다.
 
-![img_1.png](img_1.png)
+![img_1.png](image/img_1.png)
 
 ```java
 @Transactional(propagation = Propagation.REQUIRED_NEW)
@@ -52,7 +52,7 @@ public void example(){
 > 중첩된 트랜잭션을 생성한다. 트랜잭션이 이미 존재하는 경우 새 트랜잭션이 생성되어
 > 기존 트랜잭션 내에 중첩되고, 트랜잭션이 존재하지 않으면 새 트랜잭션이 생성된다.
 
-![img_2.png](img_2.png)
+![img_2.png](image/img_2.png)
 
 ```java
 @Transactional(propagation = Propagation.NESTED)
@@ -67,7 +67,7 @@ public void example(){
 
 > 트랜잭션이 이미 존재해야 하며, 트랜잭션이 존재하지 않으면 예외가 발생한다.
 
-![img_3.png](img_3.png)
+![img_3.png](image/img_3.png)
 
 ```java
 @Transactional(propagation = Propagation.MANDATORY)
@@ -83,7 +83,7 @@ public void example(){
 > 트랜잭션이 이미 존재하는 경우 트랜잭션을 지원한다. 트랜잭션이 존재하면 해당 트랜잭션
 > 내에서 현재 메소드가 실행되고 트랜잭션이 존재하지 않으면 트랜잭션 없이 메소드가 실행된다.
 
-![img_4.png](img_4.png)
+![img_4.png](image/img_4.png)
 
 ```java
 @Transactional(propagation = Propagation.SUPPORTS)
@@ -113,7 +113,7 @@ public void example(){
 > 현재 메소드가 실행될 때 트랜잭션이 존재하지 않는지 확인한다. 
 > 트랜잭션이 존재하면 예외가 발생한다.
 
-![img_5.png](img_5.png)
+![img_5.png](image/img_5.png)
 
 ```java
 @Transactional(propagation = Propagation.NEVER)
@@ -251,7 +251,7 @@ public void example(){
         }
 ```
 
-![img_6.png](img_6.png)
+![img_6.png](image/img_6.png)
 
 <br>
 <br>
