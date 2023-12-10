@@ -9,7 +9,7 @@
 
 ![Alt text](image/image.png)
 
-- **정점(Vertex)**과 **간선(Edge)**으로 이루어진 자료구조
+- **정점(Vertex)** 과 **간선(Edge)** 으로 이루어진 자료구조
 
 **정점**(Node, Vertex) : 데이터를 저장하는 위치
 
