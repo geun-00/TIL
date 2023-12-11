@@ -17,15 +17,13 @@ DTO 내부에 필드의 개수가 많다면 데이터를 옮기는 코드만 해
 ### Mapper 인터페이스 생성
 
 ```java
-@Mapper(componentModel = "spring",
-        injectionStrategy = InjectionStrategy.FIELD,
-        unmappedTargetPolicy = ReportingPolicy.IGNORE, unmappedSourcePolicy = ReportingPolicy.IGNORE
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, 
+        unmappedSourcePolicy = ReportingPolicy.IGNORE
 )
 public interface MemberInfoResponseMapper {
 
     MemberInfoResponseMapper INSTANCE = Mappers.getMapper(MemberInfoResponseMapper.class);
-
-
+    
     @Mapping(target = "simplifiedPostResponseList", source = "posts")
     @Mapping(target = "memberId", source = "member.id")
     MemberInfoResponse toMemberInfoResponse(Member member, List<SimplifiedPostResponse> posts);
@@ -42,7 +40,6 @@ public interface MemberInfoResponseMapper {
     date = "2023-12-10T22:10:23+0900",
     comments = "version: 1.4.2.Final, compiler: javac, environment: Java 17.0.9 (Oracle Corporation)"
 )
-@Component
 public class MemberInfoResponseMapperImpl implements MemberInfoResponseMapper {
 
     @Override
@@ -87,8 +84,8 @@ public class MemberInfoResponseMapperImpl implements MemberInfoResponseMapper {
 ```
 source가 되는 Member 엔티티에서 getter메소드를 이용해 DTO에 매핑시켜주는 코드를 만들어준다.<br>
 이 때 나는 Member 엔티티에서 필드가 id로 되어 있어 source ="id"로 해야할 줄 알았다.
-하지만 컴파일 시 매핑에러가 나서(에러를 조기에 잡아준다는 점도 장점이다.) 여러 번 시도해보다가
-방법을 찾게 되었다.
+하지만 컴파일 시 매핑에러가 나서(에러를 조기에 잡아준다는 점도 장점이다.) 알아보다가 파라미터가 2개 이상인 경우
+명확하게 명시를 해주어야 한다는 것을 알았다.
 
 <br>
 
@@ -135,7 +132,7 @@ public MemberInfoResponse getMemberInfo(String username, Pageable pageable) {
                     Page<Post> posts = postRepository.findByMemberIdOrderByCreatedAtDesc(member.getId(), pageable);
                     List<SimplifiedPostResponse> simplifiedPostResponses = posts.getContent().stream().map(SimplifiedPostResponse::new).toList();
 
-                    return memberInfoResponseMapper.INSTANCE.toMemberInfoResponse(member, simplifiedPostResponses);
+                    return MemberInfoResponseMapper.INSTANCE.toMemberInfoResponse(member, simplifiedPostResponses);
                 })
                 .orElseThrow(EntityNotFoundException::new);
     }
@@ -149,10 +146,22 @@ public MemberInfoResponse getMemberInfo(String username, Pageable pageable) {
 ### Mapper 설정
 
 ```java
+Mappers.getMapper(MemberInfoResponseMapper.class);
+```
+위 코드를 Mapper 인터페이스에 만들어 주면 mapper를 사용할 서비스 로직에서
+따로 인스턴스를 생성할 필요 없이 싱글톤으로 생성된 인스턴스를 사용할 수 있다.<br>
+빈으로 등록해 DI를 통해 사용하는 방법도 있다.
+```java
 @Mapper(componentModel = "spring")
 ```
 Mapper를 생성할 때 Bean으로 생성할 수 있다.(mapperImpl에서 @component를 달아준다.)
 
+```java
+@Mapper(injectionStrategy = InjectionStrategy.FIELD)
+```
+필드 방식으로 DI, CONSTRUCTOR(생성자 주입)와 FIELD가 있다.
+
+<br>
 <br>
 
 ```java
@@ -166,16 +175,11 @@ target 객체를 생성할 때 builder가 있다면 builder로 만들고 그렇�
 source와 target은 필드명이 동일하지 않은 필드에만 적용해주면 된다.
 
 <br>
-
-```java
-@Mapper(injectionStrategy = InjectionStrategy.FIELD)
-```
-필드 방식으로 DI, CONSTRUCTOR(생성자 주입)와 FIELD가 있다.
-
 <br>
 
 ```java
-@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, unmappedSourcePolicy = ReportingPolicy.IGNORE)
+@Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, 
+        unmappedSourcePolicy = ReportingPolicy.IGNORE)
 ```
 source나 target에 매핑이 되지 않는 필드들에 대해 무시할 수 있다.<br>
 ERROR, WARN, IGNORE가 있고 ERROR 사용 시 매핑이 맞지 않으면 애플리케이션이 실행이 아예 되지 않는다.<br>
