@@ -123,8 +123,6 @@ public MemberInfoResponse getMemberInfo(String username, Pageable pageable) {
 #### Mapper 적용 후 코드
 
 ```java
-private final MemberInfoResponseMapper memberInfoResponseMapper;
-
 public MemberInfoResponse getMemberInfo(String username, Pageable pageable) {
 
         return memberRepository.findByEmail(username)
