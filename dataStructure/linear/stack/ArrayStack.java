@@ -1,5 +1,7 @@
 package dataStructure.linear.stack;
 
+import java.util.Arrays;
+
 class ArrayStack<E> implements Stack<E> {
 
     private Object[] array;
@@ -38,6 +40,7 @@ class ArrayStack<E> implements Stack<E> {
             System.out.println("stack is Empty");
             return null;
         }
+        size--;
         return (E) array[top--];
     }
 
@@ -56,6 +59,22 @@ class ArrayStack<E> implements Stack<E> {
         if (isEmpty()) {
             System.out.println("stack is already empty");
             return;
-        } else top = -1;
+        } else {
+            top = -1;
+            size = 0;
+        }
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+
+    @Override
+    public String toString() {
+        if (isEmpty()) {
+            return "[]";
+        }
+        else return Arrays.toString(array);
     }
 }
