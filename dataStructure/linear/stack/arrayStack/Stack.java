@@ -1,4 +1,4 @@
-package dataStructure.linear.stack;
+package dataStructure.linear.stack.arrayStack;
 interface Stack<E> {
     boolean isEmpty();
     boolean isFull();

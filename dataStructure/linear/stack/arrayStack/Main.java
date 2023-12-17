@@ -1,6 +1,4 @@
-package dataStructure.linear.stack;
-
-import java.util.Arrays;
+package dataStructure.linear.stack.arrayStack;
 
 class Main {
     public static void main(String[] args) {
