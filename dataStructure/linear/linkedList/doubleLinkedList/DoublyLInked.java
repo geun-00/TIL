@@ -1,6 +1,6 @@
-package dataStructure.linear.LinkedList;
+package dataStructure.linear.linkedList.doubleLinkedList;
 
-public interface SinglyLinked<E> {
+public interface DoublyLInked<E> {
     void addFirst(E value);
     void addLast(E value);
     boolean add(E value);
@@ -12,6 +12,10 @@ public interface SinglyLinked<E> {
     E removeLast();
     E get(int index);
     void set(int index, E value);
+    int indexOf(Object value);
+    int lastIndexOf(Object value);
     int size();
+    boolean isEmpty();
     void clear();
+    boolean contains(Object value);
 }

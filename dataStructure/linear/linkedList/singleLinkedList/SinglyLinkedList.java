@@ -1,4 +1,4 @@
-package dataStructure.linear.LinkedList;
+package dataStructure.linear.linkedList.singleLinkedList;
 
 import java.util.Arrays;
 import java.util.Objects;
