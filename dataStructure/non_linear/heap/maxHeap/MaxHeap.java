@@ -1,10 +1,10 @@
-package dataStructure.linear.heap.minHeap;
+package dataStructure.non_linear.heap.maxHeap;
 
-public class MinHeap<T extends Comparable<T>> {
+public class MaxHeap<T extends Comparable<T>> {
     private Object[] heapArray;
     private int size;
     private int capacity;
-    public MinHeap(int capacity) {
+    public MaxHeap(int capacity) {
         this.capacity = capacity;
         this.size = 0;
         this.heapArray = new Object[capacity + 1]; // 0번 인덱스는 사용하지 않음
@@ -39,11 +39,13 @@ public class MinHeap<T extends Comparable<T>> {
         heapArray[++size] = value;
 
         int currentIndex = size;
-        while (currentIndex > 1 && ((T) heapArray[currentIndex]).compareTo((T) heapArray[parent(currentIndex)]) < 0) {
+        while (currentIndex > 1 && ((T) heapArray[currentIndex]).compareTo((T) heapArray[parent(currentIndex)]) > 0) {
             swap(currentIndex, parent(currentIndex));
             currentIndex = parent(currentIndex);
         }
     }
+
+
     @SuppressWarnings("unchecked")
     public T remove() {
         if(size == 0) return null;
@@ -53,12 +55,12 @@ public class MinHeap<T extends Comparable<T>> {
         int index = 1;
         while(leftChild(index) <= size) {
             int child;
-            if(rightChild(index) <= size && ((T)heapArray[rightChild(index)]).compareTo((T)heapArray[leftChild(index)]) < 0) {
+            if(rightChild(index) <= size && ((T)heapArray[rightChild(index)]).compareTo((T)heapArray[leftChild(index)]) > 0) {
                 child = rightChild(index);
             } else {
                 child = leftChild(index);
             }
-            if(((T)heapArray[index]).compareTo((T)heapArray[child]) < 0) break;
+            if(((T)heapArray[index]).compareTo((T)heapArray[child]) > 0) break;
             swap(index, child);
             index = child;
         }

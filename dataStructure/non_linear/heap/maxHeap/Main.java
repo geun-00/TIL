@@ -1,11 +1,11 @@
-package dataStructure.linear.heap.minHeap;
+package dataStructure.non_linear.heap.maxHeap;
 
 import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        MinHeap<Integer> maxHeap = new MinHeap<>(10);
-        Random random = new Random();
+       MaxHeap<Integer> maxHeap = new MaxHeap<>(10);
+       Random random = new Random();
         for (int i = 0; i < 10; i++) {
             maxHeap.add(random.nextInt(100));
         }
@@ -13,12 +13,9 @@ public class Main {
         System.out.println(maxHeap);
 
         System.out.println(maxHeap.remove());
-        System.out.println(maxHeap);
-
         System.out.println(maxHeap.remove());
-        System.out.println(maxHeap);
-
         System.out.println(maxHeap.remove());
+
         System.out.println(maxHeap);
 
         System.out.println(maxHeap.getSize());
