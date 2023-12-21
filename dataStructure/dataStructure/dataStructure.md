@@ -50,6 +50,20 @@ int나 long같은 기본 데이터 형식도 자료구조가 될 수 있다.
 
 알고리즘을 구할 때는 항상 최악의 경우를 생각해서 구해야 하기 때문에 보통 빅오 표기법을 많이 사용한다.
 
+<br>
+<br>
 
+- 선형
 
+    - [배열](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/Array/Array.md)
+    - [연결 리스트(링크드 리스트)](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/linkedList/LinkedList.md)
+    - [스택](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/stack/Stack.md)
+    - [큐](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/queue/Queue.md)
+    - [데크](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/dequeue/Deque.md)
+    - [해시 테이블](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/hash/hash.md)
+
+- 비선형
+
+    - [그래프](https://github.com/genesis12345678/TIL/blob/main/dataStructure/non_linear/graph/graph.md)
+    - [힙](https://github.com/genesis12345678/TIL/blob/main/dataStructure/non_linear/heap/heap.md)
  
