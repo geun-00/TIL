@@ -634,3 +634,66 @@ public class ResponseBodyController {
     }
 }
 ```
+
+<br>
+
+## HTTP 메시지 컨버터
+
+- @ResponseBody 사용 원리
+
+![img.png](image/img.png)
+
+- HTTP body에 문자 내용을 직접 반환한다.
+- ``viewResolver`` 대신에 ``HttpMessageConverter``가 동작한다.
+- 기본 문자처리는 ``StringHttpMessageConverter``
+- 기본 객체처리는 ``MappingJackson2HttpMessageConverter``
+
+다음 경우 HTTP 메시지 컨버터 적용
+- HTTP 요청 : ``@RequestBody``, ``HttpEntity(RequestEntity)``
+- HTTP 응답 : ``@ResponseBody``, ``HttpEntity(ResponseEntity)``
+
+``HttpMessageConverter`` 인터페이스는 HTTP 요청, 응답 둘 다 사용된다.
+- ``canRead()``,``canWrite()``: 해당 클래스, 미디어타입을 지원하는지 확인
+- ``read()``, ``write()``: 메시지 컨버터를 통해서 메시지를 읽고 쓰는 기능
+
+
+스프링 부트 주요 메시지 컨버터
+- 0 = ``ByteArrayHttpMessageConverter`` - byte[] 데이터 처리
+  - 클래스 타입:``byte[]``, 미디어타입:``*/*``
+  - 응답 미디어타입: ``application/octet-stream``
+- 1 = ``StringHttpMessageConverter`` - String 데이터 처리
+  - 클래스 타입:``String``, 미디어타입:``*/*``
+  - 응답 미디어타입: ``text/plain``
+- 2 = ``MappingJackson2HttpMessageConverter``
+  - 클래스 타입: 객체 또는 HashMap, 미디어타입: ``application/json`` 관련
+  - 응답 미디어타입: ``application/json`` 관련
+
+<br>
+
+## 요청 매핑 핸들러 어댑터 구조
+
+![img_1.png](image/img_1.png)
+
+어노테이션 기반 컨트롤러를 처리하는 ``RequestMappingHandlerAdaptor``는 ``ArgumentResolver``를 호출해서 컨트롤러(핸들러)가 필요로 하는
+파라미터를 생성해서 넘겨준다.
+
+```java
+public interface HandlerMethodArgumentResolver {
+
+	boolean supportsParameter(MethodParameter parameter);
+
+	@Nullable
+	Object resolveArgument(MethodParameter parameter, @Nullable ModelAndViewContainer mavContainer,
+			NativeWebRequest webRequest, @Nullable WebDataBinderFactory binderFactory) throws Exception;
+
+}
+```
+``supportsParameter()``에서 해당 파라미터를 지원하는지 체크하고 지원하면 ``resolveArgument()``를 호출해서 실제 객체를 생성하고 컨트롤러 호출시 넘어간다.
+
+직접 이 인터페이스를 구현해서 원하는 ``ArgumentResolver``를 만들 수도 있다.
+
+<br>
+
+### HTTP 메시지 컨버터
+
+![img_2.png](image/img_2.png)
