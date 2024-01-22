@@ -21,5 +21,5 @@ Form 태그에 별도의 `enctype`을 지정해야 한다. 다른 종류의 여�
 
 
 
-- [서블릿]()
-- [스프링]()
+- [서블릿](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_2/fileUpload/servlet/servlet_fileUpload.md)
+- [스프링](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_2/fileUpload/spring/spring_fileUpload.md)
