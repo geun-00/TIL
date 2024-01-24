@@ -110,7 +110,7 @@ public class JdbcTemplateItemRepositoryV2 implements ItemRepository {
     - `Map`과 유사한데 SQL에 좀 더 특화된 기능을 제공한다. `SqlParameterSource`인터페이스의 구현체이다.
     - 메서드 체인을 통해 편리한 사용법을 제공한다, `update()`
   - `BeanPropertySqlParameterSource`
-    - **자바빈 프로터티 규약을 통해서 자동으로 파라미터 객체를 생성한다.**(`getXxx()`)
+    - **자바빈 프로퍼티 규약을 통해서 자동으로 파라미터 객체를 생성한다.**(`getXxx()`)
     - `SqlParameterSource`인터페이스의 구현체이다, `save()`,`findAll()`
     - 가장 편리해 보이지만 항상 사용할 수 있는 것은 아니다. 왜냐하면 `update()`에서는 `id`를 바인딩 해야하는데 `ItemUpdateDto`에는 `id`가 없다.
 ```java
