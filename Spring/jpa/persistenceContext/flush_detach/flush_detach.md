@@ -194,7 +194,7 @@ em2.contains(mergeMember) = true
 ![img_6.png](image/img_6.png)
 
 1. `merge()` 실행
-2. 파라미터로 넘어온 준영속 엔티티의 식별자 값으로 1차 캐시에서 엔티티 조호
+2. 파라미터로 넘어온 준영속 엔티티의 식별자 값으로 1차 캐시에서 엔티티 조회
    - 만약 1차 캐시에 엔티티가 없으면 DB에서 엔티티를 조회하고 1차 캐시에 저장한다.
 3. 조회한 영속 엔티티(`mergeMember`)에 member 엔티티의 값을 채워 넣는다.
    - member 엔티티의 모든 값을 `mergeMember`에 밀어 넣는다. 이때 `mergeMember`의 "회원1"이 "회원명 변경"으로 바뀐다.
@@ -202,6 +202,7 @@ em2.contains(mergeMember) = true
 
 `em2.contains(member) = false`를 보면 파라미터로 넘어온 member 엔티티는 준영속 상태이므로 `false`,<br>
 `em2.contains(mergeMember) = true`를 보면 새롭게 병합된 영속 상태의 엔티티는 `true`이다.<br>
+
 즉, 준영속 상태인 `member` 엔티티와 영속 상태인 `mergeMember` 엔티티는 서로 완전히 다른 인스턴스다. 준영속 상태인 `member` 엔티티는 이제 사용할
 필요가 없기 때문에 준영속 엔티티를 참조하던 변수를 영속 엔티티를 참조하도록 변경하는 것이 안전하다.(덮어씌운다.)
 ```java
