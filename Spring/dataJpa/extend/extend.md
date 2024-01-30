@@ -245,7 +245,7 @@ public Page<Member> list(Pageable pageable) {
   - `id`와 `username`을 내림차순으로 첫 번째 페이지를 반환한다.
   - `sort`는 `asc`가 기본값이기 때문에 `asc`는 생략 가능하다.
 
-**`Pageable`의 기본값은 `page=0`, `size=20`이다. 변경 가능하다.
+`Pageable`의 기본값은 `page=0`, `size=20`이다. 변경 가능하다.
 - 글로벌 설정
 ```properties
 spring.data.web.pageable.default-page-size=20 //기본 페이지 사이즈
