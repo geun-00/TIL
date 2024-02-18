@@ -223,9 +223,9 @@ public class ProxyApplication {
 
 **이제 원본 코드를 전혀 수정하지 않고 다양한 케이스에 로그 추적기를 적용해야 한다.**
 
-- [프록시 패턴 예제]()
-- [데코레이터 패턴 예제]()
+- [프록시 패턴 예제](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/proxyAndDecorator/proxy/Proxy.md#%ED%94%84%EB%A1%9D%EC%8B%9C-%ED%8C%A8%ED%84%B4)
+- [데코레이터 패턴 예제](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/proxyAndDecorator/proxy/Proxy.md#%EB%8D%B0%EC%BD%94%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4)
 
 
-- [인터페이스 기반 프록시]()
-- [구체 클래스 기반 프록시]()
+- [인터페이스 기반 프록시](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/proxyAndDecorator/Proxy.md#%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B8%B0%EB%B0%98-%ED%94%84%EB%A1%9D%EC%8B%9C)
+- [구체 클래스 기반 프록시](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/proxyAndDecorator/Proxy.md#%EA%B5%AC%EC%B2%B4-%ED%81%B4%EB%9E%98%EC%8A%A4-%EA%B8%B0%EB%B0%98-%ED%94%84%EB%A1%9D%EC%8B%9C)
