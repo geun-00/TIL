@@ -73,13 +73,13 @@ public class ProxyApplication {
 자동 프록시 생성기는 여기에 추가로 하나의 역할을 더하는데 바로 `@Aspect`를 창자서 이것을 `Advisor`로 만들어준다. 그래서 이름 앞에 `AnnotationAware`(어노테이션을 인식하는)
 가 붙어 있는 것이다.
 
-![img.png](img.png)
+![img.png](image/img.png)
 
 **자동 프록시 생성기는 2가지 일을 한다.**
 1. `@Aspect`를 보고 어드바이저로 변환해서 저장한다.
 2. 어드바이저를 기반으로 프록시를 생성한다.
 
-![img_1.png](img_1.png)
+![img_1.png](image/img_1.png)
 
 1. **실행** : 스프링 애플리케이션 로딩 시점에 자동 프록시 생성기를 호출한다.
 2. **모든 @Aspect 빈 조회** : 자동 프록시 생성기는 스프링 컨테이너에서 `@Aspect` 어노테이션이 붙은 스프링 빈을 모두 조회한다.
@@ -91,7 +91,7 @@ public class ProxyApplication {
 `@Aspect` 의 정보를 기반으로 어드바이저를 만들고 @Aspect 어드바이저 빌더 내부 저장소에 캐시한다. 캐시에 어드바이저가 이미 만들어져 있는 경우 캐시에 저장된
 어드바이저를 반환한다.
 
-![img_2.png](img_2.png)
+![img_2.png](image/img_2.png)
 
 1. **생성** : 스프링 빈 대상이 되는 객체를 생성한다.(`@Bean`, 컴포넌트 스캔 모두 포함)
 2. **전달** : 생성된 객체를 빈 저장소에 등록하기 직전에 빈 후처리기에 전달한다.
@@ -106,6 +106,6 @@ public class ProxyApplication {
 
 이것을 **횡단 관심사(cross-cutting concerns)라고 한다.**
 
-![img_3.png](img_3.png)
+![img_3.png](image/img_3.png)
 
 스프링 AOP를 사용하면 이러한 횡단 관심사를 매우 편리하게 관리할 수 있다.
