@@ -125,7 +125,7 @@ public class AopTest { ... }
 ```
 - 트랜잭션 어드바이스가 먼저 실행되고 이후에 로그 어드바이스가 적용됐다.
 
-![img_3.png](img_3.png)
+![img_3.png](image/img_3.png)
 
 # 스프링 AOP 구현 - V6
 
@@ -269,7 +269,7 @@ public void doAfter(JoinPoint joinPoint) {
 [around][리소스 릴리즈] void hello.aop.order.OrderService.orderItem(String)
 ```
 
-![img_4.png](img_4.png)
+![img_4.png](image/img_4.png)
 - 실행 순서: `@Around`, `@Before`, `@After`, `@AfterReturning`, `@AfterThrowing`
 - 어드바이스가 적용되는 순서는 이렇지만 호출 순서와 리턴 순서는 반대이다.
 - `@Aspect`안에 동일한 종류의 어드바이스가 2개 이상 있으면 순서는 보장되지 않는다. 이 경우 `@Aspect`를 별도 클래스로 분리하고 `@Order`를 적용해야 한다.

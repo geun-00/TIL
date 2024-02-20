@@ -64,7 +64,7 @@ hello.aop.order.OrderRepository          : [orderRepository] 실행
 ```
 - `joinpoint` 시그니처 출력 결과다.
 
-![img_1.png](img_1.png)
+![img_1.png](image/img_1.png)
 
 # 스프링 AOP 구현 - V2
 
@@ -170,7 +170,7 @@ public class AopTest { ... }
 [리소스 릴리즈] void hello.aop.order.OrderService.orderItem(String)
 ```
 
-![img_2.png](img_2.png)
+![img_2.png](image/img_2.png)
 
 - 로그를 남기는 순서가 `doLog()` -> `doTransaction()` 순서로 작동한다. 
 - 어드바이스가 적용되는 순서를 변경하고 싶으면 어떻게 해야 할까?
