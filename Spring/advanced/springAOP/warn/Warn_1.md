@@ -76,7 +76,7 @@ call internal
 ```
 **`external()` 실행 결과가 중요하다.**
 
-![img.png](img.png)
+![img.png](image_1/img.png)
 
 - 실행 결과를 보면 `external()`을 실행할 때는 프록시를 호출한다. `CallLogAspect`어드바이스가 호출된 것이다.
 - 그리고 AOP Proxy는 `target.internal()`을 호출한다.
@@ -85,7 +85,7 @@ call internal
 자바 언어에서 메서드 앞에 별도의 참조가 없으면 `this`라는 뜻으로 자기 자신의 인스턴스를 가리킨다. 이떄 `this`는 실제 대상 객체(`target`)의 인스턴스를 뜻한다.
 **결과적으로 이러한 내부 호출은 프록시를 거치지 않기 때문에 어드바이스도 적용할 수 없는 것이다.**
 
-![img_1.png](img_1.png)
+![img_1.png](image_1/img_1.png)
 
 - 외부에서 호출하는 경우 프록시를 거치지 때문에 `internal()`도 `CallLogAsepct`어드바이스가 적용이 된다.
 
@@ -148,7 +148,7 @@ aop=void hello.aop.internalcall.CallServiceV1.internal()
 call internal
 ```
 
-![img_2.png](img_2.png)
+![img_2.png](image_1/img_2.png)
 
 - `internal`을 호출할 때 자기 자신의 인스턴스를 호출하는 것이 아니라 프록시 인스턴스를 통해서 호출하기 때문에 AOP가 잘 적용된다.
 
@@ -265,4 +265,4 @@ aop=void hello.aop.internalcall.InternalService.internal()
 call internal
 ```
 
-![img_3.png](img_3.png)
+![img_3.png](image_1/img_3.png)

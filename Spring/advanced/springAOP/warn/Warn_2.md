@@ -36,7 +36,7 @@ void jdkProxy() {
 - JDK 동적 프록시는 `MemberService` 인터페이스를 기반으로 프록시를 생성한다.
 - `memberServiceProxy`가 `JDK Proxy`가 된다.
 
-![img.png](img.png)
+![img.png](image_2/img.png)
 
 - 여기에서 `JDK Proxy`를 대상 클래스인 `MemberServiceImpl` 타입으로 캐스팅 할 때 예외가 발생한다.
 - JDK 동적 프록시는 인터페이스를 기반으로 프록시를 생성한다. `JDK Proxy`는 `MemberService` 인터페이스를 기반으로 생성된 프록시이다.
@@ -60,14 +60,14 @@ void cglibProxy() {
 }
 ```
 
-![img_1.png](img_1.png)
+![img_1.png](image_2/img_1.png)
 
 - `MemberServiceImpl` 타입을 기반으로 CGLIB 프록시를 생성했다.
 - `MemberServiceImpl` 타입은 `MemberService` 인터페이스를 구현했고, CGLIB는 구체 클래스를 기반으로 프록시를 생성한다.
 - CGLIB는 `MemberServiceImpl` 구체 클래스를 기반으로 프록시를 생성한다.
 - `memberServiceProxy`가 `CGLIB Proxy`가 된다.
 
-![img_2.png](img_2.png)
+![img_2.png](image_2/img_2.png)
 
 - `CGLIB Proxy`는 `MemberServiceImpl` 구체 클래스를 기반으로 생성된 프록시이다.
 - `CGLIB Proxy`는 `MemberServiceImpl` 은 물론, 이의 부모인 `MemberService` 인터페이스로도 캐스팅이 가능하다.
@@ -114,12 +114,12 @@ BeanNotOfRequiredTypeException: Bean named 'memberServiceImpl' is expected to be
 - `memberServiceImpl`에 주입되길 기대하는 타입은 `hello.aop.member.MemberServiceImpl`인데 실제 넘어온 타입은 `jdk.proxy3.$Proxy56`이다.
 - 타입 예외가 발생한다.
 
-![img_3.png](img_3.png)
+![img_3.png](image_2/img_3.png)
 
 - JDK 동적 프록시는 인터페이스를 기반으로 프록시를 생성하기 때문에 인터페이스인 `MemberService` 타입으로 캐스팅이 가능하다.
 - 하지만 구체 클래스인 `MemberServiceImpl` 타입은 전혀 알지 못하므로 해당 타입에 주입할 수 없는 것이다.
 
-![img_4.png](img_4.png)
+![img_4.png](image_2/img_4.png)
 
 - CGLIB 방식을 사용하면 정상 동작한다.
 - CGLIB 프록시는 `MemberServiceImpl` 구체 클래스를 기반으로 만들어진다.
@@ -144,7 +144,7 @@ CGLIB는 구체 클래스를 상속 받기 때문에 다음과 같은 문제가 
 1. 실제 target의 객체를 생성할 때
 2. 프록시 객체를 생성할 때 부모 클래스의 생성자 호출
 
-![img_5.png](img_5.png)
+![img_5.png](image_2/img_5.png)
 
 ## 프록시 기술과 한계 - 스프링의 해결책
 
