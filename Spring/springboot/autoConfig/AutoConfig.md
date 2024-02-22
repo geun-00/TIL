@@ -135,6 +135,6 @@ class DBConfigTest {
 
 <br>
 
-- [스프링 부트의 자동 구성 - 1]()
-- [스프링 부트의 자동 구성 - 2]()
+- [스프링 부트의 자동 구성 - 1](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/autoConfig/SpringBootAutoConfig_1.md)
+- [스프링 부트의 자동 구성 - 2](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/autoConfig/SpringBootAutoConfig_2.md)
 
