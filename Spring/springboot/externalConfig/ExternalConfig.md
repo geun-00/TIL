@@ -39,11 +39,11 @@
 
 <br>
 
-- [OS 환경 변수]()
-- [자바 시스템 속성]()
-- [커맨드 라인 인수]()
-- [스프링 통합]()
-- [설정 데이터]()
-- [외부 설정 사용]()
-- [YAML]()
-- [@Profile]()
+- [OS 환경 변수](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/externalConfig/OS.md)
+- [자바 시스템 속성](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/externalConfig/JavaSystem.md)
+- [커맨드 라인 인수](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/externalConfig/CommandLine.md)
+- [스프링 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/externalConfig/SpringCombine.md)
+- [설정 데이터](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/externalConfig/ExternalFile.md)
+- [외부 설정 사용](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/externalConfig/ExternalRead.md)
+- [YAML](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/externalConfig/YAML.md)
+- [@Profile](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/externalConfig/%40Profile.md)
