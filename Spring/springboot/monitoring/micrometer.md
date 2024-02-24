@@ -179,4 +179,4 @@ server:
 ![img_4.png](image/img_4.png)
 
 ### [프로메테우스](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Prometheus.md)
-### [그라파나]https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Grafana.md)
+### [그라파나](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Grafana.md)
