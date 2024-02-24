@@ -14,10 +14,11 @@
 스프링 부트가 제공하는 `액츄에이터`는 이런 프로덕션 준비 기능을 매우 편리하게 사용할 수 있는 다양한 편의 기능들을 제공한다.<br>
 더 나아가 마이크로미터, 프로메테우스, 그라파나 같은 모니터링 시스템과 매우 쉽게 연동할 수 있는 기능도 제공한다.
 
-- [액츄에이터 시작]()
-  - [엔드포인트 설정]()
-  - [다양한 엔드포인트]()
-- [헬스 정보]()
-- [애플리케이션 정보]()
-- [HTTP 요청 응답 기록]()
-- [액츄에이터 보안]()
+- [액츄에이터 시작](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/actuator/Basic.md)
+  - [엔드포인트 설정](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/actuator/Basic.md#%EC%97%94%EB%93%9C%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%84%A4%EC%A0%95)
+  - [다양한 엔드포인트](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/actuator/Basic.md#%EB%8B%A4%EC%96%91%ED%95%9C-%EC%97%94%EB%93%9C%ED%8F%AC%EC%9D%B8%ED%8A%B8)
+- [헬스 정보](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/actuator/Health.md)
+- [애플리케이션 정보](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/actuator/Info.md)
+- [로거](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/actuator/Logger.md)
+- [HTTP 요청 응답 기록](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/actuator/HttpExchange.md)
+- [액츄에이터 보안](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/actuator/Security.md)
