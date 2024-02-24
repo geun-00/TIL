@@ -178,5 +178,5 @@ server:
 **프로메테우스 아키텍처**
 ![img_4.png](image/img_4.png)
 
-### [프로메테우스]()
-### [그라파나]()
+### [프로메테우스](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Prometheus.md)
+### [그라파나]https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Grafana.md)
