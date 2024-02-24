@@ -105,12 +105,15 @@ public class ActuatorApplication {
 - 컨트롤러만 컴포넌트 스캔의 대상이 되도록 했다.
 - 이후 여러 버전에 따라서 `@Import`를 수정하면서 하면 된다.
 
-### [카운터]()
-- [V1]()
-- [V2]()
-### [타이머]()
-- [V1]()
-- [V2]()
+### [카운터](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Counter.md#%EB%A9%94%ED%8A%B8%EB%A6%AD-%EB%93%B1%EB%A1%9D---%EC%B9%B4%EC%9A%B4%ED%84%B0)
+- [V1](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Counter.md#%EC%B9%B4%EC%9A%B4%ED%84%B0---v1)
+- [V2](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Counter.md#%EC%B9%B4%EC%9A%B4%ED%84%B0---v2)
+### [타이머](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Timer.md#%EB%A9%94%ED%8A%B8%EB%A6%AD-%EB%93%B1%EB%A1%9D---%ED%83%80%EC%9D%B4%EB%A8%B8)
+- [V1](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Timer.md#%ED%83%80%EC%9D%B4%EB%A8%B8---v1)
+- [V2](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Timer.md#%ED%83%80%EC%9D%B4%EB%A8%B8---v2)
+### [게이지](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Gauge.md#%EB%A9%94%ED%8A%B8%EB%A6%AD-%EB%93%B1%EB%A1%9D---%EA%B2%8C%EC%9D%B4%EC%A7%80)
+- [V1](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Gauge.md#%EA%B2%8C%EC%9D%B4%EC%A7%80---v1)
+- [V2](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Gauge.md#%EA%B2%8C%EC%9D%B4%EC%A7%80---v2)
 
 ## 정리
 
