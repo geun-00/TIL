@@ -182,3 +182,44 @@
     - [V1](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Gauge.md#%EA%B2%8C%EC%9D%B4%EC%A7%80---v1) - 코드로 만들기
     - [V2](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Gauge.md#%EA%B2%8C%EC%9D%B4%EC%A7%80---v2) - 간단한 버전
 </details>
+
+### JPA
+
+<details>
+    <summary>기본</summary>
+
+- [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/jpa.md#jpa)
+- [영속성 컨텍스트](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/persistenceContext/persistenceContext.md#%EC%98%81%EC%86%8D%EC%84%B1-%EA%B4%80%EB%A6%AC) - 영속성 컨텍스트에 대한 용어 이해
+- [엔티티 매핑](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/entityMapping/entityMapping.md#%EC%97%94%ED%8B%B0%ED%8B%B0-%EB%A7%A4%ED%95%91) - 엔티티와 테이블 매핑 기본
+- [연관 관계 매핑](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/related/related.md#%EC%97%B0%EA%B4%80-%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91) - 단방향, 양방향, 연관관계의 주인에 대해
+- [다양한 연관 관계 매핑](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/related/relateds.md#%EB%8B%A4%EC%96%91%ED%95%9C-%EC%97%B0%EA%B4%80%EA%B4%80%EA%B3%84) - 일대일, 다대일 등의 연관관계에 대해
+- [고급 매핑](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/inheritance/inheritance.md#%EC%83%81%EC%86%8D%EA%B4%80%EA%B3%84-%EB%A7%A4%ED%95%91) - 테이블 상속 구현하기
+- [프록시](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/proxy/proxy.md#%ED%94%84%EB%A1%9D%EC%8B%9C) - JPA의 프록시 기술, 즉시 로딩과 지연 로딩, 영속성 전이에 대해
+- [값 타입](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/valueType/valueType.md#%EA%B0%92-%ED%83%80%EC%9E%85) - 임베디드 타입과 불변 객체, 값 타입 컬렉션에 대해
+- [JPQL(1)](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/jpql/jpql.md#jpql) - `JPQL` 기본 사용법
+- [JPQL(2)](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/jpql/jpql_2.md#jpql) - `JPQL` 심화 사용법
+
+</details>
+
+<details>
+    <summary>스프링 데이터 JPA</summary>
+
+- [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/dataJpa/spring_data_jpa.md#%EC%8A%A4%ED%94%84%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-jpa)
+- [공통 인터페이스](https://github.com/genesis12345678/TIL/blob/main/Spring/dataJpa/common_interface/common_interface.md#%EA%B3%B5%ED%86%B5-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EA%B8%B0%EB%8A%A5) - 스프링 데이터 JPA의 구조
+- [쿼리 메서드 기능(1)](https://github.com/genesis12345678/TIL/blob/main/Spring/dataJpa/query_method/query_method_1.md#%EC%BF%BC%EB%A6%AC-%EB%A9%94%EC%84%9C%EB%93%9C-%EA%B8%B0%EB%8A%A5---1) - 메서드 이름으로 쿼리 생성, `@Query` 등에 대해
+- [쿼리 메서드 기능(2)](https://github.com/genesis12345678/TIL/blob/main/Spring/dataJpa/query_method/query_method_2.md#%EC%BF%BC%EB%A6%AC-%EB%A9%94%EC%84%9C%EB%93%9C---2) - 페이징, `@EntityGraph`등에 대해
+- [확장 기능](https://github.com/genesis12345678/TIL/blob/main/Spring/dataJpa/extend/extend.md#%ED%99%95%EC%9E%A5-%EA%B8%B0%EB%8A%A5) - 스프링 데이터 JPA를 확장하여 사용할 수 있는 기술들(`Auditing`, `Web`확장 등)
+- [분석](https://github.com/genesis12345678/TIL/blob/main/Spring/dataJpa/analyse/analyse.md#%EC%8A%A4%ED%94%84%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-jpa-%EB%B6%84%EC%84%9D) - 스프링 데이터 JPA가 사용하는 구현체와 새로운 엔티티를 구별하는 방법에 대해
+- [그 외 기능들](https://github.com/genesis12345678/TIL/blob/main/Spring/dataJpa/functions/functions.md#%EC%8A%A4%ED%94%84%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-jpa-%EB%82%98%EB%A8%B8%EC%A7%80-%EA%B8%B0%EB%8A%A5%EB%93%A4) - 프로젝션과 Native Query
+</details>
+
+<details>
+    <summary>Querydsl</summary>
+
+- [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/querydsl.md#querydsl)
+- [기본 문법(1)](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/basic/basic_1.md#querydsl-%EA%B8%B0%EB%B3%B8-%EB%AC%B8%EB%B2%95---1) - 검색, 결과 조회, 정렬, 페이징
+- [기본 문법(2)](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/basic/basic_2.md#querydsl-%EA%B8%B0%EB%B3%B8-%EB%AC%B8%EB%B2%95---2) - 집합 함수, 조인, 페치 조인
+- [기본 문법(3)](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/basic/basic_3.md#querydsl-%EA%B8%B0%EB%B3%B8-%EB%AC%B8%EB%B2%95---3) - 서브 쿼리, `Case`문
+- [중급 문법(1)](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/intermidate/intermediate_1.md#querydsl-%EC%A4%91%EA%B8%89-%EB%AC%B8%EB%B2%95---1) - 프로젝션 결과 반환의 여러가지 방법
+- [중급 문법(2)](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/intermidate/intermediate_2.md#querydsl-%EC%A4%91%EA%B8%89-%EB%AC%B8%EB%B2%95---2) - 동적 쿼리, 벌크 연산
+</details>

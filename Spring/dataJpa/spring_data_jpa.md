@@ -15,3 +15,5 @@
 - [Web 확장 기능](https://github.com/genesis12345678/TIL/blob/main/Spring/dataJpa/extend/extend.md)
 - [스프링 데이터 JPA 분석](https://github.com/genesis12345678/TIL/blob/main/Spring/dataJpa/analyse/analyse.md)
 - [그 외 기능들](https://github.com/genesis12345678/TIL/blob/main/Spring/dataJpa/functions/functions.md)
+
+> 전체 내용에 대한 출처 : [인프런 - 김영한 님의 "실전! 스프링 데이터 JPA"](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-JPA-%EC%8B%A4%EC%A0%84)

@@ -66,3 +66,5 @@ spring.jpa.properties.hibernate.use_sql_comments: true
 
 - [중급 문법 - 1](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/intermidate/intermediate_1.md)
 - [중급 문법 - 2](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/intermidate/intermediate_2.md)
+
+> 전체 내용에 대한 출처 : [인프런 - 김영한 님의 "실전! Querydsl"](https://www.inflearn.com/course/querydsl-%EC%8B%A4%EC%A0%84)
