@@ -17,3 +17,5 @@
 - [스프링 트랜잭션](https://github.com/genesis12345678/TIL/blob/main/Spring/database_2/transaction/transaction.md)
 - [트랜잭션 전파-1](https://github.com/genesis12345678/TIL/blob/main/Spring/database_2/propagation/tx_propagation_1/tx_propagation.md)
 - [트랜잭션 전파-2](https://github.com/genesis12345678/TIL/blob/main/Spring/database_2/propagation/tx_propagation_2/tx_propagation.md)
+
+> 전체 내용에 대한 출처 : [인프런 - 김영한 님의 "스프링 DB 2편 - 데이터 접근 활용 기술"](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-db-2)
