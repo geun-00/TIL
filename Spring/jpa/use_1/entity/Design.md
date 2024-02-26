@@ -100,13 +100,13 @@
 
 ## 엔티티 클래스 개발
 
-- [회원 엔티티]()
-- [주문 엔티티]()
-- [주문상품 엔티티]()
-- [상품 엔티티]()
-- [배송 엔티티]()
-- [카테고리 엔티티]()
-- [주소 값 타입]()
+- [회원 엔티티](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_1/entity/Member.md)
+- [주문 엔티티](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_1/entity/Orders.md#%EC%A3%BC%EB%AC%B8-%EC%97%94%ED%8B%B0%ED%8B%B0)
+- [주문상품 엔티티](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_1/entity/OrderItem.md#%EC%A3%BC%EB%AC%B8%EC%83%81%ED%92%88-%EC%97%94%ED%8B%B0%ED%8B%B0)
+- [상품 엔티티](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_1/entity/Item.md#%EC%83%81%ED%92%88-%EC%97%94%ED%8B%B0%ED%8B%B0)
+- [배송 엔티티](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_1/entity/Delivery.md#%EB%B0%B0%EC%86%A1-%EC%97%94%ED%8B%B0%ED%8B%B0)
+- [카테고리 엔티티](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_1/entity/Category.md#%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC-%EC%97%94%ED%8B%B0%ED%8B%B0)
+- [주소 값 타입](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_1/entity/Address.md#%EC%A3%BC%EC%86%8C-%EA%B0%92-%ED%83%80%EC%9E%85)
 
 ## 엔티티 설계 주의점
 
