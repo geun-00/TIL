@@ -1,6 +1,6 @@
-# TIL
+# TIL 📃
 
-## INDEX
+## INDEX 🔍
 
 ### Spring
 
@@ -254,5 +254,71 @@
 - [기본 문법(3)](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/basic/basic_3.md#querydsl-%EA%B8%B0%EB%B3%B8-%EB%AC%B8%EB%B2%95---3) - 서브 쿼리, `Case`문
 - [중급 문법(1)](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/intermidate/intermediate_1.md#querydsl-%EC%A4%91%EA%B8%89-%EB%AC%B8%EB%B2%95---1) - 프로젝션 결과 반환의 여러가지 방법
 - [중급 문법(2)](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/intermidate/intermediate_2.md#querydsl-%EC%A4%91%EA%B8%89-%EB%AC%B8%EB%B2%95---2) - 동적 쿼리, 벌크 연산
+</details>
+
+
+### CS 💻
+
+<details>
+  <summary>HTTP</summary>
+
+- [메인]()
+- [인터넷 네트워크](https://github.com/genesis12345678/TIL/blob/main/Http/network/network.md#ip---%EC%9D%B8%ED%84%B0%EB%84%B7-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C) - `IP`, `TCP와 UDP`, `PORT`, `DNS`에 대해
+- [URI](https://github.com/genesis12345678/TIL/blob/main/Http/uri/uri.md#uri) - `URI`와 웹 브라우저 요청의 흐름
+- [Http](https://github.com/genesis12345678/TIL/blob/main/Http/http/http.md#http) - `Http` 특징에 대해
+- [Http 메서드](https://github.com/genesis12345678/TIL/blob/main/Http/httpMethod/httpMethod.md#http-method) - `Http` 메서드와 API 설계 예시
+- [Http 상태코드](https://github.com/genesis12345678/TIL/blob/main/Http/httpStatusCode/httpStatusCode.md#http-%EC%83%81%ED%83%9C-%EC%BD%94%EB%93%9C) - 여러가지 `Http` 상태코드에 대해
+- [Http 일반헤더](https://github.com/genesis12345678/TIL/blob/main/Http/httpHeader_1/header_1.md#http-%EC%9D%BC%EB%B0%98-%ED%97%A4%EB%8D%94) - `Http` 헤더의 표현, 협상, 전송 방식, 정보, 인증, 쿠키에 대해
+- [Http 헤더(Cache)](https://github.com/genesis12345678/TIL/blob/main/Http/httpHeader_2/httpHeader_2.md#http-%ED%97%A4%EB%8D%94---cache) - `Http` 헤더의 캐시(`Cache`)에 대해
+
+</details>
+
+<details>
+  <summary>OS</summary>
+
+- [PCB](https://github.com/genesis12345678/TIL/blob/main/OS/PCB_and_ContextSwitching/pcb.md#pcb--context-switching) - `PCB`와 `컨텍스트 스위칭`에 대해
+- [CPU Scheduling](https://github.com/genesis12345678/TIL/blob/main/OS/cpuScheduling/Scheduling.md#cpu-scheduling) - `CPU 스케줄링`에 대해(`FCFS`, `SJF` 등)
+- [Memory](https://github.com/genesis12345678/TIL/blob/main/OS/memory/memory.md#memory---%EB%A9%94%EB%AA%A8%EB%A6%AC) - `Memory` 영역에 대해
+- [OS](https://github.com/genesis12345678/TIL/blob/main/OS/os/OperatingSystem.md#os---%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C) - 운영체제(`OS`)에 대해
+- [Process](https://github.com/genesis12345678/TIL/blob/main/OS/process/process.md#process---%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4) - `Process`, `Thread`, `멀티 태스킹`에 대해
+
+</details>
+
+### 자료구조 📊
+
+- [자료구조란?](https://github.com/genesis12345678/TIL/blob/main/dataStructure/dataStructure/dataStructure.md#%EC%9E%90%EB%A3%8C-%EA%B5%AC%EC%A1%B0)
+
+<details>
+  <summary>선형 자료구조</summary>
+
+- [배열](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/Array/Array.md#array---%EB%B0%B0%EC%97%B4) - `Array`와 `ArrayList`에 대해
+  - [`ArrayList` 직접 구현해보기](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/Array/ArrayList.java)
+- [연결 리스트](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/linkedList/LinkedList.md#linkedlist) - `LinkedList`에 대해
+  - [`SingleLinkedList` 직접 구현해보기](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/linkedList/singleLinkedList/SinglyLinkedList.java)
+  - [`DoubleLinkedList` 직접 구현해보기](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/linkedList/doubleLinkedList/DoublyLinkedList.java#L20)
+- [스택](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/stack/Stack.md#stack---%EC%8A%A4%ED%83%9D) - `Stack`에 대해
+  - [`LinkedStack` 직접 구현해보기](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/stack/linkedStack/LinkedStack.java)
+  - [`ArrayStack` 직접 구현해보기](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/stack/arrayStack/ArrayStack.java)
+- [큐](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/queue/Queue.md#queue---%ED%81%90) - `Queue`에 대해
+  - [`LinkedtQueue` 직접 구현해보기](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/queue/linkedQueue/LinkedListQueue.java)
+  - [`ArrayQueue` 직접 구현해보기](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/queue/arrayQueue/ArrayQueue.java)
+- [데크](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/dequeue/Deque.md#deque-%EB%8D%B0%ED%81%AC) - `Deque`에 대해
+  - [`LinkedDeque` 직접 구현해보기](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/dequeue/linkedDeque/LinkedDeque.java)
+  - [`ArrayDeque` 직접 구현해보기](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/dequeue/arrayDeque/ArrayDeque.java)
+- [해시 테이블](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/hash/hash.md#%ED%95%B4%EC%8B%9Chash) - `Hash`에 대해
+  - [`HashSet` 직접 구현해보기](https://github.com/genesis12345678/TIL/blob/main/dataStructure/linear/hash/hashSet/HashSet.java)
+
+</details>
+
+<details>
+  <summary>비선형 자료구조</summary>
+
+- [그래프](https://github.com/genesis12345678/TIL/blob/main/dataStructure/non_linear/graph/graph.md#%EA%B7%B8%EB%9E%98%ED%94%84) - `Graph`와 `트리`에 대해
+  - [인접 행렬 방식 예제](https://github.com/genesis12345678/TIL/blob/main/dataStructure/non_linear/graph/ArrayGraph.java)
+  - [인접 리스트 방식 예제](https://github.com/genesis12345678/TIL/blob/main/dataStructure/non_linear/graph/LinkedGraph.java)
+- [힙](https://github.com/genesis12345678/TIL/blob/main/dataStructure/non_linear/heap/heap.md#heap---%ED%9E%99) - `Heap`에 대해
+  - [최소힙(`MinHeap`) 직접 구현해보기](https://github.com/genesis12345678/TIL/blob/main/dataStructure/non_linear/heap/minHeap/MinHeap.java)
+  - [최대힙(`MaxHeap`) 직접 구현해보기](https://github.com/genesis12345678/TIL/blob/main/dataStructure/non_linear/heap/maxHeap/MaxHeap.java)
+
 </details>
 
