@@ -202,6 +202,38 @@
 </details>
 
 <details>
+  <summary>JPA를 활용한 웹 애플리케이션 개발 - 1</summary>
+
+- [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_1/Use.md#jpa%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EA%B0%9C%EB%B0%9C)
+- [엔티티 개발](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_1/entity/Design.md#%EC%84%A4%EA%B3%84) - 엔티티 클래스 개발 및 엔티티 설계 시 주의할 점
+- [도메인 개발](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_1/domain/Domain.md#%EB%8F%84%EB%A9%94%EC%9D%B8-%EA%B0%9C%EB%B0%9C) - 레포지토리 및 서비스 계층 개발
+- [웹 계층 개발](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_1/web/Web.md#%EC%9B%B9-%EA%B3%84%EC%B8%B5-%EA%B0%9C%EB%B0%9C) - 웹 계층 개발 및 **변경 감지와 병합**에 대해
+</details>
+
+<details>
+  <summary>JPA를 활용한 웹 애플리케이션 개발 - 2</summary>
+
+- [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/Use.md#jpa%EB%A5%BC-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EA%B0%9C%EB%B0%9C)
+- [API 조회 기본](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/Basic.md#%ED%9A%8C%EC%9B%90-api) - 기본적인 등록, 수정, 조회 API
+- [지연 로딩과 조회 성능 최적화](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/OptimizingInquiry.md#%EC%A7%80%EC%97%B0-%EB%A1%9C%EB%94%A9%EA%B3%BC-%EC%A1%B0%ED%9A%8C-%EC%84%B1%EB%8A%A5-%EC%B5%9C%EC%A0%81%ED%99%94) - `XToOne` 연관관계 조회 성능 최적화
+  - [V1](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/OptimizingInquiry.md#%EC%A3%BC%EB%AC%B8-%EC%A1%B0%ED%9A%8C---v1) - 엔티티 직접 노출
+  - [V2](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/OptimizingInquiry.md#%EC%A3%BC%EB%AC%B8-%EC%A1%B0%ED%9A%8C---v2) - 엔티티 DTO 변환
+  - [V3](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/OptimizingInquiry.md#%EC%A3%BC%EB%AC%B8-%EC%A1%B0%ED%9A%8C---v3) - DTO로 변환 후 페치 조인 적용
+  - [V4](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/OptimizingInquiry.md#%EC%A3%BC%EB%AC%B8-%EC%A1%B0%ED%9A%8C---v4) - DTO로 바로 조회
+  - [정리](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/OptimizingInquiry.md#%EC%A0%95%EB%A6%AC)
+- [컬렉션 조회 성능 최적화](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/CollectionOptimizing.md#%EC%BB%AC%EB%A0%89%EC%85%98-%EC%A1%B0%ED%9A%8C-%EC%B5%9C%EC%A0%81%ED%99%94) - `XToMany` 연관관계 조회 성능 최적화
+  - [V1](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/CollectionOptimizing.md#%EC%A1%B0%ED%9A%8C---v1) - 엔티티 직접 노출
+  - [V2](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/CollectionOptimizing.md#%EC%A1%B0%ED%9A%8C---v2) - 엔티티 DTO 변환
+  - [V3](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/CollectionOptimizing.md#%EC%A1%B0%ED%9A%8C---v3) - DTO로 변환 후 페치 조인 적용(페이징 불가능)
+  - [V3.1](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/CollectionOptimizing.md#%EC%A1%B0%ED%9A%8C---v31) - `V3` 페이징 불가능 문제 해결
+  - [V4](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/CollectionOptimizing.md#%EC%A1%B0%ED%9A%8C---v4) - DTO로 바로 조회(`N + 1`문제 발생)
+  - [V5](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/CollectionOptimizing.md#%EC%A1%B0%ED%9A%8C---v5) - DTO로 바로 조회, 컬렉션 조회 최적화
+  - [V6](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/CollectionOptimizing.md#%EC%A1%B0%ED%9A%8C---v6) - DTO로 바로 조회, 플랫 데이터 최적화
+  - [정리](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/CollectionOptimizing.md#%EC%A0%95%EB%A6%AC)
+- [OSIV]() - `OSIV`에 대해
+</details>
+
+<details>
     <summary>스프링 데이터 JPA</summary>
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/dataJpa/spring_data_jpa.md#%EC%8A%A4%ED%94%84%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0-jpa)
@@ -223,3 +255,4 @@
 - [중급 문법(1)](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/intermidate/intermediate_1.md#querydsl-%EC%A4%91%EA%B8%89-%EB%AC%B8%EB%B2%95---1) - 프로젝션 결과 반환의 여러가지 방법
 - [중급 문법(2)](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/intermidate/intermediate_2.md#querydsl-%EC%A4%91%EA%B8%89-%EB%AC%B8%EB%B2%95---2) - 동적 쿼리, 벌크 연산
 </details>
+
