@@ -58,6 +58,10 @@ QueryDSL이 실행하는 JPQL 쿼리를 확인하려면 이렇게 설정하면 �
 ```properties
 spring.jpa.properties.hibernate.use_sql_comments: true
 ```
+> **주의**<br>
+> `gradle`로 빌드하면 `test`쪽에 Q파일이 생성된다. **`Intellij`로 빌드해야 한다.**
+> 
+> ![img.png](img.png)
 
 - [기본 문법 - 1](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/basic/basic_1.md)
 - [기본 문법 - 2](https://github.com/genesis12345678/TIL/blob/main/Spring/querydsl/basic/basic_2.md)
