@@ -85,6 +85,8 @@ git fetch
 ```text
 git switch -t origin/(브랜치 이름)
 ```
+- `-t`는 `push`의 `-u`와 같다.
+
 
 - 원격의 브랜치 삭제
 ```text
