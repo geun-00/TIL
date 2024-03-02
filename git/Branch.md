@@ -70,24 +70,24 @@ git rebase --abort
 
 **[Fast-forward](https://wikidocs.net/153693)**
 
-![img_1.png](img_1.png)
+![img_1.png](image/img_1.png)
 - `main` 브랜치에서 `dev1`이 분기해 나가는 지점, 즉 두 브랜치가 공통으로 가지고 있는 커밋을 `base`라고 한다.
 - `main`과 `dev1`이 각각 참조하는 커밋은 동일 선상에 위치하고 있다. 이 때 두 브랜치는 `Fast-forward` 상태에 있다고 한다.
 - `Fast-forward` 관계에 있는 브랜치를 관계에서 `git merge` 를 하면 새로운 커밋이 생기지 않고, 뒤에 쳐진 브랜치(`main`)의 참조 개체가 앞서 있는
   브랜치가 가리키는 개체를 참조하도록 이동을 한다.
 - 마치 브랜치가 점프 하듯 상대 브랜치 참조 값으로 이동한다고 해서 `Fast-forward(빨리 감기)`라고 불린다.
 
-![img_2.png](img_2.png)
+![img_2.png](image/img_2.png)
 
 **[3-way merge](https://wikidocs.net/153693)**
 
-![img_3.png](img_3.png)
+![img_3.png](image/img_3.png)
 
 - 두 브랜치 모두 `base`에서 커밋을 진행해서 분기한 나간 상태다. 두 브랜치 중 어느 것도 `base`에 위치하지 않는다.
 - 이렇게 두 브랜치가 `base`에서 분리된 커밋을 참조할 때 `git merge`를 하면 새로운 커밋이 생성된다. 이것을 `3-way merge`라고 한다.
 - `3-way`인 이유는 `base`와 각 브랜치 2개가 참조하는 커밋을 기준으로 병합을 진행하기 때문이다.
 
-![img_4.png](img_4.png)
+![img_4.png](image/img_4.png)
 
 **`git merge` 옵션들**
 
@@ -113,12 +113,12 @@ git merge --squash
 - `--squash` 옵션은 뜻(짓누르다)처럼 다소 강압적인 병합 방법이다. 커밋 이력과 `merge`된 브랜치 이력도 남기지 않는다.
 - 새로운 커밋에 상대 브랜치의 내용을 모두 뭉쳐 놓는 그림이 된다.
 
-![img_5.png](img_5.png)
+![img_5.png](image/img_5.png)
 
 - **`--squash` 옵션은 브랜치가 삭제되는 것은 아니다.**
 - 상대 브랜치의 최신 커밋이 `merged commit`을 참조하지 않아서 `merging`정보가 표시되지 않고, `main` 브랜치 관점에서는 병합에 대한 이력이 남지 않는다.
 
-![img_6.png](img_6.png)
+![img_6.png](image/img_6.png)
 
 ## 다른 브랜치에서 원하는 커밋 가져오기
 
@@ -161,5 +161,5 @@ git merge --squash (대상 브랜치)
 | feature | 기능 개발              |
 | hotfix  | 긴급한 버그 수정          |
 
-![img_7.png](img_7.png)
+![img_7.png](image/img_7.png)
 [출처](https://nvie.com/posts/a-successful-git-branching-model/)

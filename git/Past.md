@@ -16,7 +16,7 @@ git reset --hard (돌아갈 커밋 해시)
 ```
 만약 커밋 해시를 생략하면 자동으로 마지막 커밋을 가리킨다.<br>
 그리고 `reset`에는 `hard`를 포함해서 3가지 옵션이 있다.
-- [`Git`의 3가지 공간 참고]()
+- [`Git`의 3가지 공간 참고](https://github.com/genesis12345678/TIL/blob/main/git/Deep.md#git%EC%9D%98-3%EA%B0%80%EC%A7%80-%EA%B3%B5%EA%B0%84)
 
 **revert**
 ```text

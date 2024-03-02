@@ -1,6 +1,6 @@
 # Git의 3가지 공간
 
-![img.png](img.png)
+![img.png](image/img.png)
 
 **Working directory**
 - `untracked` : `add`된 적 없는 파일 또는 `.gitignore`된 파일
