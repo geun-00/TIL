@@ -322,3 +322,77 @@
 
 </details>
 
+### GIT
+
+- [메인](https://github.com/genesis12345678/TIL/blob/main/git/Main.md#git)
+<details>
+  <summary>기본</summary>
+
+- [초반 설정](https://github.com/genesis12345678/TIL/blob/main/git/Start.md#git-%EC%B5%9C%EC%B4%88-%EC%84%A4%EC%A0%95) - `Git`을 사용할 때 최초로 하는 설정(`config`와 `.gitignore`)
+- [변경사항 저장](https://github.com/genesis12345678/TIL/blob/main/git/Save.md#%EB%B3%80%EA%B2%BD%EC%82%AC%ED%95%AD-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0) - 변경사항을 커밋하기
+</details>
+
+<details>
+  <summary>Branch</summary>
+
+- [기본적인 브랜치 다루는 방법](https://github.com/genesis12345678/TIL/blob/main/git/Branch.md#branch) - 생성, 확인, 이동, 삭제 등
+- [브랜치 합치기](https://github.com/genesis12345678/TIL/blob/main/git/Branch.md#%EB%B8%8C%EB%9E%9C%EC%B9%98-%ED%95%A9%EC%B9%98%EA%B8%B0) - `merge`와 `rebase`
+- [Git의 merge 전략](https://github.com/genesis12345678/TIL/blob/main/git/Branch.md#git%EC%9D%98-merge-%EC%A0%84%EB%9E%B5) - `fast-forward`, `3-way merge`, 다양한 `merge` 옵션들에 대해
+- [다른 브랜치](https://github.com/genesis12345678/TIL/blob/main/git/Branch.md#%EB%8B%A4%EB%A5%B8-%EB%B8%8C%EB%9E%9C%EC%B9%98%EC%97%90%EC%84%9C-%EC%9B%90%ED%95%98%EB%8A%94-%EC%BB%A4%EB%B0%8B-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0) - 다른 브랜치에서 원하는 커밋 가져오기(`cherry-pick`), 파생된 브랜치 옮겨붙이기(`rebase --onto`), 커밋들 하나로 묶어 가져오기(`--squash`)
+- [Gitflow](https://github.com/genesis12345678/TIL/blob/main/git/Branch.md#gitflow) - 협업을 위한 브랜칭 전략
+
+</details>
+
+<details>
+  <summary>되돌리기</summary>
+
+- [과거로 가기](https://github.com/genesis12345678/TIL/blob/main/git/Past.md#%EA%B3%BC%EA%B1%B0%EB%A1%9C-%EA%B0%80%EA%B8%B0) - `reset`과 `revert`
+- [취소와 되돌리기](https://github.com/genesis12345678/TIL/blob/main/git/Revert.md#%EC%B7%A8%EC%86%8C%EC%99%80-%EB%90%98%EB%8F%8C%EB%A6%AC%EA%B8%B0) - `Git`에서 관리되지 않는 파일들 삭제, 커밋하지 않은 변경사항 되돌리기, `reset` 복구하기
+</details>
+
+<details>
+  <summary>Git 더 알아보기</summary>
+
+- [Git의 3가지 공간](https://github.com/genesis12345678/TIL/blob/main/git/Deep.md#git%EC%9D%98-3%EA%B0%80%EC%A7%80-%EA%B3%B5%EA%B0%84) - `Git`이 파일을 관리하는 방법에 대해(+`reset`의 3가지 옵션)
+- [HEAD](https://github.com/genesis12345678/TIL/blob/main/git/Deep.md#git%EC%9D%98-head) - `HEAD`라는 개념을 활용하는 방법
+- [fetch vs pull](https://github.com/genesis12345678/TIL/blob/main/git/Deep.md#fetch%EC%99%80-pull) - `fetch`와 `pull`의 차이점
+- [Help](https://github.com/genesis12345678/TIL/blob/main/git/Deep.md#git-help) - `Git help`에 대해
+- [Config](https://github.com/genesis12345678/TIL/blob/main/git/Deep.md#git-config) - 설정값 보기, 단축키 설정 등 `Git config` 관련 명령어
+
+</details>
+
+<details>
+  <summary>원격 저장소</summary>
+
+- [원격 저장소](https://github.com/genesis12345678/TIL/blob/main/git/GitHub.md#%EC%9B%90%EA%B2%A9-%EC%A0%80%EC%9E%A5%EC%86%8Cgithub) - `GitHub`에 대해
+  - 로컬과 원격 연결
+  - 원격 저장소에서 프로젝트 가져오기
+  - `pull`을 하는 두 가지 방법
+
+</details>
+
+<details>
+  <summary>커밋 관리</summary>
+
+- [커밋 권장사항](https://github.com/genesis12345678/TIL/blob/main/git/Commit.md#%EC%9E%91%EC%97%85%EC%9D%84-%EC%BB%A4%EB%B0%8B%ED%95%A0-%EB%95%8C-%EA%B6%8C%EC%9E%A5%EC%82%AC%ED%95%AD) - 커밋 권장사항 및 컨벤션
+- [세심하게 커밋](https://github.com/genesis12345678/TIL/blob/main/git/Commit.md#%EC%84%B8%EC%8B%AC%ED%95%98%EA%B2%8C-%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%A7%95-%ED%95%98%EA%B3%A0-%EC%BB%A4%EB%B0%8B%ED%95%98%EA%B8%B0) - `hunk`별 스테이징 진행
+- [커밋 치워두기](https://github.com/genesis12345678/TIL/blob/main/git/Commit.md#%EC%BB%A4%EB%B0%8B%ED%95%98%EA%B8%B0-%EC%95%A0%EB%A7%A4%ED%95%9C-%EB%B3%80%ED%99%94-%EC%B9%98%EC%9B%8C%EB%91%90%EA%B8%B0) - `stash`에 대해
+- [커밋 수정하기](https://github.com/genesis12345678/TIL/blob/main/git/Commit.md#%EC%BB%A4%EB%B0%8B-%EC%88%98%EC%A0%95%ED%95%98%EA%B8%B0) - 과거 커밋 내역을 수정하는 방법
+- [태그](https://github.com/genesis12345678/TIL/blob/main/git/Commit.md#%EC%BB%A4%EB%B0%8B-%ED%83%9C%EA%B7%B8) - `Git`의 `Tag`에 대해
+
+</details>
+
+<details>
+  <summary>분석과 디버깅</summary>
+
+- [log](https://github.com/genesis12345678/TIL/blob/main/git/Debug.md#log) - `git log`의 다양한 옵션들
+- [차이 살펴보기](https://github.com/genesis12345678/TIL/blob/main/git/Debug.md#%EC%B0%A8%EC%9D%B4-%EC%82%B4%ED%8E%B4%EB%B3%B4%EA%B8%B0) - 파일, 커밋, 브랜치의 차이를 CLI로 알아보는 방법
+- [오류 발생지점 찾기](https://github.com/genesis12345678/TIL/blob/main/git/Debug.md#%EC%98%A4%EB%A5%98-%EB%B0%9C%EC%83%9D-%EC%8B%9C%EC%A0%90-%EC%B0%BE%EA%B8%B0) - `git`으로 오류가 발생하는 커밋 지점을 찾는 방법
+
+</details>
+
+
+
+
+
+
