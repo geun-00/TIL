@@ -9,38 +9,22 @@
 ### 손으로 풀어보기
 1. 2차원 구간 합 배열의 `1행,1열`부터 구한다.
 
-<<<<<<< HEAD
 ![img_2.png](image/img_2.png)
 
 2. 이를 통해 2차원 구간 합 배열을 채운다.
 
 ![img_3.png](image/img_3.png)
-=======
-![img_2.png](img_2.png)
-
-2. 이를 통해 2차원 구간 합 배열을 채운다.
-
-![img_3.png](img_3.png)
->>>>>>> d6baa23 (algorithm_dataStructure_sectionSum)
 
 **`D[i][j]`의 값을 채우는 구간 합 공식**
 - `D[i][j]` = `D[i][j-1]` + `D[i-1][j]` - `D[i-1][j-1]` + `A[i][j]` 
 
-<<<<<<< HEAD
 ![img_4.png](image/img_4.png)
-=======
-![img_4.png](img_4.png)
->>>>>>> d6baa23 (algorithm_dataStructure_sectionSum)
 
 - 원본 리스트로 질의에 대한 도출하기 위한 과정은 이렇다.
 - 질의가 `2 2 3 4`라면 `(3,4)`구간 합에서 `(1,4)`구간 합, `(3,1)`구간 합을 뺀 다음 중복하여 뺀 `(1,1)` 구간합을 더하면 된다.
 - 이것을 다시 구간 합 배열로 표현하면 다음과 같다.
 
-<<<<<<< HEAD
 ![img_5.png](image/img_5.png)
-=======
-![img_5.png](img_5.png)
->>>>>>> d6baa23 (algorithm_dataStructure_sectionSum)
 
 **질의 `X1`, `Y1`, `X2`, `Y2`에 대한 답을 구간 합으로 구하는 방법**
 - `D[X2][Y2]` - `D[X1-1][Y2]` - `D[X2][Y1-1]` + `D[X1-1][Y1-1]`
