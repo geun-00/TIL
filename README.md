@@ -70,7 +70,7 @@
     - [bean](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/springAOP/pointcut/Pointcut_3.md#bean) - `bean`에 대해
     - [매개변수 전달](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/springAOP/pointcut/Pointcut_3.md#%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98-%EC%A0%84%EB%8B%AC) - 포인트컷 표현식을 사용하여 어드바이스에 매개변수 전달
     - [this, target](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/springAOP/pointcut/Pointcut_3.md#this%EC%99%80-target) - `this`와 `target`에 대해
-  - [예제]() - 스프링 AOP를 활용하여 로그 출력과 재시도를 하는 AOP 구현해보기
+  - [예제](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/springAOP/example/Example.md#%EC%8A%A4%ED%94%84%EB%A7%81-aop-%EC%8B%A4%EC%A0%84-%EC%98%88%EC%A0%9C) - 스프링 AOP를 활용하여 로그 출력과 재시도를 하는 AOP 구현해보기
   - 주의사항 - 스프링 AOP 주의사항
     - [프록시 내부 호출](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/springAOP/warn/Warn_1.md#%EC%8A%A4%ED%94%84%EB%A7%81-aop-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD) - 프록시 내부 호출 문제와 여러가지 대안
     - [프록시 기술과 한계](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/springAOP/warn/Warn_2.md#%EC%8A%A4%ED%94%84%EB%A7%81-aop-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD) - 프록시 기술의 한계(타입 캐스팅, 의존관계 주입, CGLIB)와 스프링의 해결책
@@ -117,7 +117,7 @@
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/database_1.md#%EC%8A%A4%ED%94%84%EB%A7%81-db-1%ED%8E%B8)
 - [JDBC](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/database_1.md#jdbc) - JDBC에 대해
-- [커넥션 풀과 데이터 소스]() - 커넥션 풀과 데이터 소스(`DataSource`)에 대해
+- [커넥션 풀과 데이터 소스](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/connectionPool/connectionPool.md#%EC%BB%A4%EB%84%A5%EC%85%98-%ED%92%80%EA%B3%BC-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%86%8C%EC%8A%A4) - 커넥션 풀과 데이터 소스(`DataSource`)에 대해
 - [트랜잭션](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/transaction/transaction.md#%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98) - 트랜잭션 개념과 트랜잭션 적용 해보기
 - [스프링 트랜잭션](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/spring_transaction/spring_transaction.md#%EC%8A%A4%ED%94%84%EB%A7%81%EA%B3%BC-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0---%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98) - 트랜잭션을 적용했을 때 문제점을 스프링으로 해결해보기
 - [자바 예외](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/javaException/javaException.md#%EC%9E%90%EB%B0%94-%EC%98%88%EC%99%B8) - 자바의 예외에 대해(체크, 언체크 예외)
@@ -230,7 +230,7 @@
   - [V5](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/CollectionOptimizing.md#%EC%A1%B0%ED%9A%8C---v5) - DTO로 바로 조회, 컬렉션 조회 최적화
   - [V6](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/CollectionOptimizing.md#%EC%A1%B0%ED%9A%8C---v6) - DTO로 바로 조회, 플랫 데이터 최적화
   - [정리](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/CollectionOptimizing.md#%EC%A0%95%EB%A6%AC)
-- [OSIV]() - `OSIV`에 대해
+- [OSIV](https://github.com/genesis12345678/TIL/blob/main/Spring/jpa/use_2/OSIV.md#osivopen-session-in-view) - `OSIV`에 대해
 </details>
 
 <details>
@@ -440,5 +440,21 @@
 
 </details>
 
+<details>
+  <summary>탐색</summary>
+
+- [깊이 우선 탐색](https://github.com/genesis12345678/TIL/blob/main/algorithm/search/dfs/DFS.md#%EA%B9%8A%EC%9D%B4-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89) - `O(V+E)`, 재귀 함수
+  - [예제 문제 - 1](https://github.com/genesis12345678/TIL/blob/main/algorithm/search/dfs/Example_1.md#%EA%B9%8A%EC%9D%B4-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89-%EC%98%88%EC%A0%9C---1)
+  - [예제 문제 - 2](https://github.com/genesis12345678/TIL/blob/main/algorithm/search/dfs/Example_2.md#%EA%B9%8A%EC%9D%B4-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89-%EC%98%88%EC%A0%9C---2)
+  - [예제 문제 - 3](https://github.com/genesis12345678/TIL/blob/main/algorithm/search/dfs/Example_3.md#%EA%B9%8A%EC%9D%B4-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89-%EC%98%88%EC%A0%9C---3)
+- [너비 우선 탐색](https://github.com/genesis12345678/TIL/blob/main/algorithm/search/bfs/BFS.md#%EB%84%88%EB%B9%84-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89) - `O(V+E)`, 큐, 최단 경로 보장
+  - [예제 문제 - 1](https://github.com/genesis12345678/TIL/blob/main/algorithm/search/bfs/Example_1.md#%EB%84%88%EB%B9%84-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89-%EC%98%88%EC%A0%9C---1)
+  - [예제 문제 - 2](https://github.com/genesis12345678/TIL/blob/main/algorithm/search/bfs/Exmaple_2.md#%EB%84%88%EB%B9%84-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89--%EC%98%88%EC%A0%9C---2)
+  - [예제 문제 - 3](https://github.com/genesis12345678/TIL/blob/main/algorithm/search/bfs/Example_3.md#%EB%84%88%EB%B9%84-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89-%EC%98%88%EC%A0%9C---3)
+- [이진 탐색](https://github.com/genesis12345678/TIL/blob/main/algorithm/search/binary/BinarySearch.md#%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89) - 중앙값 비교, `O(logN)`
+  - [예제 문제 - 1](https://github.com/genesis12345678/TIL/blob/main/algorithm/search/binary/Example_1.md#%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-%EC%98%88%EC%A0%9C---1)
+  - [예제 문제 - 2](https://github.com/genesis12345678/TIL/blob/main/algorithm/search/binary/Example_2.md#%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-%EC%98%88%EC%A0%9C---2)
+  - [예제 문제 - 3](https://github.com/genesis12345678/TIL/blob/main/algorithm/search/binary/Example_3.md#%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-%EC%98%88%EC%A0%9C---3)
+</details>
 
 
