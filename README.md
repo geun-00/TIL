@@ -457,4 +457,15 @@
   - [예제 문제 - 3](https://github.com/genesis12345678/TIL/blob/main/algorithm/search/binary/Example_3.md#%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-%EC%98%88%EC%A0%9C---3)
 </details>
 
+<details>
+  <summary>그리디</summary>
+
+- [그리디 알고리즘 이론](https://github.com/genesis12345678/TIL/blob/main/algorithm/greedy/Greedy.md#%EA%B7%B8%EB%A6%AC%EB%94%94)
+  - [예제 문제 - 1](https://github.com/genesis12345678/TIL/blob/main/algorithm/greedy/Example_1.md#%EA%B7%B8%EB%A6%AC%EB%94%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%98%88%EC%A0%9C---1)
+  - [예제 문제 - 2](https://github.com/genesis12345678/TIL/blob/main/algorithm/greedy/Example_2.md#%EA%B7%B8%EB%A6%AC%EB%94%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%98%88%EC%A0%9C---2)
+  - [예제 문제 - 3](https://github.com/genesis12345678/TIL/blob/main/algorithm/greedy/Example_3.md#%EA%B7%B8%EB%A6%AC%EB%94%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%98%88%EC%A0%9C---3)
+  - [예제 문제 - 4](https://github.com/genesis12345678/TIL/blob/main/algorithm/greedy/Example_4.md#%EA%B7%B8%EB%A6%AC%EB%94%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%98%88%EC%A0%9C---4)
+  - [예제 문제 - 5](https://github.com/genesis12345678/TIL/blob/main/algorithm/greedy/Example_5.md#%EA%B7%B8%EB%A6%AC%EB%94%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%98%88%EC%A0%9C---5)
+</details>
+
 
