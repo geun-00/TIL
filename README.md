@@ -468,4 +468,20 @@
   - [예제 문제 - 5](https://github.com/genesis12345678/TIL/blob/main/algorithm/greedy/Example_5.md#%EA%B7%B8%EB%A6%AC%EB%94%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%98%88%EC%A0%9C---5)
 </details>
 
+<details>
+  <summary>정수론</summary>
 
+- [소수 구하기](https://github.com/genesis12345678/TIL/blob/main/algorithm/numberTheory/getPrime/GetPrimeNumber.md#%EC%86%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0) - 에라토스테네스의 체 원리로 소수 구하기
+  - [예제 문제 - 1](https://github.com/genesis12345678/TIL/blob/main/algorithm/numberTheory/getPrime/Example_1.md#%EC%86%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0-%EC%98%88%EC%A0%9C---1)
+  - [예제 문제 - 2](https://github.com/genesis12345678/TIL/blob/main/algorithm/numberTheory/getPrime/Example_2.md#%EC%86%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0-%EC%98%88%EC%A0%9C---2)
+  - [예제 문제 - 3](https://github.com/genesis12345678/TIL/blob/main/algorithm/numberTheory/getPrime/Example_3.md#%EC%86%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0-%EC%98%88%EC%A0%9C---3)
+  - [예제 문제 - 4](https://github.com/genesis12345678/TIL/blob/main/algorithm/numberTheory/getPrime/Example_4.md#%EC%86%8C%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0-%EC%98%88%EC%A0%9C---4)
+- [오일러 피 함수](https://github.com/genesis12345678/TIL/blob/main/algorithm/numberTheory/eulerPhi/EulerPhi.md#%EC%98%A4%EC%9D%BC%EB%9F%AC-%ED%94%BC-%ED%95%A8%EC%88%98) - `N`의 서로소 구하기(1 이외에 공약수가 없음)
+  - [예제 문제 - 1](https://github.com/genesis12345678/TIL/blob/main/algorithm/numberTheory/eulerPhi/Example_1.md#%EC%98%A4%EC%9D%BC%EB%9F%AC-%ED%94%BC-%ED%95%A8%EC%88%98-%EC%98%88%EC%A0%9C---1)
+- [유클리드 호제법](https://github.com/genesis12345678/TIL/blob/main/algorithm/numberTheory/euclidean/Euclidean.md#%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C-%ED%98%B8%EC%A0%9C%EB%B2%95) - 두 수의 최대공약수 구하기
+  - [예제 문제 - 1](https://github.com/genesis12345678/TIL/blob/main/algorithm/numberTheory/euclidean/Example_1.md#%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C-%ED%98%B8%EC%A0%9C%EB%B2%95-%EC%98%88%EC%A0%9C---1)
+  - [예제 문제 - 2](https://github.com/genesis12345678/TIL/blob/main/algorithm/numberTheory/euclidean/Example_2.md#%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C-%ED%98%B8%EC%A0%9C%EB%B2%95-%EC%98%88%EC%A0%9C---2)
+  - [예제 문제 - 3](https://github.com/genesis12345678/TIL/blob/main/algorithm/numberTheory/euclidean/Example_3.md#%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C-%ED%98%B8%EC%A0%9C%EB%B2%95-%EC%98%88%EC%A0%9C---3)
+- [확장 유클리드 호제법](https://github.com/genesis12345678/TIL/blob/main/algorithm/numberTheory/euclidean/Euclidean.md#%ED%99%95%EC%9E%A5-%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C-%ED%98%B8%EC%A0%9C%EB%B2%95) - 방정식의 해 구하기
+  - [예제 문제 - 1](https://github.com/genesis12345678/TIL/blob/main/algorithm/numberTheory/euclidean/Example_4.md#%ED%99%95%EC%9E%A5-%EC%9C%A0%ED%81%B4%EB%A6%AC%EB%93%9C-%ED%98%B8%EC%A0%9C%EB%B2%95-%EC%98%88%EC%A0%9C---1)
+</details>
