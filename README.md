@@ -541,7 +541,7 @@
 <details>
   <summary>조합</summary>
 
-- [조합](https://github.com/genesis12345678/TIL/blob/main/algorithm/combination/Combination.md#%EC%A1%B0%ED%95%A9) - 동적 프로그래밍의 기본이 되는 조합에 대해
+- [조합](https://github.com/genesis12345678/TIL/blob/main/algorithm/combination/Combination.md#%EC%A1%B0%ED%95%A9) - 동적 계획법의 기본이 되는 조합에 대해
   - [예제 문제 - 1](https://github.com/genesis12345678/TIL/blob/main/algorithm/combination/Example_1.md#%EC%A1%B0%ED%95%A9-%EC%98%88%EC%A0%9C---1)
   - [예제 문제 - 2](https://github.com/genesis12345678/TIL/blob/main/algorithm/combination/Example_2.md#%EC%A1%B0%ED%95%A9-%EC%98%88%EC%A0%9C---2)
   - [예제 문제 - 3](https://github.com/genesis12345678/TIL/blob/main/algorithm/combination/Example_3.md#%EC%A1%B0%ED%95%A9-%EC%98%88%EC%A0%9C---3)
@@ -550,4 +550,22 @@
   - [예제 문제 - 6](https://github.com/genesis12345678/TIL/blob/main/algorithm/combination/Example_6.md#%EC%A1%B0%ED%95%A9-%EC%98%88%EC%A0%9C---6)
   - [예제 문제 - 7](https://github.com/genesis12345678/TIL/blob/main/algorithm/combination/Example_7.md#%EC%A1%B0%ED%95%A9-%EC%98%88%EC%A0%9C---7)
   - [예제 문제 - 8](https://github.com/genesis12345678/TIL/blob/main/algorithm/combination/Example_8.md#%EC%A1%B0%ED%95%A9-%EC%98%88%EC%A0%9C---8)
+</details>
+
+<details>
+  <summary>동적 계획법</summary>
+
+- [동적 계획법](https://github.com/genesis12345678/TIL/blob/main/algorithm/dynamic/DP.md#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95) - 동적 계획법(`DP`) 핵심 이론
+  - [예제 문제 - 1](https://github.com/genesis12345678/TIL/blob/main/algorithm/dynamic/Example_1.md#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EC%98%88%EC%A0%9C---1)
+  - [예제 문제 - 2](https://github.com/genesis12345678/TIL/blob/main/algorithm/dynamic/Example_2.md#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EC%98%88%EC%A0%9C---2)
+  - [예제 문제 - 3](https://github.com/genesis12345678/TIL/blob/main/algorithm/dynamic/Example_3.md#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EC%98%88%EC%A0%9C---3)
+  - [예제 문제 - 4](https://github.com/genesis12345678/TIL/blob/main/algorithm/dynamic/Examlple_4.md#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EC%98%88%EC%A0%9C---4)
+  - [예제 문제 - 5](https://github.com/genesis12345678/TIL/blob/main/algorithm/dynamic/Example_5.md#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EC%98%88%EC%A0%9C---5)
+  - [예제 문제 - 6](https://github.com/genesis12345678/TIL/blob/main/algorithm/dynamic/Example_6.md#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EC%98%88%EC%A0%9C---6)
+  - [예제 문제 - 7](https://github.com/genesis12345678/TIL/blob/main/algorithm/dynamic/Example_7.md#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EC%98%88%EC%A0%9C---7)
+  - [예제 문제 - 8](https://github.com/genesis12345678/TIL/blob/main/algorithm/dynamic/Example_8.md#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EC%98%88%EC%A0%9C---8)
+  - [예제 문제 - 9](https://github.com/genesis12345678/TIL/blob/main/algorithm/dynamic/Example_9.md#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EC%98%88%EC%A0%9C---9)
+  - [예제 문제 - 10](https://github.com/genesis12345678/TIL/blob/main/algorithm/dynamic/Example_10.md#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EC%98%88%EC%A0%9C---10)
+  - [예제 문제 - 11](https://github.com/genesis12345678/TIL/blob/main/algorithm/dynamic/Example_11.md#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EC%98%88%EC%A0%9C---11)
+  - [예제 문제 - 12](https://github.com/genesis12345678/TIL/blob/main/algorithm/dynamic/Example_12.md#%EB%8F%99%EC%A0%81-%EA%B3%84%ED%9A%8D%EB%B2%95-%EC%98%88%EC%A0%9C---12)
 </details>
