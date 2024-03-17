@@ -393,6 +393,7 @@
 
 ### Algorithm 
 
+- [메인](https://github.com/genesis12345678/TIL/blob/main/algorithm/Main.md#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
 - [시간 복잡도](https://github.com/genesis12345678/TIL/blob/main/algorithm/Algorithm.md#%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84-%ED%91%9C%EA%B8%B0%EB%B2%95) - 시간 복잡도 표기법과 활용에 대해
 
 <details>
