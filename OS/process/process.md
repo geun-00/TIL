@@ -38,7 +38,7 @@ HDD에 저장되어 있고, 실행되기 전까지는 메모리에 올라가지 
 
 프로그램이 실행되어 프로세스가 만들어지면 메모리 공간이 할당된다.<br>
 
-[메모리](https://github.com/genesis12345678/TIL/blob/main/OS/OperatingSystem/memory/memory.md)
+[메모리](https://github.com/genesis12345678/TIL/blob/main/OS/memory/memory.md)
 
 <br>
 
