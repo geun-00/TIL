@@ -69,6 +69,22 @@
 </details>
 </details>
 
+<details>
+    <summary>알고리즘</summary>
+
+- [시간 복잡도](https://github.com/genesis12345678/TIL/blob/main/interview/algorithm/%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84.md)
+- [동적 프로그래밍](https://github.com/genesis12345678/TIL/blob/main/interview/algorithm/DP.md)
+- [버블 정렬](https://github.com/genesis12345678/TIL/blob/main/interview/algorithm/BubbleSort.md)
+- [선택 정렬](https://github.com/genesis12345678/TIL/blob/main/interview/algorithm/SelectionSort.md)
+- [삽입 정렬](https://github.com/genesis12345678/TIL/blob/main/interview/algorithm/InsertionSort.md)
+- [힙 정렬](https://github.com/genesis12345678/TIL/blob/main/interview/algorithm/HeapSort.md)
+- [병합 정렬](https://github.com/genesis12345678/TIL/blob/main/interview/algorithm/MergeSort.md)
+- [퀵 정렬](https://github.com/genesis12345678/TIL/blob/main/interview/algorithm/QuickSort.md)
+- [허프만 코딩](https://github.com/genesis12345678/TIL/blob/main/interview/algorithm/Huffman.md)
+- [정렬 알고리즘에 따른 시간복잡도 비교](https://github.com/genesis12345678/TIL/blob/main/interview/algorithm/%EC%A0%95%EB%A0%AC%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%8B%9C%EA%B0%84%EB%B3%B5%EC%9E%A1%EB%8F%84.md)
+- [재귀 알고리즘](https://github.com/genesis12345678/TIL/blob/main/interview/algorithm/%EC%9E%AC%EA%B7%80%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.md)
+</details>
+
 ### Spring
 
 <details>
