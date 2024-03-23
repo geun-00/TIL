@@ -15,8 +15,6 @@
 <details>
   <summary>프로그래밍</summary>
 
-
-
 - [OOP](https://github.com/genesis12345678/TIL/blob/main/interview/programming/OOP.md#oop%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
 - [블로킹 vs 논블로킹](https://github.com/genesis12345678/TIL/blob/main/interview/programming/Block_Sync.md#%EB%B8%94%EB%A1%9C%ED%82%B9%EA%B3%BC-%EB%85%BC%EB%B8%94%EB%A1%9C%ED%82%B9%EC%9D%98-%EC%B0%A8%EC%9D%B4%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94)
 - [동기 vs 비동기](https://github.com/genesis12345678/TIL/blob/main/interview/programming/Block_Sync.md#%EB%8F%99%EA%B8%B0%EC%99%80-%EB%B9%84%EB%8F%99%EA%B8%B0%EC%9D%98-%EC%B0%A8%EC%9D%B4%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94)
@@ -28,8 +26,47 @@
 - [MSA](https://github.com/genesis12345678/TIL/blob/main/interview/programming/MSA.md#msa%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
 - [함수형 프로그래밍](https://github.com/genesis12345678/TIL/blob/main/interview/programming/%ED%95%A8%EC%88%98%ED%98%95%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.md#%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
 - [메모리 구조](https://github.com/genesis12345678/TIL/blob/main/interview/programming/Memory.md#%EB%A9%94%EB%AA%A8%EB%A6%AC-%EA%B5%AC%EC%A1%B0%EC%9D%98-%EB%84%A4-%EA%B0%80%EC%A7%80-%EC%98%81%EC%97%AD%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
+- [컴파일러와 인터프리터](https://github.com/genesis12345678/TIL/blob/main/interview/programming/%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC_%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0.md#%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC%EC%99%80-%EC%9D%B8%ED%84%B0%ED%94%84%EB%A6%AC%ED%84%B0%EB%A5%BC-%EB%B9%84%EA%B5%90%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
+- [병렬 프로그래밍](https://github.com/genesis12345678/TIL/blob/main/interview/programming/%EB%B3%91%EB%A0%AC%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.md#%EB%B3%91%EB%A0%AC-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
 
+</details>
 
+<details>
+  <summary>자료구조</summary>
+
+<details>
+    <summary>1 ~ 10</summary>
+
+- [자료구조와 알고리즘의 개념](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.md#%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%97%90-%EA%B0%9C%EB%85%90%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
+- [그래프와 트리의 차이점](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/Graph_Tree.md#%EA%B7%B8%EB%9E%98%ED%94%84%EC%99%80-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
+- [이진 탐색 트리](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/BST.md#%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-%ED%8A%B8%EB%A6%AC%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
+- [AVL 트리](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/AVLTree.md#avl-%ED%8A%B8%EB%A6%AC%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
+- [레드 블랙 트리](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/RedBlackTree.md#%EB%A0%88%EB%93%9C-%EB%B8%94%EB%9E%99-%ED%8A%B8%EB%A6%AC%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
+- [스택과 큐](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/Stack_Queue.md#%EC%8A%A4%ED%83%9D%EA%B3%BC-%ED%81%90%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
+- [Array와 ArrayList](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/Array.md#array%EC%99%80-arraylist%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
+- [배열과 연결 리스트의 장단점](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/LinkedList.md)
+- [해시 테이블](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/HashTable.md#%ED%95%B4%EC%8B%9C%ED%85%8C%EC%9D%B4%EB%B8%94hast-table%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
+- [List, Set, Map의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/List_Set_Map.md#list-set-map-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
+
+</details>
+
+<details>
+    <summary>11 ~ 22</summary>
+
+- [B+ Tree](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/B%2BTree.md#b-tree%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
+- [HashMap 동작 방식](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/HashMap.md#hashmap%EC%9D%80-%EC%96%B4%EB%96%A4-%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EB%8F%99%EC%9E%91%ED%95%98%EB%82%98%EC%9A%94)
+- [Hash 충돌이 발생하는 경우](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/Hash_%EC%B6%A9%EB%8F%8C_1.md#hash-%EC%B6%A9%EB%8F%8C%EC%9D%B4-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94)
+- [Hash 충돌 시 내부 데이터 탐색](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/Hash_%EC%B6%A9%EB%8F%8C_2.md)
+- [컬렉션 프레임워크](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/JCF.md)
+- [검색 자료구조로서 해시 테이블과 BST 비교](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/HashTable_BST.md)
+- [스택에서 자원 공유](https://github.com/genesis12345678/TIL/blob/main/interview/programming/Stack.md)
+- [최소 스패닝 트리](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/MST.md)
+- [선형구조 형태의 자료형에서 가산성과 동차성](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/%EA%B0%80%EC%82%B0%EC%84%B1_%EB%8F%99%EC%B0%A8%EC%84%B1.md)
+- [배열 중복제거 방법](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/%EB%B0%B0%EC%97%B4%EC%A4%91%EB%B3%B5%EC%A0%9C%EA%B1%B0.md)
+- [Enum](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/Enum.md)
+- [Char 타입과 String 타입](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/char_string.md)
+
+</details>
 </details>
 
 ### Spring
