@@ -85,6 +85,27 @@
 - [재귀 알고리즘](https://github.com/genesis12345678/TIL/blob/main/interview/algorithm/%EC%9E%AC%EA%B7%80%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.md)
 </details>
 
+<details>
+    <summary>네트워크</summary>
+
+<details>
+    <summary>1 ~ 10</summary>
+
+- [웹 동작 방식](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/Web.md)
+- [Http와 Https의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/Http_Https.md)
+- [OSI 7 계층](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/OSI7Layer.md)
+- [TCP/IP 4 계층](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/TcpIp4Layer.md)
+- [DNS란, DNS 작동 방식](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/DNS.md)
+- [TCP와 UDP의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/TCPUDP.md)
+- [MTU](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/MTU.md)
+- [서버-클라이언트 메시지 확인](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/MessageACK.md)
+- [3-way handshake, 4-way handshake 흐름](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/Handshake.md)
+- [Http 프로토콜](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/HTTP.md)
+
+</details>
+
+</details>
+
 ### Spring
 
 <details>
