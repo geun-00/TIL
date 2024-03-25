@@ -104,6 +104,22 @@
 
 </details>
 
+<details>
+    <summary>11 ~ 20</summary>
+
+- [HTTPS가 동작하는 방식](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/HTTPS.md)
+- [HTTP 헤더의 구조](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/HttpHeader.md)
+- [Keep-Alive 헤더](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/KeepAlive.md)
+- [HTTP GET과 POST의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/GetPost.md)
+- [쿠키와 세션](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/CookieSession.md)
+- [웹 브라우저에 google.com을 치면 일어나는 일](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/Google.md)
+- [CORS](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/cors.md)
+- [웹 서버와 WAS의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/WebServer.md)
+- [Restful API에서 리소스](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/Resource.md)
+- [REST API란](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/RestAPI.md)
+
+</details>
+
 </details>
 
 ### Spring
