@@ -120,6 +120,39 @@
 
 </details>
 
+<details>
+    <summary>21 ~ 22</summary>
+
+- [I/O와 N/I/O 차이](https://github.com/genesis12345678/TIL/blob/main/interview/network/21_22/IO.md)
+- [MQTT 프로토콜이란](https://github.com/genesis12345678/TIL/blob/main/interview/network/21_22/MQTT.md)
+</details>
+
+</details>
+
+<details>
+    <summary>운영체제</summary>
+
+<details>
+    <summary>1 ~ 10</summary>
+
+- [운영 체제란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/OS.md)
+  - 운영 체제의 주요 목적
+  - 운영 체제의 기능
+- [프로세스란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/Process.md)
+- [쓰레드란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/Thread.md)
+- [쓰레드를 만들 때 자원](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/ThreadResource.md)
+- [쓰레드의 주소 공간](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/ThreadSpace.md)
+- [쓰레드와 프로세스 차이](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/%EC%93%B0%EB%A0%88%EB%93%9C_%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4.md)
+  - `Threading`, `Processing`
+  - `Thrashing`
+- [교착 상태란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/DeadLock.md)
+  - 교착상태가 발생하기 위한 조건
+  - 교창상태 해결법
+- [경쟁 상태란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/RaceCondition.md)
+- [Mutex와 SpinLock의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/Mutex_SpinLock.md)
+- [쓰레드 간 접근](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/%EC%93%B0%EB%A0%88%EB%93%9C%EC%A0%91%EA%B7%BC.md)
+</details>
+
 </details>
 
 ### Spring
