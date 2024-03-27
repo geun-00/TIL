@@ -34,7 +34,7 @@
 <details>
   <summary>자료구조</summary>
 
-<details>
+<details style="margin-left: 20px">
     <summary>1 ~ 10</summary>
 
 - [자료구조와 알고리즘의 개념](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.md#%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%97%90-%EA%B0%9C%EB%85%90%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
@@ -50,7 +50,7 @@
 
 </details>
 
-<details>
+<details style="margin-left: 20px">
     <summary>11 ~ 22</summary>
 
 - [B+ Tree](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/B%2BTree.md#b-tree%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
@@ -88,7 +88,7 @@
 <details>
     <summary>네트워크</summary>
 
-<details>
+<details style="margin-left: 20px">
     <summary>1 ~ 10</summary>
 
 - [웹 동작 방식](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/Web.md)
@@ -104,7 +104,7 @@
 
 </details>
 
-<details>
+<details style="margin-left: 20px">
     <summary>11 ~ 20</summary>
 
 - [HTTPS가 동작하는 방식](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/HTTPS.md)
@@ -120,7 +120,7 @@
 
 </details>
 
-<details>
+<details style="margin-left: 20px">
     <summary>21 ~ 22</summary>
 
 - [I/O와 N/I/O 차이](https://github.com/genesis12345678/TIL/blob/main/interview/network/21_22/IO.md)
@@ -132,7 +132,7 @@
 <details>
     <summary>운영체제</summary>
 
-<details>
+<details style="margin-left: 20px">
     <summary>1 ~ 10</summary>
 
 - [운영 체제란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/OS.md)
@@ -153,6 +153,28 @@
 - [쓰레드 간 접근](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/%EC%93%B0%EB%A0%88%EB%93%9C%EC%A0%91%EA%B7%BC.md)
 </details>
 
+<details style="margin-left: 20px">
+    <summary>11 ~ 20</summary>
+
+- [CPU 스케줄링이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/CPUScheduling.md)
+  - CPU 스케줄링 방법들
+- [최초 적합, 최적 적합, 최악 적합](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/Fit.md)
+- [외부 단편화와 내부 단편화란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/Fragmentation.md)
+- [커널이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/Kernel.md)
+- [멀티 쓰레딩이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/Multi.md)
+  - 멀티 프로세스란?
+  - 멀티 프로세스 대신 멀티 쓰레드를 사용하는 이유
+  - 멀티 프로세싱과 멀티 프로그래밍의 차이
+  - 멀티 태스킹이란?
+  - 멀티 태스킹과 멀티 쓰레딩 비교
+- [뮤텍스와 세마포어란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/MutexSemaphore.md)
+- [페이지 교체 알고리즘](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/PRA.md)
+- [페이징이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/Paging.md)
+- [프로세스 & 쓰레드의 동기화란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/Sync.md)
+- [가상 메모리란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/VirtualMemory.md)
+
+</details>
+
 </details>
 
 ### Spring
@@ -160,7 +182,7 @@
 <details>
     <summary>스프링 핵심 원리</summary>
 
-<details>
+<details style="margin-left: 20px">
     <summary>기본</summary>
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/basic/spring_basic.md#%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EA%B8%B0%EB%B3%B8-%EC%9B%90%EB%A6%AC)
@@ -179,7 +201,7 @@
 
 </details>
 
-<details>
+<details style="margin-left: 20px">
     <summary>고급</summary>
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/LogTrace.md#%EB%A1%9C%EA%B7%B8-%EC%B6%94%EC%A0%81%EA%B8%B0)
@@ -232,7 +254,7 @@
 
 <details>
     <summary>스프링 MVC</summary>
-<details>
+<details style="margin-left: 20px">
     <summary>1편</summary>
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_1/springmvc_1.md#spring-mvc---1)
@@ -244,7 +266,7 @@
 - [스프링 MVC 기본 기능](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_1/springmvc_feature/feature.md#%EC%8A%A4%ED%94%84%EB%A7%81-mvc---%EA%B8%B0%EB%B3%B8-%EA%B8%B0%EB%8A%A5) - 스프링 MVC가 지원하는 요청과 응답의 여러가지 기능
 </details>
 
-<details>
+<details style="margin-left: 20px">
     <summary>2편</summary>
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_2/springmvc_2.md#spring-mvc---2)
@@ -265,7 +287,7 @@
 
 <details>
     <summary>스프링 DB</summary>
-<details>
+<details style="margin-left: 20px">
     <summary>1편</summary>
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/database_1.md#%EC%8A%A4%ED%94%84%EB%A7%81-db-1%ED%8E%B8)
@@ -278,7 +300,7 @@
 
 </details>
 
-<details>
+<details style="margin-left: 20px">
     <summary>2편</summary>
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/database_2/db2.md#db2---%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%91%EA%B7%BC-%EA%B8%B0%EC%88%A0)
