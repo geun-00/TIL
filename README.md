@@ -133,7 +133,7 @@
     <summary>운영체제</summary>
 
 <details style="margin-left: 20px">
-    <summary>1 ~ 10</summary>
+    <summary >1 ~ 10</summary>
 
 - [운영 체제란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/OS.md)
   - 운영 체제의 주요 목적
