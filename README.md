@@ -133,7 +133,7 @@
     <summary>운영체제</summary>
 
 <details style="margin-left: 20px">
-    <summary >1 ~ 10</summary>
+    <summary>1 ~ 10</summary>
 
 - [운영 체제란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/OS.md)
   - 운영 체제의 주요 목적
@@ -172,6 +172,19 @@
 - [페이징이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/Paging.md)
 - [프로세스 & 쓰레드의 동기화란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/Sync.md)
 - [가상 메모리란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/VirtualMemory.md)
+
+</details>
+
+<details>
+    <summary>21 ~ 27</summary>
+
+- [에이징이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/21_27/Aging.md)
+- [기아 상태란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/21_27/Starvation.md)
+- [문맥 교환이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/21_27/ContextSwitching.md)
+- [멀티 쓰레드 프로그래밍의 장단점](https://github.com/genesis12345678/TIL/blob/main/interview/os/21_27/MultiThread.md)
+- [세그먼테이션이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/21_27/Segmentation.md)
+- [모드 스위치와 프로세스 스위치의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/os/21_27/Switch.md)
+- [커널 수준 쓰레드와 사용자 수준 쓰레드의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/os/21_27/Thread.md)
 
 </details>
 
