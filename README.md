@@ -132,7 +132,7 @@
 <details>
     <summary>운영체제</summary>
 
-<details style="margin-left: 20px">
+<details>
     <summary>1 ~ 10</summary>
 
 - [운영 체제란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/OS.md)
@@ -153,7 +153,7 @@
 - [쓰레드 간 접근](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/%EC%93%B0%EB%A0%88%EB%93%9C%EC%A0%91%EA%B7%BC.md)
 </details>
 
-<details style="margin-left: 20px">
+<details>
     <summary>11 ~ 20</summary>
 
 - [CPU 스케줄링이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/CPUScheduling.md)
@@ -185,6 +185,48 @@
 - [세그먼테이션이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/21_27/Segmentation.md)
 - [모드 스위치와 프로세스 스위치의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/os/21_27/Switch.md)
 - [커널 수준 쓰레드와 사용자 수준 쓰레드의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/os/21_27/Thread.md)
+
+</details>
+
+
+</details>
+
+<details>
+<summary>데이터베이스</summary>
+
+<details>
+    <summary>1 ~ 10</summary>
+
+- [인덱스(Index)에 대해서](https://github.com/genesis12345678/TIL/blob/main/interview/database/1_10/Index.md)
+  - 인덱스를 효과적으로 사용하려면
+  - 인덱스 알고리즘
+- [JOIN에 대해서](https://github.com/genesis12345678/TIL/blob/main/interview/database/1_10/Join.md)
+  - 내부 조인과 외부 조인의 차이
+- [MyBatis와 ORM 장단점](https://github.com/genesis12345678/TIL/blob/main/interview/database/1_10/MyBatis.md)
+- [NoSQL이란?](https://github.com/genesis12345678/TIL/blob/main/interview/database/1_10/NoSQL.md)
+  - RDB와 차이점
+  - NoSQL이 더 빠른 이유
+  - RDB와 NoSQL을 사용해야 할 때
+- [정규화와 정규화 단계](https://github.com/genesis12345678/TIL/blob/main/interview/database/1_10/Normalization.md)
+- [ORM이란?](https://github.com/genesis12345678/TIL/blob/main/interview/database/1_10/ORM.md)
+- [파티셔닝과 샤딩에 대해](https://github.com/genesis12345678/TIL/blob/main/interview/database/1_10/Partitioning.md)
+- [테이블 스캔에 대해](https://github.com/genesis12345678/TIL/blob/main/interview/database/1_10/Scan.md)
+- [스키마란?](https://github.com/genesis12345678/TIL/blob/main/interview/database/1_10/Schema.md)
+- [트랜잭션이란?](https://github.com/genesis12345678/TIL/blob/main/interview/database/1_10/Transaction.md)
+  - 트랜잭션 4가지 원칙(ACID)
+  - 트랜잭션 격리 수준
+
+</details>
+
+<details>
+    <summary>11 ~ 16</summary>
+
+- [클러스터링과 리플리케이션 차이](https://github.com/genesis12345678/TIL/blob/main/interview/database/11_16/Cluster.md)
+- [DB 이중화 방식](https://github.com/genesis12345678/TIL/blob/main/interview/database/11_16/Duplication.md)
+- [JPA를 사용하면 좋은 점](https://github.com/genesis12345678/TIL/blob/main/interview/database/11_16/JPA.md)
+- [락(Lock), 공유락과 베타락](https://github.com/genesis12345678/TIL/blob/main/interview/database/11_16/Lock.md)
+- [옵티마이저란?](https://github.com/genesis12345678/TIL/blob/main/interview/database/11_16/Optimizer.md)
+- [DB 종류별 장단점](https://github.com/genesis12345678/TIL/blob/main/interview/database/11_16/PronsAndCons.md)
 
 </details>
 
