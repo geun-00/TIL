@@ -232,6 +232,36 @@
 
 </details>
 
+<details>
+  <summary>자바</summary>
+
+<details>
+  <summary>1 ~ 10</summary>
+
+- [자바의 장단점](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/ProsAndCons.md)
+- [call by value와 call by reference 차이 코드 예시](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/Call.md)
+- [상속과 인터페이스 차이](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/Extends.md)
+- [GC란?](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/GC.md)
+  - GC 등장 배경
+  - Heap 메모리 구조
+  - GC 동작 방식
+  - GC 여러가지 알고리즘
+- [제네릭이란?](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/Generic.md)
+  - 변성 & 와일드카드
+- [JVM 이란?](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/JVM.md)
+  - JVM 구조
+- [상속을 이용한 디자인 패턴](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/TemplateMethod.md)
+- [쓰레드들의 순서를 보장하는 코드 예시](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/Threads.md)
+- [쓰레스 안전하다는 것은?](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/TreadSafe.md)
+  - 쓰레드 안전을 위한 4가지 방법
+  - 자바에서 쓰레드 안전하게 설계하는 방법
+  - `java.util.concurrent` 패키지란?
+- [`new String()`과 `""` 차이](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/newString.md)
+
+</details>
+
+</details>
+
 ### Spring
 
 <details>
