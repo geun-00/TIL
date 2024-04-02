@@ -34,9 +34,9 @@
 즉, **객체는 대부분 일회성이며, 메모리에 오랫동안 남아있는 경우는 드물다는 것이다.**<br>
 때문에 객체의 생존 기간에 따라 물리적인 Heap 영역을 나누게 되었고 `Young`, `Old` 2가지 영역으로 설계되었다.
 
-![img_5.png](img_5.png)
+![img_5.png](image/img_5.png)
 
-![img_2.png](img_2.png)
+![img_2.png](image/img_2.png)
 
 ### Young 영역
 - 새롭게 생성된 객체가 할당(`Allocation`)되는 영역
@@ -73,7 +73,7 @@
     - **Eden 영역** : 새로 생성된 객체가 할당(`Allocation`)되는 영역
     - **Survivor 영역** : `Minor GC`로부터 살아남은 객체들이 존재하는 영역
   
-![img_3.png](img_3.png)
+![img_3.png](image/img_3.png)
 
 - 객체가 새롭게 생성되면 `Young` 영역 중에서도 `Eden` 영역에 할당되고, **`Eden` 영역이 꽉 차면 `Minor GC`가 발생하게 된다.**
 - 사용되지 않는 메모리는 해제되고, `Eden` 영역에 존재하는 객체는(사용중인 객체) `Survivor` 영역으로 옮겨지게 된다.
@@ -92,7 +92,7 @@
 
 또한 `Survivor` 영역 중 1개는 반드시 사용이 되어야 하는데, 만약 두 `Survivor` 영역에 모두 데이터가 존재하거나, 모두 사용량이 0이라면 현재 시스템이 정상적인 상황이 아님을 파악할 수 있다.
 
-![img_4.png](img_4.png)
+![img_4.png](image/img_4.png)
 
 > `HotSpot JVM`에서는 `Eden` 영역에 객체를 빠르게 할당하기 위해 **bump the pointer**와 **TLABs**라는 기술을 사용하고 있다.
 > - **bump the pointer**
@@ -132,7 +132,7 @@
 java -XX:+UseSerialGC -jar Application.java
 ```
 
-![img_6.png](img_6.png)
+![img_6.png](image/img_6.png)
 
 - 서버의 CPU 코어가 1개일 때 사용하기 위한 개발된 가장 단순한 GC
 - GC를 처리하는 **쓰레드가 1개(싱글 쓰레드)** 여서 GC 알고리즘 중 가장 `Stop The World` 시간이 길다.
@@ -145,7 +145,7 @@ java -XX:+UseParallelGC -jar Application.java
 # -XX:ParallelGCThreads=N : 사용할 쓰레드의 갯수
 ```
 
-![img_7.png](img_7.png)
+![img_7.png](image/img_7.png)
 
 - Java 8의 디폴트 GC 방식
 - `Serial GC`와 기본적인 알고리즘은 같고, **`Young` 영역의 `Minor GC`를 멀티 쓰레드로 수행한다.**(`Old` 영역은 싱글 쓰레드로)
@@ -158,7 +158,7 @@ java -XX:+UseParallelOldGC -jar Application.java
 # -XX:ParallelGCThreads=N : 사용할 쓰레드의 갯수
 ```
 
-![img_8.png](img_8.png)
+![img_8.png](image/img_8.png)
 
 - **Parallel GC**를 개선한 버전
 - `Young` 영역 뿐만 아니라, **`Old` 영역에서도 멀티 쓰레드로 GC를 수행한다.**
@@ -171,7 +171,7 @@ java -XX:+UseParallelOldGC -jar Application.java
 java -XX:+UseConcMarkSweepGC -jar Application.java
 ```
 
-![img_9.png](img_9.png)
+![img_9.png](image/img_9.png)
 
 - `Stop The World` 시간을 최소화하기 위해 고안된 알고리즘
 - 대부분의 가비지(Garbage) 수집 작업을 애플리케이션 쓰레드와 동시에 수행해서 `Stop The World` 시간을 최소화 시킨다.
@@ -192,7 +192,7 @@ java -XX:+UseG1GC -jar Application.java
 - **G1 GC**는 `Eden` 영역에 할당하고, `Survivor`로 카피하는 등의 과정을 사용하지만 물리적으로 메모리 공간을 나누지 않는다.
 - 대신 **Region**이라는 새로운 개념을 도입하여 `Heap`을 균등하게 여러 개의 지역으로 나누고, 각 지역을 역할과 함께 논리적으로 구분하여 `Eden` 지역인지, `Survivor` 지역인지, `Old` 지역인지 객체를 할당한다.
 
-![img_10.png](img_10.png)
+![img_10.png](image/img_10.png)
 
 - **G1 GC**에서는 `Eden`, `Survivor`, `Old` 에 더해 `Humonogous`와 `Available/Unused`라는 2가지 역할을 추가했다.
 - `Humonogous`는 **Region 크기의 50%** 를 초과하는 객체를 저장하는 `Region`을 의미하며, `Available/Unused`는 사용되지 않은 `Region`을 의미한다.
@@ -233,7 +233,7 @@ java -XX:+UseG1GC -jar Application.java
 java -XX:+UseShenandoahGC -jar Application.java
 ```
 
-![img_11.png](img_11.png)
+![img_11.png](image/img_11.png)
 
 - 레드햇에서 개발한 GC로, Java 12 에 release 됐다.
 - 기존 CMS GC가 가진 단편화, G1 GC가 가진 pause의 이슈를 해결했다.
@@ -246,7 +246,7 @@ java -XX:+UseShenandoahGC -jar Application.java
 java -XX:+UnlockExperimentalVMOptions -XX:+UseZGC -jar Application.java
 ```
 
-![img_12.png](img_12.png)
+![img_12.png](image/img_12.png)
 
 - Java 15에 release 된 GC로, 대량의 메모리(8MB ~ 16TB)를 `low-latency(저지연)` 로 잘 처리하기 위해 디자인된 GC
 - G1 GC의 `Region` 처럼, **ZGC**는 **ZPage**라는 영역을 사용하며, G1 GC의 `Region`은 크기가 고정인데 비해, **ZPage**는 **2MB 배수로 동적으로 운영된다.**
