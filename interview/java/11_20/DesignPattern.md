@@ -44,7 +44,7 @@
 
 <br>
 
-## 구조 해턴 (Structural Pattern)
+## 구조 패턴 (Structural Pattern)
 
 - **객체간의 관계를 조직**
 - 클래스와 객체를 더 큰 구조로 만들 수 있게 구성을 사용하는 패턴이다.
