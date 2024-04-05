@@ -98,10 +98,147 @@ public class StreamMain3 {
 }
 ```
 
+# 병렬 스트림이란?
+
+- **요소 병렬 처리(`Parallel Operation`)** 란 멀티 코어 CPU 환경에서 전체 요소를 분할해서 각각의 코어가 병렬적으로 처리하는 것을 말한다.
+- 요서 병렬 처리의 목적은 작업 처리 시간을 줄이는 것에 있고, 자바는 요소 병렬 처리를 위해 **병렬 스트림**을 제공한다.
+
+### 동시성과 병렬성
+
+- **동시성**은 멀티 작업을 위해 멀티 쓰레드가 하나의 코어에서 번갈아 가며 실행하는 것을 말한다.
+- **병렬성**은 멀티 작업을 위해 멀티 코어를 각각 이용해서 병렬로 실행하는 것을 말한다.
+
+![img_7.png](img_7.png)
+
+- 동시성은 한 시점에 하나의 작업만 실행한다. 번갈아 작업을 실행하는 것이 매우 빨라 동시에 처리되는 것처럼 보일 뿐이다.
+- 병렬성은 한 시점에 여러 개의 작업을 병렬로 실행하기 때문에 동시성보다는 좋은 성능을 낸다.
+
+병렬성은 **데이터 병렬성**과 **작업 병렬성**으로 구분할 수 있다.
+
+**데이터 병렬성**
+- 전체 데이터를 분할해서 서브 데이터셋으로 만들고 이 서브 데이터셋들을 병렬 처리해서 작업을 빨리 끝내는 것을 말한다.
+- 자바 병렬 스트림은 데이터 벙렬성을 구현한 것이다.
+
+**작업 병렬성**
+- 서로 다른 작업을 병렬 처리하는 것을 말하며, 작업 병렬성의 대표적인 예로 서버 프로그램이 있다.
+- 서버는 각각의 클라이언트에서 요청한 내용을 개별 쓰레드에서 병렬로 처리한다.
+
+## 포크조인 프레임워크
+
+- 자바 병렬 스트림은 요소들을 병렬 처리하기 위해 **포크조인 프레임워크(`ForkJoin Framework`)** 를 사용한다.
+- **포크 단계**에서 전체 요소들을 서브 요소셋으로 분할하고, 각각의 서브 요소셋을 멀티 코어에서 병렬로 처리한다.
+- **조인 단계**에서는 서브 결과를 결합해서 최종 결과를 만들어낸다.
+
+![img_8.png](img_8.png)
+
+- **병렬 처리 스트림은 포크 단계에서 요소를 순서대로 분할하지 않는다.** 내부적으로 요소들을 나누는 알고리즘이 이미 구현되어 있고, 개발자는 신경 쓸 필요 없다.
+- 포크조인 프레임워크는 병렬 처리를 위해 **쓰레드풀을** 사용한다. 각각의 코어에서 서브 요소셋을 처리하는 것은 작업 쓰레드가 해야 하므로 쓰레드 관리가 필요하다.
+
+![img_9.png](img_9.png)
+
+## 병렬 스트림 사용 예제
+
+- `parallelStream()` : 컬렉션(`List, Set`)으로 부터 병렬 스트림을 바로 리턴
+- `parallel()` : 기존 스트림을 병렬 처리 스트림으로 변환
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.stream.Stream;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Random random = new Random();
+
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 100_000_000; i++) {
+            list.add(random.nextInt(101)); // 0~100 사이의 정수 1억 개 저장
+        }
+
+        double avg = 0.0;
+        long startTime = 0;
+        long endTime = 0;
+        long time = 0;
+
+        /**
+         * 일반 스트림 처리
+         */
+        Stream<Integer> stream = list.stream();
+        startTime = System.nanoTime();
+
+        avg = stream
+                .mapToInt(Integer::intValue)
+                .average()
+                .getAsDouble();
+
+        endTime = System.nanoTime();
+        time = endTime - startTime;
+        System.out.println("avg: " + avg + ", 일반 스트림 처리 시간: " + time + "ns");
+
+
+        /**
+         * 병렬 스트림 처리
+         */
+        Stream<Integer> parallelStream = list.parallelStream();
+        startTime = System.nanoTime();
+
+        avg = parallelStream
+                .mapToInt(Integer::intValue)
+                .average()
+                .getAsDouble();
+
+        endTime = System.nanoTime();
+        time = endTime - startTime;
+        System.out.println("avg: " + avg + ", 병렬 스트림 처리 시간: " + time + "ns");
+    }
+}
+```
+```text
+avg: 50.00432972, 일반 스트림 처리 시간: 112810800ns
+avg: 50.00432972, 병렬 스트림 처리 시간: 42708400ns
+```
+
+- 0~100 사이에 1억 개의 숫자의 평균을 각각 일반 스트림과 병렬 스트림으로 처리했다.
+- 확실히 병렬 스트림 처리가 더 빠른 것을 볼 수 있다.
+
+## 병렬 스트림 성능 문제
+
+**그렇다면 일반 스트림보다 병렬 스트림이 좋은 것일까?**
+
+`parallelStream()`은 여러가지 제약사항이 있기 때문에 이를 고려하지 않고 사용하면 여러 문제점들이 발생할 수 있다.
+
+### 병렬 처리에 미치는 3가지 요인
+
+1. **요소의 수와 요소당 처리 시간**
+   - 컬렉션에 전체 요소의 수가 적고 요소당 처리 시간이 짧으면 일반 스트림이 병렬 스트림보다 빠를 수 있다.
+   - 병렬 처리는 **포크 및 조인** 단계가 있고, 쓰레드 풀을 생성하는 추가적인 비용이 발생하기 때문이다.
+2. **스트림 소스의 종류**
+   - `ArrayList`나 배열 같은 경우 인덱스로 요소를 관리하기 때문에 포크 단계에서 요소를 쉽게 분리할 수 있어 병렬 처리 시간이 절약된다.
+   - 반면 `Set`이나 `LinkedList` 같은 경우 요소 분리가 쉽지 않기 때문에 상대적으로 병렬 처리가 늦다.
+3. **코어의 수**
+   - CPU 코어의 수가 많으면 많을수록 병렬 스트림의 성능은 좋아진다.
+   - 하지만 코어의 수가 적을 경우에는 일반 스트림이 더 빠를 수 있다.
+   - 병렬 스트림은 쓰레드 수가 증가하여 동시성이 많이 일어나므로 오히려 느려진다.
+
+### 병렬 스트림 사용 시 예상 문제점
+
+- **동기화 문제**
+  - 동시에 여러 쓰레드에서 같은 데이터에 접근하면서 값을 수정하는 경우에 발생하는 문제
+- **데이터 순서 문제**
+  - 병렬 스트림에서 데이터 처리 순서는 보장되지 않는다.
+  - 순서를 보장하지 않으면 일관된 결과를 보장할 수 없는 경우도 있을 수 있다.
+- **메모리 사용량 증가**
+  - 병렬 스트림은 스트림의 각 요소를 여러 쓰레드에서 병렬로 처리한다.
+  - 때문에 처리 중에 생성되는 객체의 수가 증가하고 이로 인해 메모리 사용량이 증가할 수 있다.
+
 <br>
 
 ### 참고
 - [참고 사이트](https://www.tcpschool.com/java/java_stream_concept)
 - [참고 동영상](https://www.youtube.com/watch?v=7Kyf4mMjbTQ)
 - [참고 동영상](https://www.youtube.com/watch?v=4ZtKiSvZNu4)
+- [참고 동영상](https://www.youtube.com/watch?v=X2y_BL1TNPI)
 - [참고 블로그](https://velog.io/@kakdark/Stream)
+- [참고 블로그](https://timotimo.tistory.com/80)
