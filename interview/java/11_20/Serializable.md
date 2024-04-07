@@ -5,7 +5,7 @@
 - 반대로 직렬화된 바이트를 객체의 필드값으로 복원하는 것을 **역직렬화(`Deserialization`)** 라고 한다.
 - 자바에서 직렬화를 사용하면 객체의 상태를 다른 프로세스나 JVM 인스턴스, 네트워크 등에서 재사용할 수 있다.
 
-![img_10.png](img_10.png)
+![img_10.png](image/img_10.png)
 
 직렬화를 구현하려면 객체에 `Serializable` 인터페이스를 구현하고, `ObjectOutputStream`으로 직렬화, `ObjectInputStream`으로 역직렬화를 할 수 있다.
 

@@ -13,4 +13,4 @@
 | **(default)** | 클래스, 필드, 생성자, 메서드 | 같은 패키지                  |
 | **private**   | 필드, 생성자, 메서드      | 객체 내부                   |
 
-![img_3.png](img_3.png)
+![img_3.png](image/img_3.png)

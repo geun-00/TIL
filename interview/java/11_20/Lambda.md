@@ -3,7 +3,7 @@
 - 먼저 [함수형 프로그래밍](https://github.com/genesis12345678/TIL/blob/main/interview/programming/%ED%95%A8%EC%88%98%ED%98%95%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D.md#%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)이란, 함수를 정의하고 이 함수를 데이터 처리부로 보내 데이터를 처리하는 기법을 말한다. 데이터 처리부는 데이터만 가지고 있을 뿐,
     처리 방법이 정해져 있지 않아 외부에서 제공된 함수에 의존하게 된다.
 
-![img_4.png](img_4.png)
+![img_4.png](image/img_4.png)
 
 - 데이터 처리부는 제공된 함수의 입력값으로 데이터를 넣고 함수에 정의된 처리 내용을 실행한다.
 - 동일한 데이터라도 함수A와 함수B는 서로 처리내용이 다르기 때문에 결과가 다를 수 있다.
@@ -193,7 +193,7 @@ int add(int x, int y) {
 
 ## 함수형 인터페이스 API 정리
 
-![img_5.png](img_5.png)
+![img_5.png](image/img_5.png)
 
 - 왼쪽 세로는 **매개 변수 타입**, 각 표의 위쪽 부분은 **함수 반환 타입**을 나타낸다.
 - 예를 들어, `int` 형 매개 변수를 받아 `boolean`을 반환하는 함수형 인터페이스는 `IntPredicate`인 것이다.
