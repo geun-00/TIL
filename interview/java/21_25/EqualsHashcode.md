@@ -10,7 +10,7 @@
 
 `equals()`만 재정의하면 `hash`값을 사용하는 자료구조(`HashSet`, `HashMap`, `HashTable`)에 저장할 시 문제가 될 수 있다.
 
-![img.png](img.png)
+![img.png](image/img.png)
 
 `hashCode` 메서드는 **객체의 주소 값을 이용해서** 해싱(`hashing`) 기법을 통해 해시 코드를 만든 후 반환한다.<br>
 때문에 서로 다른 두 객체는 같은 해시 코드를 가질 수 없고, 해시코드는 **객체의 지문** 이라고도 한다.
