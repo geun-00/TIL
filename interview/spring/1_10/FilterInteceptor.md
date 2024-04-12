@@ -2,7 +2,7 @@
 
 - **Filter**와 **Interceptor**는 여러 로직에서 공통으로 관심이 있는 **공통 관심사**를 해결하는데 도움을 주는 기능들이다.
 
-![img_9.png](img_9.png)
+![img_9.png](image/img_9.png)
 
 ## 필터(Filter)
 

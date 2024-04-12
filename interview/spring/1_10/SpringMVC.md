@@ -1,8 +1,8 @@
 # 스프링 MVC 구조에 대해 설명해 주세요.
 
-![img_4.png](img_4.png)
+![img_4.png](image/img_4.png)
 
-![img_5.png](img_5.png)
+![img_5.png](image/img_5.png)
 
 ### HandlerMapping
 - 요청을 처리할 핸들러(컨트롤러)를 찾는 역할(인터페이스)

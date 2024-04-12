@@ -17,7 +17,7 @@
 
 **스프링은 POJO 프로그래밍을 위해 `IoC/DI`, `AOP`, `PSA`라는 기술을 제공한다.**
 
-![img.png](img.png)
+![img.png](image/img.png)
 
 ## IoC/DI
 
