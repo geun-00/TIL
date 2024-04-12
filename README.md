@@ -292,6 +292,28 @@
 
 </details>
 
+<details>
+  <summary>스프링</summary>
+
+<details>
+  <summary>1 ~ 10</summary>
+
+- [스프링이란?](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/Spring.md)
+  - 스프링의 특징
+- [스프링과 스프링 부트의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/SpringBoot.md)
+- [스프링 컨테이너와 스프링 빈이란?](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/Bean.md)
+- [프레임워크, 라이브러리, API의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/FrameworkLibrary.md)
+- [필터와 인터셉터의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/FilterInteceptor.md)
+- [서블릿에 대해](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/Servlet.md)
+- [MVC 패턴에 대해](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/MVCPattern.md)
+- [스프링 MVC 구조에 대해](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/SpringMVC.md)
+- [스프링 AOP에 대해](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/AOP.md)
+- [`@Controller`와 `@RestController`의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/Controller.md)
+
+</details>
+
+</details>
+
 ### Spring
 
 <details>
