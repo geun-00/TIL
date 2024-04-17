@@ -312,6 +312,24 @@
 
 </details>
 
+<details>
+  <summary>11 ~ 20</summary>
+
+- [`Annotation`이란?](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/Annotation.md)
+  - 스프링이 `Annotation` 기반인 이유와 주요 `Annotation`
+- [커넥션 풀 & 데이터 소스란?](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/ConnectionPool.md)
+- [하나의 컨트롤러로 요청을 받을 수 있는 이유](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/Controller.md)
+- [DAO, DTO, VO, Entity](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/DTO.md)
+- [GET과 POST의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/GetPost.md)
+- [IoC / DI란?](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/IoCDI.md)
+- [레이어드 아키텍처](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/LayerdArchitecture.md)
+- [mvc1과 mvc2](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/MVC1_2.md)
+- [ORM이란?](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/ORM.md)
+  - `MyBatis` vs `JPA`
+- [Spring Security에 대해서](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/Security.md)
+
+</details>
+
 </details>
 
 ### Spring
