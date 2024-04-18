@@ -330,6 +330,17 @@
 
 </details>
 
+<details>
+  <summary>21 ~ 25</summary>
+
+- [트랜잭션을 추상화한 이유](https://github.com/genesis12345678/TIL/blob/main/interview/spring/21_30/TxAbstract.md)
+- [트랜잭션 동기화 매니저의 역할](https://github.com/genesis12345678/TIL/blob/main/interview/spring/21_30/TxSyncManager.md)
+- [선언전 트랜잭션 vs 프로그래밍 방식 트랜잭션](https://github.com/genesis12345678/TIL/blob/main/interview/spring/21_30/Transaction.md)
+- [`@Transactional` 동작 방식](https://github.com/genesis12345678/TIL/blob/main/interview/spring/21_30/%40Transactional.md)
+- [트랜잭션 전파에 대해](https://github.com/genesis12345678/TIL/blob/main/interview/spring/21_30/Propagation.md)
+
+</details>
+
 </details>
 
 ### Spring
