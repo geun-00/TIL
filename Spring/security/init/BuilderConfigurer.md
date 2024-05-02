@@ -49,3 +49,11 @@ class HttpSecurityConfiguration {
 - 각 설정에 맞는 `XxxConfigurer`가 생성되어 `HttpSecurity`에 담겨지고, 이것을 매개변수로 받는 `SecurityFilterChain`을 생성하는 단계로 넘어간다.
 - `SecurityFilterChain`을 생성하면서 `HttpSecurity`에 추가적으로 필요한 설정들을 더해준다.
 - 마지막으로 `SecurityFilterChain` 빈을 생성하는 코드에서 `return httpSecurity.build()`를 하면 각각의 `configurer`가 `init()`과 `configure()`를 실행하면서 초기화과 수행된다.
+
+---
+
+[이전 ↩️ - 스프링 시큐리티 초기화 과정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/init/Init.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - HttpSecurity & WebSecurity](https://github.com/genesis12345678/TIL/blob/main/Spring/security/init/HttpSecurity.md)

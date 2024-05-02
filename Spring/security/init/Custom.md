@@ -39,3 +39,9 @@ public class SecurityConfig {
 ```
 
 - `new InMemoryUserDetailsManager()`는 `...` 문법으로 `UserDetails`를 받고 있다. 즉 한 번에 여러 개의 사용자를 추가할 수 있다.
+
+---
+
+[이전 ↩️ - DelegatingFilterProxy & FilterChainProxy](https://github.com/genesis12345678/TIL/blob/main/Spring/security/init/FilterChainProxy.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
