@@ -89,6 +89,6 @@ public String index(@RequestParam("customParam") String customParam) {
 
 ---
 
-[이전 ↩️ - ]()
+[이전 ↩️ - 로그아웃(logout())](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationProcess/Logout.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)

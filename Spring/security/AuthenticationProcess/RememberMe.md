@@ -77,8 +77,8 @@ public class SecurityConfig {
 
 ---
 
-[이전 ↩️ - ]()
+[이전 ↩️ - 기본 인증(httpBasic())](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationProcess/HttpBasic.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
 
-[다음 ↪️ - ]()
+[다음 ↪️ - 익명 인증 사용자(anonymous())](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationProcess/Anonymous.md)

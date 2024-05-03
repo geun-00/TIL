@@ -78,8 +78,8 @@ public String anonymousContext(@CurrentSecurityContext SecurityContext context) 
 
 ---
 
-[이전 ↩️ - ]()
+[이전 ↩️ - 기억하기 인증(rememberMe())](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationProcess/RememberMe.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
 
-[다음 ↪️ - ]()
+[다음 ↪️ - 로그아웃(logout())](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationProcess/Logout.md)
