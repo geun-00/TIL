@@ -7,9 +7,9 @@
 - 스프링 시큐리티에서 사용자가 인증을 한 이후 요청에 대해 계속 사용자의 인증을 유지하기 위해 사용되는 클래스다.
 - 인증 상태의 영속 메커니즘은 사용자가 인증을 하게 되면 해당 사용자의 인증 정보와 권한이 `SecurityContext`에 저장되고 `HttpSession`을 통해 요청 간 영속이 이루어지는 방식이다.
 
-![img.png](img.png)
+![img.png](image/img.png)
 
-![img_1.png](img_1.png)
+![img_1.png](image/img_1.png)
 
 - **HttpSessionSecurityContextRepository** : 요청 간에 `HttpSession`에 보안 컨텍스트를 저장한다. 후속 요청 시 컨텍스트 영속성을 유지한다.
 - **RequestAttributeSecurityContextRepository** : `ServletRequest`에 보안 컨텍스트를 저장한다. 후속 요청 시 컨텍스트 영속성을 유지할 수 없다.
@@ -48,19 +48,19 @@
 
 ## SecurityContextHolderFilter 흐름
 
-![img_2.png](img_2.png)
+![img_2.png](image/img_2.png)
 
 ---
 
 ## SecurityContextHolderFilter & SecurityContextPersistenceFilter
 
-![img_3.png](img_3.png)
+![img_3.png](image/img_3.png)
 
 --- 
 
 ## securityContext()
 
-![img_4.png](img_4.png)
+![img_4.png](image/img_4.png)
 
 - 현재 `SecurityContextPersistenceFilter`는 **Deprecated** 되었기 때문에 레거시 시스템 외에는 `SecurityContextHolderFilter`를 사용하면 된다.
 
@@ -142,3 +142,9 @@ public class CustomAuthenticationFilter extends AbstractAuthenticationProcessing
     }
 }
 ```
+
+---
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - 스프링 MVC 로그인 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationPersistence/MVCLogin.md)

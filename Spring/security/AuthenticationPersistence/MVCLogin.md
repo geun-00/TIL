@@ -3,7 +3,7 @@
 - 스프링 시큐리티 필터에 의존하는 대신 수동으로 사용자를 인증하는 경우 스프링 MVC 컨트롤러 엔드포인트를 사용할 수 있다.
 - 요청 간에 인증을 저장하고 싶다면 `HttpSessionSecurityContextRepository`를 사용하여 인증 상태를 저장할 수 있다.
 
-![img_5.png](img_5.png)
+![img_5.png](image/img_5.png)
 
 ---
 
@@ -66,3 +66,9 @@ public class SecurityConfig {
 ```
 
 - `formLogin`과 `csrf`를 비활성화 하지 않으면 스프링 시큐리티의 폼 인증 필터가 요청을 먼저 가로채어 컨트롤러 요청은 무시된다.
+
+---
+
+[이전 ↩️ - `SecurityContextRepository & SecurityContextHolderFilter`](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationPersistence/ContextRepository.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)

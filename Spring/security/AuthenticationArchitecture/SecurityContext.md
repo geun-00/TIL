@@ -61,3 +61,11 @@ securityContextHolderStrategy.setContext(context);
 
 애플리케이션이 `SecurityContext`를 정적으로 접근하는 대신 `SecurityContextHolderStrategy`를 자동 주입이 될 수 있도록 하여
 각 애플리케이션 컨텍스트는 자신에게 가장 적합한 보안 전략을 사용할 수 있게 된다.
+
+---
+
+[이전 ↩️ - 인증(`Authentication`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationArchitecture/Authentication.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - 인증 관리자(`AuthenticationManager`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationArchitecture/AuthenticationManager.md)

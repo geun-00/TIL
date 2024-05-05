@@ -85,3 +85,11 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
     }
 }
 ```
+
+---
+
+[이전 ↩️ - 인증 제공자(`AuthenticationProvider`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationArchitecture/AuthenticationProvider.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - 사용자 상세(`UserDetails`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationArchitecture/UserDetails.md)

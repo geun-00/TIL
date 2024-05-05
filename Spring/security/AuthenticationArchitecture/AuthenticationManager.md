@@ -162,3 +162,11 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 ```
 
 요청 URL : `localhost:8080/api/login?username=user&password=1111`
+
+---
+
+[이전 ↩️ - 인증 컨텍스트(`SecurityContext & SecurityContextHolder`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationArchitecture/SecurityContext.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - 인증 제공자(`AuthenticationProvider`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationArchitecture/AuthenticationProvider.md)
