@@ -55,3 +55,11 @@ public class SecurityConfig {
 ```
 
 - 이렇게 직접 설정을 하지 않으면 스프링 시큐리티는 내부적으로 `changeSession()` 전략으로 초기화를 한다.
+
+---
+
+[이전 ↩️ - 동시 세션 제어(`maximumSessions()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/SessionManagement/MaximumSessions.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - 세션 생성 정책(`sessionCreationPolicy()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/SessionManagement/SessionCreationPolicy.md)

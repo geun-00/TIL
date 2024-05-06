@@ -34,5 +34,30 @@
 ---
 
 ```java
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
+        http
+                .authorizeHttpRequests(auth -> auth
+                        .anyRequest().authenticated())
+                .formLogin(Customizer.withDefaults())
+                .sessionManagement(session -> session
+                                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                        )
+        ;
+
+        return http.build();
+    }
+}
 ```
+
+---
+
+[이전 ↩️ - 세션 고정 보호(`sessionFixation()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/SessionManagement/SessionFixation.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - `SessionManagementFilter & ConcurrentSessionFilter`](https://github.com/genesis12345678/TIL/blob/main/Spring/security/SessionManagement/SessionFilter.md)

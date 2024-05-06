@@ -49,3 +49,9 @@ public class SecurityConfig {
 
 - 위 코드 같은 경우 `maxSessionsPreventsLogin()`에 `false`를 설정했으므로 **사용자 세션 강제 만료** 전략을 사용한다.
 - 또한 `invalidSessionUrl()`과 `expiredUrl()`을 같이 지정하면 `invalidSessionUrl()`이 우선이다.
+
+---
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - 세션 고정 보호(`sessionFixation()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/SessionManagement/SessionFixation.md)
