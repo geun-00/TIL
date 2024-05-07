@@ -194,3 +194,9 @@ public class IndexController {
 - **모듈 1**의 `index.html`에 **fetch** 쪽을 보면 **Content-Type**을 `text/xml`로 설정했기 때문에 `Simple Request`가 아닌 `Preflight Request`가 적용이 된 것이다.
 - **Content-Type** 부분을 주석처리하면 `Simple Request`로 요청이 간다.
 - **모듈 2**의 `addAllowedOrigin()` 부분을 8080이 아닌 다른 포트 번호나 다른 URL로 변경한다면 403 에러가 발생한다.
+
+---
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - CSRF](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/Csrf.md)

@@ -87,3 +87,9 @@ public class SecurityConfig {
 ![img_35.png](image/img_35.png)
 
 - 이름 `SESSION`, `HttpOnly`와 `Secure`, `SameSite`는 `None`으로 쿠키가 생성된 것을 확인할 수 있다.
+
+---
+
+[이전 ↩️ - CSRF 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/CsrfAggregation.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)

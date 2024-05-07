@@ -256,3 +256,11 @@ public CsrfToken cookieCsrf(CsrfToken csrfToken) {
     return csrfToken;
 }
 ```
+
+---
+
+[이전 ↩️ - CSRF 토큰 유지 및 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/CsrfToken.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - SameSite](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/SameSite.md)

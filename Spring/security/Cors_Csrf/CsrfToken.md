@@ -103,3 +103,10 @@ public String csrfToken(HttpServletRequest request) {
 
 - CSRF 토큰은 `HttpSerlvetRequest`에 저장되기 때문에 참조할 수 있다.
 
+---
+
+[이전 ↩️ - CSRF](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/Csrf.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - CSRF 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/CsrfAggregation.md)

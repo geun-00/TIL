@@ -130,3 +130,11 @@ public class SecurityConfig {
 > 스프링 시큐리티는 CSRF 설정을 직접 해주지 않아도 초기화 되면서 자동으로 CSRF 기능이 활성화되기 때문에 `permitAll()`로 설정을 해도 접근 거부가 발생할 수 있다.
 > 
 > 이때는 CSRF 기능이 활성화 되어 있는지에 대해 한 번 확인해보자.
+
+---
+
+[이전 ↩️ - CORS](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/Cors.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - CSRF 토큰 유지 및 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/CsrfToken.md)
