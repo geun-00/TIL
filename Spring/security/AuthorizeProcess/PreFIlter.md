@@ -204,3 +204,11 @@ public class Account {
 - `Post Account Map`(`http://localhost:8080/readMap`)
 
 ![img_19.png](image/img_19.png)
+
+---
+
+[이전 ↩️ - 메서드 기반 권한 부여(`@PreAuthorize`, `@PostAuthorize`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/PreAuthorize.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - 메서드 기반 권한 부여(`@Secured`, `JSR-250`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/Secured.md)

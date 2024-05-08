@@ -232,3 +232,9 @@ public class RequestController {
   - 인증자 페이지 접근(`/resource/address_01`) : 가능
   - Manager 페이지 접근(`/resource/address01`) : 불가능(Manager만 가능)
   - POST 요청 보내기(`/post`) : 가능
+
+---
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - 표현식 및 커스텀 권한 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/Expression.md)

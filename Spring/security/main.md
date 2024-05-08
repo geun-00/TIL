@@ -30,12 +30,21 @@
   - [`SessionManagementFilter & ConcurrentSessionFilter`](https://github.com/genesis12345678/TIL/blob/main/Spring/security/SessionManagement/SessionFilter.md)
 - 예외 처리
   - [예외 처리(`exceptionHandling()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/exception/ExceptionHandling.md)
-  - [예외 펄티(`ExceptionTranslationFilter`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/exception/ExceptionTranslationFilter.md)
+  - [예외 필터(`ExceptionTranslationFilter`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/exception/ExceptionTranslationFilter.md)
 - 악용 보호
   - [CORS](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/Cors.md)
   - [CSRF](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/Csrf.md)
   - [CSRF 토큰 유지 및 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/CsrfToken.md)
   - [CSRF 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/CsrfAggregation.md)
   - [SameSite](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/SameSite.md)
+- 인가 프로세스
+  - [요청 기반 권한 부여(`HttpSecurity.authorizeHttpRequests()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/HttpRequests.md)
+  - [표현식 및 커스텀 권한 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/Expression.md)
+  - [요청 기반 권한 부여(`HttpSecurity.securityMatcher()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/SecurityMatcher.md)
+  - [메서드 기반 권한 부여(`@PreAuthorize`, `@PostAuthorize`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/PreAuthorize.md)
+  - [메서드 기반 권한 부여(`@PreFilter`, `@PostFilter`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/PreFIlter.md)
+  - [메서드 기반 권한 부여(`@Secured`, `JSR-250`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/Secured.md)
+  - [정적 자원 관리](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/StaticResource.md)
+  - [계층적 권한(`RoleHirerachy`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/RoleHirerachy.md)
 
 > 전체 내용에 대한 출처 : [인프런 - 정수원 님의 "스프링 시큐리티 완전 정복 [6.x 개정판]"](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0-%EC%99%84%EC%A0%84%EC%A0%95%EB%B3%B5#reviews)
