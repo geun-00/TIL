@@ -195,3 +195,11 @@ public class DataService {
     }
 }
 ```
+
+---
+
+[이전 ↩️ - `RequestMatcherDelegatingAuthorizationManager` 인가 설정 응용](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/RequestMatcherDelegatingAuthorizationManager.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - 포인트컷 메서드 보안](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/Pointcut.md)

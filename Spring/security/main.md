@@ -46,5 +46,13 @@
   - [메서드 기반 권한 부여(`@Secured`, `JSR-250`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/Secured.md)
   - [정적 자원 관리](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/StaticResource.md)
   - [계층적 권한(`RoleHirerachy`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/RoleHirerachy.md)
+- 인가 아키텍처
+  - [인가(`Authorization`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/Authorization.md)
+  - [인가 관리자(`AuthorizationManager`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/AuthorizationManager.md)
+  - [요청 기반 인가 관리자](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/AuthorityAuthorizationManager.md)
+  - [`RequestMatcherDelegatingAuthorizationManager` 인가 설정 응용](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/RequestMatcherDelegatingAuthorizationManager.md)
+  - [메서드 기반 인가 관리자](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/PreAuthorizeAuthorizationManager.md)
+  - [포인트컷 메서드 보안](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/Pointcut.md)
+  - [AOP 메서드 보안](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/AOP.md)
 
 > 전체 내용에 대한 출처 : [인프런 - 정수원 님의 "스프링 시큐리티 완전 정복 [6.x 개정판]"](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0-%EC%99%84%EC%A0%84%EC%A0%95%EB%B3%B5#reviews)

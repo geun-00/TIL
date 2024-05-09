@@ -118,3 +118,11 @@ public class DataService {
 ```
 
 - 포인트컷을 지정했기 때문에 어노테이션이 필요 없다.
+
+---
+
+[이전 ↩️ - 메서드 기반 인가 관리자](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/PreAuthorizeAuthorizationManager.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - AOP 메서드 보안](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/AOP.md)
