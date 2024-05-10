@@ -128,3 +128,11 @@ public class SecurityConfig {
 ![img_5.png](image/img_5.png)
 
 - 스프링 시큐리티 초기화 시 생성되는 `Configurer`들 중에 직접 만든 `MyCustomDsl` 클래스도 추가되었다.
+
+---
+
+[이전 ↩️ - 다중 보안 설정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/MultiSecurity/MultiSecurity.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - `Redis`를 활용한 이중화 설정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/MultiSecurity/Redis.md)

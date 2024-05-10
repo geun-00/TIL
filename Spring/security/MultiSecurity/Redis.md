@@ -87,3 +87,9 @@ public class SecurityConfig {
 
 - 레디스를 사용한 이중화 설정으로 서버 두 개중 하나가 꺼져도 동일한 세션 쿠키만 가지고 인증 상태를 유지할 수 있다.
 - 레디스 설정을 하지 않으면 스프링은 각 서버의 WAS 별로 세션을 생성하고, 레디스 설정을 하면 두 개의 서버가 같은 레디스 저장소를 보기 때문에 세션 쿠키의 공유가 가능하다.
+
+---
+
+[이전 ↩️ - Custom DSL](https://github.com/genesis12345678/TIL/blob/main/Spring/security/MultiSecurity/CustomDSL.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)

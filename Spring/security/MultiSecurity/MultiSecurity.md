@@ -82,3 +82,9 @@ public class SecurityConfig {
 - `RequestMatcher`마다 처리해야 하는 방식이 다르기 때문에 필터의 개수에 차이가 있다.
 - `FilterChainProxy`는 각 요청마다 알맞은 `SecurityFilterChain`을 가져와 해당 필터들로 처리한다.
 - 만약 `@Order`를 통해 넓은 범위의 URL을 먼저 설정했을 경우 의도하지 않게 동작할 수 있다.
+
+---
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - Custom DSL](https://github.com/genesis12345678/TIL/blob/main/Spring/security/MultiSecurity/CustomDSL.md)

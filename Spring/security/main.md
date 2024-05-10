@@ -62,5 +62,9 @@
   - [Servlet API 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Integration/Servlet.md)
   - [Spring MVC 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Integration/SpringMVC.md)
   - [Spring MVC 비동기 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Integration/SpringMVCAsync.md)
+- 고급 설정
+  - [다중 보안 설정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/MultiSecurity/MultiSecurity.md)
+  - [Custom DSL](https://github.com/genesis12345678/TIL/blob/main/Spring/security/MultiSecurity/CustomDSL.md)
+  - [`Redis`를 활용한 이중화 설정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/MultiSecurity/Redis.md)
 
 > 전체 내용에 대한 출처 : [인프런 - 정수원 님의 "스프링 시큐리티 완전 정복 [6.x 개정판]"](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0-%EC%99%84%EC%A0%84%EC%A0%95%EB%B3%B5#reviews)
