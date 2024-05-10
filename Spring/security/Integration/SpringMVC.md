@@ -135,3 +135,11 @@ public @interface CurrentUsername {}
 - `/user` : 바로 `Principal` 객체 가져오기
 - `/user2` : `Principal` 객체를 바로 가져와서 내부 필드 꺼내기(없는 필드 선언 시 예외 발생)
 - `/currentUser`, `/currentUser2` : 스프링 시큐리티에 전혀 종속적이지 않으면서 스프링 시큐리티 기술 사용
+
+---
+
+[이전 ↩️ - Servlet API 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Integration/Servlet.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - Spring MVC 비동기 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Integration/SpringMVCAsync.md)
