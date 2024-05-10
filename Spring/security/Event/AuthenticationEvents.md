@@ -230,3 +230,9 @@ public class SecurityConfig {
     }
 }
 ```
+
+---
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+[다음 ↪️ - 인증 이벤트(`AuthenticationEventPublisher` 활용)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Event/AuthenticationEventPublisher.md)

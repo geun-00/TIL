@@ -160,3 +160,9 @@ public class AuthorizationEvents {
 ```
 
 - `MyAuthorizationEventPublisher`을 빈으로 등록할 경우 `ADMIN` 계정으로 `/admin`에 접근하는 경우에만 `AuthorizationGrantedEvent`를 수신할 수 있다.
+
+---
+
+[이전 ↩️ - 인증 이벤트(`AuthenticationEventPublisher` 활용)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Event/AuthenticationEventPublisher.md)
+
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
