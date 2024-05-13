@@ -116,7 +116,7 @@ public class AuthConfig {
 
 ---
 
-[이전 ↩️ - 회원 인증 시스템 - 커스텀 `UserDetailsService`]()
+[이전 ↩️ - 회원 인증 시스템 - 커스텀 `UserDetailsService`](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%ED%9A%8C%EC%9B%90_%EC%9D%B8%EC%A6%9D_%EC%8B%9C%EC%8A%A4%ED%85%9C/userDetailsService/UserDetailsService.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
 
