@@ -524,6 +524,13 @@
     - [V2](https://github.com/genesis12345678/TIL/blob/main/Spring/springboot/monitoring/Gauge.md#%EA%B2%8C%EC%9D%B4%EC%A7%80---v2) - 간단한 버전
 </details>
 
+<details>
+    <summary>스프링 시큐리티</summary>
+
+- [스프링 시큐리티](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+
+</details>
+
 ### JPA
 
 <details>
