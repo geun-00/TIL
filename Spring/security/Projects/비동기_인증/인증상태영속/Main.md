@@ -116,8 +116,8 @@ public class SecurityConfig {
 
 ---
 
-[이전 ↩️ - 비동기 인증 - Rest 인증 성공 및 실패 핸들러]()
+[이전 ↩️ - 비동기 인증 - Rest 인증 성공 및 실패 핸들러](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%EB%B9%84%EB%8F%99%EA%B8%B0_%EC%9D%B8%EC%A6%9D/%EC%9D%B8%EC%A6%9D%ED%95%B8%EB%93%A4%EB%9F%AC/Main.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
 
-[다음 ↪️ - 비동기 인증 - Rest 예외 처리]()
+[다음 ↪️ - 비동기 인증 - Rest 예외 처리](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%EB%B9%84%EB%8F%99%EA%B8%B0_%EC%9D%B8%EC%A6%9D/%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/Main.md)

@@ -34,8 +34,8 @@ public class RestApiController {
 
 ---
 
-[이전 ↩️ - 비동기 인증 - Rest 로그아웃 구현]()
+[이전 ↩️ - 비동기 인증 - Rest 예외 처리](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%EB%B9%84%EB%8F%99%EA%B8%B0_%EC%9D%B8%EC%A6%9D/%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC/Main.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
 
-[다음 ↪️ - 비동기 인증 - Rest CSRF 구현]()
+[다음 ↪️ - 비동기 인증 - Rest CSRF 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%EB%B9%84%EB%8F%99%EA%B8%B0_%EC%9D%B8%EC%A6%9D/CSRF/Main.md)

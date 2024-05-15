@@ -10,8 +10,8 @@
 
 ---
 
-[이전 ↩️ - 비동기 인증 - Rest 로그아웃 구현]()
+[이전 ↩️ - 비동기 인증 - Rest 로그아웃 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%EB%B9%84%EB%8F%99%EA%B8%B0_%EC%9D%B8%EC%A6%9D/%EB%A1%9C%EA%B7%B8%EC%95%84%EC%9B%83/Main.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
 
-[다음 ↪️ - 비동기 인증 - Rest DSLs 구현]()
+[다음 ↪️ - 비동기 인증 - Rest DSLs 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%EB%B9%84%EB%8F%99%EA%B8%B0_%EC%9D%B8%EC%A6%9D/DSLs/Main.md)
