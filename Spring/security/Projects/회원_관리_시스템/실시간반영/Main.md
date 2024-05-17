@@ -149,8 +149,8 @@ public class CustomDynamicAuthorizationManager implements AuthorizationManager<R
 
 ---
 
-[이전 ↩️ - 회원 관리 시스템 - DB 연동 프로그래밍 방식 인가 구현]()
+[이전 ↩️ - 회원 관리 시스템 - DB 연동 프로그래밍 방식 인가 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%ED%9A%8C%EC%9B%90_%EA%B4%80%EB%A6%AC_%EC%8B%9C%EC%8A%A4%ED%85%9C/DB/Main.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
 
-[다음 ↪️ - 회원 관리 시스템 - 계층적 권한 적용]()
+[다음 ↪️ - 회원 관리 시스템 - 계층적 권한 적용](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%ED%9A%8C%EC%9B%90_%EA%B4%80%EB%A6%AC_%EC%8B%9C%EC%8A%A4%ED%85%9C/%EA%B3%84%EC%B8%B5%EC%A0%81%EA%B6%8C%ED%95%9C/Main.md)

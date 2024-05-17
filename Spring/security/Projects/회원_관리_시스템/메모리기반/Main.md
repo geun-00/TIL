@@ -179,8 +179,8 @@ public class SecurityConfig {
 
 ---
 
-[이전 ↩️ - 회원 관리 시스템 - 기본 구성]()
+[이전 ↩️ - 회원 관리 시스템 - 기본 구성](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%ED%9A%8C%EC%9B%90_%EA%B4%80%EB%A6%AC_%EC%8B%9C%EC%8A%A4%ED%85%9C/%EA%B8%B0%EB%B3%B8%EA%B5%AC%EC%84%B1/Main.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
 
-[다음 ↪️ - 회원 관리 시스템 - DB 연동 프로그래밍 방식 인가 구현]()
+[다음 ↪️ - 회원 관리 시스템 - DB 연동 프로그래밍 방식 인가 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%ED%9A%8C%EC%9B%90_%EA%B4%80%EB%A6%AC_%EC%8B%9C%EC%8A%A4%ED%85%9C/DB/Main.md)
