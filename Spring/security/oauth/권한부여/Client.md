@@ -33,8 +33,8 @@
 
 ---
 
-[이전 ↩️ - OAuth 2.0 권한부여 유형 - 패스워드 자격증명 승인 방식]()
+[이전 ↩️ - OAuth 2.0 권한부여 유형 - 패스워드 자격증명 승인 방식](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B6%8C%ED%95%9C%EB%B6%80%EC%97%AC/Password.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 권한부여 유형 - 리프레시 토큰 승인 방식]()
+[다음 ↪️ - OAuth 2.0 권한부여 유형 - 리프레시 토큰 승인 방식](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B6%8C%ED%95%9C%EB%B6%80%EC%97%AC/RefreshToken.md)

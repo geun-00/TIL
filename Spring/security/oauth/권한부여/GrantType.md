@@ -68,4 +68,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 권한부여 유형 - 권한 부여 코드 승인 방식]()
+[다음 ↪️ - OAuth 2.0 권한부여 유형 - 권한 부여 코드 승인 방식](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B6%8C%ED%95%9C%EB%B6%80%EC%97%AC/Authorization.md)
