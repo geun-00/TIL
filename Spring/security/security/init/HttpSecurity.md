@@ -32,8 +32,8 @@
 
 ---
 
-[이전 ↩️ - SecurityBuilder & SecurityConfigurer](https://github.com/genesis12345678/TIL/blob/main/Spring/security/init/BuilderConfigurer.md)
+[이전 ↩️ - SecurityBuilder & SecurityConfigurer](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/init/BuilderConfigurer.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - DelegatingFilterProxy & FilterChainProxy](https://github.com/genesis12345678/TIL/blob/main/Spring/security/init/FilterChainProxy.md)
+[다음 ↪️ - DelegatingFilterProxy & FilterChainProxy](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/init/FilterChainProxy.md)

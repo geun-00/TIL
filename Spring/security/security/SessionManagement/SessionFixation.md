@@ -58,8 +58,8 @@ public class SecurityConfig {
 
 ---
 
-[이전 ↩️ - 동시 세션 제어(`maximumSessions()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/SessionManagement/MaximumSessions.md)
+[이전 ↩️ - 동시 세션 제어(`maximumSessions()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/SessionManagement/MaximumSessions.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - 세션 생성 정책(`sessionCreationPolicy()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/SessionManagement/SessionCreationPolicy.md)
+[다음 ↪️ - 세션 생성 정책(`sessionCreationPolicy()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/SessionManagement/SessionCreationPolicy.md)

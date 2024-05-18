@@ -123,8 +123,8 @@ public class CustomRequestMatcherDelegatingAuthorizationManager implements Autho
 
 ---
 
-[이전 ↩️ - 요청 기반 인가 관리자](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/AuthorityAuthorizationManager.md)
+[이전 ↩️ - 요청 기반 인가 관리자](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizationProcess/AuthorityAuthorizationManager.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - 메서드 기반 인가 관리자](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/PreAuthorizeAuthorizationManager.md)
+[다음 ↪️ - 메서드 기반 인가 관리자](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizationProcess/PreAuthorizeAuthorizationManager.md)

@@ -59,8 +59,8 @@ public class SecurityConfig {
 
 ---
 
-[이전 ↩️ - 익명 인증 사용자(anonymous())](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationProcess/Anonymous.md)
+[이전 ↩️ - 익명 인증 사용자(anonymous())](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationProcess/Anonymous.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - 요청 캐시(RequestCache & SavedRequest)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationProcess/RequestCache.md)
+[다음 ↪️ - 요청 캐시(RequestCache & SavedRequest)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationProcess/RequestCache.md)

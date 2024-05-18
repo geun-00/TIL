@@ -85,6 +85,6 @@ public class SecurityConfig {
 
 ---
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - Custom DSL](https://github.com/genesis12345678/TIL/blob/main/Spring/security/MultiSecurity/CustomDSL.md)
+[다음 ↪️ - Custom DSL](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/MultiSecurity/CustomDSL.md)

@@ -90,6 +90,6 @@ public class SecurityConfig {
 
 ---
 
-[이전 ↩️ - CSRF 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/CsrfAggregation.md)
+[이전 ↩️ - CSRF 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Cors_Csrf/CsrfAggregation.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)

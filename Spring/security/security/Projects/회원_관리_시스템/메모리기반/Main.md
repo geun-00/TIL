@@ -1,6 +1,6 @@
 # 회원 관리 시스템 - 메모리 기반 프로그래밍 방식 인가 구현
 
-- 프로그래밍 방식에 의한 인가 기능을 위해 `CustomDynamicAuthorizationManager` 클래스를 만든다. 이때 스프링 시큐리티의 인가 클래스인 [RequestMatcherDelegatingAuthorizationManager](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizationProcess/AuthorityAuthorizationManager.md) 클래스의 인가 원리를 이해하고 참고한다.
+- 프로그래밍 방식에 의한 인가 기능을 위해 `CustomDynamicAuthorizationManager` 클래스를 만든다. 이때 스프링 시큐리티의 인가 클래스인 [RequestMatcherDelegatingAuthorizationManager](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizationProcess/AuthorityAuthorizationManager.md) 클래스의 인가 원리를 이해하고 참고한다.
 - `Map` 방식으로 권한과 자원을 매핑하기 위해 `UrlRoleMapper` 인터페이스를 구현한 **MapBasedUrlRoleMapper** 클래스를 만든다.
 
 ![img.png](image/img.png)
@@ -179,8 +179,8 @@ public class SecurityConfig {
 
 ---
 
-[이전 ↩️ - 회원 관리 시스템 - 기본 구성](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%ED%9A%8C%EC%9B%90_%EA%B4%80%EB%A6%AC_%EC%8B%9C%EC%8A%A4%ED%85%9C/%EA%B8%B0%EB%B3%B8%EA%B5%AC%EC%84%B1/Main.md)
+[이전 ↩️ - 회원 관리 시스템 - 기본 구성](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Projects/%ED%9A%8C%EC%9B%90_%EA%B4%80%EB%A6%AC_%EC%8B%9C%EC%8A%A4%ED%85%9C/%EA%B8%B0%EB%B3%B8%EA%B5%AC%EC%84%B1/Main.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - 회원 관리 시스템 - DB 연동 프로그래밍 방식 인가 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%ED%9A%8C%EC%9B%90_%EA%B4%80%EB%A6%AC_%EC%8B%9C%EC%8A%A4%ED%85%9C/DB/Main.md)
+[다음 ↪️ - 회원 관리 시스템 - DB 연동 프로그래밍 방식 인가 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Projects/%ED%9A%8C%EC%9B%90_%EA%B4%80%EB%A6%AC_%EC%8B%9C%EC%8A%A4%ED%85%9C/DB/Main.md)

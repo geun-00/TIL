@@ -131,8 +131,8 @@ public class SecurityConfig {
 
 ---
 
-[이전 ↩️ - 다중 보안 설정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/MultiSecurity/MultiSecurity.md)
+[이전 ↩️ - 다중 보안 설정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/MultiSecurity/MultiSecurity.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - `Redis`를 활용한 이중화 설정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/MultiSecurity/Redis.md)
+[다음 ↪️ - `Redis`를 활용한 이중화 설정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/MultiSecurity/Redis.md)

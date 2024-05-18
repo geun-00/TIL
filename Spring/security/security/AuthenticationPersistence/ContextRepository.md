@@ -145,6 +145,6 @@ public class CustomAuthenticationFilter extends AbstractAuthenticationProcessing
 
 ---
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - 스프링 MVC 로그인 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationPersistence/MVCLogin.md)
+[다음 ↪️ - 스프링 MVC 로그인 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationPersistence/MVCLogin.md)

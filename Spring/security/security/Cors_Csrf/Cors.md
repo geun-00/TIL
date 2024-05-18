@@ -43,7 +43,7 @@
 ![img_3.png](image/img_3.png)
 
 - **응답 예시**
-- 서버가 보내준 응답 헤더에 포함된 `Access-Control-Allow-Origin: https://security.io`의 의미는 해당 URL 외의 다른 출처로 요청할 경우에는 CORS 정책을 위반했다고
+- 서버가 보내준 응답 헤더에 포함된 `Access-Control-Allow-Origin: https://security/security.io`의 의미는 해당 URL 외의 다른 출처로 요청할 경우에는 CORS 정책을 위반했다고
     판단하고 오류 메시지를 내고 응답을 버리게 된다.
 
 ![img_4.png](image/img_4.png)
@@ -60,7 +60,7 @@
 
 - **Access-Control-Allow-Origin**
   - 헤더에 작성된 출처만 브라우저가 리소스를 접근할 수 있도록 허용한다.
-  - `*`(모든 URL), `https://security.io`(특정 URL)
+  - `*`(모든 URL), `https://security/security.io`(특정 URL)
 - **Access-Control-Allow-Methods**
   - `preflight request`에 대한 응답으로 실제 요청 중에 사용할 수 있는 메서드를 나타낸다.
   - 기본값은 `GET`, `POST`, `HEAD`, `OPTIONS`, `*`
@@ -197,6 +197,6 @@ public class IndexController {
 
 ---
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - CSRF](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/Csrf.md)
+[다음 ↪️ - CSRF](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Cors_Csrf/Csrf.md)

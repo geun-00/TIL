@@ -138,8 +138,8 @@ public @interface CurrentUsername {}
 
 ---
 
-[이전 ↩️ - Servlet API 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Integration/Servlet.md)
+[이전 ↩️ - Servlet API 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Integration/Servlet.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - Spring MVC 비동기 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Integration/SpringMVCAsync.md)
+[다음 ↪️ - Spring MVC 비동기 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Integration/SpringMVCAsync.md)

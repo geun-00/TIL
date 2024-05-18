@@ -37,8 +37,8 @@
 
 ---
 
-[이전 ↩️ - HttpSecurity & WebSecurity](https://github.com/genesis12345678/TIL/blob/main/Spring/security/init/HttpSecurity.md)
+[이전 ↩️ - HttpSecurity & WebSecurity](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/init/HttpSecurity.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - 사용자 정의 보안 설정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/init/Custom.md)
+[다음 ↪️ - 사용자 정의 보안 설정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/init/Custom.md)

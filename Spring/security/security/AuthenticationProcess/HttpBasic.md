@@ -54,8 +54,8 @@ public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint 
 
 ---
 
-[이전 ↩️ - 폼 인증(formLogin())](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationProcess/FormLogin.md)
+[이전 ↩️ - 폼 인증(formLogin())](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationProcess/FormLogin.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - 기억하기 인증(rememberMe())](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationProcess/RememberMe.md)
+[다음 ↪️ - 기억하기 인증(rememberMe())](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationProcess/RememberMe.md)

@@ -133,8 +133,8 @@ public class SecurityConfig {
 
 ---
 
-[이전 ↩️ - CORS](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/Cors.md)
+[이전 ↩️ - CORS](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Cors_Csrf/Cors.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - CSRF 토큰 유지 및 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/CsrfToken.md)
+[다음 ↪️ - CSRF 토큰 유지 및 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Cors_Csrf/CsrfToken.md)

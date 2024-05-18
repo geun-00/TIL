@@ -105,8 +105,8 @@ public String csrfToken(HttpServletRequest request) {
 
 ---
 
-[이전 ↩️ - CSRF](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/Csrf.md)
+[이전 ↩️ - CSRF](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Cors_Csrf/Csrf.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - CSRF 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Cors_Csrf/CsrfAggregation.md)
+[다음 ↪️ - CSRF 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Cors_Csrf/CsrfAggregation.md)

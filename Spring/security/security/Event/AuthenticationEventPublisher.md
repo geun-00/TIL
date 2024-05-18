@@ -167,8 +167,8 @@ public class AuthenticationEvents {
 
 ---
 
-[이전 ↩️ - 인증 이벤트(`Authentication Events`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Event/AuthenticationEvents.md)
+[이전 ↩️ - 인증 이벤트(`Authentication Events`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Event/AuthenticationEvents.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - 인가 이벤트(`AuthorizationEvent`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Event/AuthorizationEvent.md)
+[다음 ↪️ - 인가 이벤트(`AuthorizationEvent`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Event/AuthorizationEvent.md)

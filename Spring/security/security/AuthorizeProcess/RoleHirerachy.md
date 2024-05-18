@@ -109,6 +109,6 @@ public class IndexController {
 
 ---
 
-[이전 ↩️ - 정적 자원 관리](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthorizeProcess/StaticResource.md)
+[이전 ↩️ - 정적 자원 관리](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizeProcess/StaticResource.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)

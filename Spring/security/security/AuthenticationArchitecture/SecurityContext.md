@@ -64,8 +64,8 @@ securityContextHolderStrategy.setContext(context);
 
 ---
 
-[이전 ↩️ - 인증(`Authentication`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationArchitecture/Authentication.md)
+[이전 ↩️ - 인증(`Authentication`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationArchitecture/Authentication.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - 인증 관리자(`AuthenticationManager`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationArchitecture/AuthenticationManager.md)
+[다음 ↪️ - 인증 관리자(`AuthenticationManager`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationArchitecture/AuthenticationManager.md)

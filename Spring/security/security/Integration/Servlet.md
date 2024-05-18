@@ -120,6 +120,6 @@ public class IndexController {
 
 ---
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - Spring MVC 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Integration/SpringMVC.md)
+[다음 ↪️ - Spring MVC 통합](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Integration/SpringMVC.md)

@@ -18,12 +18,12 @@
 > 1. `AuthorizationFilter`는 **SecurityContextHolder**에서 `Authentication`을 가져오는 `Supplier`를 구성한다.
 > 2. `Supplice<Authentication>`과 **HttpServletRequest**를 `AuthorizationManager`에 전달한다. `AuthorizationManager`는 `authorizeHttpRequests`의 패턴과 요청을 매칭하고 해당 규칙을 실행한다.
 >    - **인가 거부 됐을 때**
->      - `AuthorizationDeniedEvent`가 발행되고, **AccessDeniedException**이 발생한다. 이 경우 [ExceptionTranslationFilter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/exception/ExceptionTranslationFilter.md)가 **AccessDeniedException**을 처리한다.
+>      - `AuthorizationDeniedEvent`가 발행되고, **AccessDeniedException**이 발생한다. 이 경우 [ExceptionTranslationFilter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/exception/ExceptionTranslationFilter.md)가 **AccessDeniedException**을 처리한다.
 >    - **인가 허용 됐을 때**
 >      - `AuthorizationGrantedEvent`가 발행되고, **AuthorizationFilter**가 `FilterChain`을 계속하여 처리한다.
 
 - 스프링 시큐리티의 `AuthorizationFilter`는 초기화 과정에서 `AuthorizationManager` 속성을 `RequestMatcherDelegatingAuthorizationManager`로 초기화한다.
-- 즉, 클라이언트의 요청을 `AuthorizationFilter`가 받고, `RequestMatcherDelegatingAuthorizationManager`가 인가 처리를 하게 된다.([참고](https://github.com/genesis12345678/TIL/blob/main/Spring/security/AuthenticationArchitecture/Authentication.md))
+- 즉, 클라이언트의 요청을 `AuthorizationFilter`가 받고, `RequestMatcherDelegatingAuthorizationManager`가 인가 처리를 하게 된다.([참고](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationArchitecture/Authentication.md))
 - 그렇다면 여기서 얻을 수 있는 힌트는 커스텀한 `AuthorizationFilter`를 만들어 `AuthorizationManager`를 `CustomDynamicAuthorizationManager`로 초기화 하면 클라이언트의 요청을 직접 만든 `AuthorizationManager`가 받을 수 있을 것이다.
 
 ---
@@ -307,6 +307,6 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
 
 ---
 
-[이전 ↩️ - 회원 관리 시스템 - 계층적 권한 적용](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%ED%9A%8C%EC%9B%90_%EA%B4%80%EB%A6%AC_%EC%8B%9C%EC%8A%A4%ED%85%9C/%EA%B3%84%EC%B8%B5%EC%A0%81%EA%B6%8C%ED%95%9C/Main.md)
+[이전 ↩️ - 회원 관리 시스템 - 계층적 권한 적용](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Projects/%ED%9A%8C%EC%9B%90_%EA%B4%80%EB%A6%AC_%EC%8B%9C%EC%8A%A4%ED%85%9C/%EA%B3%84%EC%B8%B5%EC%A0%81%EA%B6%8C%ED%95%9C/Main.md)
 
-[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)

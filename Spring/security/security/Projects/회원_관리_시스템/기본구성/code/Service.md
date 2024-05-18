@@ -229,4 +229,4 @@ public class UserService {
     }
 }
 ```
-> [기존 회원가입](https://github.com/genesis12345678/TIL/blob/main/Spring/security/Projects/%ED%9A%8C%EC%9B%90_%EC%9D%B8%EC%A6%9D_%EC%8B%9C%EC%8A%A4%ED%85%9C/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85/Main.md) 에서 권한 정보를 단순 문자열로 저장하던 로직에서 `Role`이라는 엔티티로 저장하는 로직으로 변경
+> [기존 회원가입](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Projects/%ED%9A%8C%EC%9B%90_%EC%9D%B8%EC%A6%9D_%EC%8B%9C%EC%8A%A4%ED%85%9C/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85/Main.md) 에서 권한 정보를 단순 문자열로 저장하던 로직에서 `Role`이라는 엔티티로 저장하는 로직으로 변경
