@@ -74,4 +74,4 @@ public class SecurityConfig {
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
 
-[다음 ↪️ - 예외 펄티(`ExceptionTranslationFilter`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/exception/ExceptionTranslationFilter.md)
+[다음 ↪️ - 예외 필터(`ExceptionTranslationFilter`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/exception/ExceptionTranslationFilter.md)

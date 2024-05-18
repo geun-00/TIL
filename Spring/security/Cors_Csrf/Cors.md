@@ -46,7 +46,7 @@
 - 서버가 보내준 응답 헤더에 포함된 `Access-Control-Allow-Origin: https://security.io`의 의미는 해당 URL 외의 다른 출처로 요청할 경우에는 CORS 정책을 위반했다고
     판단하고 오류 메시지를 내고 응답을 버리게 된다.
 
-![img_4.png](img_4.png
+![img_4.png](image/img_4.png)
 
 ---
 
