@@ -527,7 +527,7 @@
 <details>
     <summary>스프링 시큐리티</summary>
 
-- [스프링 시큐리티](https://github.com/genesis12345678/TIL/blob/main/Spring/security/main.md)
+- [스프링 시큐리티](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
 </details>
 
