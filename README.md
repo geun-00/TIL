@@ -528,6 +528,7 @@
     <summary>스프링 시큐리티</summary>
 
 - [스프링 시큐리티](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
+- [OAuth 2.0](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
 </details>
 
