@@ -11,7 +11,7 @@
    - 인증 서버는 `Refresh Token`의 유효성을 검사하고 새 액세스 토큰을 발급한다.
    - `Refresh Token`은 액세스 토큰과 달리 권한 서버 토큰 엔드 포인트에만 보내지고 리소스 서버에는 보내지 않는다.
 3. **ID Token**
-   - [OpenID Connect]()
+   - [OpenID Connect](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OpenID/OpenID.md)
 4. **Authorization Code**
    - **권한 부여 코드 흐름에서 사용**되며 이 코드는 **클라이언트가 액세스 토큰과 교환할 임시 코드**이다.(일회용)
    - 사용자가 클라이언트가 요청하는 정보를 확인하고 인가 서버로부터 리다이렉트 되어 받아온다.

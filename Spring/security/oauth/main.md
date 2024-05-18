@@ -14,8 +14,7 @@
   - [리프레시 토큰 승인 방식](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B6%8C%ED%95%9C%EB%B6%80%EC%97%AC/RefreshToken.md)
   - [PKCE 권한부여 코드 승인 방식](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B6%8C%ED%95%9C%EB%B6%80%EC%97%AC/PKCE.md)
 - OAuth 2.0 Open ID Connect
-  - [Open ID Connect란]()
-  - [ID Token & Scope]()
+  - [Open ID Connect](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OpenID/OpenID.md)
 
 ---
 
