@@ -63,8 +63,8 @@ public class IndexController {
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Client - ClientRegistration]()
+[이전 ↩️ - OAuth 2.0 Client - ClientRegistration](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuthClient/ClientRegistration.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Client - 자동 설정에 의한 초기화 과정]()
+[다음 ↪️ - OAuth 2.0 Client - 자동 설정에 의한 초기화 과정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuthClient/AutoConfig.md)

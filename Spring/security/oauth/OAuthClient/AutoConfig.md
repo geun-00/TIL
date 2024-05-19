@@ -30,6 +30,6 @@
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Client - ClientRegistrationRepository]()
+[이전 ↩️ - OAuth 2.0 Client - ClientRegistrationRepository](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuthClient/ClientRegistrationRepository.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)

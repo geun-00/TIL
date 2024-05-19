@@ -29,4 +29,4 @@ implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Client - `application.yml`, `OAuth2ClientProperties`]()
+[다음 ↪️ - OAuth 2.0 Client - `application.yml`, `OAuth2ClientProperties`](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuthClient/YmlProperties.md)

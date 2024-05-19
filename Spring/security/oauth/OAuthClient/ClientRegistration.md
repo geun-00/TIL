@@ -69,8 +69,8 @@
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Client - `application.yml`, `OAuth2ClientProperties`]()
+[이전 ↩️ - OAuth 2.0 Client - `application.yml`, `OAuth2ClientProperties`](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuthClient/YmlProperties.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Client - `ClientRegistrationRepository`]()
+[다음 ↪️ - OAuth 2.0 Client - `ClientRegistrationRepository`](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuthClient/ClientRegistrationRepository.md)
