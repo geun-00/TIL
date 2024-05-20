@@ -195,4 +195,4 @@ public class SecurityConfig {
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
-[다음 ↪️ - 요청 기반 권한 부여(`HttpSecurity.securityMatcher()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizeProcess/security/securityMatcher.md)
+[다음 ↪️ - 요청 기반 권한 부여(`HttpSecurity.securityMatcher()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizeProcess/SecurityMatcher.md)

@@ -40,7 +40,7 @@
 - 인가 프로세스
   - [요청 기반 권한 부여(`HttpSecurity.authorizeHttpRequests()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizeProcess/HttpRequests.md)
   - [표현식 및 커스텀 권한 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizeProcess/Expression.md)
-  - [요청 기반 권한 부여(`HttpSecurity.securityMatcher()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizeProcess/security/securityMatcher.md)
+  - [요청 기반 권한 부여(`HttpSecurity.securityMatcher()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizeProcess/SecurityMatcher.md)
   - [메서드 기반 권한 부여(`@PreAuthorize`, `@PostAuthorize`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizeProcess/PreAuthorize.md)
   - [메서드 기반 권한 부여(`@PreFilter`, `@PostFilter`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizeProcess/PreFIlter.md)
   - [메서드 기반 권한 부여(`@Secured`, `JSR-250`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizeProcess/Secured.md)
