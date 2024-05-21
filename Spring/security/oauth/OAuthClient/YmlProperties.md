@@ -16,6 +16,24 @@
 
 ![img_1.png](image/img_1.png)
 
+> **자격증명 전송 방식 종류**
+> 
+> - **client_secret_post**
+>   - 클라이언트가 `client_id`와 `client_secret`을 HTTP 기본 인증 헤더에 포함하여 서버에 인증 요청을 보낸다.
+>   - HTTP 요청의 `Authorization` 헤더에 `client_id`와 `client_secret`을 Base64로 인코딩하여 **Baisc** 방식으로 전송한다.
+> - **client_secret_post**
+>   - 클라이언트가 `client_id`와 `client_secret`을 요청 본문에 포함하여 서버에 인증 요청을 보낸다. 
+>   - `client_id`와 `client_secret`을 **application/x-www-form-urlencoded** 형식의 요청 본문에 포함하여 전송한다.
+> - **client_secret_jwt**
+>   - 클라이언트가 `client_secret`을 사용하여 JWT를 생성하고 이를 인증 토큰으로 사용한다.
+>   - JWT는 `client_id`와 기타 클레임을 포함하여, `client_secret`으로 서명된다.
+> - **private_key_jwt**
+>   - 클라이언트가 공개 키와 개인 키 쌍을 사용하여 JWT를 생성하고, 이를 인증 토큰으로 사용한다.
+>   - JWT는 `client_id`와 기타 클레임을 포함하며, 클라이언트의 개인 키로 서명된다.
+> - **none**
+>   - 클라이언트 인증을 사용하지 않으며, 클라이언트가 공개 자원에 접근할 때 사용된다.
+>   - `client_id`만을 사용하며, `client_secret`이 필요하지 않는다.
+
 ---
 
 ## OAuth2ClientProperties
