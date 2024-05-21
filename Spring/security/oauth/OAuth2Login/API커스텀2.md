@@ -201,6 +201,6 @@ public class CustomOAuth2AuthorizationRequestResolver implements OAuth2Authoriza
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Client(oauth2Login) - API 커스텀 `Authorization BaseUrl` & `Redirection BaseUrl`]()
+[이전 ↩️ - OAuth 2.0 Client(oauth2Login) - API 커스텀 `Authorization BaseUrl` & `Redirection BaseUrl`](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/API%EC%BB%A4%EC%8A%A4%ED%85%801.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)

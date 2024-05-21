@@ -40,8 +40,8 @@
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Client(oauth2Login) - OAuth2LoginConfigurer]()
+[이전 ↩️ - OAuth 2.0 Client(oauth2Login) - OAuth2LoginConfigurer](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/OAuth2LoginConfigurer.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Client(oauth2Login) - Access Token 교환하기]()
+[다음 ↪️ - OAuth 2.0 Client(oauth2Login) - Access Token 교환하기](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/Access%20Token.md)

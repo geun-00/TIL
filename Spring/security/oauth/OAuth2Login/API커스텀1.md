@@ -103,8 +103,8 @@ spring:
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Client(oauth2Login) - Spring MVC 인증 객체 참조]()
+[이전 ↩️ - OAuth 2.0 Client(oauth2Login) - Spring MVC 인증 객체 참조](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/Spring%20MVC%20%EC%9D%B8%EC%A6%9D%20%EA%B0%9D%EC%B2%B4%20%EC%B0%B8%EC%A1%B0.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Client(oauth2Login) - API 커스텀 - `OAuth2AuthorizationRequestResolver`]()
+[다음 ↪️ - OAuth 2.0 Client(oauth2Login) - API 커스텀 - `OAuth2AuthorizationRequestResolver`](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/API%EC%BB%A4%EC%8A%A4%ED%85%802.md)

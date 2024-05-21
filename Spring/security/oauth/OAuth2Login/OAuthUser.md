@@ -72,8 +72,8 @@
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Client(oauth2Login) - Access Token 교환하기]()
+[이전 ↩️ - OAuth 2.0 Client(oauth2Login) - Access Token 교환하기](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/Access%20Token.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Client(oauth2Login) - UserInfo 엔드포인트 요청하기]()
+[다음 ↪️ - OAuth 2.0 Client(oauth2Login) - UserInfo 엔드포인트 요청하기](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/UserInfo.md)

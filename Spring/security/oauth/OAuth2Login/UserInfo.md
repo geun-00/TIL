@@ -62,8 +62,8 @@
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Client(oauth2Login) - OAuth 2.0 User 모델]()
+[이전 ↩️ - OAuth 2.0 Client(oauth2Login) - OAuth 2.0 User 모델](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/OAuthUser.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Client(oauth2Login) - OpenID Connect 로그아웃]()
+[다음 ↪️ - OAuth 2.0 Client(oauth2Login) - OpenID Connect 로그아웃](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/OpenID%20Connect%20%EB%A1%9C%EA%B7%B8%EC%95%84%EC%9B%83.md)
