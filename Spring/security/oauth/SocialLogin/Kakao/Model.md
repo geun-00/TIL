@@ -201,7 +201,7 @@ public class GoogleUser extends OAuth2ProviderUser {
     }
 }
 ```
-> **Attributes에 대한 정보는 [converter]()에서 확인할 수 있다.**
+> **Attributes에 대한 정보는 [converter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Kakao/Converter.md#oauth2googleprovideruserconverter)에서 확인할 수 있다.**
 ---
 
 ### KakaoUser
@@ -232,7 +232,7 @@ public class KakaoUser extends OAuth2ProviderUser {
     }
 }
 ```
-> **Attributes에 대한 정보는 [converter]()에서 확인할 수 있다.**
+> **Attributes에 대한 정보는 [converter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Kakao/Converter.md#oauth2kakaoprovideruserconverter--oauth2kakaooidcprovideruserconverter)에서 확인할 수 있다.**
 ---
 
 ### KakaoOidcUSer
@@ -260,7 +260,7 @@ public class KakaoOidcUser extends OAuth2ProviderUser {
     }
 }
 ```
-> **Attributes에 대한 정보는 [converter]()에서 확인할 수 있다.**
+> **Attributes에 대한 정보는 [converter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Kakao/Converter.md#oauth2kakaoprovideruserconverter--oauth2kakaooidcprovideruserconverter)에서 확인할 수 있다.**
 ---
 
 ### NaverUSer
@@ -288,7 +288,7 @@ public class NaverUser extends OAuth2ProviderUser {
     }
 }
 ```
-> **Attributes에 대한 정보는 [converter]()에서 확인할 수 있다.**
+> **Attributes에 대한 정보는 [converter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Kakao/Converter.md#oauth2naverprovideruserconverter)에서 확인할 수 있다.**
 
 ---
 

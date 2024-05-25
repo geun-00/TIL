@@ -2,21 +2,21 @@
 
 ![img_20.png](image/img_20.png)
 
-### [카카오 애플리케이션 등록]()
+### [카카오 애플리케이션 등록](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Kakao/Kakao.md)
 
 ---
 
-### [converter]()
+### [converter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Kakao/Converter.md)
 
-[기존 `registrationId`에 따라 if문으로 분기하던 AbstractOAuth2UserService]()의 로직을 좀 더 유연하고 확장성 있게 변경하도록 한다.
-
----
-
-### [model]()
+[기존 `registrationId`에 따라 if문으로 분기하던 AbstractOAuth2UserService](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/code/Service.md)의 로직을 좀 더 유연하고 확장성 있게 변경하도록 한다.
 
 ---
 
-### [service]()
+### [model](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Kakao/Model.md)
+
+---
+
+### [service](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Kakao/Service.md)
 
 ---
 
@@ -66,9 +66,8 @@ spring:
 >   - 메타데이터 확인 - [https://kauth.kakao.com/.well-known/openid-configuration](https://kauth.kakao.com/.well-known/openid-configuration)
 >   - [https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#kakaologin](https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api#kakaologin)
 
-
-
 ---
-[이전 ↩️ - OAuth 2.0 Client(Social Login) - 소셜 인증 내부 프로세스]()
+
+[이전 ↩️ - OAuth 2.0 Client(Social Login) - 소셜 인증 내부 프로세스](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Process.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)

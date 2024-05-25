@@ -2,15 +2,15 @@
 
 ![img.png](img.png)
 
-### [model]()
+### [model](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/code/Model.md)
 
 ---
 
-### [repository]()
+### [repository](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/code/Repository.md)
 
 ---
 
-### [service]()
+### [service](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/code/Service.md)
 
 ---
 
@@ -180,8 +180,8 @@ spring:
 > - 네이버의 `provider` 각 `uri` 정보는 [네이버 로그인 개발가이드](https://developers.naver.com/docs/login/devguide/devguide.md#3-4-2-%EB%84%A4%EC%9D%B4%EB%B2%84-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%97%B0%EB%8F%99-url-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0)에서 확인할 수 있다.
 ---
 
-[이전 ↩️ - OAuth 2.0 Client(Social Login) - 구글, 네이버 애플리케이션 등록]()
+[이전 ↩️ - OAuth 2.0 Client(Social Login) - 구글, 네이버 애플리케이션 등록](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Google_Naver.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Client(Social Login) - ]()
+[다음 ↪️ - OAuth 2.0 Client(Social Login) - 소셜 인증 내부 프로세스](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Process.md)
