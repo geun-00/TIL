@@ -31,6 +31,6 @@
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Resource Server 검증 기초 - JWT 특징]()
+[이전 ↩️ - OAuth 2.0 Resource Server 검증 기초 - JWT 특징](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/JWT.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)

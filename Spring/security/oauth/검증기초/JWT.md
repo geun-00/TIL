@@ -87,8 +87,8 @@
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Resource Server 검증 기초 - 대칭키 & 비대칭키]()
+[이전 ↩️ - OAuth 2.0 Resource Server 검증 기초 - 대칭키 & 비대칭키](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/%EB%B9%84%EB%8C%80%EC%B9%AD%ED%82%A4.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Resource Server 검증 기초 - JWK]()
+[다음 ↪️ - OAuth 2.0 Resource Server 검증 기초 - JWK](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/JWK.md)
