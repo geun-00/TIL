@@ -9,6 +9,8 @@
 
 ## NimbusJwtDecoder.withJwkSetUri()
 
+![img.png](img/img_9.png)
+
 - 기본적으로 스프링 부트에 의해 `NimbusJwtDecoder`가 자동 생성될 경우, 리소스 서버는 `RS256` 을 사용한 토큰만 신뢰하고 이 토큰만 검증할 수 있다.
 - `JwtSetUri`에 의한 검증 방식으로 `NimbusJwtDecoder`를 생성할 경우, 알고리즘의 종류를 변경할 수 있지만 `RSA` 알고리즘(비대칭)에 한해 변경이 가능하고 `HMAC`은 지원하지 않는다.
 
@@ -69,6 +71,6 @@ spring:
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Resource Server(jwt()) - JwtDecoder 세부 흐름]()
+[이전 ↩️ - OAuth 2.0 Resource Server(jwt()) - JwtDecoder 세부 흐름](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Decoder%ED%9D%90%EB%A6%84.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)

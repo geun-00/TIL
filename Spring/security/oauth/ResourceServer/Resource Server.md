@@ -16,8 +16,9 @@
 - `JWT`로 전달되는 토큰을 검증하기 위한 `JwtDecoder`, `BarerTokenAuthenticationFilter`, `JwtAuthenticationProvider` 등의 클래스 모델들을 제공한다.
 - 자체 검증 프로세스를 지원한다.
 
-### Opaque (불투명한)
+### Opaque
 
+- **Opaque** : 불투명한
 - 인가 서버의 `introspection` 엔드 포인트로 검증할 수 있는 `Opaque` 토큰을 지원한다.
 - 실시간으로 토큰의 활성화 여부를 확인할 수 있다.
 
@@ -38,4 +39,4 @@ implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-ser
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Resource Server - Resource Server 시작(`application.yml`,`OAuth2ResourceServerProperties`)]()
+[다음 ↪️ - OAuth 2.0 Resource Server - Resource Server 시작(`application.yml`,`OAuth2ResourceServerProperties`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Properties.md)

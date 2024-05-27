@@ -45,6 +45,16 @@
   - [코드 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/code/Main.md)
   - [소셜 인증 내부 프로세스](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Process.md)
   - [폼 인증 & 카카오 추가 및 리팩토링](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Kakao/Main.md)
+- OAuth 2.0 Resource Server
+  - [OAuth 2.0 Resource Server](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Resource%20Server.md)
+  - [Resource Server 시작(`application.yml`,`OAuth2ResourceServerProperties`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Properties.md)
+  - [AuthenticationEntryPoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/AuthenticationEntryPoint.md)
+  - [자동 설정에 의한 초기화 과정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/%EC%9E%90%EB%8F%99%EC%84%A4%EC%A0%95%EC%B4%88%EA%B8%B0%ED%99%94.md)
+- OAuth 2.0 Resource Server - jwt()
+  - [JWT API](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/jwt.md)
+  - [JwtDecoder 세부 흐름](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Decoder%ED%9D%90%EB%A6%84.md)
+  - [JwtDecoder 생성 방법](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Decoder%EC%83%9D%EC%84%B1.md)
+- OAuth 2.0 Resource Server - 검증 기초
 ---
 
 > 전체 내용에 대한 출처 : [인프런 - 정수원 님의 "스프링 시큐리티 OAuth2"](https://www.inflearn.com/course/%EC%A0%95%EC%88%98%EC%9B%90-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0/dashboard)

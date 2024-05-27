@@ -62,7 +62,7 @@ spring:
 ```
 ![img_4.png](image/img_4.png)
 
-스프링 시큐리티가 기본적으로 제공하는 폼 인증을 위환 화면이 출력된다.
+스프링 시큐리티가 기본적으로 제공하는 폼 인증을 위한 화면이 출력된다.
 
 ### application.yml 설정
 
@@ -97,8 +97,8 @@ spring:
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Resource Server - OAuth 2.0 Resource Server]()
+[이전 ↩️ - OAuth 2.0 Resource Server - OAuth 2.0 Resource Server](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Resource%20Server.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Resource Server - AuthenticationEntryPoint]()
+[다음 ↪️ - OAuth 2.0 Resource Server - AuthenticationEntryPoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/AuthenticationEntryPoint.md)

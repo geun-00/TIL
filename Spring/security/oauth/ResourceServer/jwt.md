@@ -33,4 +33,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Resource Server(jwt()) - JwtDecoder 세부 흐름]()
+[다음 ↪️ - OAuth 2.0 Resource Server(jwt()) - JwtDecoder 세부 흐름](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Decoder%ED%9D%90%EB%A6%84.md)

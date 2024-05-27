@@ -23,8 +23,8 @@
 ![img_7.png](img/img_7.png)
 ---
 
-[이전 ↩️ - OAuth 2.0 Resource Server(jwt()) - JWT API]()
+[이전 ↩️ - OAuth 2.0 Resource Server(jwt()) - JWT API](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/jwt.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Resource Server(jwt()) - JwtDecoder 생성 방법]()
+[다음 ↪️ - OAuth 2.0 Resource Server(jwt()) - JwtDecoder 생성 방법](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Decoder%EC%83%9D%EC%84%B1.md)
