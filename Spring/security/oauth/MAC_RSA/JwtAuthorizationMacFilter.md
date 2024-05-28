@@ -4,7 +4,7 @@
 
 ---
 
-###
+### SecuritySigner
 
 ```java
 public abstract class SecuritySigner {
@@ -254,8 +254,8 @@ public class SecurityConfig {
 ```
 ---
 
-[이전 ↩️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - 기본 환경 및 공통 클래스 구성]()
+[이전 ↩️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - 기본 환경 및 공통 클래스 구성](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/%EA%B8%B0%EB%B3%B8%EC%84%A4%EC%A0%95.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - JwtDecoder 에 의한 검증(MAC)]()
+[다음 ↪️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - JwtDecoder 에 의한 검증(MAC)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/MAC_JwtDecoder.md)

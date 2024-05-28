@@ -27,6 +27,6 @@
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - @AuthenticationPrincipal 참조]()
+[이전 ↩️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - @AuthenticationPrincipal 참조](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/AuthenticationPrincipal.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)

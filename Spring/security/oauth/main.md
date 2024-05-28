@@ -59,6 +59,16 @@
   - [JCA & JCE - 대칭키 & 비대칭키](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/%EB%B9%84%EB%8C%80%EC%B9%AD%ED%82%A4.md)
   - [JWT 특징](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/JWT.md)
   - [JWT - JWK 이해](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/JWK.md)
+- OAuth 2.0 Resource Server - MAC & RSA 토큰 검증
+  - [기본 환경 및 공통 클래스 구성](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/%EA%B8%B0%EB%B3%B8%EC%84%A4%EC%A0%95.md)
+  - [MAC 검증 기능 구현 - JwtAuthorizationMacFilter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/JwtAuthorizationMacFilter.md)
+  - [MAC 검증 기능 구현 - JwtDecoder 에 의한 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/MAC_JwtDecoder.md)
+  - [RSA 검증 기능 구현 - JwtAuthorizationRsaFilter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/JwtAuthorizationRsaFilter.md)
+  - [RSA 검증 기능 구현 - JwtDecoder 에 의한 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/RSA_JwtDecoder.md)
+  - [RSA 검증 기능 구현 - PublicKey.txt 에 의한 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/PublicKey.md)
+  - [RSA 검증 기능 구현 - JwkSetUri 에 의한 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/JwkSetUri.md)
+  - [@AuthenticationPrincipal 참조](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/AuthenticationPrincipal.md)
+  - [BearerTokenAuthenticationFilter 이해](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/BearerTokenAuthenticationFilter.md)
 ---
 
 > 전체 내용에 대한 출처 : [인프런 - 정수원 님의 "스프링 시큐리티 OAuth2"](https://www.inflearn.com/course/%EC%A0%95%EC%88%98%EC%9B%90-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0/dashboard)

@@ -10,7 +10,7 @@
 
 ## keytool
 
-- `keytool`은 자바에서 제공하는 유틸리티로 `KeyStore` 기반으로 인증서와 키를 고나리할 수 있으며 JDK 에 포함되어 있다.
+- `keytool`은 자바에서 제공하는 유틸리티로 `KeyStore` 기반으로 인증서와 키를 관리할 수 있으며 JDK 에 포함되어 있다.
   - `C:\Program Files\Java\jdk-17\bin\keytool.exe`
 - **KeyStore 생성 후 Private Key, Public Key, Certificate 생성**
   - **Private Key 생성** : ` keytool -genkeypair -alias apiKey -keyalg RSA -keypass "pass1234" -keystore apiKey.jks -storepass "pass1234"`
@@ -321,8 +321,8 @@ public class SecurityConfig {
 ```
 ---
 
-[이전 ↩️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - JwtDecoder 에 의한 검증(RSA)]()
+[이전 ↩️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - JwtDecoder 에 의한 검증(RSA)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/RSA_JwtDecoder.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - JwkSetUri 에 의한 검증(RSA)]()
+[다음 ↪️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - JwkSetUri 에 의한 검증(RSA)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/JwkSetUri.md)

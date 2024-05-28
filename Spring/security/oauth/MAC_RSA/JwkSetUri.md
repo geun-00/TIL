@@ -65,8 +65,8 @@ public class SecurityConfig {
 ![img_10.png](image/img_10.png)
 ---
 
-[이전 ↩️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - PublicKey.txt 에 의한 검증(RSA)]()
+[이전 ↩️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - PublicKey.txt 에 의한 검증(RSA)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/PublicKey.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - @AuthenticationPrincipal 참조]()
+[다음 ↪️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - @AuthenticationPrincipal 참조](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/AuthenticationPrincipal.md)

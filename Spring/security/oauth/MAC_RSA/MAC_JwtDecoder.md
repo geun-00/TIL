@@ -30,7 +30,7 @@ spring:
           jws-algorithms: HS256
 ```
 
-###
+### SecurityConfig
 
 ```java
 @Configuration
@@ -91,8 +91,8 @@ public class SecurityConfig {
  
 ---
 
-[이전 ↩️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - JwtAuthorizationMacFilter(MAC)]()
+[이전 ↩️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - JwtAuthorizationMacFilter(MAC)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/JwtAuthorizationMacFilter.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - JwtAuthorizationRsaFilter(RSA)]()
+[다음 ↪️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - JwtAuthorizationRsaFilter(RSA)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/JwtAuthorizationRsaFilter.md)

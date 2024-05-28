@@ -61,8 +61,8 @@ public class IndexController {
 ```
 ---
 
-[이전 ↩️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - JwkSetUri 에 의한 검증(RSA)]()
+[이전 ↩️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - JwkSetUri 에 의한 검증(RSA)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/JwkSetUri.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - BearerTokenAuthenticationFilter 이해]()
+[다음 ↪️ - OAuth 2.0 Resource Server MAC & RSA 토큰 검증 - BearerTokenAuthenticationFilter 이해](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/BearerTokenAuthenticationFilter.md)
