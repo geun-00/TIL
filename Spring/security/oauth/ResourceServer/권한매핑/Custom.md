@@ -100,6 +100,6 @@ public class CustomRoleConverter implements Converter<Jwt, Collection<GrantedAut
 ![img_14.png](image/img_14.png)
 ---
 
-[이전 ↩️ - OAuth 2.0 Resource Server 권한 구현 - Scope 기반 권한 매핑]()
+[이전 ↩️ - OAuth 2.0 Resource Server 권한 구현 - Scope 기반 권한 매핑](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/%EA%B6%8C%ED%95%9C%EB%A7%A4%ED%95%91/ScopeAuth.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)

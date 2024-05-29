@@ -1,11 +1,11 @@
 # 스프링 시큐리티 OAuth2
 
-- OAuth 2.0 용어 이해
+- **OAuth 2.0 용어 이해**
   - [OAuth 2.0 소개](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EC%9A%A9%EC%96%B4%EC%9D%B4%ED%95%B4/OAuth.md)
   - [OAuth 2.0 Roles](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EC%9A%A9%EC%96%B4%EC%9D%B4%ED%95%B4/Roles.md)
   - [OAuth 2.0 Client Types](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EC%9A%A9%EC%96%B4%EC%9D%B4%ED%95%B4/ClientTypes.md)
   - [OAuth 2.0 Token Types](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EC%9A%A9%EC%96%B4%EC%9D%B4%ED%95%B4/TokenTypes.md)
-- OAuth 2.0 권한부여 유형
+- **OAuth 2.0 권한부여 유형**
   - [OAuth 2.0 Grant Type](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B6%8C%ED%95%9C%EB%B6%80%EC%97%AC/GrantType.md)
   - [권한 부여 코드 승인 방식](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B6%8C%ED%95%9C%EB%B6%80%EC%97%AC/Authorization.md)
   - [암묵적 승인 방식](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B6%8C%ED%95%9C%EB%B6%80%EC%97%AC/Implicit.md)
@@ -13,62 +13,70 @@
   - [클라이언트 자격증명 승인 방식](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B6%8C%ED%95%9C%EB%B6%80%EC%97%AC/Client.md)
   - [리프레시 토큰 승인 방식](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B6%8C%ED%95%9C%EB%B6%80%EC%97%AC/RefreshToken.md)
   - [PKCE 권한부여 코드 승인 방식](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B6%8C%ED%95%9C%EB%B6%80%EC%97%AC/PKCE.md)
-- OAuth 2.0 Open ID Connect
+- **OAuth 2.0 Open ID Connect**
   - [Open ID Connect](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OpenID/OpenID.md)
-- OAuth 2.0 Client
+- **OAuth 2.0 Client**
   - [OAuth 2.0 Client](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuthClient/OAuthClient.md)
   - [클라이언트 앱 시작(`application.yml`, `OAuth2ClientProperties`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuthClient/YmlProperties.md)
   - [ClientRegistration](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuthClient/ClientRegistration.md)
   - [ClientRegistrationRepository](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuthClient/ClientRegistrationRepository.md)
   - [자동 설정에 의한 초기화 과정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuthClient/AutoConfig.md)
-- OAuth 2.0 Client - oauth2Login()
-  - [OAuth2LoginConfigurer 초기화](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/OAuth2LoginConfigurer.md)
-  - [Authorization Code 요청하기](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/Authorization%20Code.md)
-  - [Access Token 교환하기](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/Access%20Token.md)
-  - [OAuth 2.0 User 모델](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/OAuthUser.md)
-  - [UserInfo 엔드포인트 요청하기](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/UserInfo.md)
-  - [OpenID Connect 로그아웃](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/OpenID%20Connect%20%EB%A1%9C%EA%B7%B8%EC%95%84%EC%9B%83.md)
-  - [Spring MVC 인증 객체 참조](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/Spring%20MVC%20%EC%9D%B8%EC%A6%9D%20%EA%B0%9D%EC%B2%B4%20%EC%B0%B8%EC%A1%B0.md)
-  - [API 커스텀 - `Authorization BaseUrl` & `Redirection BaseUrl`](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/API%EC%BB%A4%EC%8A%A4%ED%85%801.md)
-  - [API 커스텀 - `OAuth2AuthorizationRequestResolver`](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/API%EC%BB%A4%EC%8A%A4%ED%85%802.md)
-- OAuth 2.0 Client - oauth2Client()
-  - [OAuth2ClientConfigurer 초기화](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/OAuth2ClientConfigurer.md)
-  - [OAuth2AuthorizedClient](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/OAuth2AuthorizedClient.md)
-  - [DefaultOAuth2AuthorizedClientManager](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/DefaultOAuth2AuthorizedClientManager.md)
-  - [DefaultOAuth2AuthorizedClientManager - `Resource Owner Password` 권한 부여 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/Resource%20Owner%20Password.md)
-  - [DefaultOAuth2AuthorizedClientManager - `Client Credentials` 권한 부여 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/Client%20Credentials.md)
-  - [DefaultOAuth2AuthorizedClientManager - `Refresh Token` 권한 부여 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/Refresh%20Token.md)
-  - [DefaultOAuth2AuthorizedClientManager - 필터 기반 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/Filter.md)
-  - [@RegisteredOAuth2AuthorizedClient 활용](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/%40RegisteredOAuth2AuthorizedClient.md)
-- OAuth 2.0 Client - Social Login 구현
-  - [구글, 네이버 애플리케이션 등록](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Google_Naver.md)
-  - [코드 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/code/Main.md)
-  - [소셜 인증 내부 프로세스](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Process.md)
-  - [폼 인증 & 카카오 추가 및 리팩토링](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Kakao/Main.md)
-- OAuth 2.0 Resource Server
+  - **oauth2Login()**
+    - [OAuth2LoginConfigurer 초기화](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/OAuth2LoginConfigurer.md)
+    - [Authorization Code 요청하기](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/Authorization%20Code.md)
+    - [Access Token 교환하기](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/Access%20Token.md)
+    - [OAuth 2.0 User 모델](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/OAuthUser.md)
+    - [UserInfo 엔드포인트 요청하기](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/UserInfo.md)
+    - [OpenID Connect 로그아웃](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/OpenID%20Connect%20%EB%A1%9C%EA%B7%B8%EC%95%84%EC%9B%83.md)
+    - [Spring MVC 인증 객체 참조](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/Spring%20MVC%20%EC%9D%B8%EC%A6%9D%20%EA%B0%9D%EC%B2%B4%20%EC%B0%B8%EC%A1%B0.md)
+    - [API 커스텀 - `Authorization BaseUrl` & `Redirection BaseUrl`](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/API%EC%BB%A4%EC%8A%A4%ED%85%801.md)
+    - [API 커스텀 - `OAuth2AuthorizationRequestResolver`](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Login/API%EC%BB%A4%EC%8A%A4%ED%85%802.md)
+  - **oauth2Client()**
+    - [OAuth2ClientConfigurer 초기화](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/OAuth2ClientConfigurer.md)
+    - [OAuth2AuthorizedClient](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/OAuth2AuthorizedClient.md)
+    - [DefaultOAuth2AuthorizedClientManager](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/DefaultOAuth2AuthorizedClientManager.md)
+    - [DefaultOAuth2AuthorizedClientManager - `Resource Owner Password` 권한 부여 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/Resource%20Owner%20Password.md)
+    - [DefaultOAuth2AuthorizedClientManager - `Client Credentials` 권한 부여 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/Client%20Credentials.md)
+    - [DefaultOAuth2AuthorizedClientManager - `Refresh Token` 권한 부여 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/Refresh%20Token.md)
+    - [DefaultOAuth2AuthorizedClientManager - 필터 기반 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/Filter.md)
+    - [@RegisteredOAuth2AuthorizedClient 활용](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/%40RegisteredOAuth2AuthorizedClient.md)
+  - **Social Login 구현**
+    - [구글, 네이버 애플리케이션 등록](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Google_Naver.md)
+    - [코드 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/code/Main.md)
+    - [소셜 인증 내부 프로세스](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Process.md)
+    - [폼 인증 & 카카오 추가 및 리팩토링](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SocialLogin/Kakao/Main.md)
+- **OAuth 2.0 Resource Server**
   - [OAuth 2.0 Resource Server](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Resource%20Server.md)
   - [Resource Server 시작(`application.yml`,`OAuth2ResourceServerProperties`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Properties.md)
   - [AuthenticationEntryPoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/AuthenticationEntryPoint.md)
   - [자동 설정에 의한 초기화 과정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/%EC%9E%90%EB%8F%99%EC%84%A4%EC%A0%95%EC%B4%88%EA%B8%B0%ED%99%94.md)
-- OAuth 2.0 Resource Server - jwt()
-  - [JWT API](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/jwt.md)
-  - [JwtDecoder 세부 흐름](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Decoder%ED%9D%90%EB%A6%84.md)
-  - [JwtDecoder 생성 방법](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Decoder%EC%83%9D%EC%84%B1.md)
-- OAuth 2.0 Resource Server - 검증 기초
-  - [JCA & JCE 구조](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/JCAJCE.md)
-  - [JCA & JCE - 대칭키 & 비대칭키](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/%EB%B9%84%EB%8C%80%EC%B9%AD%ED%82%A4.md)
-  - [JWT 특징](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/JWT.md)
-  - [JWT - JWK 이해](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/JWK.md)
-- OAuth 2.0 Resource Server - MAC & RSA 토큰 검증
-  - [기본 환경 및 공통 클래스 구성](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/%EA%B8%B0%EB%B3%B8%EC%84%A4%EC%A0%95.md)
-  - [MAC 검증 기능 구현 - JwtAuthorizationMacFilter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/JwtAuthorizationMacFilter.md)
-  - [MAC 검증 기능 구현 - JwtDecoder 에 의한 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/MAC_JwtDecoder.md)
-  - [RSA 검증 기능 구현 - JwtAuthorizationRsaFilter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/JwtAuthorizationRsaFilter.md)
-  - [RSA 검증 기능 구현 - JwtDecoder 에 의한 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/RSA_JwtDecoder.md)
-  - [RSA 검증 기능 구현 - PublicKey.txt 에 의한 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/PublicKey.md)
-  - [RSA 검증 기능 구현 - JwkSetUri 에 의한 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/JwkSetUri.md)
-  - [@AuthenticationPrincipal 참조](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/AuthenticationPrincipal.md)
-  - [BearerTokenAuthenticationFilter 이해](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/BearerTokenAuthenticationFilter.md)
+  - **jwt()**
+    - [JWT API](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/jwt.md)
+    - [JwtDecoder 세부 흐름](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Decoder%ED%9D%90%EB%A6%84.md)
+    - [JwtDecoder 생성 방법](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/Decoder%EC%83%9D%EC%84%B1.md)
+  - **검증 기초**
+    - [JCA & JCE 구조](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/JCAJCE.md)
+    - [JCA & JCE - 대칭키 & 비대칭키](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/%EB%B9%84%EB%8C%80%EC%B9%AD%ED%82%A4.md)
+    - [JWT 특징](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/JWT.md)
+    - [JWT - JWK 이해](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/%EA%B2%80%EC%A6%9D%EA%B8%B0%EC%B4%88/JWK.md)
+  - **MAC & RSA 토큰 검증**
+    - [기본 환경 및 공통 클래스 구성](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/%EA%B8%B0%EB%B3%B8%EC%84%A4%EC%A0%95.md)
+    - [MAC 검증 기능 구현 - JwtAuthorizationMacFilter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/JwtAuthorizationMacFilter.md)
+    - [MAC 검증 기능 구현 - JwtDecoder 에 의한 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/MAC_JwtDecoder.md)
+    - [RSA 검증 기능 구현 - JwtAuthorizationRsaFilter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/JwtAuthorizationRsaFilter.md)
+    - [RSA 검증 기능 구현 - JwtDecoder 에 의한 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/RSA_JwtDecoder.md)
+    - [RSA 검증 기능 구현 - PublicKey.txt 에 의한 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/PublicKey.md)
+    - [RSA 검증 기능 구현 - JwkSetUri 에 의한 검증](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/JwkSetUri.md)
+    - [@AuthenticationPrincipal 참조](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/AuthenticationPrincipal.md)
+    - [BearerTokenAuthenticationFilter 이해](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/MAC_RSA/BearerTokenAuthenticationFilter.md)
+  - **리소스 서버 권한 구현**
+    - [Scope 기반 권한 매핑](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/%EA%B6%8C%ED%95%9C%EB%A7%A4%ED%95%91/ScopeAuth.md)
+    - [권한 구성 커스터마이징](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/%EA%B6%8C%ED%95%9C%EB%A7%A4%ED%95%91/Custom.md)
+  - **opaque()**
+    - [Opaque 개념 및 프로세스](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/opaque/Opaque.md)
+    - [토큰 검사 및 프로세스](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/opaque/Process.md)
+- **[OAuth 2.0 Client + OAuth 2.0 Resource Server 연동](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/%EC%97%B0%EB%8F%99/Main.md)**
+- **Spring Authorization Server**
 ---
 
 > 전체 내용에 대한 출처 : [인프런 - 정수원 님의 "스프링 시큐리티 OAuth2"](https://www.inflearn.com/course/%EC%A0%95%EC%88%98%EC%9B%90-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0/dashboard)

@@ -82,6 +82,6 @@ public class CustomOpaqueTokenIntrospector implements OpaqueTokenIntrospector {
 
 ---
 
-[이전 ↩️ - OAuth 2.0 Resource Server Opaque - 개념]()
+[이전 ↩️ - OAuth 2.0 Resource Server Opaque - 개념](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/opaque/Opaque.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)

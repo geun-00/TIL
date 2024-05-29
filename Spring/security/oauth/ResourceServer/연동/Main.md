@@ -16,5 +16,5 @@
 
 ---
 
-### [모듈 1 - OAuth2 Client]()
-### [모듈 2 - OAuth2 Resource Server]()
+### [모듈 1 - OAuth2 Client](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/%EC%97%B0%EB%8F%99/Client.md)
+### [모듈 2 - OAuth2 Resource Server](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/%EC%97%B0%EB%8F%99/ResourceServer.md)

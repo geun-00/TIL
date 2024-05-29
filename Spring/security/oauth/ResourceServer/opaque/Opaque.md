@@ -123,4 +123,4 @@ public class IndexController {
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Resource Server Opaque - 토큰 검사 및 프로세스]()
+[다음 ↪️ - OAuth 2.0 Resource Server Opaque - 토큰 검사 및 프로세스](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/opaque/Process.md)

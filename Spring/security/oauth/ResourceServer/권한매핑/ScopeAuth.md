@@ -138,4 +138,4 @@ public class PhotoController {
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - OAuth 2.0 Resource Server 권한 구현 - 권한 구성 커스터마이징]()
+[다음 ↪️ - OAuth 2.0 Resource Server 권한 구현 - 권한 구성 커스터마이징](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/%EA%B6%8C%ED%95%9C%EB%A7%A4%ED%95%91/Custom.md)
