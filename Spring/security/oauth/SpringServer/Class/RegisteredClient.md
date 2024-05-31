@@ -111,4 +111,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - Spring Authorization Server - 주요 클래스(`OAuth2Authorization`)]()
+[다음 ↪️ - Spring Authorization Server - 주요 클래스(`OAuth2Authorization`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Class/OAuth2Authorization.md)

@@ -77,6 +77,14 @@
     - [토큰 검사 및 프로세스](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/opaque/Process.md)
 - **[OAuth 2.0 Client + OAuth 2.0 Resource Server 연동](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/ResourceServer/%EC%97%B0%EB%8F%99/Main.md)**
 - **Spring Authorization Server**
+  - [Spring Authorization Server](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/SpringServer.md)
+  - [초기화 과정 - OAuth2AuthorizationServerConfiguration](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/%EC%B4%88%EA%B8%B0%ED%99%94_1.md)
+  - [초기화 과정 - OAuth2AuthorizationServerConfigurer](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/%EC%B4%88%EA%B8%B0%ED%99%94_2.md)
+  - [초기화 과정 - AuthorizationServerContext](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/%EC%B4%88%EA%B8%B0%ED%99%94_3.md)
+  - [인가 서버 시작](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/%EC%9D%B8%EA%B0%80%EC%84%9C%EB%B2%84.md)
+  - **주요 클래스**
+    - [RegisteredClient](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Class/RegisteredClient.md)
+    - [OAuth2Authorization](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Class/OAuth2Authorization.md)
 ---
 
 > 전체 내용에 대한 출처 : [인프런 - 정수원 님의 "스프링 시큐리티 OAuth2"](https://www.inflearn.com/course/%EC%A0%95%EC%88%98%EC%9B%90-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0/dashboard)

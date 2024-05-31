@@ -108,6 +108,6 @@
 
 ---
 
-[이전 ↩️ - Spring Authorization Server - 주요 클래스(`RegisteredClient`)]()
+[이전 ↩️ - Spring Authorization Server - 주요 클래스(`RegisteredClient`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Class/RegisteredClient.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
