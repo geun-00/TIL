@@ -18,7 +18,7 @@
 
 > **자격증명 전송 방식 종류**
 > 
-> - **client_secret_post**
+> - **client_secret_basic**
 >   - 클라이언트가 `client_id`와 `client_secret`을 HTTP 기본 인증 헤더에 포함하여 서버에 인증 요청을 보낸다.
 >   - HTTP 요청의 `Authorization` 헤더에 `client_id`와 `client_secret`을 Base64로 인코딩하여 **Baisc** 방식으로 전송한다.
 > - **client_secret_post**
