@@ -85,6 +85,19 @@
   - **주요 클래스**
     - [RegisteredClient](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Class/RegisteredClient.md)
     - [OAuth2Authorization](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Class/OAuth2Authorization.md)
+  - **엔드포인트 프로토콜**
+    - [AuthorizationServer Endpoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/AuthorizationServer.md)
+    - [Token Endpoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/TokenEndpoint.md)
+      - [클라이언트 인증하기](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/TokenEndpoint.md#%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%9D%B8%EC%A6%9D%ED%95%98%EA%B8%B0)
+      - [Authorization Code Endpoint 흐름](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/AuthCode.md)
+      - [Client Credentials Endpoint 흐름](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/ClientCredentials.md)
+      - [Refresh Token Endpoint 흐름](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/RefreshToken.md)
+      - [Authorization Code with PKCE Endpoint 흐름](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/AuthCodewithPKCE.md)
+    - [Token Introspection Endpoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/Introspection.md)
+    - [Token Revocation Endpoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/Revocation.md)
+    - [Authorization Server Metadata Endpoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/Metadata.md#spring-authorization-server---%EC%97%94%EB%93%9C%ED%8F%AC%EC%9D%B8%ED%8A%B8-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C)
+    - [JWK Set Endpoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/Metadata.md#oauth2authorizationserverconfigurer)
+    - [OpenID Connect 1.0 Endpoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/OpenID.md)
 ---
 
 > 전체 내용에 대한 출처 : [인프런 - 정수원 님의 "스프링 시큐리티 OAuth2"](https://www.inflearn.com/course/%EC%A0%95%EC%88%98%EC%9B%90-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0/dashboard)

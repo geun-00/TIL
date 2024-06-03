@@ -92,8 +92,8 @@
 
 ---
 
-[이전 ↩️ - Spring Authorization Server(엔드포인트 프로토콜) - Token Endpoint]()
+[이전 ↩️ - Spring Authorization Server(엔드포인트 프로토콜) - Token Endpoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/TokenEndpoint.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - Spring Authorization Server(엔드포인트 프로토콜) - Token Revocation Endpoint]()
+[다음 ↪️ - Spring Authorization Server(엔드포인트 프로토콜) - Token Revocation Endpoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/Revocation.md)

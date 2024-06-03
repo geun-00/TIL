@@ -74,8 +74,8 @@
 
 ---
 
-[이전 ↩️ - Spring Authorization Server(엔드포인트 프로토콜) - Token Introspection Endpoint]()
+[이전 ↩️ - Spring Authorization Server(엔드포인트 프로토콜) - Token Introspection Endpoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/Introspection.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - Spring Authorization Server(엔드포인트 프로토콜) - Authorization Server Metadata Endpoint]()
+[다음 ↪️ - Spring Authorization Server(엔드포인트 프로토콜) - Authorization Server Metadata Endpoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/Metadata.md#spring-authorization-server---%EC%97%94%EB%93%9C%ED%8F%AC%EC%9D%B8%ED%8A%B8-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C)

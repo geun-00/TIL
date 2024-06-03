@@ -155,4 +155,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
 
-[다음 ↪️ - Spring Authorization Server(엔드포인트 프로토콜) - TokenEndpoint]()
+[다음 ↪️ - Spring Authorization Server(엔드포인트 프로토콜) - TokenEndpoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/TokenEndpoint.md)

@@ -124,8 +124,6 @@ public JwtDecoder jwtDecoder(JWKSource<SecurityContext> jwkSource) {
 
 ---
 
-[이전 ↩️ - Spring Authorization Server(엔드포인트 프로토콜) - ]()
+[이전 ↩️ - Spring Authorization Server(엔드포인트 프로토콜) - Authorization Server Metadata Endpoint](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/SpringServer/Endpoints/Metadata.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/main.md)
-
-[다음 ↪️ - Spring Authorization Server(엔드포인트 프로토콜) - ]()
