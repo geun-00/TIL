@@ -38,6 +38,6 @@
 
 ---
 
-[이전 ↩️ - 자바(래퍼, Class 클래스) - Class 클래스]()
+[이전 ↩️ - 자바(래퍼, Class 클래스) - Class 클래스](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Wrapper/Class.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)

@@ -27,8 +27,8 @@
 
 ---
 
-[이전 ↩️ - 자바(래퍼 클래스) - 래퍼 클래스]()
+[이전 ↩️ - 자바(래퍼 클래스) - 래퍼 클래스](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Wrapper/%EB%9E%98%ED%8D%BC%ED%81%B4%EB%9E%98%EC%8A%A4.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
 
-[다음 ↪️ - 자바(래퍼 클래스) - System, Random 클래스]()
+[다음 ↪️ - 자바(래퍼 클래스) - System, Random 클래스](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Wrapper/System.md)
