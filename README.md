@@ -1,7 +1,11 @@
 # TIL 📃
 
 ## INDEX 🔍
+
 ### Java
+
+<details>
+  <summary>기본 및 기타</summary>
 
 - [OOP](https://github.com/genesis12345678/TIL/blob/main/Java/OOP/OOP.md#oop)
 - [SOLID](https://github.com/genesis12345678/TIL/blob/main/Java/OOP/solid/solid.md#%EC%A2%8B%EC%9D%80-%EA%B0%9D%EC%B2%B4-%EC%A7%80%ED%96%A5-%EC%84%A4%EA%B3%84%EC%9D%98-5%EA%B0%80%EC%A7%80-%EC%9B%90%EC%B9%99solid)
@@ -10,6 +14,18 @@
 - 다형성
   - [다형성 - 1](https://github.com/genesis12345678/TIL/blob/main/Java/polymorphism/Polymorphism_1.md#%EB%8B%A4%ED%98%95%EC%84%B1---1) - 다형성의 기본적인 개념과 캐스팅
   - [다형성 - 2](https://github.com/genesis12345678/TIL/blob/main/Java/polymorphism/Polymorphism_2.md#%EB%8B%A4%ED%98%95%EC%84%B1---2) - 다형성을 활용한 코드 리팩토링(with 인터페이스)
+- [JPA Auditing](https://github.com/genesis12345678/TIL/blob/main/Springboot3/JPA_Auditing/JPA_Auditing.md)
+- [MapStruct](https://github.com/genesis12345678/TIL/blob/main/Springboot3/MapStruct/MapStruct.md)
+
+</details>
+
+<details>
+  <summary>중급 개념</summary>
+
+- [중급 - 1]()
+- [중급 - 2]()
+
+</details>
 
 ### Interview ✨
 <details>
