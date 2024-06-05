@@ -42,8 +42,8 @@
 
 ---
 
-[이전 ↩️ - 자바(Object 클래스) - Object 다형성]()
+[이전 ↩️ - 자바(Object 클래스) - Object 다형성](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/object/%EB%8B%A4%ED%98%95%EC%84%B1.md)
 
-[메인 ⏫]()
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
 
-[다음 ↪️ - 자바(Object 클래스) - `equals()`]()
+[다음 ↪️ - 자바(Object 클래스) - `equals()`](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/object/Equals.md)

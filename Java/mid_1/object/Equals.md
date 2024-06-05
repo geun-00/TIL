@@ -38,8 +38,6 @@
 
 ---
 
-[이전 ↩️ - 자바(Object 클래스) - `toString()`]()
+[이전 ↩️ - 자바(Object 클래스) - `toString()`](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/object/ToString.md)
 
-[메인 ⏫]()
-
-[다음 ↪️ - 자바(Object 클래스) - ]()
+[메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)

@@ -22,7 +22,7 @@
 <details>
   <summary>중급 개념</summary>
 
-- [중급 - 1]()
+- [중급 - 1](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
 - [중급 - 2]()
 
 </details>
