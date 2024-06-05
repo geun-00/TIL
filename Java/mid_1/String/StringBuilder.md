@@ -23,8 +23,8 @@
 
 ---
 
-[이전 ↩️ - 자바(String 클래스) - String 클래스]()
+[이전 ↩️ - 자바(String 클래스) - String 클래스](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/String/String.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
 
-[다음 ↪️ - 자바(String 클래스) - String 최적화]()
+[다음 ↪️ - 자바(String 클래스) - String 최적화](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/String/%EC%B5%9C%EC%A0%81%ED%99%94.md)

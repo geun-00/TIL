@@ -77,4 +77,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
 
-[다음 ↪️ - 자바(String 클래스) - StringBuilder]()
+[다음 ↪️ - 자바(String 클래스) - StringBuilder](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/String/StringBuilder.md)
