@@ -57,8 +57,8 @@ public class Grade extends Enum {
 
 ---
 
-[이전 ↩️ - 자바(ENUM) - 문자열과 타입 안전성 - ENUM이 생겨난 이유]()
+[이전 ↩️ - 자바(ENUM) - 문자열과 타입 안전성 - ENUM이 생겨난 이유](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Enum/TypeSafety.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
 
-[다음 ↪️ - 자바(ENUM) - 열거형 리팩토링]()
+[다음 ↪️ - 자바(ENUM) - 열거형 리팩토링](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Enum/Refac.md)

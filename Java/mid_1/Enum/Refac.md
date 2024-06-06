@@ -48,7 +48,7 @@
 ![img_30.png](image/img_30.png)
 
 - 이 코드를 보면 할인율 계산을 위해 `Grade`의 할인율 값을 꺼내서 사용한다.
-- 객체지향 관점에서 이렇게 자신의 데이터를 외부에 노출하는 것보다는, `Grade` 클래스가 자신의 할인율을 어떻게 계산하는지 계산하는지 스스로 관리하는 것이 캡슐화 원칙에 더 맞다.
+- 객체지향 관점에서 이렇게 자신의 데이터를 외부에 노출하는 것보다는, `Grade` 클래스가 자신의 할인율을 어떻게 계산하는지 스스로 관리하는 것이 캡슐화 원칙에 더 맞다.
 
 ![img_31.png](image/img_31.png)
 
@@ -68,6 +68,6 @@
 
 ---
 
-[이전 ↩️ - 자바(ENUM) - Enum Type]()
+[이전 ↩️ - 자바(ENUM) - Enum Type](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Enum/Enum%20Type.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
