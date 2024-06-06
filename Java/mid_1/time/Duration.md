@@ -31,8 +31,8 @@
 
 ---
 
-[이전 ↩️ - 자바(날짜와 시간) - Instant]()
+[이전 ↩️ - 자바(날짜와 시간) - Instant](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/time/Instant.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
 
-[다음 ↪️ - 자바(날짜와 시간) - 날짜와 시간 핵심 인터페이스]()
+[다음 ↪️ - 자바(날짜와 시간) - 날짜와 시간 핵심 인터페이스](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/time/Interface.md)

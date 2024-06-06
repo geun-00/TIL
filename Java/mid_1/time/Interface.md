@@ -39,8 +39,8 @@
 
 ---
 
-[이전 ↩️ - 자바(날짜와 시간) - Duration, Period]()
+[이전 ↩️ - 자바(날짜와 시간) - Duration, Period](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/time/Duration.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
 
-[다음 ↪️ - 자바(날짜와 시간) - 날짜와 시간 조회하고 조작하기]()
+[다음 ↪️ - 자바(날짜와 시간) - 날짜와 시간 조회하고 조작하기](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/time/%EC%A1%B0%EC%9E%91.md)

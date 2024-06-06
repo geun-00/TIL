@@ -12,8 +12,8 @@
 
 ---
 
-[이전 ↩️ - 자바(날짜와 시간) - ZonedDateTime]()
+[이전 ↩️ - 자바(날짜와 시간) - ZonedDateTime](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/time/ZonedDateTime.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
 
-[다음 ↪️ - 자바(날짜와 시간) - Duration, Period]()
+[다음 ↪️ - 자바(날짜와 시간) - Duration, Period](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/time/Duration.md)
