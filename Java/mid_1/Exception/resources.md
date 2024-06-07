@@ -34,6 +34,6 @@
 
 ---
 
-[이전 ↩️ - 자바(예외 처리) - 실무 예외 처리 방안]()
+[이전 ↩️ - 자바(예외 처리) - 실무 예외 처리 방안](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Exception/%EB%B0%A9%EC%95%88.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
