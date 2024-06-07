@@ -131,8 +131,8 @@ class Outer {
 
 ---
 
-[이전 ↩️ - 자바(중첩, 내부 클래스) - 중첩 클래스, 내부 클래스]()
+[이전 ↩️ - 자바(중첩, 내부 클래스) - 중첩 클래스, 내부 클래스](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Nested/Nested.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
 
-[다음 ↪️ - 자바(중첩, 내부 클래스) - 익명 클래스]()
+[다음 ↪️ - 자바(중첩, 내부 클래스) - 익명 클래스](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Nested/Anonymous.md)

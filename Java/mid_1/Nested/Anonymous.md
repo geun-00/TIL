@@ -86,6 +86,6 @@
 
 ---
 
-[이전 ↩️ - 자바(중첩, 내부 클래스) - 지역 클래스]()
+[이전 ↩️ - 자바(중첩, 내부 클래스) - 지역 클래스](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Nested/Local.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
