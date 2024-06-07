@@ -25,5 +25,18 @@
   - [날짜와 시간 핵심 인터페이스](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/time/Interface.md)
   - [날짜와 시간 조회하고 조작하기](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/time/%EC%A1%B0%EC%9E%91.md)
   - [문자열 파싱과 포맷팅](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/time/Parsing.md)
+- **중첩, 내부 클래스**
+  - [중첩 클래스, 내부 클래스](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Nested/Nested.md)
+  - [지역 클래스](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Nested/Local.md)
+  - [익명 클래스](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Nested/Anonymous.md)
+- **예외 처리**
+  - [예외 처리가 필요한 이유](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Exception/Reason.md)
+  - [예외 계층 및 예외 기본 규칙](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/javaException/javaException.md#%EC%9E%90%EB%B0%94-%EC%98%88%EC%99%B8)
+    - [체크 예외](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/javaException/check/check.md)
+    - [언체크 예외](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/javaException/uncheck/uncheck.md)
+  - [예외 처리 도입](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Exception/%EB%8F%84%EC%9E%85.md)
+  - [예외 계층 활용](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Exception/%EA%B3%84%EC%B8%B5.md)
+  - [실무 예외 처리 방안](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Exception/%EB%B0%A9%EC%95%88.md)
+  - [`try-with-resources`](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Exception/resources.md)
 
 > 내용 참고 : [인프런 - 김영한의 실전 자바 - 중급 1편](https://www.inflearn.com/course/%EA%B9%80%EC%98%81%ED%95%9C%EC%9D%98-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-%EA%B8%B0%EB%B3%B8%ED%8E%B8/dashboard)
