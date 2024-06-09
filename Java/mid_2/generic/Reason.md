@@ -37,4 +37,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(제네릭) - 제네릭]()
+[다음 ↪️ - 자바(제네릭) - 제네릭](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/generic/%EC%A0%81%EC%9A%A9.md)
