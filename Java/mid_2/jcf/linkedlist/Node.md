@@ -69,8 +69,8 @@ IDE가 생성해주는 `toString()`을 사용하면 다음과 같이 출력된�
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크(ArrayList)) - 제네릭 적용]()
+[이전 ↩️ - 자바(컬렉션 프레임워크(ArrayList)) - 제네릭 적용](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/arraylist/Generic.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크(LinkedList)) - 직접 구현하는 연결 리스트]()
+[다음 ↪️ - 자바(컬렉션 프레임워크(LinkedList)) - 직접 구현하는 연결 리스트](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/linkedlist/LinkedList.md)

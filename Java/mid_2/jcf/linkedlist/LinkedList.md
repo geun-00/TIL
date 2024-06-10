@@ -179,8 +179,8 @@
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크(LinkedList)) - 노드와 연결]()
+[이전 ↩️ - 자바(컬렉션 프레임워크(LinkedList)) - 노드와 연결](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/linkedlist/Node.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크(LinkedList)) - 제네릭 적용]()
+[다음 ↪️ - 자바(컬렉션 프레임워크(LinkedList)) - 제네릭 적용](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/linkedlist/Generic.md)

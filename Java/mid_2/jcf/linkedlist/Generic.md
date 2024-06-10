@@ -11,7 +11,7 @@
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크(LinkedList)) - 직접 구현하는 연결 리스트]()
+[이전 ↩️ - 자바(컬렉션 프레임워크(LinkedList)) - 직접 구현하는 연결 리스트](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/linkedlist/LinkedList.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 

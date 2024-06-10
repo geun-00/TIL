@@ -81,8 +81,8 @@
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크(ArrayList)) - 빅오 표기법]()
+[이전 ↩️ - 자바(컬렉션 프레임워크(ArrayList)) - 배열의 특징](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/arraylist/%EB%B0%B0%EC%97%B4%ED%8A%B9%EC%A7%95.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크(ArrayList)) - 제네릭 적용]()
+[다음 ↪️ - 자바(컬렉션 프레임워크(ArrayList)) - 제네릭 적용](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/arraylist/Generic.md)
