@@ -18,6 +18,10 @@
     - [직접 구현하는 연결 리스트](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/linkedlist/LinkedList.md)
     - [직접 구현하는 연결 리스트(제네릭 적용)](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/linkedlist/Generic.md)
   - **List**
-    - [리스트 추상화]()
+    - [리스트 추상화](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/list/%EC%B6%94%EC%83%81%ED%99%94.md)
+    - [직접 구현한 리스트 성능 비교](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/list/%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90_1.md)
+    - [자바 리스트](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/list/List.md)
+    - [자바 리스트 성능 비교](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/list/%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90_2.md)
+  - **해시(Hash)**
 
 > 내용 참고 : [인프런 - 김영한의 실전 자바 - 중급 2편](https://www.inflearn.com/course/%EA%B9%80%EC%98%81%ED%95%9C%EC%9D%98-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-%EC%A4%91%EA%B8%89-2/dashboard)

@@ -15,4 +15,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크(List)) - 리스트 추상화]()
+[다음 ↪️ - 자바(컬렉션 프레임워크(List)) - 리스트 추상화](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/list/%EC%B6%94%EC%83%81%ED%99%94.md)

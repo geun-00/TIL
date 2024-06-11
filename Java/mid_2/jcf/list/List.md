@@ -54,9 +54,13 @@
 
 **단일 연결 리스트**
 
+![img_18.png](image/img_18.png)
+
 - 직접 만든 `MyLinkedList`의 노드는 다음 노드로만 이동할 수 있는 단일 연결 구조다. 이전 노드로 이동할 수 없다는 단점이 있다.
 
 **이중 연결 리스트**
+
+![img_19.png](image/img_19.png)
 
 - 자바가 제공하는 `LinkedList`는 이중 연결 구조를 사용한다. 이 구조는 다음 노드 뿐만 아니라 이전 노드로도 이동할 수 있다.
 - 마지막 노드에 대한 참조를 제공하기 때문에 데이터를 마지막에 추가하는 경우에도 `O(1)`의 성능을 제공한다.
@@ -66,8 +70,8 @@
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크(List)) - 직접 구현한 리스트 성능 비교]()
+[이전 ↩️ - 자바(컬렉션 프레임워크(List)) - 직접 구현한 리스트 성능 비교](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/list/%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90_1.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크(List)) - 자바 리스트 성능 비교]()
+[다음 ↪️ - 자바(컬렉션 프레임워크(List)) - 자바 리스트 성능 비교](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/list/%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90_2.md)
