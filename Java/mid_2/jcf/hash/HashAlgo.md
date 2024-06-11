@@ -122,7 +122,7 @@
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크(Hash)) - 직접 구현하는 SetV0]()
+[이전 ↩️ - 자바(컬렉션 프레임워크(Hash)) - 직접 구현하는 SetV0](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hash/ListSet.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 

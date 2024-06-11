@@ -35,8 +35,8 @@
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크(List)) - 자바 리스트 성능 비교]()
+[이전 ↩️ - 자바(컬렉션 프레임워크(List)) - 자바 리스트 성능 비교](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/list/%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90_2.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크(Hash)) - 해시 알고리즘]()
+[다음 ↪️ - 자바(컬렉션 프레임워크(Hash)) - 해시 알고리즘](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hash/HashAlgo.md)

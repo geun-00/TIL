@@ -23,5 +23,9 @@
     - [자바 리스트](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/list/List.md)
     - [자바 리스트 성능 비교](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/list/%EC%84%B1%EB%8A%A5%EB%B9%84%EA%B5%90_2.md)
   - **해시(Hash)**
+    - [직접 구현하는 HashSetV0](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hash/ListSet.md)
+    - [해시 알고리즘](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hash/HashAlgo.md)
+  - **HashSet**
+    - [직접 구현하는 HashSetV1]()
 
 > 내용 참고 : [인프런 - 김영한의 실전 자바 - 중급 2편](https://www.inflearn.com/course/%EA%B9%80%EC%98%81%ED%95%9C%EC%9D%98-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-%EC%A4%91%EA%B8%89-2/dashboard)
