@@ -36,13 +36,13 @@
 
 **정리**
 - 어떤 객체든지 정수로 만든 해시 코드만 정의할 수 있다면 해시 인덱스를 사용할 수 있다.
-- 그렇다면 문자 뿐만 아니라 직접 만든 클래스는 어떻게 해시 코드를 정의할 수 있을까?
+- 그렇다면 **문자 뿐만 아니라 직접 만든 클래스는 어떻게 해시 코드를 정의할 수 있을까?**
 - 자바에는 `hashCode()`라는 메서드를 제공한다.
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크(HashSet)) - 직접 구현하는 HashSetV1]()
+[이전 ↩️ - 자바(컬렉션 프레임워크(HashSet)) - 직접 구현하는 HashSetV1](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/MyHashSetV1.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크(HashSet)) - 자바의 `hashCode()`]()
+[다음 ↪️ - 자바(컬렉션 프레임워크(HashSet)) - 자바의 `hashCode()`](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/JavaHashCode.md)

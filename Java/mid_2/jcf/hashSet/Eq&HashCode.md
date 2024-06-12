@@ -117,8 +117,8 @@
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크(HashSet)) - 직접 구현하는 HashSetV2]()
+[이전 ↩️ - 자바(컬렉션 프레임워크(HashSet)) - 직접 구현하는 HashSetV2](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/MyHashSetV2.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크(HashSet)) - 직접 구현하는 HashSetV3(제네릭 적용)]()
+[다음 ↪️ - 자바(컬렉션 프레임워크(HashSet)) - 직접 구현하는 HashSetV3(제네릭 적용)](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/Generic.md)

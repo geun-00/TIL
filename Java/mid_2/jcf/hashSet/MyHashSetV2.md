@@ -46,8 +46,8 @@
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크(HashSet)) - 자바 `hashCode()`]()
+[이전 ↩️ - 자바(컬렉션 프레임워크(HashSet)) - 자바 `hashCode()`](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/JavaHashCode.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크(HashSet)) - equals와 hashCode의 중요성]()
+[다음 ↪️ - 자바(컬렉션 프레임워크(HashSet)) - equals와 hashCode의 중요성](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/Eq%26HashCode.md)

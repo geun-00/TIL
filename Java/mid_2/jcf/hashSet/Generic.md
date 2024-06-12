@@ -17,8 +17,8 @@
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크(HashSet)) - equals, hashCode의 중요성]()
+[이전 ↩️ - 자바(컬렉션 프레임워크(HashSet)) - equals, hashCode의 중요성](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/Eq%26HashCode.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크(HashSet)) - 자바가 제공하는 Set]()
+[다음 ↪️ - 자바(컬렉션 프레임워크(HashSet)) - 자바가 제공하는 Set](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/JavaSet.md)

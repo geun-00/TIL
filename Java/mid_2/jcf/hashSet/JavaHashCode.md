@@ -41,8 +41,8 @@
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크(HashSet)) - 문자열 해시코드]()
+[이전 ↩️ - 자바(컬렉션 프레임워크(HashSet)) - 문자열 해시코드](https://github.com/genesis12345678/TIL/tree/main/Java/mid_2/jcf/hashSet)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크(HashSet)) - 직접 구현하는 HashSetV2]()
+[다음 ↪️ - 자바(컬렉션 프레임워크(HashSet)) - 직접 구현하는 HashSetV2](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/MyHashSetV2.md)
