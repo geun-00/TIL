@@ -27,7 +27,7 @@
     - [해시 알고리즘](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hash/HashAlgo.md)
   - **HashSet**
     - [직접 구현하는 HashSetV1](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/MyHashSetV1.md)
-    - [문자열 해시코드](https://github.com/genesis12345678/TIL/tree/main/Java/mid_2/jcf/hashSet)
+    - [문자열 해시코드](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/StrHashCode.md)
     - [자바 `hashCode()`](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/JavaHashCode.md)
     - [직접 구현하는 HashSetV2](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/MyHashSetV2.md)
     - [equals, hashCode의 중요성](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/Eq%26HashCode.md)

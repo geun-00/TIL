@@ -25,4 +25,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크(HashSet)) - 문자열 해시 코드](https://github.com/genesis12345678/TIL/tree/main/Java/mid_2/jcf/hashSet)
+[다음 ↪️ - 자바(컬렉션 프레임워크(HashSet)) - 문자열 해시 코드](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/hashSet/StrHashCode.md)
