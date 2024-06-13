@@ -81,8 +81,8 @@ List<Integer> list = List.of(1, 2, 3);
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크) - 정렬(`Comparable`, `Comparator`)]()
+[이전 ↩️ - 자바(컬렉션 프레임워크) - 정렬(`Comparable`, `Comparator`)](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/Sort.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크) - 컬렉션 프레임워크 전체 정리]()
+[다음 ↪️ - 자바(컬렉션 프레임워크) - 컬렉션 프레임워크 전체 정리](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/%EC%A0%95%EB%A6%AC.md)

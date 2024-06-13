@@ -29,8 +29,8 @@
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크) - 직접 구현하는 `Iterable`, `Iterator`]()
+[이전 ↩️ - 자바(컬렉션 프레임워크) - 직접 구현하는 `Iterable`, `Iterator`](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/%EC%A7%81%EC%A0%91%EA%B5%AC%ED%98%84Iterable.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크) - 정렬(`Comparable`, `Comparator`)]()
+[다음 ↪️ - 자바(컬렉션 프레임워크) - 정렬(`Comparable`, `Comparator`)](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/Sort.md)

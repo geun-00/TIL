@@ -29,7 +29,7 @@ public interface Comparator<T> {
 
 ![img_36.png](image/img_36.png)
 
-- `Arrays.sort()`를 사용할 때 비교자(`Comparator`)를 넘겨주면 알고리즘에서 어떤 값이 더 큰지 두 값을 비교할 대 비교자를 사용한다.
+- `Arrays.sort()`를 사용할 때 비교자(`Comparator`)를 넘겨주면 알고리즘에서 어떤 값이 더 큰지 두 값을 비교할 때 비교자를 사용한다.
 - 정렬을 반대로 할 때 `reversed()` 메서드를 사용할 수 있다.
 - `Comparator`는 함수형 인터페이스이기 때문에 익명 클래스 및 람다 표현식이 가능하다.
 
@@ -90,7 +90,7 @@ public interface Comparator<T> {
   - 별도의 비교자로 정렬하고 싶을 때 비교자를 전달하면 된다.
   - 하지만 이 방식보다는 객체 스스로 정렬 메서드를 가지고 있는 `list.sort()` 사용을 더 권장한다.(둘의 결과는 같다)
 - **list.sort(null) 또는 list.sort(Comparator)**
-  - `null`을 전달하면 `자연적인 순서로 비교, 비교자를 전달하면 전달한 비교자로 비교한다.
+  - `null`을 전달하면 자연적인 순서로 비교, 비교자를 전달하면 전달한 비교자로 비교한다.
   - 자바 1.8 부터 사용
 
 ![img_45.png](image/img_45.png)
@@ -115,8 +115,8 @@ public interface Comparator<T> {
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크) - 자바가 제공하는 `Iterable`, `Iterator`]()
+[이전 ↩️ - 자바(컬렉션 프레임워크) - 자바가 제공하는 `Iterable`, `Iterator`](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/%EC%9E%90%EB%B0%94Iterable.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크) - 컬렉션 유틸]()
+[다음 ↪️ - 자바(컬렉션 프레임워크) - 컬렉션 유틸](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/Util.md)

@@ -49,7 +49,7 @@
 
 - `Deque`의 대표적인 구현체 `ArrayDeque`와 `LinkedList` 중에 `ArrayDeque`가 모든 면에서 더 빠르다.
 - 둘의 차이는 `ArrayList`와 `LinkedList`의 차이와 비슷한데, 작동 원리가 하나는 배열을 사용하고 하나는 동적 노드 링크를 사용하기 때문이다.
-- `ArrayDeque`는 추가로 특별한 원형 큐 자료 구조를 사용하는데, 덕분아 앞, 뒤 입력 모두 `O(1)`의 성능을 제공한다.
+- `ArrayDeque`는 추가로 특별한 원형 큐 자료 구조를 사용하는데, 덕분에 앞, 뒤 입력 모두 `O(1)`의 성능을 제공한다.
 - `LinkedList`도 앞, 뒤 입력 모두 `O(1)`의 성능을 제공한다.
 - 이론적으로 `LinkedList`가 삽입, 삭제가 자주 발생할 때 더 효율적일 수 있지만, 현대 컴퓨터 시스템의 메모리 접근 패턴, CPU 캐시 최적화 등을 고려할 때
   배열을 사용하는 `ArrayDeque`가 실제 사용 환경에서 더 나은 성능을 보여주는 경우가 많다.
@@ -82,8 +82,8 @@
 
 ---
 
-[이전 ↩️ - 자바(컬렉션 프레임워크) - Map]()
+[이전 ↩️ - 자바(컬렉션 프레임워크) - Map](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/Map.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 
-[다음 ↪️ - 자바(컬렉션 프레임워크) - 직접 구현하는 `Iterable`, `Iterator`]()
+[다음 ↪️ - 자바(컬렉션 프레임워크) - 직접 구현하는 `Iterable`, `Iterator`](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/jcf/%EC%A7%81%EC%A0%91%EA%B5%AC%ED%98%84Iterable.md)
