@@ -63,7 +63,7 @@
 
 ---
 
-[이전 ↩️ - 운영 체제 기본 지식 - 사용자 & 커널 모드]()
+[이전 ↩️ - 운영 체제 기본 지식 - 사용자 & 커널 모드](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/os/KernelMode.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 

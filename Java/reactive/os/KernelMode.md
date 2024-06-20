@@ -49,8 +49,8 @@
 
 ---
 
-[이전 ↩️ - 운영 체제 기본 지식 - CPU & I/O Bound]()
+[이전 ↩️ - 운영 체제 기본 지식 - CPU & I/O Bound](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/os/Bound.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - 운영 체제 기본 지식 - 사용자 & 커널 수준 스레드]()
+[다음 ↪️ - 운영 체제 기본 지식 - 사용자 & 커널 수준 스레드](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/os/LevelThread.md)

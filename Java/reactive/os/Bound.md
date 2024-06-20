@@ -52,8 +52,8 @@
 
 ---
 
-[이전 ↩️ - 운영 체제 기본 지식 - Context Switching]()
+[이전 ↩️ - 운영 체제 기본 지식 - Context Switching](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/os/Context%20Switching.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - 운영 체제 기본 지식 - 사용자 & 커널 모드]()
+[다음 ↪️ - 운영 체제 기본 지식 - 사용자 & 커널 모드](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/os/KernelMode.md)

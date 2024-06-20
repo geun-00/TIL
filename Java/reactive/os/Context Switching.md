@@ -74,8 +74,8 @@
 
 ---
 
-[이전 ↩️ - 운영 체제 기본 지식 - 동시성과 병렬성]()
+[이전 ↩️ - 운영 체제 기본 지식 - 동시성과 병렬성](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/os/Concurrency.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - 운영 체제 기본 지식 - CPU & I/O Bound]()
+[다음 ↪️ - 운영 체제 기본 지식 - CPU & I/O Bound](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/os/Bound.md)

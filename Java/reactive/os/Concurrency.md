@@ -81,8 +81,8 @@
 
 ---
 
-[이전 ↩️ - 운영 체제 기본 지식 - 프로세스와 스레드]()
+[이전 ↩️ - 운영 체제 기본 지식 - 프로세스와 스레드](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/os/ProcessThread.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - 운영 체제 기본 지식 - Context Switching]()
+[다음 ↪️ - 운영 체제 기본 지식 - Context Switching](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/os/Context%20Switching.md)
