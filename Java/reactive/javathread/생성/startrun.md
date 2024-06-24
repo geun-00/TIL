@@ -27,7 +27,7 @@
 # 스레드 스택
 
 - 스레드가 생성되면 해당 스레드를 위한 스택(`stack`)이 같이 만들어진다.
-- 스택은 각 스레드마다 독립적으로 할당되어 작동하기 때문에 스레드 간 접근하거나 공유할 수 없고, 이는 스레드로부터 안전하다 할 수 있다.
+- 스택은 각 스레드마다 독립적으로 할당되어 작동하기 때문에 스레드 간 접근하거나 공유할 수 없고, 이는 **스레드로부터 안전하다** 할 수 있다.
 - 스택은 OS에 따라 크기가 주어지고 주어진 크기를 넘게 되면 `java.lang.StackOverFlowError`가 발생하게 된다.
 
 ![img_17.png](image/img_17.png)
@@ -35,7 +35,7 @@
 ### 스택의 구성 정보
 
 - 스택에 대한 메모리 접근은 후입선출 순서로 이루어지며, 스택은 프레임(`Frame`)으로 구성되어 있다.
-- 프레임은 새 메서드를 호출할 때마다 로컬 변수(지역 변수, 파라미터) 및 객체 참조 변수와 함께 스택의 맨 위애 생성(`push`)되고, 메서드 실행이 완료되면
+- 프레임은 새 메서드를 호출할 때마다 로컬 변수(지역 변수, 파라미터) 및 객체 참조 변수와 함께 스택의 맨 위에 생성(`push`)되고, 메서드 실행이 완료되면
     해당 스택 프레임이 제거(`pop`)되고 흐름이 호출한 메서드로 돌아가며 공간이 다음 메서드에 사용 가능해진다.
 
 ![img_18.png](image/img_18.png)
@@ -59,8 +59,8 @@
 
 ---
 
-[이전 ↩️ - Java Thread - 스레드 생성]()
+[이전 ↩️ - Java Thread - 스레드 생성](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/%EC%83%9D%EC%84%B1/%EC%8A%A4%EB%A0%88%EB%93%9C%EC%83%9D%EC%84%B1.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Thread - 스레드 생명주기와 상태]()
+[다음 ↪️ - Java Thread - 스레드 생명주기와 상태](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/%EC%83%9D%EC%84%B1/state.md)
