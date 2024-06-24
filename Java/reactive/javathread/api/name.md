@@ -6,7 +6,7 @@
 - 디버깅 할 때 어떤 스레드가 무슨 작업을 하고 있는지 정확하게 파악하기 위해서 스레드 이름을 정하는 것은 큰 도움이 된다.
 - 자바에서 스레드가 생성되면 스레드 이름이 자동으로 주어진다.
   - 가장 먼저 생성되는 메인 스레드의 이름은 `main` 이다.
-  - 스레드 이름은 `Thread-0`, `Thread-1` , ... `Thread-n`과 같이 0부터 순차적으로 숫자를 증가하면서 이름이 만들어진다.
+  - 스레드 이름은 `Thread-0`, `Thread-1` , ... , `Thread-n`과 같이 0부터 순차적으로 숫자를 증가하면서 이름이 만들어진다.
 - 자바에서 사용자가 스레드 이름을 정하는 방법은 두 가지를 제공한다.
   - 스레드 객체 생성 시 인자로 전달
     - `Thread myThread = new Thread([ThreadGroup], [Runnalbe], "myThread");`
@@ -45,8 +45,8 @@
 
 ---
 
-[이전 ↩️ - Java Thread - `interrupt()` & `interrupted()` & `isInterrupted()`]()
+[이전 ↩️ - Java Thread - `interrupt()` & `interrupted()` & `isInterrupted()`](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/api/interrupt.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Thread - Priority]()
+[다음 ↪️ - Java Thread - Priority](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/api/Priority.md)

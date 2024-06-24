@@ -81,8 +81,8 @@
 
 ---
 
-[이전 ↩️ - Java Thread - `join()`]()
+[이전 ↩️ - Java Thread - `join()`](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/api/join.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Thread - `name()` & `currentThread()` & `isAlive()`]()
+[다음 ↪️ - Java Thread - `name()` & `currentThread()` & `isAlive()`](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/api/name.md)

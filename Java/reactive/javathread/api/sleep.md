@@ -73,31 +73,31 @@
 
 ![img_6.png](image/img_6.png)
 
-2초 후에 코드가 실행된다.
+> 2초 후에 코드가 실행된다.
 
 ![img_7.png](image/img_7.png)
 
 ![img_8.png](image/img_8.png)
 
-1초 간격으로 출력한다.
+> 1초 간격으로 출력한다.
 
 ![img_9.png](image/img_9.png)
 
 ![img_10.png](image/img_10.png)
 
-멀티 스레드에서 각각의 스레드에게 `sleep()`을 사용한다.
+> 멀티 스레드에서 각각의 스레드에게 `sleep()`을 사용한다.
 
 ![img_11.png](image/img_11.png)
 
 ![img_12.png](image/img_12.png)
 
-- 20초 동안 잠드는 스레드에게 1초 후에 인터럽트를 걸었으므로 예외가 발생한다.
-- 인터럽트를 걸지 않았다면 20초 후에 정상 흐름대로 실행하게 된다.
+> - 20초 동안 잠드는 스레드에게 1초 후에 인터럽트를 걸었으므로 예외가 발생한다.
+> - 인터럽트를 걸지 않았다면 20초 후에 정상 흐름대로 실행하게 된다.
 
 ---
 
-[이전 ↩️ - Java Thread - 스레드 생명 주기와 상태]()
+[이전 ↩️ - Java Thread - 스레드 생명 주기와 상태](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/%EC%83%9D%EC%84%B1/state.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Thread - `join()`]()
+[다음 ↪️ - Java Thread - `join()`](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/api/join.md)

@@ -48,8 +48,8 @@
 
 ---
 
-[이전 ↩️ - Java Thread - `name()` & `currentThread()` & `isAlive()`]()
+[이전 ↩️ - Java Thread - `name()` & `currentThread()` & `isAlive()`](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/api/name.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Thread - ]()
+[다음 ↪️ - Java Thread - 스레드 예외처리]()

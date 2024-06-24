@@ -55,13 +55,13 @@
 
 ![img_17.png](image/img_17.png)
 
-메인 스레드는 `thread`의 작업이 종료될 때까지 이후 작업을 수행할 수 없다.
+> 메인 스레드는 `thread`의 작업이 종료될 때까지 이후 작업을 수행할 수 없다.
 
 ![img_18.png](image/img_18.png)
 
 ![img_19.png](image/img_19.png)
 
-멀티 스레드 상황에서도 메인 스레드는 n개의 스레드가 작업을 모두 마칠 때까지 이후 작업을 수행할 수 없다.
+> 멀티 스레드 상황에서도 메인 스레드는 n개의 스레드가 작업을 모두 마칠 때까지 이후 작업을 수행할 수 없다.
 
 ![img_20.png](image/img_20.png)
 
@@ -69,8 +69,8 @@
 
 ---
 
-[이전 ↩️ - Java Thread - `sleep()`]()
+[이전 ↩️ - Java Thread - `sleep()`](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/api/sleep.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Thread - `interrupt()` & `interrupted()` & `isInterrupted()`]()
+[다음 ↪️ - Java Thread - `interrupt()` & `interrupted()` & `isInterrupted()`](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/api/interrupt.md)
