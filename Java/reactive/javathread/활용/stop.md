@@ -21,7 +21,7 @@
 
 > - 플래그 변수의 값을 변경한다 하더라도 메모리에 바로 반영되는 것이 아니라 효율을 위해 각 스레드의 캐시 메모리에 우선 저장이 된다.
 > - 각 스레드는 서로 다른 캐시 메모리를 사용하기 때문에 다른 스레드에서 플래그 변수 값을 읽을 때 변경된 값을 즉시 읽지 못할 수 있다.
-> - `volatile` 키워드는 메인 메모리에 직접 접근하여 모든 스레드가 최산 값을 볼 수 있게 해준다.
+> - `volatile` 키워드는 메인 메모리에 직접 접근하여 모든 스레드가 최신 값을 볼 수 있게 해준다.
 > - 또한 컨텍스트 스위칭을 활용하여 같은 효과를 볼 수 있다.
 > - 컨텍스트 스위칭 과정에서 캐시 메모리를 초기화하고, 다시 컨텍스트 스위칭 되는 과정에서 메모리 동기화가 이루어지기 때문에 최신 값을 읽어올 수 있다.
 
@@ -68,8 +68,8 @@
 
 ---
 
-[이전 ↩️ - Java Thread - 스레드 예외 처리]()
+[이전 ↩️ - Java Thread - 스레드 예외 처리](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/%ED%99%9C%EC%9A%A9/UncaughtExceptionHandler.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Thread - 사용자 스레드와 데몬 스레드]()
+[다음 ↪️ - Java Thread - 사용자 스레드와 데몬 스레드](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/%ED%99%9C%EC%9A%A9/Daemod.md)

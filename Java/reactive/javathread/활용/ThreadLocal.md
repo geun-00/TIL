@@ -32,7 +32,7 @@
 
 - 스레드는 `ThreadLocal`에 있는 `ThreadLocalMap` 객체를 자신의 `threadLocals` 속성에 저장한다.
 - 스레드 생성 시 `threadLocals` 기본값은 `null` 이며, `ThreadLocal`에 값을 저장할 때 `ThreadLocalMap`이 생성되고 `threadLocals`와 연결된다.
-- 스레드가 전역적으로 값을 참조할 수 있는 원리는 스레드가 `ThreadLocal`의 `ThreadLocalMap`에 접근해서 여기에 저장된 값을 바로 꺼내어 쓸 수 있기 때문이다.
+- **스레드가 전역적으로 값을 참조할 수 있는 원리는 스레드가 `ThreadLocal`의 `ThreadLocalMap`에 접근해서 여기에 저장된 값을 바로 꺼내어 쓸 수 있기 때문이다.**
 
 ![img_45.png](image/img_45.png)
 
@@ -54,7 +54,7 @@
 ## ThreadLocal 작동원리
 
 - `ThreadLocal`은 `Thread`와 `ThreadLocalMap`을 연결하여 스레드 전용 저장소를 구현하고 있는데 이것이 가능한 이유는 `Thread.currentThread()`를 참조할 수 있기 때문이다.
-- `Thread.currentThread()`는 현재 실행 중인 스레드의 객체를 참조한다. CPU는 오직 하나의 스레드만 할당받아 처리하기 때문에 `ThreadLocal`에서
+- `Thread.currentThread()`는 현재 실행 중인 스레드의 객체를 참조한다. 그리고 CPU는 오직 하나의 스레드만 할당받아 처리하기 때문에 `ThreadLocal`에서
   `Thread.currentThread()`를 참조하면 지금 실행 중인 스레드의 로컬 변수를 저장하거나 참조할 수 있게 된다.
 - `ThreadLocal`에서 현재 스레드를 참조할 수 있는 방법이 없다면 값을 저장하거나 요청하는 스레드를 식별할 수 없기 때문에 `Thread.currentThread()`는 `ThreadLocal`의 중요한 데이터 식별 기준이 된다.
 
@@ -92,7 +92,7 @@
 
 ---
 
-[이전 ↩️ - Java Thread - ThreadGroup]()
+[이전 ↩️ - Java Thread - ThreadGroup](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/%ED%99%9C%EC%9A%A9/ThreadGroup.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 

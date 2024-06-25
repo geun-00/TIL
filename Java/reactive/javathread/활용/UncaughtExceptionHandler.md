@@ -33,17 +33,23 @@
 
 ## 예제 코드
 
+### 1
+
 ![img_2.png](image/img_2.png)
 
 ![img_3.png](image/img_3.png)
 
 > 스레드 실행 중 예외가 발생하더라도 `catch` 구문으로 가지 못하게 되고, 예외는 사라져 버린다.
 
+### 2
+
 ![img_4.png](image/img_4.png)
 
 ![img_5.png](image/img_5.png)
 
 > `setDefaultUncaughtExceptionHandler()`로 모든 스레드에 대한 예외 처리를 할 수 있다.
+
+### 3
 
 ![img_6.png](image/img_6.png)
 
@@ -53,8 +59,8 @@
 
 ---
 
-[이전 ↩️ - Java Thread - Priority]()
+[이전 ↩️ - Java Thread - Priority](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/api/Priority.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Thread - 스레드 중지]()
+[다음 ↪️ - Java Thread - 스레드 중지](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/%ED%99%9C%EC%9A%A9/stop.md)

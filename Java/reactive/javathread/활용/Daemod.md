@@ -2,7 +2,7 @@
 
 ## 사용자 스레드와 데몬 스레드
 
-- 자바에는 크게 사용자 스레드와 데몬 스레드 두 가지 유형의 스레드로 구분할 수 있다.
+- 자바에는 크게 **사용자 스레드**와 **데몬 스레드** 두 가지 유형의 스레드로 구분할 수 있다.
 - 사용자 스레드는 사용자 스레드를 낳고, 데몬 스레드는 데몬 스레드를 낳는다. 즉, 자식 스레드는 부모 스레드의 상태를 상속 받는다.
 - 자바 애플리케이션이 실행 되면 JVM은 사용자 스레드인 메인 스레드와 나머지 데몬 스레드를 동시에 생성하고 시작한다.
 
@@ -67,8 +67,8 @@
 
 ---
 
-[이전 ↩️ - Java Thread - 스레드 중지]()
+[이전 ↩️ - Java Thread - 스레드 중지](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/%ED%99%9C%EC%9A%A9/stop.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Thread - ThreadGroup]()
+[다음 ↪️ - Java Thread - ThreadGroup](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/%ED%99%9C%EC%9A%A9/ThreadGroup.md)
