@@ -44,8 +44,8 @@
 
 ---
 
-[이전 ↩️ - 동기화 개념 - 동기화와 CPU 관계]()
+[이전 ↩️ - 동기화 개념 - 동기화와 CPU 관계](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/synchronization/%EA%B0%9C%EB%85%90/CPU.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - 동기화 개념 - 안전한 스레드 구성]()
+[다음 ↪️ - 동기화 개념 - 안전한 스레드 구성](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/synchronization/%EA%B0%9C%EB%85%90/ThreadSafe.md)

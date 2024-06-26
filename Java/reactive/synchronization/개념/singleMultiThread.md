@@ -71,8 +71,8 @@
 
 ---
 
-[이전 ↩️ - Java Thread - ThreadLocal]()
+[이전 ↩️ - Java Thread - ThreadLocal](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javathread/%ED%99%9C%EC%9A%A9/ThreadLocal.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - 동기화 개념 - 동기화와 CPU 관계]()
+[다음 ↪️ - 동기화 개념 - 동기화와 CPU 관계](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/synchronization/%EA%B0%9C%EB%85%90/CPU.md)

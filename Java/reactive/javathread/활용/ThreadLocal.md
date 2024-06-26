@@ -96,4 +96,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - 동기화 개념 - 싱글 스레드와 멀티 스레드]()
+[다음 ↪️ - 동기화 개념 - 싱글 스레드와 멀티 스레드](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/synchronization/%EA%B0%9C%EB%85%90/singleMultiThread.md)
