@@ -2,7 +2,7 @@
 
 ## 스핀락 (SpinLock)
 
-- 스핀락은 뮤텍스나 세마포어와 같은 동기화 기법의 일종으로, 기다리지 않고 스레드가 임계 영역을 사용할 수 있을 때까지 계속 반복하여 검사하는 동기화 메커니즘이다.
+- 스핀락은 뮤텍스나 세마포어와 같은 동기화 기법의 일종으로, **기다리지 않고 스레드가 임계 영역을 사용할 수 있을 때까지 계속 반복하여 검사하는 동기화 메커니즘이다.**
 
 ![img_30.png](image/img_30.png)
 
@@ -48,7 +48,7 @@
 
 ---
 
-[이전 ↩️ - 동기화 기법 - 모니터]()
+[이전 ↩️ - 동기화 기법 - 모니터](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/synchronization/%EA%B8%B0%EB%B2%95/Monitor.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 

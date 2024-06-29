@@ -72,4 +72,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - 동기화 기법 - 상호 배제]()
+[다음 ↪️ - 동기화 기법 - 상호 배제](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/synchronization/%EA%B8%B0%EB%B2%95/Mutex.md)
