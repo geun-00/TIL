@@ -65,7 +65,7 @@
 ## synchronized
 
 - `synchronized` 블록을 사용하면 한 시점에 오직 하나의 스레드만이 동기화 영역에 접근할 수 있도록 보장해준다.(상호 배제)
-- `synchronized` 블록 안에서 참조되는 모든 변수들은 메인 메모리로부터 읽어들여지고, 블록을 벗어나면 그 동안 수정된 모든 변수들이 즉시 메인 메모리로 반영될 수 있도록 해준다.
+- **`synchronized` 블록 안에서 참조되는 모든 변수들은 메인 메모리로부터 읽어들여지고, 블록을 벗어나면 그 동안 수정된 모든 변수들이 즉시 메인 메모리로 반영될 수 있도록 해준다.**
 - `synchronized` 는 상호 배제와 함께 가시성의 문제까지 해결할 수 있는 기능을 포함하고 있다.
   - `synchronized` 블록 내에서는 `volatile` 키워드가 없어도 된다.
 
@@ -91,8 +91,8 @@
 
 ---
 
-[이전 ↩️ - Java Synchronization - 스레드 간 협력(`wait()` & `notify()`)]()
+[이전 ↩️ - Java Synchronization - 스레드 간 협력(`wait()` & `notify()`)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/synchronization/javaSync/notify.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Synchronization - 교착 상태(DeadLock)]()
+[다음 ↪️ - Java Synchronization - 교착 상태(DeadLock)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/synchronization/javaSync/Deadlock.md)

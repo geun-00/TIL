@@ -140,7 +140,7 @@
 
 ---
 
-[이전 ↩️ - Java Synchronization - `volatile`(메모리 동기화)]()
+[이전 ↩️ - Java Synchronization - `volatile`(메모리 동기화)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/synchronization/javaSync/volatile.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 

@@ -4,7 +4,7 @@
 
 - `wait()`, `notify()`, `notifyAll()`은 모니터 객체의 조건 변수와 함께 사용해서 동기화를 구현할 수 있는 동기화 메커니즘이라 할 수 있다.
 - `wait()`, `notify()`, `notifyAll()`은 뮤텍스(상호 배제) 동기화 기법으로 충족되지 않는 동기화 문제를 해결할 수 있는 협력에 의한 동기화 장치이다.
-- `wait()`, `notify()`, `notifyAll()`은 반드시 `synchronized` 블록 안에서만 사용해야 하며 이는 스레드가 모니터 락을 확보한 상태에서 이 API 들이 작동한다는 것을 의미한다.
+- **`wait()`, `notify()`, `notifyAll()`은 반드시 `synchronized` 블록 안에서만 사용해야 하며 이는 스레드가 모니터 락을 확보한 상태에서 이 API 들이 작동한다는 것을 의미한다.**
 
 ![img_23.png](image/img_23.png)
 
@@ -61,8 +61,8 @@
 
 ---
 
-[이전 ↩️ - Java Synchronization - `synchronized` 기본]()
+[이전 ↩️ - Java Synchronization - `synchronized` 기본](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/synchronization/javaSync/%EA%B8%B0%EB%B3%B8.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Synchronization - `volatile`(메모리 동기화)]()
+[다음 ↪️ - Java Synchronization - `volatile`(메모리 동기화)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/synchronization/javaSync/volatile.md)

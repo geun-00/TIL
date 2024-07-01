@@ -52,4 +52,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Synchronization - `synchronized` 기본]()
+[다음 ↪️ - Java Synchronization - `synchronized` 기본](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/synchronization/javaSync/%EA%B8%B0%EB%B3%B8.md)
