@@ -2,7 +2,7 @@
 
 ## Lock & ReentrantLock
 
-- `Lock` 구현은 `synchronized` 구문과 마찬가지로 상호 배제와 가시성 기능을 가진 동기화 기법이며 `synchronized` 보다 더 확장된 락 작업을 제공한다.
+- `Lock` 구현은 `synchronized` 구문과 마찬가지로 **상호 배제**와 **가시성 기능**을 가진 동기화 기법이며 `synchronized` 보다 더 확장된 락 작업을 제공한다.
 - `Lock` 구현은 락을 획득 시 블록되지 않는 비 차단 시도(`tryLock()`), 인터럽트가 가능한 방식으로 락을 획득하는 시도(`lockInterruptibly()`) 및 시간 
     제한을 둔 방식으로 락을 획득하는 시도(`tryLock()`)와 같은 추가 기능을 제공한다.
 - `synchronized` 사용은 락 획득과 락 해제가 블록 구조화된 방식으로 발생하도록 강제한다.
@@ -49,7 +49,7 @@
 - `lockInterruptibly()` : 락 획득을 시도하거나 대기하는 중에 중단이 필요한 경우
 - `tryLock(long time, TimeUnit unit)` : 지정된 시간 안에 락 획득이 필요한 경우
 - `new ReentrantLock(true)` : 공정하게 락을 획득하는 정책을 사용하는 경우
-- `{ lock.lock() } { ... } { lock.unlock() }` : 락의 획득과 해제가 단일 블롯을 벗어나는 경우
+- `{ lock.lock() } { ... } { lock.unlock() }` : 락의 획득과 해제가 단일 블록을 벗어나는 경우
 
 ### synchronized
 
@@ -137,8 +137,8 @@
 
 ---
 
-[이전 ↩️ - Java Synchronization - 교착 상태(DeadLock)]()
+[이전 ↩️ - Java Synchronization - 교착 상태(DeadLock)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/synchronization/javaSync/Deadlock.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Locks - ReadWriteLock & ReentrantReadWriteLock]()
+[다음 ↪️ - Java Locks - ReadWriteLock & ReentrantReadWriteLock](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/locks/ReentrantReadWriteLock.md)

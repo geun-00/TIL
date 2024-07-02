@@ -190,8 +190,8 @@
 
 ---
 
-[이전 ↩️ - Java Locks - Lock & ReentrantLock]()
+[이전 ↩️ - Java Locks - Lock & ReentrantLock](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/locks/ReentrantLock.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java Locks - Condition]()
+[다음 ↪️ - Java Locks - Condition](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/locks/Condition.md)
