@@ -65,8 +65,8 @@
 
 ---
 
-[이전 ↩️ - Java 동기화 도구 - CAS(Compare and Swap)]()
+[이전 ↩️ - Java 동기화 도구 - CAS(Compare and Swap)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaSync/CAS.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java 동기화 도구 - AtomicFieldUpdater]()
+[다음 ↪️ - Java 동기화 도구 - AtomicFieldUpdater](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaSync/AtomicFieldUpdater.md)

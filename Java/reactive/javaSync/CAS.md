@@ -39,8 +39,8 @@
 
 ---
 
-[이전 ↩️ - Java Locks - Condition]()
+[이전 ↩️ - Java Locks - Condition](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/locks/Condition.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java 동기화 도구 - Atomic Variable]()
+[다음 ↪️ - Java 동기화 도구 - Atomic Variable](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaSync/Atomic.md)

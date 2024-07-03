@@ -39,7 +39,7 @@
 
 ---
 
-[이전 ↩️ - Java 동기화 도구 - CountDownLatch]()
+[이전 ↩️ - Java 동기화 도구 - CountDownLatch](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaSync/CountDownLatch.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 

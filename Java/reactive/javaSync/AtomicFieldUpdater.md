@@ -55,8 +55,8 @@
 
 ---
 
-[이전 ↩️ - Java 동기화 도구 - Atomic Variable]()
+[이전 ↩️ - Java 동기화 도구 - Atomic Variable](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaSync/Atomic.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java 동기화 도구 - CountDownLatch]()
+[다음 ↪️ - Java 동기화 도구 - CountDownLatch](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaSync/CountDownLatch.md)
