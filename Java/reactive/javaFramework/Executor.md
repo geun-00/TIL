@@ -68,8 +68,8 @@
 
 ---
 
-[이전 ↩️ - Java 동시성 프레임워크 - 스레드 풀]()
+[이전 ↩️ - Java 동시성 프레임워크 - 스레드 풀](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaFramework/ThreadPool.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java 동시성 프레임워크 - Runnable & Callable]()
+[다음 ↪️ - Java 동시성 프레임워크 - Runnable & Callable](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaFramework/Runnable.md)

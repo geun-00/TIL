@@ -161,7 +161,7 @@
 
 ---
 
-[이전 ↩️ - Java 동시성 프레임워크 - ScheduledExecutorService]()
+[이전 ↩️ - Java 동시성 프레임워크 - ScheduledExecutorService](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaFramework/ScheduledExecutorService.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 

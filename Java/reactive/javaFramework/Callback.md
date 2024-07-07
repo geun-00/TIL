@@ -56,8 +56,8 @@
 
 ---
 
-[이전 ↩️ - Java 동시성 프레임워크 - Runnable & Callable]()
+[이전 ↩️ - Java 동시성 프레임워크 - Runnable & Callable](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaFramework/Runnable.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java 동시성 프레임워크 - Future 구조 및 API]()
+[다음 ↪️ - Java 동시성 프레임워크 - Future 구조 및 API](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaFramework/Future.md)

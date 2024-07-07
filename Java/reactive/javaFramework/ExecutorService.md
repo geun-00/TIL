@@ -65,7 +65,7 @@
     - 실행 중인 스레드를 강제로 인터럽트 하지 않기 때문에 인터럽트에 응답하는 작업이나 `InterruptedException` 예외 구문을 작성할 필요가 없다.
   - `List<Runnable> shutdownNow();` **(강제적인 스레드 풀 종료)**
     - 이전에 제출된 작업도 취소하고 현재 실행 중인 작업도 중단하려고 시도한다. 그리고 작업 대기 중이었던 작업 목록을 반환한다.
-    - 실행 중인 스레드를 강제로 인터럽트 하지만 해당 작업이 인터럽트에 응답하는 작업이 아닌 경우 작업 종료를 보장하지 않는다.
+    - 실행 중인 스레드를 강제로 인터럽트 하지만 **해당 작업이 인터럽트에 응답하는 작업이 아닌 경우 작업 종료를 보장하지 않는다.**
     - 작업을 종료하기 위해서는 `Thread.isInterrupted()`나 `sleep()`과 같은 인터럽트 관련 API를 사용해야 한다.
 - `shutdown` 후 작업을 제출하려고 시도하면 `RejectExecutionException` 예외가 발생한다.
 - `shutdown`을 호출한 스레드는 실행 중인 작업이 종료될 때까지 기다리지 않고 바로 다음 라인을 실행한다. 만약 스레드가 메서드 호출 후 블로킹 되기 위해서는
@@ -151,8 +151,8 @@
 
 ---
 
-[이전 ↩️ - Java 동시성 프레임워크 - Future 구조 및 API]()
+[이전 ↩️ - Java 동시성 프레임워크 - Future 구조 및 API](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaFramework/Future.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java 동시성 프레임워크 - ScheduledExecutorService]()
+[다음 ↪️ - Java 동시성 프레임워크 - ScheduledExecutorService](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaFramework/ScheduledExecutorService.md)

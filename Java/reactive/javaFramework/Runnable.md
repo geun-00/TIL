@@ -43,7 +43,7 @@
 
 ![img_18.png](image/img_18.png)
 
-### Callalbe
+### Callable
 
 ![img_19.png](image/img_19.png)
 
@@ -51,8 +51,8 @@
 
 ---
 
-[이전 ↩️ - Java 동시성 프레임워크 - Executor]()
+[이전 ↩️ - Java 동시성 프레임워크 - Executor](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaFramework/Executor.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java 동시성 프레임워크 - Future & Callback]()
+[다음 ↪️ - Java 동시성 프레임워크 - Future & Callback](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaFramework/Callback.md)

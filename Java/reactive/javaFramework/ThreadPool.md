@@ -52,8 +52,8 @@
 
 ---
 
-[이전 ↩️ - Java 동기화 도구 - CyclicBarrier]()
+[이전 ↩️ - Java 동기화 도구 - CyclicBarrier](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaSync/CyclicBarrier.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - Java 동시성 프레임워크 - Executor]()
+[다음 ↪️ - Java 동시성 프레임워크 - Executor](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/javaFramework/Executor.md)
