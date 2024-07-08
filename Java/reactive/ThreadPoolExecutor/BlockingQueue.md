@@ -27,8 +27,8 @@
 ### ArrayBlockingQueue
 
 - 내부적으로 고정된 크기의 배열을 사용하여 작업을 추가하고 큐를 생성할 때 최대 크기를 지정해야 하며 한 번 지정된 큐의 크기는 변경할 수 없다.
-- 큰 대기열과 작은 풀을 사용하면 CPU 사용량 OS 리소스 및 컨텍스트 전환 오버헤드가 최소화 되지만 낮은 처리량을 유발할 수 있다.
-- 작은 대기열과 큰 풀을 사용하면 CPU 사용량이 높아지지만 대기열이 가득 찰 경우 추가적인 작업을 거부하기 때문에 처리량이 감소할 수 있다.
+- **큰 대기열과 작은 풀**을 사용하면 CPU 사용량 OS 리소스 및 컨텍스트 전환 오버헤드가 최소화 되지만 낮은 처리량을 유발할 수 있다.
+- **작은 대기열과 큰 풀**을 사용하면 CPU 사용량이 높아지지만 대기열이 가득 찰 경우 추가적인 작업을 거부하기 때문에 처리량이 감소할 수 있다.
 
 ---
 
@@ -43,8 +43,8 @@
 
 ---
 
-[이전 ↩️ - ThreadPoolExecutor - keepAliveTime]()
+[이전 ↩️ - ThreadPoolExecutor - keepAliveTime](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/ThreadPoolExecutor/keepAliveTime.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - ThreadPoolExecutor - RejectedExecutionHandler]()
+[다음 ↪️ - ThreadPoolExecutor - RejectedExecutionHandler](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/ThreadPoolExecutor/RejectedExecutionHandler.md)

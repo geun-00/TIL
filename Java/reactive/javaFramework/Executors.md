@@ -165,4 +165,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - ThreadPoolExecutor - corePoolSize & maximumPoolSize]()
+[다음 ↪️ - ThreadPoolExecutor - corePoolSize & maximumPoolSize](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/ThreadPoolExecutor/corePoolSize.md)

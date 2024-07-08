@@ -30,8 +30,8 @@
 
 ---
 
-[이전 ↩️ - ThreadPoolExecutor - corePoolSize & maximumPoolSize]()
+[이전 ↩️ - ThreadPoolExecutor - corePoolSize & maximumPoolSize](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/ThreadPoolExecutor/corePoolSize.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - ThreadPoolExecutor - BlockingQueue]()
+[다음 ↪️ - ThreadPoolExecutor - BlockingQueue](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/ThreadPoolExecutor/BlockingQueue.md)

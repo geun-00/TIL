@@ -27,8 +27,8 @@
 
 ---
 
-[이전 ↩️ - ThreadPoolExecutor - RejectedExecutionHandler]()
+[이전 ↩️ - ThreadPoolExecutor - RejectedExecutionHandler](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/ThreadPoolExecutor/RejectedExecutionHandler.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - ThreadPoolExecutor - 생명 주기와 상태 & ThreadPoolExecutor 아키텍처]()
+[다음 ↪️ - ThreadPoolExecutor - 생명 주기와 상태 & ThreadPoolExecutor 아키텍처](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/ThreadPoolExecutor/LifeCycle.md)

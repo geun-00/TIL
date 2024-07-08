@@ -29,7 +29,7 @@
 
 ---
 
-[이전 ↩️ - ThreadPoolExecutor - 스레드 풀 Hook 메서드]()
+[이전 ↩️ - ThreadPoolExecutor - 스레드 풀 Hook 메서드](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/ThreadPoolExecutor/Hook.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 

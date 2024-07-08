@@ -67,8 +67,8 @@
 
 ---
 
-[이전 ↩️ - ThreadPoolExecutor - BlockingQueue]()
+[이전 ↩️ - ThreadPoolExecutor - BlockingQueue](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/ThreadPoolExecutor/corePoolSize.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - ThreadPoolExecutor - 스레드 풀 Hook 메서드]()
+[다음 ↪️ - ThreadPoolExecutor - 스레드 풀 Hook 메서드](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/ThreadPoolExecutor/Hook.md)
