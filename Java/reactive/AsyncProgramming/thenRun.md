@@ -78,8 +78,8 @@
 
 ---
 
-[이전 ↩️ - 비동기 프로그래밍 - 비동기 결과 조작(`thenApply()` & `thenApplyAsync()`)]()
+[이전 ↩️ - 비동기 프로그래밍 - 비동기 결과 조작(`thenApply()` & `thenApplyAsync()`)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/AsyncProgramming/thenApplyAsync.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - 비동기 프로그래밍 - 비동기 작업 조합(`thenCompose()` & `thenCombine()`)]()
+[다음 ↪️ - 비동기 프로그래밍 - 비동기 작업 조합(`thenCompose()` & `thenCombine()`)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/AsyncProgramming/thenCombine.md)

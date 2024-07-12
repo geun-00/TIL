@@ -53,8 +53,8 @@
 
 ---
 
-[이전 ↩️ - 비동기 프로그래밍 - 비동기 결과 조작(`thenAccept()` & `thenRun()`)]()
+[이전 ↩️ - 비동기 프로그래밍 - 비동기 결과 조작(`thenAccept()` & `thenRun()`)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/AsyncProgramming/thenRun.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - 비동기 프로그래밍 - 비동기 작업 조합(`allOf()` & `anyOf()`)]()
+[다음 ↪️ - 비동기 프로그래밍 - 비동기 작업 조합(`allOf()` & `anyOf()`)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/AsyncProgramming/anyOf.md)

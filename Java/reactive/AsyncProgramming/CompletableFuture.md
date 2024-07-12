@@ -85,8 +85,8 @@
 
 ---
 
-[이전 ↩️ - 비동기 프로그래밍 - 동기 vs 비동기]()
+[이전 ↩️ - 비동기 프로그래밍 - 동기 vs 비동기](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/AsyncProgramming/Blocking.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - 비동기 프로그래밍 - 비동기 작업 시작(`supplyAsync()` & `runAsync()`)]()
+[다음 ↪️ - 비동기 프로그래밍 - 비동기 작업 시작(`supplyAsync()` & `runAsync()`)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/AsyncProgramming/runAsync.md)

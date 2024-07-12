@@ -64,8 +64,8 @@
 
 ---
 
-[이전 ↩️ - 비동기 프로그래밍 - 비동기 작업 조합(`thenCompose()` & `thenCombine()`)]()
+[이전 ↩️ - 비동기 프로그래밍 - 비동기 작업 조합(`thenCompose()` & `thenCombine()`)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/AsyncProgramming/thenCombine.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - 비동기 프로그래밍 - 비동기 예외 처리]()
+[다음 ↪️ - 비동기 프로그래밍 - 비동기 예외 처리](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/AsyncProgramming/%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC.md)

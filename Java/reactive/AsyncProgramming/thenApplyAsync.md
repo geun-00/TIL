@@ -70,8 +70,8 @@
 
 ---
 
-[이전 ↩️ - 비동기 프로그래밍 - 비동기 작업 시작(`supplyAsync()` & `runAsync()`)]()
+[이전 ↩️ - 비동기 프로그래밍 - 비동기 작업 시작(`supplyAsync()` & `runAsync()`)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/AsyncProgramming/runAsync.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
 
-[다음 ↪️ - 비동기 프로그래밍 - 비동기 결과 조작(`thenAccept()` & `thenRun()`)]()
+[다음 ↪️ - 비동기 프로그래밍 - 비동기 결과 조작(`thenAccept()` & `thenRun()`)](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/AsyncProgramming/thenRun.md)
