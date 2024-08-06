@@ -656,6 +656,14 @@
 
 </details>
 
+<details>
+  <summary>컴퓨터 구조와 운영체제</summary>
+
+- [컴퓨터 구조와 운영체제](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
+
+</details>
+
+
 ### 자료구조 📊
 
 - [자료구조란?](https://github.com/genesis12345678/TIL/blob/main/dataStructure/dataStructure/dataStructure.md#%EC%9E%90%EB%A3%8C-%EA%B5%AC%EC%A1%B0)
