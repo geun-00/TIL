@@ -2,8 +2,8 @@
 
 ### 명령어
 
-- [소스 코드와 명령어]()
-- [명령어 구조]()
+- [소스 코드와 명령어](https://github.com/genesis12345678/TIL/blob/main/cs/command/SourceCode.md)
+- [명령어 구조](https://github.com/genesis12345678/TIL/blob/main/cs/command/Structure.md)
 
 ### CPU 작동 원리
 
