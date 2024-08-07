@@ -7,6 +7,12 @@
 
 ### CPU 작동 원리
 
+- [ALU와 제어장치](https://github.com/genesis12345678/TIL/blob/main/cs/cpu/ALU.md)
+- [레지스터](https://github.com/genesis12345678/TIL/blob/main/cs/cpu/Register.md)
+- [명령어 사이클과 인터럽트](https://github.com/genesis12345678/TIL/blob/main/cs/cpu/Interrupt.md)
+
+### CPU의 성능 향상 기법
+
 ---
 
 > 참고

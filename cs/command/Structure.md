@@ -126,4 +126,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
-[다음 ↪️ - 컴퓨터 구조(CPU 작동 원리) - ALU와 제어장치]()
+[다음 ↪️ - 컴퓨터 구조(CPU 작동 원리) - ALU와 제어장치](https://github.com/genesis12345678/TIL/blob/main/cs/cpu/ALU.md)
