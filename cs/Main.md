@@ -13,6 +13,12 @@
 
 ### CPU의 성능 향상 기법
 
+- [빠른 CPU를 위한 설계 기법](https://github.com/genesis12345678/TIL/blob/main/cs/cpu/SpeedCpu.md)
+- [명령어 병렬 처리 기법](https://github.com/genesis12345678/TIL/blob/main/cs/cpu/Parallelism.md)
+- [CISC & RISC](https://github.com/genesis12345678/TIL/blob/main/cs/cpu/CISC.md)
+
+### 메모리와 캐시 메모리
+
 ---
 
 > 참고

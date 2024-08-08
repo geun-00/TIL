@@ -105,4 +105,4 @@ CPU 명령어 사이클에 인터럽트 사이클까지 추가한 결과 다음�
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
-[다음 ↪️ - 컴퓨터 구조(CPU의 성능 향상 기법) - 빠른 CPU를 위한 설계 기법]()
+[다음 ↪️ - 컴퓨터 구조(CPU의 성능 향상 기법) - 빠른 CPU를 위한 설계 기법](https://github.com/genesis12345678/TIL/blob/main/cs/cpu/SpeedCpu.md)

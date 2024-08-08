@@ -52,7 +52,7 @@
 
 ![img_10.png](image_1/img_10.png)
 
-- 슈퍼스칼라 구조로 명령어 처리가 가능한 CPU를 슈퍼스칼라 프로세서 또는 슈퍼스칼라 CPU라고 한다.
+- 슈퍼스칼라 구조로 명령어 처리가 가능한 CPU를 **슈퍼스칼라 프로세서** 또는 **슈퍼스칼라 CPU**라고 한다.
 - 슈퍼스칼라 프로세서는 매 클럭 주기마다 동시에 여러 명령어를 인출하고 실행할 수도 있다.
 - 이론적으로는 파이프라인 개수에 비례하여 프로그램 처리 속도가 빨라진다. 하지만 **파이프라인 위험도**의 증가로 인해 파이프라인 개수에 비례하여 빨라지지는 않는다.
 
@@ -70,8 +70,8 @@
 
 ---
 
-[이전 ↩️ - 컴퓨터 구조(CPU의 성능 향상 기법) - 빠른 CPU를 위한 설계 기법]()
+[이전 ↩️ - 컴퓨터 구조(CPU의 성능 향상 기법) - 빠른 CPU를 위한 설계 기법](https://github.com/genesis12345678/TIL/blob/main/cs/cpu/SpeedCpu.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
-[다음 ↪️ - 컴퓨터 구조(CPU의 성능 향상 기법) - CISC & RISC]()
+[다음 ↪️ - 컴퓨터 구조(CPU의 성능 향상 기법) - CISC & RISC](https://github.com/genesis12345678/TIL/blob/main/cs/cpu/CISC.md)

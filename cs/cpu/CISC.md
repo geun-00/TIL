@@ -68,7 +68,7 @@
 
 ---
 
-[이전 ↩️ - 컴퓨터 구조(CPU의 성능 향상 기법) - 명령어 병렬 처리 기법]()
+[이전 ↩️ - 컴퓨터 구조(CPU의 성능 향상 기법) - 명령어 병렬 처리 기법](https://github.com/genesis12345678/TIL/blob/main/cs/cpu/Parallelism.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
