@@ -51,9 +51,9 @@ CPU가 실행하고 싶은 프로그램이 보조기억장치에 있다면 이�
 - 하지만 **SRAM**은 DRAM보다 집적도가 낮고, 소비 전력도 크며, 가격도 더 비싸기 때문에 일반적으로 사용되는 RAM은 아니다.
 - 대신 **SRAM**은 메모리가 아닌 대용량으로 만들어질 필요는 없지만 속도가 빨라야 하는 저장 장치, 주로 **캐시 메모리**에서 사용된다.
 
-#### DRAM vs SRAM
-
-![img_3.png](image/img_3.png)
+> **DRAM vs SRAM**
+>
+> ![img_3.png](image/img_3.png)
 
 ### SDRAM
 
@@ -75,8 +75,8 @@ CPU가 실행하고 싶은 프로그램이 보조기억장치에 있다면 이�
 
 ---
 
-[이전 ↩️ - 컴퓨터 구조(CPU의 성능 향상 기법) - CISC & RISC]()
+[이전 ↩️ - 컴퓨터 구조(CPU의 성능 향상 기법) - CISC & RISC](https://github.com/genesis12345678/TIL/blob/main/cs/cpu/CISC.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
-[다음 ↪️ - 컴퓨터 구조(메모리와 캐시 메모리) - 메모리의 주소 공간]()
+[다음 ↪️ - 컴퓨터 구조(메모리와 캐시 메모리) - 메모리의 주소 공간](https://github.com/genesis12345678/TIL/blob/main/cs/memory/Address.md)

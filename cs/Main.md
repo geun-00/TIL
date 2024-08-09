@@ -19,6 +19,10 @@
 
 ### 메모리와 캐시 메모리
 
+- [RAM 특징과 종류](https://github.com/genesis12345678/TIL/blob/main/cs/memory/Ram.md)
+- [메모리 주소 공간](https://github.com/genesis12345678/TIL/blob/main/cs/memory/Address.md)
+- [캐시 메모리](https://github.com/genesis12345678/TIL/blob/main/cs/memory/Cache.md)
+
 ---
 
 > 참고
