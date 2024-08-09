@@ -72,4 +72,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
-[다음 ↪️ - 컴퓨터 구조(메모리와 캐시 메모리) - ]()
+[다음 ↪️ - 컴퓨터 구조(메모리와 캐시 메모리) - RAM 특징과 종류]()
