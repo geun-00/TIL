@@ -96,4 +96,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
-[다음 ↪️ - 컴퓨터 구조() - ]()
+[다음 ↪️ - 컴퓨터 구조(보조기억장치) - 다양한 보조기억장치](https://github.com/genesis12345678/TIL/blob/main/cs/ssd/SSD.md)

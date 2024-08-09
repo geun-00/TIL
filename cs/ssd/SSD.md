@@ -74,7 +74,7 @@
 
 ### TLC 타입
 
-- **TLC 타입**은 한 셀로 8개의 정보를 표현할 수 있다.
+- **TLC 타입**은 한 셀로 여덟 개의 정보를 표현할 수 있다.
 - 대용량화하기 유리하며, 일반적으로 SLC나 MLC 타입보다 수명과 속도가 떨어지지만 용량 대비 가격이 저렴하다.
 
 ### 정리
@@ -115,4 +115,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
-[다음 ↪️ - 컴퓨터 구조(보조기억장치) - RAID]()
+[다음 ↪️ - 컴퓨터 구조(보조기억장치) - RAID](https://github.com/genesis12345678/TIL/blob/main/cs/ssd/RAID.md)

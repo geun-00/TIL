@@ -23,6 +23,13 @@
 - [메모리 주소 공간](https://github.com/genesis12345678/TIL/blob/main/cs/memory/Address.md)
 - [캐시 메모리](https://github.com/genesis12345678/TIL/blob/main/cs/memory/Cache.md)
 
+### 보조기억장치
+
+- [다양한 보조기억장치](https://github.com/genesis12345678/TIL/blob/main/cs/ssd/SSD.md)
+- [RAID](https://github.com/genesis12345678/TIL/blob/main/cs/ssd/RAID.md)
+
+### 입출력장치
+
 ---
 
 > 참고
