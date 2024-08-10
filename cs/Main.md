@@ -30,6 +30,17 @@
 
 ### 입출력장치
 
+- [장치 컨트롤러와 장치 드라이버](https://github.com/genesis12345678/TIL/blob/main/cs/iodevice/DeviceDriver.md)
+- [다양한 입출력방법](https://github.com/genesis12345678/TIL/blob/main/cs/iodevice/IOway.md)
+
+---
+
+# 운영체제
+
+- [운영체제란?]()
+
+
+
 ---
 
 > 참고

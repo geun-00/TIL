@@ -83,4 +83,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
-[다음 ↪️ - 컴퓨터 구조(입출력장치) - 장치 컨트롤러와 장치 드라이버]()
+[다음 ↪️ - 컴퓨터 구조(입출력장치) - 장치 컨트롤러와 장치 드라이버](https://github.com/genesis12345678/TIL/blob/main/cs/iodevice/DeviceDriver.md)
