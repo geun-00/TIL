@@ -41,9 +41,9 @@
 
 ### 프로세스와 스레드
 
-- [프로세스]()
-- [프로세스 상태와 계층 구조]()
-- [스레드]()
+- [프로세스](https://github.com/genesis12345678/TIL/blob/main/cs/process/Process.md)
+- [프로세스 상태와 계층 구조](https://github.com/genesis12345678/TIL/blob/main/cs/process/ProcessStat.md)
+- [스레드](https://github.com/genesis12345678/TIL/blob/main/cs/process/Thread.md)
 
 ### CPU 스케줄링
 
