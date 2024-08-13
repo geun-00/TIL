@@ -67,4 +67,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
-[다음 ↪️ - 운영체제(CPU 스케줄링) - CPU 스케줄링]()
+[다음 ↪️ - 운영체제(CPU 스케줄링) - CPU 스케줄링](https://github.com/genesis12345678/TIL/blob/main/cs/scheduling/Scheduling.md)

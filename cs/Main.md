@@ -47,8 +47,8 @@
 
 ### CPU 스케줄링
 
-- [CPU 스케줄링]()
-- [CPU 스케줄링 알고리즘]()
+- [CPU 스케줄링](https://github.com/genesis12345678/TIL/blob/main/cs/scheduling/Scheduling.md)
+- [CPU 스케줄링 알고리즘](https://github.com/genesis12345678/TIL/blob/main/cs/scheduling/Algorithm.md)
 
 ---
 
