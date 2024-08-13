@@ -366,6 +366,23 @@
 
 </details>
 
+<details>
+  <summary>JPA</summary>
+
+- [페치 조인의 단점](https://github.com/genesis12345678/TIL/blob/main/interview/jpa/1_10/FetchJoin.md)
+- [ID를 Long 타입으로 사용하는 이유](https://github.com/genesis12345678/TIL/blob/main/interview/jpa/1_10/IdLong.md)
+- [상속 관계 매핑](https://github.com/genesis12345678/TIL/blob/main/interview/jpa/1_10/Inheritance.md)
+- [N + 1 문제](https://github.com/genesis12345678/TIL/blob/main/interview/jpa/1_10/N%2B1.md)
+- [OneToOne 양방향 관계의 지연 로딩](https://github.com/genesis12345678/TIL/blob/main/interview/jpa/1_10/OneToOneLazy.md)
+- [영속성 컨텍스트](https://github.com/genesis12345678/TIL/blob/main/interview/jpa/1_10/PersistenceContext.md)
+- [Querydsl을 사용하는 이유](https://github.com/genesis12345678/TIL/blob/main/interview/jpa/1_10/Querydsl.md)
+- [readOnly 속성의 이점](https://github.com/genesis12345678/TIL/blob/main/interview/jpa/1_10/ReadOnly.md)
+- [연관 관계가 필요한 이유]()
+- [`save()`와 `saveAll()`의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/jpa/1_10/SaveSaveAll.md)
+- [`deleteAll()`과 `deleteAllInBatch()`의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/jpa/11_20/DeleteAll.md)
+
+</details>
+
 ### Spring
 
 <details>
