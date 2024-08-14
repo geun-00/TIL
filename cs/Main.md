@@ -50,6 +50,16 @@
 - [CPU 스케줄링](https://github.com/genesis12345678/TIL/blob/main/cs/scheduling/Scheduling.md)
 - [CPU 스케줄링 알고리즘](https://github.com/genesis12345678/TIL/blob/main/cs/scheduling/Algorithm.md)
 
+### 프로세스 동기화
+
+- [동기화란](https://github.com/genesis12345678/TIL/blob/main/cs/sync/Sync.md)
+- [동기화 기법](https://github.com/genesis12345678/TIL/blob/main/cs/sync/SyncWay.md)
+
+### 교착 상태
+
+- [교착 상태란]()
+- [교착 상태 해결 방법]()
+
 ---
 
 > 참고

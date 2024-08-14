@@ -110,4 +110,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
-[다음 ↪️ - 운영체제(프로세스 동기화) - 동기화란]()
+[다음 ↪️ - 운영체제(프로세스 동기화) - 동기화란](https://github.com/genesis12345678/TIL/blob/main/cs/sync/Sync.md)
