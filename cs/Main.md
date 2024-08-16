@@ -57,8 +57,12 @@
 
 ### 교착 상태
 
-- [교착 상태란]()
-- [교착 상태 해결 방법]()
+- [교착 상태란](https://github.com/genesis12345678/TIL/blob/main/cs/deadlock/Deadlock.md)
+- [교착 상태 해결 방법](https://github.com/genesis12345678/TIL/blob/main/cs/deadlock/DeadlockSolve.md)
+
+### 가상 메모리
+
+- [연속 메모리 할당]()
 
 ---
 

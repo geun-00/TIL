@@ -144,4 +144,4 @@ wait 연산으로 일시 중지된 프로세스는 다른 프로세스의 signal
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
-[다음 ↪️ - 운영체제(교착 상태) - 교착 상태란]()
+[다음 ↪️ - 운영체제(교착 상태) - 교착 상태란](https://github.com/genesis12345678/TIL/blob/main/cs/deadlock/Deadlock.md)
