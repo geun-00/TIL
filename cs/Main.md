@@ -62,7 +62,14 @@
 
 ### 가상 메모리
 
-- [연속 메모리 할당]()
+- [연속 메모리 할당](https://github.com/genesis12345678/TIL/blob/main/cs/virtualmemory/memory.md)
+- [페이징을 통한 가상 메모리 관리](https://github.com/genesis12345678/TIL/blob/main/cs/virtualmemory/paging.md)
+- [페이지 교체와 프레임 할당](https://github.com/genesis12345678/TIL/blob/main/cs/virtualmemory/pageReplace.md)
+
+### 파일 시스템
+
+- [파일과 디렉터리]()
+- [파일 시스템]()
 
 ---
 

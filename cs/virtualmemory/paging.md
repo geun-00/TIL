@@ -223,8 +223,8 @@
 
 ---
 
-[이전 ↩️ - 운영체제(가상 메모리) - 연속 메모리 할당]()
+[이전 ↩️ - 운영체제(가상 메모리) - 연속 메모리 할당](https://github.com/genesis12345678/TIL/blob/main/cs/virtualmemory/memory.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
-[다음 ↪️ - 운영체제(가상 메모리) - 페이지 교체와 프레임 할당]()
+[다음 ↪️ - 운영체제(가상 메모리) - 페이지 교체와 프레임 할당](https://github.com/genesis12345678/TIL/blob/main/cs/virtualmemory/pageReplace.md)

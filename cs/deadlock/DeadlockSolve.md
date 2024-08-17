@@ -131,4 +131,4 @@ P2에 남은 2개의 자원을 배분하여 P2 작업을 끝내고 자원을 반
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/Main.md)
 
-[다음 ↪️ - 운영체제(가상 메모리) - 연속 메모리 할당]()
+[다음 ↪️ - 운영체제(가상 메모리) - 연속 메모리 할당](https://github.com/genesis12345678/TIL/blob/main/cs/virtualmemory/memory.md)
