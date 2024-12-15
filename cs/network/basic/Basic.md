@@ -259,4 +259,4 @@
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/network/Main.md)
 
-[다음 ↪️ - 네트워크(물리 & 데이터링크 계층) - 이더넷]()
+[다음 ↪️ - 물리 & 데이터링크 계층 - 이더넷](https://github.com/genesis12345678/TIL/blob/main/cs/network/data_layer/Ethernet.md)

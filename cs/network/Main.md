@@ -9,6 +9,9 @@
 - [캡슐화와 역캡슐화](https://github.com/genesis12345678/TIL/blob/main/cs/network/basic/Basic.md#%EC%BA%A1%EC%8A%90%ED%99%94%EC%99%80-%EC%97%AD%EC%BA%A1%EC%8A%90%ED%99%94)
 - [네트워크 성능 지표](https://github.com/genesis12345678/TIL/blob/main/cs/network/basic/Basic.md#%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EC%84%B1%EB%8A%A5-%EC%A7%80%ED%91%9C)
 
-## 물리 & 데이터링크 계층
+## 물리 & 데이터 링크 계층
 
-- [이더넷]()
+- [이더넷](https://github.com/genesis12345678/TIL/blob/main/cs/network/data_layer/Ethernet.md)
+- [NIC와 케이블](https://github.com/genesis12345678/TIL/blob/main/cs/network/data_layer/NIC.md)
+- [허브](https://github.com/genesis12345678/TIL/blob/main/cs/network/data_layer/Hub.md)
+- [스위치](https://github.com/genesis12345678/TIL/blob/main/cs/network/data_layer/Switch.md)
