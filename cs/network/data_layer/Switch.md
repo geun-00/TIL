@@ -91,4 +91,4 @@ MAC 주소를 가진 호스트에만 프레임을 전달할 수 있고, 전이�
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/network/Main.md)
 
-[다음 ↪️ - 네트워크 계층 - ]()
+[다음 ↪️ - 네트워크 계층 - 개요]()
