@@ -218,8 +218,8 @@ IP 단편화를 피하려면 IP 패킷을 주고받는 모든 노드가 **IP 단
 
 ---
 
-[이전 ↩️ - 물리 & 데이터 링크 계층 - 스위치]()
+[이전 ↩️ - 물리 & 데이터 링크 계층 - 스위치](https://github.com/genesis12345678/TIL/blob/main/cs/network/data_layer/Switch.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/network/Main.md)
 
-[다음 ↪️ - 네트워크 계층 - ]()
+[다음 ↪️ - 네트워크 계층 - IP 주소](https://github.com/genesis12345678/TIL/blob/main/cs/network/network_layer/IP.md)

@@ -56,7 +56,7 @@
 > <li>AS마다 인터넷 상에서 고유한 AS 번호가 할당된다. AS 번호는 사설 IP 주소처럼 사실 AS 번호도 있지만, 일반적으로 고유한 번호를 지칭한다.</li>
 > 
 > 한 AS 내에는 다수의 라우터가 있다. 라우터들은 AS 내부에서만 통신할 수도 있고, AS 외부와 통신할 수도 있다.
-> AS 외부와 ㅌ오신할 경우 AS 경계에서 AS 내외로 통신을 주고받을 수 있는 **AS 경계 라우터**라는 특별한 라우터를 이용한다.
+> AS 외부와 통신할 경우 AS 경계에서 AS 내외로 통신을 주고받을 수 있는 **AS 경계 라우터**라는 특별한 라우터를 이용한다.
 > 
 > ![img_24.png](image/img_24.png)
 > 
@@ -128,7 +128,7 @@ BGP에는 경로에 대한 부가 정보인 속성이 있다. 대표적인 속�
 
 ---
 
-[이전 ↩️ - 네트워크 계층 - IP 주소]()
+[이전 ↩️ - 네트워크 계층 - IP 주소](https://github.com/genesis12345678/TIL/blob/main/cs/network/network_layer/IP.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/network/Main.md)
 

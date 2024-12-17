@@ -185,8 +185,8 @@ IP 주소를 할당받는 과정에서 클라이언트와 DHCP 서버 간에 주
 
 ---
 
-[이전 ↩️ - 네트워크 계층 - 개요]()
+[이전 ↩️ - 네트워크 계층 - 개요](https://github.com/genesis12345678/TIL/blob/main/cs/network/network_layer/Basic.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/network/Main.md)
 
-[다음 ↪️ - 네트워크 계층 - 라우팅]()
+[다음 ↪️ - 네트워크 계층 - 라우팅](https://github.com/genesis12345678/TIL/blob/main/cs/network/network_layer/Routing.md)
