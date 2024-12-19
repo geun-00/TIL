@@ -132,4 +132,4 @@ BGP에는 경로에 대한 부가 정보인 속성이 있다. 대표적인 속�
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/network/Main.md)
 
-[다음 ↪️ - 전송 계층 - ]()
+[다음 ↪️ - 전송 계층 - 개요]()
