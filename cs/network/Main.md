@@ -30,9 +30,9 @@
 
 ## 응용 계층
 
-- [DNS와 자원]()
-- [HTTP]()
-- [HTTP 헤더와 HTTP 기반 기술]()
+- [DNS와 자원](https://github.com/genesis12345678/TIL/blob/main/cs/network/application_layer/DNS.md)
+- [HTTP](https://github.com/genesis12345678/TIL/blob/main/cs/network/application_layer/HTTP.md)
+- [HTTP 헤더와 HTTP 기반 기술](https://github.com/genesis12345678/TIL/blob/main/cs/network/application_layer/Header.md)
 
 ---
 

@@ -130,4 +130,4 @@ TCP에서는 흐름 제어로 **슬라이딩 윈도우**를 사용한다. **윈�
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/network/Main.md)
 
-[다음 ↪️ - 응용 계층 - DNS와 자원]()
+[다음 ↪️ - 응용 계층 - DNS와 자원](https://github.com/genesis12345678/TIL/blob/main/cs/network/application_layer/DNS.md)

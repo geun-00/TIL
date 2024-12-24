@@ -2,7 +2,7 @@
 
 ## HTTP의 특성
 
-**HTTP(Hypertext Transfer Protocol)** 은 응용 계층에서 정보를 주고받는 데 사용되는 프로토콜로, 네 가지의 주요 특성이 있다.
+**HTTP(Hypertext Transfer Protocol)** 는 응용 계층에서 정보를 주고받는 데 사용되는 프로토콜로, 네 가지의 주요 특성이 있다.
 
 ### 1. 요청-응답 기반 프로토콜
 
@@ -21,17 +21,20 @@
   - `type/subtype;parameter=value` 형식으로 표현
   - 예: `type/html;charset=UTF-8`
 
-> **자주 사용되는 미디어 타입 종류**
->
-> ![img_9.png](image/img_9.png)
->
-> ![img_10.png](image/img_10.png)
+<details>
+ <summary> 자주 사용되는 미디어 타입 종류 </summary>
+
+![img_9.png](image/img_9.png)
+
+![img_10.png](image/img_10.png)
+
+</details>
 
 ### 3. 스테이트리스 프로토콜
 
 - HTTP는 상태를 유지하지 않는 **스테이트리스 프로토콜**이다. 서버가 HTTP 요청을 보낸 클라이언트와 관련된 상태를 기억하지 않는다는 의미이다.
 - 즉, 클라이언트의 모든 HTTP 요청은 기본적으로 **독립적인 요청으로 간주된다.**
-- 이러한 HTTP의 스테이트리스한 특징은 확장성과 견고함이라는 목표를 이루기 위해서다.
+- 이러한 HTTP의 스테이트리스한 특징은 **확장성과 견고함**이라는 목표를 이루기 위해서다.
 - 상태를 유지하지 않고 모든 요청을 독립적인 요청으로 처리하는 것은 특정 클라이언트가 특정 서버에 종속되지 않도록 하며, 서버의 추가나 문제 발생 시
 대처가 용이하도록 한다.
 - 즉, 스테이트리스한 특성은 언제든 쉽게 서버를 추가할 수 있기 때문에 **확장성**이 높고, 서버 중 하나에 문제가 생겨도 다른 서버로 대체가 가능하기 때문에
@@ -234,8 +237,8 @@ HTTP 요청 메시지에서 사용될 수 있는 메서드의 종류는 대음�
 
 ---
 
-[이전 ↩️ - 응용 계층 - DNS와 자원]()
+[이전 ↩️ - 응용 계층 - DNS와 자원](https://github.com/genesis12345678/TIL/blob/main/cs/network/application_layer/DNS.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/network/Main.md)
 
-[다음 ↪️ - 응용 계층 - HTTP 헤더와 HTTP 기반 기술]()
+[다음 ↪️ - 응용 계층 - HTTP 헤더와 HTTP 기반 기술](https://github.com/genesis12345678/TIL/blob/main/cs/network/application_layer/Header.md)
