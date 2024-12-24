@@ -29,3 +29,13 @@
 - [TCP의 오류,흐름,혼잡 제어](https://github.com/genesis12345678/TIL/blob/main/cs/network/transport_layer/TCP.md)
 
 ## 응용 계층
+
+- [DNS와 자원]()
+- [HTTP]()
+- [HTTP 헤더와 HTTP 기반 기술]()
+
+---
+
+> 참고
+> 
+> 유튜브 [혼자 공부하는 네트워크]()
