@@ -28,6 +28,13 @@
 </details>
 
 <details>
+  <summary>자바 8</summary>
+
+- [함수형 인터페이스 API]()
+
+</details>
+
+<details>
   <summary>동시성 프로그래밍</summary>
 
 - [자바 동시성 프로그래밍](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
