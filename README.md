@@ -30,7 +30,7 @@
 <details>
   <summary>자바 8</summary>
 
-- [함수형 인터페이스 API]()
+- [함수형 인터페이스 API](https://github.com/genesis12345678/TIL/blob/main/Java/java8/Main.md)
 
 </details>
 
