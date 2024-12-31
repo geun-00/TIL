@@ -252,5 +252,3 @@ Authorization: <type> <credentials>
 [이전 ↩️ - 응용 계층 - HTTP](https://github.com/genesis12345678/TIL/blob/main/cs/network/application_layer/HTTP.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/cs/network/Main.md)
-
-[다음 ↪️ - 전송 계층 - ]()
