@@ -34,8 +34,13 @@
 - [HTTP](https://github.com/genesis12345678/TIL/blob/main/cs/network/application_layer/HTTP.md)
 - [HTTP 헤더와 HTTP 기반 기술](https://github.com/genesis12345678/TIL/blob/main/cs/network/application_layer/Header.md)
 
+## 네트워크 심화
+
+- [안정성을 위한 기술]()
+- [안전성을 위한 기술]()
+
 ---
 
 > 참고
 > 
-> 유튜브 [혼자 공부하는 네트워크]()
+> [혼자 공부하는 네트워크](https://www.youtube.com/watch?v=c62qssA4hYI&list=PLVsNizTWUw7HfOCgvlfHIDPPo3TE-2iQM)
