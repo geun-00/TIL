@@ -31,6 +31,7 @@
   <summary>자바 8</summary>
 
 - [함수형 인터페이스 API](https://github.com/genesis12345678/TIL/blob/main/Java/java8/Main.md)
+- [스트림](https://github.com/genesis12345678/TIL/blob/main/Java/java8/stream/Main.md)
 
 </details>
 
@@ -38,6 +39,13 @@
   <summary>동시성 프로그래밍</summary>
 
 - [자바 동시성 프로그래밍](https://github.com/genesis12345678/TIL/blob/main/Java/reactive/Main.md)
+
+</details>
+
+<details>
+  <summary>디자인 패턴</summary>
+
+- [디자인 패턴]()
 
 </details>
 
