@@ -28,7 +28,7 @@
 
 ## 행동 패턴
 
-### [전략 패턴]()
+### [전략 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/behavioral/Strategy.md)
 ### []()
 ### []()
 ### []()
