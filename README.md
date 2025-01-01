@@ -45,7 +45,7 @@
 <details>
   <summary>디자인 패턴</summary>
 
-- [디자인 패턴]()
+- [디자인 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/Main.md)
 
 </details>
 
