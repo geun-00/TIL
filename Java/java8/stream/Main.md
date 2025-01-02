@@ -2,7 +2,7 @@
 
 ## [스트림 활용](https://github.com/genesis12345678/TIL/blob/main/Java/java8/stream/chater5/chapter5.md)
 
-## [스트림 데이터 수집]()
+## [스트림 데이터 수집](https://github.com/genesis12345678/TIL/blob/main/Java/java8/stream/chapter6/Chapter6.md)
 
 ---
 
