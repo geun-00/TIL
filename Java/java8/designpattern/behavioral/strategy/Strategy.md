@@ -41,7 +41,7 @@
 
 **전략 패턴을 사용한 주어진 문자열을 특정 알고리즘을 이용해 다른 문자열로 변환**
 
-![img.png](img.png)
+![img.png](image/img_15.png)
 
 ### Strategy
 
