@@ -4,6 +4,8 @@
 
 ## [스트림 데이터 수집](https://github.com/genesis12345678/TIL/blob/main/Java/java8/stream/chapter6/Chapter6.md)
 
+## [병렬 데이터 처리와 성능](https://github.com/genesis12345678/TIL/blob/main/Java/java8/stream/chapter7/Chapter7.md)
+
 ---
 
 ### 참고
