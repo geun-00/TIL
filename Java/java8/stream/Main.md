@@ -6,7 +6,7 @@
 
 ## [병렬 데이터 처리와 성능](https://github.com/genesis12345678/TIL/blob/main/Java/java8/stream/chapter7/Chapter7.md)
 
-## [컬렉션 API 개선]()
+## [컬렉션 API 개선](https://github.com/genesis12345678/TIL/blob/main/Java/java8/stream/chapter8/Chapter8.md)
 
 ---
 
