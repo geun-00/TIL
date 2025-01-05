@@ -7,11 +7,12 @@
 - 상속보다는 구성을 활용한다.
 - 상호작용하는 객체 사이에는 가능하면 느슨한 결합을 사용해야 한다.
 - 클래스는 확장에는 열려 있어야 하지만, 변경에는 닫혀 있어야 한다.
+- 추상화된 것에 의존하게 만들고 구상 클래스에 의존하지 않게 만든다.
 
 ## 생성 패턴
 
 ### [팩토리 메서드 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/creational/factoryMethod/FactoryMethod.md)
-### []()
+### [추상 팩토리 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/creational/absractFactory/AbstractFactory.md)
 ### []()
 ### []()
 ### []()
