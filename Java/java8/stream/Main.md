@@ -1,4 +1,4 @@
-# 자바8 - 스트림
+# 자바8
 
 ## [스트림 활용](https://github.com/genesis12345678/TIL/blob/main/Java/java8/stream/chater5/chapter5.md)
 
@@ -9,6 +9,8 @@
 ## [컬렉션 API 개선](https://github.com/genesis12345678/TIL/blob/main/Java/java8/stream/chapter8/Chapter8.md)
 
 ## [Optional](https://github.com/genesis12345678/TIL/blob/main/Java/java8/stream/chapter11/Chapter11.md)
+
+## [디폴트 메서드](https://github.com/genesis12345678/TIL/blob/main/Java/java8/stream/chapter13/Chapter13.md)
 
 ---
 
