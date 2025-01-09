@@ -8,6 +8,8 @@
 - 상호작용하는 객체 사이에는 가능하면 느슨한 결합을 사용해야 한다.
 - 클래스는 확장에는 열려 있어야 하지만, 변경에는 닫혀 있어야 한다.
 - 추상화된 것에 의존하게 만들고 구상 클래스에 의존하지 않게 만든다.
+- 진짜 절친에게만 이야기해야 한다.
+  - 어떤 객체든 그 객체와 상호작용을 하는 클래스의 개수와 상호작용 방식에 주의를 기울여야 한다.
 
 ## 생성 패턴
 
@@ -23,7 +25,7 @@
 
 ### [데코레이터 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/structural/decorator/Decorator.md)
 ### [어댑터 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/structural/adapter/Adapter.md)
-### []()
+### [퍼사드 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/structural/facade/Facade.md)
 ### []()
 ### []()
 ### []()
