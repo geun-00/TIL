@@ -11,76 +11,303 @@
 
 ## 팩토리 메서드 패턴 예제 코드 - 1
 
-**팩토리 메서드 패턴으로 여러 종류의 이동 수단을 만들어본다.**
-
 ![img_1.png](image/img_1.png)
 
-![img_2.png](image/img_2.png)
+```java
+//Product
+public interface Vehicle {
+    void drive();
+}
+```
+```java
+//Concrete Product
+public class Car implements Vehicle {
 
-![img_3.png](image/img_3.png)
+    @Override
+    public void drive() {
+        System.out.println("Driving a car!");
+    }
+}
+```
+```java
+//Concrete Product
+public class Motorcycle implements Vehicle {
 
-![img_4.png](image/img_4.png)
+    @Override
+    public void drive() {
+        System.out.println("Riding a motorcycle!");
+    }
+}
+```
+```java
+//Creator
+public interface VehicleFactory {
 
-![img_5.png](image/img_5.png)
+    //추상 메서드
+    Vehicle createVehicle();
 
-> 자바 8의 디폴트 메서드를 이용해 최상위 공장 클래스를 추상 클래스 대신 인터페이스로 선언할 수 있다.
+    //디폴트 메서드
+    default void deliverVehicle() {
+        Vehicle vehicle = createVehicle();
+        System.out.print("Delivering the vehicle: ");
+        vehicle.drive();
+    }
+}
+```
+```java
+//Concrete Creator
+public class CarFactory implements VehicleFactory {
 
-![img_6.png](image/img_6.png)
+    @Override
+    public Vehicle createVehicle() {
+        return new Car();
+    }
+}
+```
+```java
+//Concrete Creator
+public class MotorcycleFactory implements VehicleFactory {
 
-![img_7.png](image/img_7.png)
+    @Override
+    public Vehicle createVehicle() {
+        return new Motorcycle();
+    }
+}
+```
+```java
+//Client
+public class Client {
+    public static void main(String[] args) {
 
-> 객체를 생성하는 공장 클래스는 애플리케이션에 여러 개 있을 필요가 없다. 따라서 각 팩토리 클래스들을
-> **싱글톤**화시켜 최적화 하는 것이 가장 좋다.
+        VehicleFactory[] factories = {
+            new CarFactory(),
+            new MotorcycleFactory()
+        };
 
-![img_8.png](image/img_8.png)
-
-![img_9.png](image/img_9.png)
+        for (VehicleFactory factory : factories) {
+            factory.deliverVehicle();
+        }
+        
+        //Output
+        //Delivering the vehicle: Driving a car!
+        //Delivering the vehicle: Riding a motorcycle!
+    }
+}
+```
 
 ## 팩토리 메서드 패턴 예제 코드 - 2
 
-![img_10.png](image/img_10.png)
+![img_2.png](image/img_2.png)
 
-![img_11.png](image/img_11.png)
+```java
+//Product
+public interface Payment {
+    void processPayment(int amount);
+}
+```
+```java
+//Concrete Product
+public class CreditCardPayment implements Payment {
 
-![img_12.png](image/img_12.png)
+    private final String creditCardNumber;
 
-![img_13.png](image/img_13.png)
+    public CreditCardPayment(String creditCardNumber) {
+        this.creditCardNumber = creditCardNumber;
+    }
 
-![img_14.png](image/img_14.png)
+    @Override
+    public void processPayment(int amount) {
+        System.out.printf("Credit card: $%d by [%s]\n", amount, creditCardNumber);
+    }
+}
+```
+```java
+//Concrete Product
+public class BankTransferPayment implements Payment {
 
-![img_15.png](image/img_15.png)
+    private final String bankAccountNumber;
 
-![img_16.png](image/img_16.png)
+    public BankTransferPayment(String bankAccountNumber) {
+        this.bankAccountNumber = bankAccountNumber;
+    }
 
-![img_17.png](image/img_17.png)
+    @Override
+    public void processPayment(int amount) {
+        System.out.printf("Bank transfer: $%d by [%s]\n", amount, bankAccountNumber);
+    }
+}
+```
+```java
+//Concrete Product
+public class PayPalPayment implements Payment {
 
-![img_18.png](image/img_18.png)
+    private final String payPalEmail;
 
-![img_19.png](image/img_19.png)
+    public PayPalPayment(String payPalEmail) {
+        this.payPalEmail = payPalEmail;
+    }
 
-![img_20.png](image/img_20.png)
+    @Override
+    public void processPayment(int amount) {
+        System.out.printf("PayPal: $%d by [%s]\n", amount, payPalEmail);
+    }
+}
+```
+```java
+//Creator
+public interface PaymentFactory {
+    Payment createPayment(FinancialInfo info);
+}
+```
+```java
+//Concrete Creator
+public class CreditCardPaymentFactory implements PaymentFactory {
 
-![img_22.png](image/img_22.png)
+    @Override
+    public Payment createPayment(FinancialInfo info) {
+        return new CreditCardPayment(info.creditCardNumber);
+    }
+}
+```
+```java
+//Concrete Creator
+public class BankTransferPaymentFactory implements PaymentFactory {
+
+    @Override
+    public Payment createPayment(FinancialInfo info) {
+        return new BankTransferPayment(info.bankAccountNumber);
+    }
+}
+```
+```java
+//Concrete Creator
+public class PayPalPaymentFactory implements PaymentFactory {
+
+    @Override
+    public Payment createPayment(FinancialInfo info) {
+        return new PayPalPayment(info.payPalEmail);
+    }
+}
+```
+```java
+public class FinancialInfo {
+
+    String creditCardNumber;
+    String payPalEmail;
+    String bankAccountNumber;
+
+    public FinancialInfo(String creditCardNumber, String payPalEmail, String bankAccountNumber) {
+        this.creditCardNumber = creditCardNumber;
+        this.payPalEmail = payPalEmail;
+        this.bankAccountNumber = bankAccountNumber;
+    }
+}
+```
+```java
+//Client
+public class Client {
+    public static void main(String[] args) {
+
+        FinancialInfo userInfo = new FinancialInfo(
+            "1234-5678-9012-3456",
+            "user@example.com",
+            "987654321"
+        );
+
+        for (Payment payment : payments) {
+            payment.processPayment(100);
+        }
+
+        PaymentFactory[] factories = {
+            new CreditCardPaymentFactory(),
+            new PayPalPaymentFactory(),
+            new BankTransferPaymentFactory()
+        };
+
+        for (EnumPaymentFactory factory : factories) {
+            Payment payment = factory.create(userInfo);
+            payment.processPayment(150);
+        }
+        
+        //Output
+        //Credit card: $150 by [1234-5678-9012-3456]
+        //PayPal: $150 by [user@example.com]
+        //Bank transfer: $150 by [987654321]
+    }
+}
+```
 
 만약 `Concrete Product`들의 생성 방식이 달라져도, 해당 팩토리의 `createPayment` 메서드만 수정하면 되기 때문에
 클라이언트 코드에는 수정해야 할 부분이 없다.
 
-
 첫 번째 예제에서 팩토리 클래스들은 싱글톤으로 구성하는 것이 좋다고 했는데, 모든 클래스들을
 싱글톤으로 구성하는 것보다 **Enum**을 이용하면 효율적인 작업이 가능하다.
-
 
 **Enum** 타입 자체가 `public static final`이기 때문에 따로 싱글톤을 구현하지 않아도
 단일한 객체만 생성됨이 보장된다.
 
-
 바로 위 예제를 **Enum**을 사용한 팩토리 메서드 패턴으로 변경하면 다음과 같다.
 
-![img_23.png](image/img_23.png)
+![img_3.png](image/img_3.png)
 
-![img_24.png](image/img_24.png)
+```java
+public enum EnumPaymentFactory {
 
-![img_21.png](image/img_21.png)
+    CREDIT_CARD {
+        @Override
+        protected Payment createPayment(FinancialInfo info) {
+            return new CreditCardPayment(info.creditCardNumber);
+        }
+    },
+    PAY_PAL {
+        @Override
+        protected Payment createPayment(FinancialInfo info) {
+            return new PayPalPayment(info.payPalEmail);
+        }
+    },
+    BANK_TRANSFER {
+        @Override
+        protected Payment createPayment(FinancialInfo info) {
+            return new BankTransferPayment(info.bankAccountNumber);
+        }
+    };
+
+    public Payment create(FinancialInfo info) {
+        return createPayment(info);
+    }
+
+    abstract protected Payment createPayment(FinancialInfo info);
+}
+```
+```java
+//Client
+public class Client {
+    public static void main(String[] args) {
+
+        FinancialInfo userInfo = new FinancialInfo(
+            "1234-5678-9012-3456",
+            "user@example.com",
+            "987654321"
+        );
+
+        EnumPaymentFactory[] factories = {
+            EnumPaymentFactory.CREDIT_CARD,
+            EnumPaymentFactory.PAY_PAL,
+            EnumPaymentFactory.BANK_TRANSFER
+        };
+
+        for (EnumPaymentFactory factory : factories) {
+            Payment payment = factory.create(userInfo);
+            payment.processPayment(150);
+        }
+        
+        //Output
+        //Credit card: $150 by [1234-5678-9012-3456]
+        //PayPal: $150 by [user@example.com]
+        //Bank transfer: $150 by [987654321]
+    }
+}
+```
 
 ## 팩토리 메서드 패턴 장단점
 
