@@ -12,20 +12,121 @@
 
 ![img_1.png](image/img_1.png)
 
-![img_2.png](image/img_2.png)
+```java
+//Singleton
+public class Theme {
 
-![img_3.png](image/img_3.png)
+    private static Theme instance;
+    private String themeColor;
 
-![img_4.png](image/img_4.png)
+    private Theme() {
+        this.themeColor = "light"; //Default theme
+    }
 
-![img_5.png](image/img_5.png)
+    public static Theme getInstance() {
+        if (instance == null) {
+            instance = new Theme();
+        }
+        return instance;
+    }
 
-![img_6.png](image/img_6.png)
+    public String getThemeColor() {
+        return themeColor;
+    }
 
-![img_7.png](image/img_7.png)
+    public void setThemeColor(String themeColor) {
+        this.themeColor = themeColor;
+    }
+}
+```
 
-`Button`, `TextField`, `Label` 클래스는 모두 하나의 같은 `Theme` 클래스 인스턴스를 참조하여 사용한다.
+```java
+//Client
+public class Button {
 
+    private final String label;
+
+    public Button(String label) {
+        this.label = label;
+    }
+
+    public void display() {
+        String themeColor = Theme.getInstance().getThemeColor();
+        System.out.println(
+            "Button [" + label + "] displayed in " + themeColor + " theme."
+        );
+    }
+}
+```
+```java
+//Client
+public class TextField {
+
+    private final String text;
+
+    public TextField(String text) {
+        this.text = text;
+    }
+
+    public void display() {
+        String themeColor = Theme.getInstance().getThemeColor();
+        System.out.println(
+            "TextField [" + text + "] displayed in " + themeColor + " theme."
+        );
+    }
+}
+```
+```java
+//Client
+public class Label {
+
+    private final String text;
+
+    public Label(String text) {
+        this.text = text;
+    }
+
+    public void display() {
+        String themeColor = Theme.getInstance().getThemeColor();
+        System.out.println(
+            "Label [" + text + "] displayed in " + themeColor + " theme."
+        );
+    }
+}
+```
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        Button button = new Button("Submit");
+        TextField textField = new TextField("Enter your name");
+        Label label = new Label("Username");
+
+        button.display();
+        textField.display();
+        label.display();
+
+        System.out.println("\n.............setThemeColor.............\n");
+
+        Theme.getInstance().setThemeColor("dark");
+
+        button.display();
+        textField.display();
+        label.display();
+        
+        //Output
+        //Button [Submit] displayed in light theme.
+        //TextField [Enter your name] displayed in light theme.
+        //Label [Username] displayed in light theme.
+        //
+        //.............setThemeColor.............
+        //
+        //Button [Submit] displayed in dark theme.
+        //TextField [Enter your name] displayed in dark theme.
+        //Label [Username] displayed in dark theme.
+    }
+}
+```
 
 ## 싱글톤 패턴 구현 기법 종류
 
@@ -52,7 +153,18 @@
 - 또 예외 처리를 할 수 없다.
 - 싱글톤을 적용한 객체가 크지 않은 객체라면 이 기법을 적용해도 무리는 없다.
 
-![img_8.png](image/img_8.png)
+```java
+public class EagerSingleton {
+
+    private static final EagerSingleton INSTANCE = new EagerSingleton();
+
+    private EagerSingleton() { }
+
+    public static EagerSingleton getINSTANCE() {
+        return INSTANCE;
+    }
+}
+```
 
 ### 2. Static block initialization
 
@@ -60,7 +172,26 @@
 - `static block`을 이용해 예외를 잡을 수 있다.
 - 여전히 `static`의 특성으로 사용하지 않는데도 공간을 차지한다.
 
-![img_9.png](image/img_9.png)
+```java
+public class StaticSingleton {
+
+    private static StaticSingleton instance;
+
+    private StaticSingleton() { }
+
+    static {
+        try {
+            instance = new StaticSingleton();
+        }catch (Exception e) {
+            throw new RuntimeException("싱글톤 객체 생성 중 오류 발생");
+        }
+    }
+
+    public static StaticSingleton getInstance() {
+        return instance;
+    }
+}
+```
 
 ### 3. Lazy Initialization
 
@@ -69,13 +200,49 @@
 - 위에서 본 미사용 객체의 고정 메모리 차지 한계를 극복할 수 있다.
 - **그러나 스레드 세이프하지 않는 치명적인 단점이 있다.**
 
-![img_10.png](image/img_10.png)
+```java
+public class LazySingleton {
+
+    private static LazySingleton instance;
+
+    private LazySingleton() {
+    }
+
+    public static LazySingleton getInstance() {
+        if (instance == null) {
+            instance = new LazySingleton();
+        }
+        return instance;
+    }
+}
+```
 
 - 첫 스레드가 처음 인스턴스를 생성하기 직전에 다른 스레드가 `if`문으로 진입하면서
 또 다른 새로운 객체를 생성할 수 있는 문제가 있다.
 - 다음은 그 문제를 확인해보는 코드다.
 
-![img_11.png](image/img_11.png)
+```java
+class Test {
+    public static void main(String[] args) throws InterruptedException {
+
+        ThreadSafeSingleton[] singletons = new ThreadSafeSingleton[10];
+
+        ExecutorService service = Executors.newFixedThreadPool(3);
+
+        for (int i = 0; i < singletons.length; i++) {
+            final int idx = i;
+            service.submit(() -> singletons[idx] = ThreadSafeSingleton.getInstance());
+        }
+
+        service.shutdown();
+        service.awaitTermination(5, TimeUnit.SECONDS);
+
+        for (ThreadSafeSingleton singleton : singletons) {
+            System.out.println(singleton);
+        }
+    }
+}
+```
 
 ![img_12.png](image/img_12.png)
 
@@ -87,7 +254,22 @@
 - 하지만 매번 객체를 가져올 때 `synchronized` 메서드를 호출해 동기화 처리 작업에
 오버헤드가 발생해 **성능 하락**이 발생한다.
 
-![img_13.png](image/img_13.png)
+```java
+public class ThreadSafeSingleton {
+
+    private static ThreadSafeSingleton instance;
+
+    private ThreadSafeSingleton() { }
+
+    //synchronized 키워드 추가
+    public static synchronized ThreadSafeSingleton getInstance() {
+        if (instance == null) {
+            instance = new ThreadSafeSingleton();
+        }
+        return instance;
+    }
+}
+```
 
 ### 5. Double-Checked Locking
 
@@ -98,7 +280,26 @@
 - 또한 JVM에 따라서 여전히 스레드 세이프 하지 않는 경우가 발생하기 때문에 
 **사용하기를 지양하는** 기법이다.
 
-![img_14.png](image/img_14.png)
+```java
+public class DCLSingleton {
+
+    private static volatile DCLSingleton instance;
+
+    private DCLSingleton() { }
+
+    public static DCLSingleton getInstance() {
+        if (instance == null) {
+            synchronized (DCLSingleton.class) {
+                if (instance == null) {
+                    instance = new DCLSingleton();
+                }
+            }
+        }
+
+        return instance;
+    }
+}
+```
 
 ### 6. Bill Pugh Solution (★)
 
@@ -110,7 +311,20 @@
 또한, 내부 `static` 클래스는 내부 클래스의 치명적인 메모리 누수 문제를 해결한다.
 - **다만 클라이언트가 Reflection API, 직렬화/역직렬화를 통해 임의로 싱글톤을 파괴할 수 있다는 단점이 있다.**
 
-![img_15.png](image/img_15.png)
+```java
+public class BillPughSingleton {
+
+    private BillPughSingleton() {}
+
+    private static class SingletonInstanceHolder {
+        private static final BillPughSingleton INSTANCE = new BillPughSingleton();
+    }
+
+    public static BillPughSingleton getInstance() {
+        return SingletonInstanceHolder.INSTANCE;
+    }
+}
+```
 
 1. 내부 클래스를 `static`으로 선언했기 때문에, 싱글톤 클래스가 초기화되어도
 `Holder` 내부 클래스는 메모리에 로드되지 않는다.
@@ -129,7 +343,31 @@
 단점이 있다.**
 - **또 클래스 상속이 필요할 때, `enum` 외의 클래스 상속은 불가능하다.**
 
-![img_16.png](image/img_16.png)
+```java
+public enum EnumSingleton {
+    
+    INSTANCE; //필드는 한개
+
+    private int count;
+
+    public void doSomeThing() { }
+
+    public void increment() {
+        count++;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public static void main(String[] args) {
+        EnumSingleton singleton = EnumSingleton.INSTANCE;
+        singleton.doSomeThing();
+        singleton.increment();
+        int count = singleton.getCount();
+    }
+}
+```
 
 ## 싱글톤 패턴 장단점
 
