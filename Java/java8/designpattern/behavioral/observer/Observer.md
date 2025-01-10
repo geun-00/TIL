@@ -12,41 +12,212 @@
 
 **구독자에게만 새로운 소식 전달하기**
 
-![img_7.png](image/img_7.png)
-
 ![img_1.png](image/img_1.png)
 
-![img_2.png](image/img_2.png)
+```java
+//Subject
+public interface Subject {
+    void registerObserver(Observer observer);
+    void removeObserver(Observer observer);
+    void notifyObservers();
+}
+```
+```java
+//Observer
+public interface Observer {
+    void update(String news);
+}
+```
+```java
+//Concrete Subject
+public class NewsAgency implements Subject {
 
-![img_3.png](image/img_3.png)
+  private final List<Observer> observers = new ArrayList<>();
+  private String news;
 
-![img_4.png](image/img_4.png)
+  @Override
+  public void registerObserver(Observer observer) {
+    observers.add(observer);
+  }
 
-![img_5.png](image/img_5.png)
+  @Override
+  public void removeObserver(Observer observer) {
+    observers.remove(observer);
+  }
 
-![img_6.png](image/img_6.png)
+  @Override
+  public void notifyObservers() {
+    for (Observer observer : observers) {
+      observer.update(news);
+    }
+  }
+
+  public void setNews(String news) {
+    this.news = news;
+    notifyObservers();
+  }
+}
+```
+```java
+//Concrete Observer
+public class NewsChannel implements Observer {
+
+    private final String name;
+
+    public NewsChannel(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void update(String news) {
+        System.out.printf("%s received news: %s\n", name, news);
+    }
+}
+```
+```java
+//Client
+public class Client {
+    public static void main(String[] args) {
+
+        NewsAgency agency = new NewsAgency();
+
+        NewsChannel channel1 = new NewsChannel("Channel 1");
+        NewsChannel channel2 = new NewsChannel("Channel 2");
+
+        //Channel 1,2 구독
+        agency.registerObserver(channel1);
+        agency.registerObserver(channel2);
+
+        //구독자들에게 새로운 소식 발행
+        agency.setNews("[Breaking news: Observer Pattern in action!]");
+        //Channel 1 received news: [Breaking news: Observer Pattern in action!]
+        //Channel 2 received news: [Breaking news: Observer Pattern in action!]
+
+        //Channel 2 구독 취소
+        agency.removeObserver(channel2);
+
+        //Channel 1에게만 새로운 소식 발행
+        agency.setNews("[Another update: Channel 2 unsubscribed.]");
+        //Channel 1 received news: [Another update: Channel 2 unsubscribed.]
+    }
+}
+```
 
 ## 옵저버 패턴 예제 코드 - 2
 
 **날씨 정보가 변경됨에 따라 각각의 옵저버들이 다르게 표현하기**
 
-![img_9.png](image/img_9.png)
+![img_2.png](image/img_2.png)
 
-![img_10.png](image/img_10.png)
+```java
+//Subject
+public interface WeatherSubject {
+    void registerObserver(WeatherObserver observer);
+    void removeObserver(WeatherObserver observer);
+    void notifyObservers();
+}
+```
+```java
+//Observer
+public interface WeatherObserver {
+    void update(float temp, float humidity, float pressure);
+}
+```
+```java
+//Concrete Subject
+public class WeatherData implements WeatherSubject {
 
-![img_11.png](image/img_11.png)
+    private final List<WeatherObserver> observers = new ArrayList<>();
+    private float temp, humidity, pressure;
 
-![img_12.png](image/img_12.png)
+    public void setMeasurements(float temp, float humidity, float pressure) {
+        this.temp = temp;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        notifyObservers();
+    }
 
-![img_13.png](image/img_13.png)
+    @Override
+    public void registerObserver(WeatherObserver observer) {
+        observers.add(observer);
+    }
 
-![img_14.png](image/img_14.png)
+    @Override
+    public void removeObserver(WeatherObserver observer) {
+        observers.remove(observer);
+    }
 
-![img_15.png](image/img_15.png)
+    @Override
+    public void notifyObservers() {
+        for (WeatherObserver observer : observers) {
+            observer.update(temp, humidity, pressure);
+        }
+    }
+}
+```
+```java
+//Concrete Observer
+public class CurrentConditionsDisplay implements WeatherObserver {
 
-![img_16.png](image/img_16.png)
+    @Override
+    public void update(float temp, float humidity, float pressure) {
+        System.out.printf("Current: %.1fF, %.1f%% humidity\n", temp, humidity);
+    }
+}
+```
+```java
+//Concrete Observer
+public class StatisticsDisplay implements WeatherObserver {
 
-![img_17.png](image/img_17.png)
+    @Override
+    public void update(float temp, float humidity, float pressure) {
+        System.out.printf("Avg/Max/Min temp: %.1f/%.1f/%.1f\n", temp, (temp + 2), (temp - 2));
+    }
+}
+```
+```java
+//Concrete Observer
+public class ForecastDisplay implements WeatherObserver {
+
+    @Override
+    public void update(float temp, float humidity, float pressure) {
+        System.out.printf("Forecast: %s\n", (pressure < 29.92 ? "Rain" : "Sunny"));
+    }
+}
+```
+```java
+//Client
+public class Client {
+    public static void main(String[] args) {
+
+        //Subject
+        WeatherData weatherData = new WeatherData();
+
+        //Observers
+        CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay();
+        StatisticsDisplay statisticsDisplay = new StatisticsDisplay();
+        ForecastDisplay forecastDisplay = new ForecastDisplay();
+
+        weatherData.registerObserver(currentDisplay);
+        weatherData.registerObserver(statisticsDisplay);
+        weatherData.registerObserver(forecastDisplay);
+
+        weatherData.setMeasurements(80, 65, 30.4f);
+        //Current: 80.0F, 65.0% humidity
+        //Avg/Max/Min temp: 80.0/82.0/78.0
+        //Forecast: Sunny
+
+        System.out.println("\nremove statisticsDisplay\n");
+
+        weatherData.removeObserver(statisticsDisplay);
+        weatherData.setMeasurements(70, 60, 28.9f);
+        //remove statisticsDisplay
+        //
+        //Current: 70.0F, 60.0% humidity
+        //Forecast: Rain
+    }
+}
+```
 
 ## 옵저버 패턴 장단점
 
