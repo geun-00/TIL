@@ -13,55 +13,224 @@
 
 **전략 패턴을 사용한 다양한 결제 전략 선택하기**
 
-![img_7.png](image/img_7.png)
-
-### Strategy
-
 ![img_1.png](image/img_1.png)
 
-### ConcreteStrategies
+```java
+//Strategy
+public interface PaymentStrategy {
+    void pay(int amount);
+}
+```
+```java
+//Concrete Strategy
+public class CreditCardPayment implements PaymentStrategy {
 
-![img_2.png](image/img_2.png)
+    private final String name;
+    private final String cardNumber;
 
-![img_3.png](image/img_3.png)
+    public CreditCardPayment(String name, String cardNumber) {
+        this.name = name;
+        this.cardNumber = cardNumber;
+    }
 
-### Context
+    @Override
+    public void pay(int amount) {
+        System.out.printf("%d paid with credit card by [%s, %s]\n", amount, name, cardNumber);
+    }
+}
+```
+```java
+//Concrete Strategy
+public class PayPalPayment implements PaymentStrategy {
 
-![img_4.png](image/img_4.png)
+    private final String email;
 
-### Client
+    public PayPalPayment(String email) {
+        this.email = email;
+    }
 
-![img_5.png](image/img_5.png)
+    @Override
+    public void pay(int amount) {
+        System.out.printf("%d amount paid using PayPal by [%s]\n", amount, email);
+    }
+}
+```
+```java
+//Context
+public class ShoppingCart {
 
-![img_6.png](image/img_6.png)
+    private PaymentStrategy paymentStrategy;
 
-- 전략의 수정이 필요하면 해당 전략만 수정하면 되고, 다른 방법이 추가되어도 새로운 전략만 만들면 된다.
+    //setter
+    public void setPaymentStrategy(PaymentStrategy paymentStrategy) {
+        this.paymentStrategy = paymentStrategy;
+    }
+
+    public void checkout(int amount) {
+        paymentStrategy.pay(amount);
+    }
+}
+```
+```java
+//Client
+public class Client {
+
+    public static void main(String[] args) {
+
+        ShoppingCart cart = new ShoppingCart();
+
+        cart.setPaymentStrategy(new CreditCardPayment(
+            "John Doe", "1234567890123456"
+        ));
+/*
+        //람다
+        cart.setPaymentStrategy(amount -> {
+
+            String name = "John Doe";
+            String cardNumber = "1234567890123456";
+
+            System.out.printf("%d paid with credit card by [%s, %s]\n", amount, name, cardNumber);
+        });
+*/
+
+        cart.checkout(100);
+        //100 paid with credit card by [John Doe, 1234567890123456]
+
+        //전략 교체
+        cart.setPaymentStrategy(new PayPalPayment(
+            "johndoe@example.com"
+        ));
+/*
+        //람다
+        cart.setPaymentStrategy(amount -> {
+            String email = "johndoe@example.com";
+            System.out.printf("%d amount paid using PayPal by [%s]\n", amount, email);
+        });
+*/
+
+        cart.checkout(200);
+        //200 amount paid using PayPal by [johndoe@example.com]
+    }
+}
+```
+
+전략의 수정이 필요하면 해당 전략만 수정하면 되고, 다른 방법이 추가되어도 새로운 전략만 만들면 된다.
 
 ## 전략 패턴 예제 코드 - 2
 
 **전략 패턴을 사용한 주어진 문자열을 특정 알고리즘을 이용해 다른 문자열로 변환**
 
-![img.png](image/img_15.png)
+![img_2.png](image/img_2.png)
 
-### Strategy
+```java
+//Strategy
+public interface CompressionStrategy {
+    String compress(String data);
+}
+```
+```java
+//Concrete Strategy
+public class RunLengthEncoding implements CompressionStrategy{
 
-![img_8.png](image/img_8.png)
+    @Override
+    public String compress(String data) {
 
-### ConcreteStrategies
+        StringBuilder sb = new StringBuilder();
+        int count = 1;
 
-![img_9.png](image/img_9.png)
+        for (int i = 1; i <= data.length(); i++) {
 
-![img_10.png](image/img_10.png)
+            if (i < data.length() && data.charAt(i) == data.charAt(i - 1)) {
+                count++;
+            } else {
+                sb.append(data.charAt(i - 1));
+                sb.append(count);
+                count = 1;
+            }
+        }
 
-### Context
+        return sb.toString();
+    }
+}
+```
+```java
+//Concrete Strategy
+class SimpleReplacementCompression implements CompressionStrategy {
 
-![img_11.png](image/img_11.png)
+    @Override
+    public String compress(String data) {
+        return data.replace("a", "1")
+                   .replace("e", "2")
+                   .replace("i", "3")
+                   .replace("o", "4")
+                   .replace("u", "5");
+    }
+}
+```
+```java
+//Context
+public class Compressor {
 
-### Client
+    private CompressionStrategy strategy;
 
-![img_12.png](image/img_12.png)
+    //setter
+    public void setCompressionStrategy(CompressionStrategy strategy) {
+        this.strategy = strategy;
+    }
 
-![img_13.png](image/img_13.png)
+    public String compress(String data) {
+        return strategy.compress(data);
+    }
+}
+```
+```java
+//Client
+public class Client {
+    public static void main(String[] args) {
+
+        Compressor compressor = new Compressor();
+        String data = "aabcccccaaa";
+/*
+        //람다
+        compressor.setCompressionStrategy(str -> {
+
+            StringBuilder sb = new StringBuilder();
+            int count = 1;
+
+            for (int i = 1; i <= data.length(); i++) {
+
+                if (i < data.length() && data.charAt(i) == data.charAt(i - 1)) {
+                    count++;
+                } else {
+                    sb.append(data.charAt(i - 1));
+                    sb.append(count);
+                    count = 1;
+                }
+            }
+
+            return sb.toString();
+        });
+*/
+        compressor.setCompressionStrategy(new RunLengthEncoding());
+        System.out.println("RLE Compression: " + compressor.compress(data));
+        //RLE Compression: a2b1c5a3
+/*
+        //람다
+        compressor.setCompressionStrategy(str ->
+            str.replace("a", "1")
+               .replace("e", "2")
+               .replace("i", "3")
+               .replace("o", "4")
+               .replace("u", "5")
+        );
+*/
+        //전략 수정
+        compressor.setCompressionStrategy(new SimpleReplacementCompression());
+        System.out.println("Simple Replacement: " + compressor.compress(data));
+        //Simple Replacement: 11bccccc111
+    }
+}
+```
 
 ---
 
