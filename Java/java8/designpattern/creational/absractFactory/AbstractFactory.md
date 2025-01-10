@@ -13,69 +13,332 @@
 
 ![img_1.png](image/img_1.png)
 
-![img_2.png](image/img_2.png)
-
-![img_3.png](image/img_3.png)
-
-![img_4.png](image/img_4.png)
-
-![img_5.png](image/img_5.png)
-
-![img_6.png](image/img_6.png)
-
-![img_7.png](image/img_7.png)
-
-![img_8.png](image/img_8.png)
-
-![img_9.png](image/img_9.png)
-
-![img_10.png](image/img_10.png)
-
-![img_11.png](image/img_11.png)
-
-![img_12.png](image/img_12.png)
-
-![img_13.png](image/img_13.png)
-
 만약 새로운 리눅스 제품군이 추가되어야 한다면 리눅스에 맞는 제품들과 팩토리 클래스만 추가해주면 된다.
 클라이언트 코드는 변경할 필요가 없다.
 
-각 팩토리 클래스들은 객체를 생성하기만 하면 되기 때문에 메모리 최적화를 위해 각 팩토리 클래스를
-싱글톤으로 설계하는 것이 좋다.
+```java
+//Abstract Product
+public interface Button {
+    void paint();
+}
+```
+```java
+//Abstract Product
+public interface Checkbox {
+    void paint();
+}
+```
+```java
+//Concrete Product
+public class WindowsButton implements Button {
+
+    @Override
+    public void paint() {
+        System.out.println("Rendering a button in Windows style");
+    }
+}
+```
+```java
+//Concrete Product
+public class WindowsCheckbox implements Checkbox {
+
+    @Override
+    public void paint() {
+        System.out.println("Rendering a checkbox in Windows style");
+    }
+}
+```
+```java
+//Concrete Product
+public class MacOSButton implements Button {
+
+    @Override
+    public void paint() {
+        System.out.println("Rendering a button in MacOS style");
+    }
+}
+```
+```java
+//Concrete Product
+public class MacOSCheckbox implements Checkbox {
+
+    @Override
+    public void paint() {
+        System.out.println("Rendering a checkbox in MacOS style");
+    }
+}
+```
+```java
+//Abstract Factory
+public interface GUIFactory {
+    Button createButton();
+    Checkbox createCheckbox();
+}
+```
+```java
+//Concrete Factory
+public class WindowsFactory implements GUIFactory {
+
+    @Override
+    public Button createButton() {
+        return new WindowsButton();
+    }
+
+    @Override
+    public Checkbox createCheckbox() {
+        return new WindowsCheckbox();
+    }
+}
+```
+```java
+//Concrete Factory
+public class MacOSFactory implements GUIFactory {
+
+    @Override
+    public Button createButton() {
+        return new MacOSButton();
+    }
+
+    @Override
+    public Checkbox createCheckbox() {
+        return new MacOSCheckbox();
+    }
+}
+```
+```java
+//Client
+public class Application {
+
+    private final Button button;
+    private final Checkbox checkbox;
+
+    public Application(GUIFactory factory) {
+        this.button = factory.createButton();
+        this.checkbox = factory.createCheckbox();
+    }
+
+    public void paint() {
+        button.paint();
+        checkbox.paint();
+    }
+}
+```
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        paint(new WindowsFactory());
+
+        System.out.println("------------------------------");
+
+        paint(new MacOSFactory());
+        
+        //Output
+        //Rendering a button in Windows style
+        //Rendering a checkbox in Windows style
+        //------------------------------
+        //Rendering a button in MacOS style
+        //Rendering a checkbox in MacOS style
+    }
+
+    public static void paint(GUIFactory factory) {
+        new Application(factory).paint();
+    }
+}
+```
 
 ## 추상 팩토리 패턴 예제 코드 - 2
 
-![img_14.png](image/img_14.png)
+![img_2.png](image/img_2.png)
 
-![img_16.png](image/img_16.png)
+```java
+//Abstract Product
+public interface Connection {
+    void open();
+    void close();
+}
+```
+```java
+//Abstract Product
+public interface Command {
+    void execute(String query);
+}
+```
+```java
+//Abstract Product
+public interface ResultSet {
+    void getResults();
+}
+```
+```java
+//Concrete Product
+public class MySQLConnection implements Connection {
 
-![img_15.png](image/img_15.png)
+    @Override
+    public void open() {
+        System.out.println("Opening MySQL connection");
+    }
 
-![img_17.png](image/img_17.png)
+    @Override
+    public void close() {
+        System.out.println("Closing MySQL connection");
+    }
+}
+```
+```java
+//Concrete Product
+public class MySQLCommand implements Command {
 
-![img_18.png](image/img_18.png)
+    @Override
+    public void execute(String query) {
+        System.out.println("Executing MySQL query: " + query);
+    }
+}
+```
+```java
+//Concrete Product
+public class MySQLResultSet implements ResultSet {
 
-![img_19.png](image/img_19.png)
+    @Override
+    public void getResults() {
+        System.out.println("Getting results from MySQL database");
+    }
+}
+```
+```java
+//Concrete Product
+public class PostgreSQLConnection implements Connection {
 
-![img_20.png](image/img_20.png)
+    @Override
+    public void open() {
+        System.out.println("Opening PostgreSQL connection");
+    }
 
-![img_21.png](image/img_21.png)
+    @Override
+    public void close() {
+        System.out.println("Closing PostgreSQL connection");
+    }
+}
+```
+```java
+//Concrete Product
+public class PostgreSQLCommand implements Command {
 
-![img_22.png](image/img_22.png)
+    @Override
+    public void execute(String query) {
+        System.out.println("Executing PostgreSQL query: " + query);
+    }
+}
+```
+```java
+//Concrete Product
+public class PostgreSQLResultSet implements ResultSet {
 
-![img_23.png](image/img_23.png)
+    @Override
+    public void getResults() {
+        System.out.println("Getting results from PostgreSQL database");
+    }
+}
+```
+```java
+//Abstract Factory
+public interface DatabaseFactory {
+    Connection createConnection();
+    Command createCommand();
+    ResultSet createResultSet();
+}
+```
+```java
+//Concrete Factory
+public class MySQLFactory implements DatabaseFactory {
 
-![img_24.png](image/img_24.png)
+    @Override
+    public Connection createConnection() {
+        return new MySQLConnection();
+    }
 
-![img_25.png](image/img_25.png)
+    @Override
+    public Command createCommand() {
+        return new MySQLCommand();
+    }
 
-![img_26.png](image/img_26.png)
+    @Override
+    public ResultSet createResultSet() {
+        return new MySQLResultSet();
+    }
+}
+```
+```java
+//Concrete Factory
+public class PostgreSQLFactory implements DatabaseFactory {
 
-![img_27.png](image/img_27.png)
+    @Override
+    public Connection createConnection() {
+        return new PostgreSQLConnection();
+    }
 
-![img_28.png](image/img_28.png)
+    @Override
+    public Command createCommand() {
+        return new PostgreSQLCommand();
+    }
 
-![img_29.png](image/img_29.png)
+    @Override
+    public ResultSet createResultSet() {
+        return new PostgreSQLResultSet();
+    }
+}
+```
+```java
+//Client
+class DatabaseClient {
+
+    private final Connection connection;
+    private final Command command;
+    private final ResultSet resultSet;
+
+    public DatabaseClient(DatabaseFactory factory) {
+        connection = factory.createConnection();
+        command = factory.createCommand();
+        resultSet = factory.createResultSet();
+    }
+
+    public void performDatabaseOperations() {
+        connection.open();
+        command.execute("SELECT * FROM users");
+        resultSet.getResults();
+        connection.close();
+    }
+}
+```
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        perform(new MySQLFactory());
+
+        System.out.println("\nSwitching to PostgreSQL...\n");
+
+        perform(new PostgreSQLFactory());
+        
+        //Output
+        //Opening MySQL connection
+        //Executing MySQL query: SELECT * FROM users
+        //Getting results from MySQL database
+        //Closing MySQL connection
+        //
+        //Switching to PostgreSQL...
+        //
+        //Opening PostgreSQL connection
+        //Executing PostgreSQL query: SELECT * FROM users
+        //Getting results from PostgreSQL database
+        //Closing PostgreSQL connection
+    }
+
+    public static void perform(DatabaseFactory factory) {
+        new DatabaseClient(factory).performDatabaseOperations();
+    }
+}
+```
 
 ## 추상 팩토리 패턴 장단점
 
