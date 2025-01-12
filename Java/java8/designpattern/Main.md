@@ -13,6 +13,7 @@
 - 할리우드 원칙 (먼저 연락하지 마세요. 저희가 연락 드리겠습니다.)
   - 고수준 모듈(추상클래스, 인터페이스)에 의존하고 고수준 모듈에서 연락(메서드 실행)하라는 원칙
   - 고수준 모듈이 필요할 때 저수준 모듈(서브클래스)을 호출한다.
+- 어떤 클래스가 바뀌는 이유는 하나뿐이어야 한다.
 
 ## 생성 패턴
 
@@ -40,7 +41,7 @@
 ### [옵저버 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/behavioral/observer/Observer.md)
 ### [커맨드 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/behavioral/command/Command.md)
 ### [템플릿 메서드 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/behavioral/templateMethod/TemplateMethod.md)
-### []()
+### [반복자 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/behavioral/iterator/Iterator.md)
 ### []()
 ### []()
 ### []()
