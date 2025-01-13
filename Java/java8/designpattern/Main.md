@@ -30,7 +30,7 @@
 ### [데코레이터 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/structural/decorator/Decorator.md)
 ### [어댑터 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/structural/adapter/Adapter.md)
 ### [퍼사드 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/structural/facade/Facade.md)
-### []()
+### [복합체 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/structural/composite/Composite.md)
 ### []()
 ### []()
 ### []()
