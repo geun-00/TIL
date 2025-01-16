@@ -32,7 +32,7 @@
 ### [퍼사드 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/structural/facade/Facade.md)
 ### [복합체 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/structural/composite/Composite.md)
 ### [프록시 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/structural/proxy/Proxy.md)
-### []()
+### [브리지 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/structural/bridge/Bridge.md)
 ### []()
 
 ## 행동 패턴
