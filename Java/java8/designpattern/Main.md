@@ -43,3 +43,4 @@
 ### [상태 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/behavioral/state/State.md)
 ### [책임 연쇄 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/behavioral/chainOfResponsibility/ChainOfResponsibility.md)
 ### [인터프리터 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/behavioral/interpreter/Interpreter.md)
+### [중재자 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/behavioral/mediator/Mediator.md)
