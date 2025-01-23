@@ -37,7 +37,7 @@
 ### [추상 팩토리 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/creational/absractFactory/AbstractFactory.md)
 ### [싱글톤 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/creational/singleton/Singleton.md)
 ### [빌더 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/creational/builder/Builder.md)
-### []()
+### [프로토타입 패턴](https://github.com/genesis12345678/TIL/blob/main/Java/java8/designpattern/creational/prototype/Prototype.md)
 
 ## 구조 패턴
 
