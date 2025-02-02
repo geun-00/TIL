@@ -305,4 +305,4 @@ A -> [UTF-8] 인코딩 -> [65] 1byte -> [UTF-16BE] 디코딩 -> �
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/Main.md)
 
-[다음 ↪️ - I/O]()
+[다음 ↪️ - 스트림](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/io/stream.md)
