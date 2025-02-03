@@ -412,4 +412,4 @@ byte로 변경한다. 그리고 `FileOutputStream`에 결과를 출력한다.
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/Main.md)
 
-[다음 ↪️ - ]()
+[다음 ↪️ - File, Files](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/files/files.md)
