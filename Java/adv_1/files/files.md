@@ -542,4 +542,4 @@ Time taken: 99ms
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/Main.md)
 
-[다음 ↪️ - ]()
+[다음 ↪️ - 네트워크 프로그램 예제](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/network/program.md)
