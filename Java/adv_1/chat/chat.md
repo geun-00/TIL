@@ -1029,4 +1029,4 @@ public class CommandManagerV4 implements CommandManager {
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/Main.md)
 
-[다음 ↪️ - ]()
+[다음 ↪️ - HTTP 서버 개발](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/was/server1.md)
