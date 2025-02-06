@@ -1,7 +1,5 @@
 # 자바 - HTTP 서버 개발
 
----
-
 ## V1
 
 간단하게 웹 브라우저에 다음 HTML을 응답하는 HTTP 서버를 직접 만들어보자.
@@ -637,7 +635,7 @@ public class HttpRequest {
     public HttpRequest(BufferedReader reader) throws IOException {
         parseRequestLine(reader);
         parseHeaders(reader);
-        //필요시 메시지 바디 처리
+        parseBody(reader);
     }
 
     //(method) (URL) (HTTP 버전)
@@ -672,6 +670,26 @@ public class HttpRequest {
         while (!(line = reader.readLine()).isEmpty()) {
             String[] headerParts = line.split(":");
             headers.put(headerParts[0].trim(), headerParts[1].trim());
+        }
+    }
+
+    private void parseBody(BufferedReader reader) throws IOException {
+        if (!headers.containsKey("Content-Length")) return;
+        
+        int contentLength = Integer.parseInt(headers.get("Content-Length"));
+        char[] bodyChars = new char[contentLength];
+        
+        int read = reader.read(bodyChars);
+        if (read != contentLength) {
+          throw new IOException("Fail to read entire body. Expected " + contentLength + " bytes, but read " + read);
+        }
+        
+        String body = new String(bodyChars);
+        log("HTTP Message Body: " + body);
+        
+        String contentType = headers.get("Content-Type");
+        if ("application/x-www-form-urlencoded".equals(contentType)) {
+            parseQueryParams(body);
         }
     }
 
@@ -1274,4 +1292,4 @@ public class ServerMainV5 {
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/Main.md)
 
-[다음 ↪️ - 리플렉션]()
+[다음 ↪️ - 리플렉션](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/reflection/reflection.md)

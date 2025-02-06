@@ -29,9 +29,10 @@
 ### HTTP 서버 개발
 
 - [HTTP 서버 개발](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/was/server1.md)
-- [리플렉션]()
-- [애노테이션]()
-- [HTTP 서버 개발(with 리플렉션 & 애노테이션)]()
+- [리플렉션](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/reflection/reflection.md)
+- [HTTP 서버 개발(with 리플렉션)](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/was/server2.md)
+- [애노테이션](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/annotation/annotation.md)
+- [HTTP 서버 개발(with 리플렉션 + 애노테이션)](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/was/server3.md)
 
 ---
 
