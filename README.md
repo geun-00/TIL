@@ -749,6 +749,7 @@
   - [최대힙(`MaxHeap`) 직접 구현해보기](https://github.com/genesis12345678/TIL/blob/main/dataStructure/non_linear/heap/maxHeap/MaxHeap.java)
 - [이진 탐색 트리](https://github.com/genesis12345678/TIL/blob/main/dataStructure/non_linear/bst/BST.md) - 개념 및 구현
 - [AVL 트리](https://github.com/genesis12345678/TIL/blob/main/dataStructure/non_linear/avl/AVLTree.md) - 개념 및 구현
+- [Red-Black 트리](https://github.com/genesis12345678/TIL/blob/main/dataStructure/non_linear/redblack/red-black.md)
 
 </details>
 
