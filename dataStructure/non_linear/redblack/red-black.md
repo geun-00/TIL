@@ -1102,5 +1102,5 @@ public class Main {
 ### 참고
 
 - [자료구조 시각화 사이트](https://www.cs.usfca.edu/~galles/visualization/RedBlack.html)
-- [유튜브](https://www.youtube.com/watch?v=syGPNOhsnI4&list=PLcXyemr8ZeoR82N8uZuG9xVrFIfdnLd72&index=10)
+- [유튜브](https://www.youtube.com/watch?v=2MdsebfJOyM&list=PLcXyemr8ZeoR82N8uZuG9xVrFIfdnLd72&index=10)
 - [사이트](https://www.codelatte.io/courses/java_data_structure/UN9UCFI8OJ7QGRCB)
