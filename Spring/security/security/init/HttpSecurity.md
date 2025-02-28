@@ -32,6 +32,44 @@
 
 ---
 
+# 초기화 과정 디버깅
+
+## 1. `HttpSecurityConfiguration`
+
+- `HttpSecurity` 빈을 생성한다.
+
+![img_9.png](image_1/img_9.png)
+
+## 2. `SpringBootWebSecurityConfiguration`
+
+- `http.build()`를 실행하면 `SecurityFilerChain`을 만드는 과정을 수행한다.
+
+![img_10.png](image_1/img_10.png)
+
+## 3. `HttpSecurity`
+
+- `HttpSecurity` 초기화 과정에서 만들어진 필터들을 `SecurityFilerChain`에 등록한다.
+
+![img_11.png](image_1/img_11.png)
+
+## 4. `WebSecurityConfiguration`
+
+- 빈으로 생성된 `SecurityFilerChain`을 주입 받는다.
+
+![img_12.png](image_1/img_12.png)
+
+- 주입 받은 `SecurityFilerChain`을 `SecurityBuilder`에 저장한다.
+
+![img_13.png](image_1/img_13.png)
+
+## 5. `WebSecurity`
+
+- `webSecurity.build()`를 호출하면 `FilterChainProxy`를 만들어서 반환한다.
+
+![img_14.png](image_1/img_14.png)
+
+---
+
 [이전 ↩️ - SecurityBuilder & SecurityConfigurer](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/init/BuilderConfigurer.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)

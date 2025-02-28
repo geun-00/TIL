@@ -37,6 +37,39 @@
 
 ---
 
+# 초기화 과정 디버깅
+
+## 1. `SecurityFilterAutoConfiguration`
+
+- `DelegatingFilterProxy`를 생성한다.
+- 여기서 사용되는 `DEFAULT_FILTER_NAME`는 "springSecurityFilterChain"이다.
+
+![img_15.png](image_1/img_15.png)
+
+![img_16.png](image_1/img_16.png)
+
+- 그리고 `DelegatingFilterProxy`를 생성해 **`Servlet Container`** 에 저장한다.
+
+![img_17.png](image_1/img_17.png)
+
+![img_18.png](image_1/img_18.png)
+
+## 클라이언트 요청 후 1 - `DelegatingFilterProxy`
+
+- "springSecurityFilterChain"라는 이름으로 등록된 빈을 가져와서 요청을 위임한다.
+
+![img_19.png](image_1/img_19.png)
+
+![img_20.png](image_1/img_20.png)
+
+## 클라이언트 요청 후 2 - `FilterChainProxy.VirtualFilterChain`
+
+- WAS에서는 사용하지 않는 스프링의 가상 필터 체인에서 요청을 처리한다.
+
+![img_21.png](image_1/img_21.png)
+
+---
+
 [이전 ↩️ - HttpSecurity & WebSecurity](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/init/HttpSecurity.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
