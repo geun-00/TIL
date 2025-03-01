@@ -78,6 +78,17 @@ public String anonymousContext(@CurrentSecurityContext SecurityContext context) 
 
 ---
 
+# 익명 인증 과정 디버깅
+
+- 익명 사용자의 경우 특별한 과정 없이 익명 인증 객체(`AnonymousAuthenticationToken`)를 만들어 `SecurityContext`에
+저장하는 것을 확인할 수 있다.
+
+## 1. AnonymousAuthenticationFilter
+
+![img_25.png](image_1/img_25.png)
+
+---
+
 [이전 ↩️ - 기억하기 인증(rememberMe())](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationProcess/RememberMe.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)

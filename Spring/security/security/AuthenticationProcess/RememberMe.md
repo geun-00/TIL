@@ -44,7 +44,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth -> auth.anyRequest().authenticated())
                 .formLogin(Customizer.withDefaults())
-                .rememberMe(rememberBe -> rememberBe
+                .rememberMe(rememberMe -> rememberMe
                         .alwaysRemember(true)
                         .tokenValiditySeconds(3600)
                         .userDetailsService(userDetailsService())
@@ -66,6 +66,15 @@ public class SecurityConfig {
 }
 ```
 
+- `rememberMe()`를 설정하면 다음과 같이 스프링 시큐리티가 `RememberMe`
+체크박스를 만들어준다.
+- 정상적으로 로그인이 되면 설정 클래스에서 설정한 대로 쿠키 이름과 기한이
+설정된 것을 확인할 수 있다.
+
+![img_15.png](image_1/img_15.png)
+
+![img_16.png](image_1/img_16.png)
+
 ---
 
 ## RememberMeAuthenticationFilter
@@ -74,6 +83,48 @@ public class SecurityConfig {
 - 세션이 만료되었거나 애플리케이션 종료로 인해 인증 상태가 소멸된 경우 토큰 기반 인증을 사용해 유효성을 검사하고 토큰이 검증되면 자동 로그인 처리를 수행한다.
 
 ![img_9.png](image/img_9.png)
+
+---
+
+# 초기 인증 과정 디버깅
+
+## 1. AbstractAuthenticationProcessingFilter
+
+- 자식 클래스(`UsernamePasswordAuthenticationFilter`)의 `attemptAuthentication()` 과정에서 정상적으로
+인증이 완료되면 `successfulAuthentication()`를 수행한다.
+- `successfulAuthentication()` 로직에서는 `rememberMeServices.loginSuccess()`를 호출한다.
+
+![img_17.png](image_1/img_17.png)
+
+![img_18.png](image_1/img_18.png)
+
+## 2. AbstractRememberMeServices
+
+- 이 클래스에서 암호화된 토큰으로 쿠키를 생성하고, Http 응답에 해당 쿠키를 담아서 전달한다. 
+
+![img_19.png](image_1/img_19.png)
+
+![img_20.png](image_1/img_20.png)
+
+![img_21.png](image_1/img_21.png)
+
+# 기억하기 인증 과정 디버깅
+
+## 1. RememberMeAuthenticationFilter
+
+- 초기 인증 과정이 정상적으로 수행되면 브라우저에는 `JSESSIONID`와 설정 클래스에서 설정한 쿠키 이름(`remember`)으로
+쿠키가 생기게 된다.
+- 여기서 `JSESSIONID` 쿠키를 제거하고 인증 요청을 보내면 `RememberMeAuthenticationFilter`가 동작한다.
+- `rememberMeServices.authLogin()`을 호출하여 인증 토큰을 반환받아 아후 인증 로직을 수행한다.
+
+![img_22.png](image_1/img_22.png)
+
+## 2. AbstractRememberMeServices
+
+![img_23.png](image_1/img_23.png)
+
+![img_24.png](image_1/img_24.png)
+
 
 ---
 

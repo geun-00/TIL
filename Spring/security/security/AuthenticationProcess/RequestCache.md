@@ -89,6 +89,56 @@ public String index(@RequestParam("customParam") String customParam) {
 
 ---
 
+# 인증 과정 디버깅
+
+## 1. ExceptionTranslationFilter
+
+- 인증이 필요한 요청에 익명 사용자가 요청을 하면 이 필터로 넘어온다.
+- 이 필터에서는 인증으로 인해 실패한 요청을 `RequestCache`에 저장한다. 기본적으로 `HttpSessionRequestCache` 구현체를 사용한다.
+- 그리고 `AuthenticationEntryPoint`에서 인증을 수행할 수 있는 URL로 리다이렉트한다.
+
+![img_34.png](image_1/img_34.png)
+
+## 2. HttpSessionRequestCache
+
+- `SavedRequest`의 구현체인 `DefaultSavedRequest`를 세션에 저장하는 것을 확인할 수 있다.
+
+![img_35.png](image_1/img_35.png)
+
+## 3. AbstractAuthenticationProcessingFilter
+
+- 인증을 하게 되면 이 필터에서 `successHandler`를 호출한다.
+
+![img_36.png](image_1/img_36.png)
+
+## 4. SavedRequestAwareAuthenticationSuccessHandler
+
+- 기본적으로 사용되는 핸들러인 이 클래스에서 로직을 수행한다.
+- `RequestCahce`에서 인증하기 전에 요청에서 세션에 저장한 `SavedRequest`를 받아온다. 그리고 해당 요청 URL로
+다시 리다이렉트 하는 것을 확인할 수 있다.
+- 필요시 이 로직은 `successHandler`를 재정의하여 커스터마이징 할 수 있다.
+
+![img_37.png](image_1/img_37.png)
+
+![img_38.png](image_1/img_38.png)
+
+## 5. RequestCacheAwareFilter
+
+- 이 필터는 모든 요청마다 항상 거치게 되는 필터이다.
+- 이 필터의 목적은 인증이 필요해서 리다이렉트된 경우, 인증 성공 후 원래 요청을 다시 수행할 수 있도록 한다.
+- `RequestCache.getMatchingRequest()`를 호출해 현재 요청과 일치하는 저장된 요청이 있는지 확인한다.
+- 일치하는 저장된 요청이 없다면 해당 필터로 넘어온 `ServletRequest`를 그대로 다음 필터로 넘기는 것을 확인할 수 있다.
+
+![img_39.png](image_1/img_39.png)
+
+![img_40.png](image_1/img_40.png)
+
+![img_41.png](image_1/img_41.png)
+
+![img_42.png](image_1/img_42.png)
+
+---
+
 [이전 ↩️ - 로그아웃(logout())](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationProcess/Logout.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)

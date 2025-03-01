@@ -49,6 +49,36 @@ public class SecurityConfig {
 - 위와 같이 설정하면 `loginPage`에 대한 뷰를 제공해야 하며, `form` 태그의 action을 `loginProc`으로, 아이디와 비밀번호에 해당하는 `input` 태그의 name을 각각 `userId`와 `passwd`로 지정해야 한다.
 
 ---
+
+# 초기화 과정 디버깅
+
+## 1. `HttpSecurity`
+
+- `HttpSecurity`에 `formLogin()`을 시작으로 초기화 과정을 시작한다.
+
+![img.png](image_1/img.png)
+
+## 2. `FormLoginConfigurer`
+
+- `FormLoginConfigurer`을 생성할 때 부모 클래스에 폼 인증 필터를 생성한다.
+- 그리고 인증 매개변수 값을 기본값으로 설정한다.
+
+![img_1.png](image_1/img_1.png)
+
+## 3. `AbstractAuthenticationFilterConfigurer`
+
+- 스프링 시큐리티 설정 클래스에서 `http.build()`를 호출하면 이 클래스에서 `init()`과 `configure()` 메서드가
+호출되어 초기화 과정을 수행한다.
+
+![img_2.png](image_1/img_2.png)
+
+![img_3.png](image_1/img_3.png)
+
+![img_4.png](image_1/img_4.png)
+
+![img_5.png](image_1/img_5.png)
+
+---
 ## 폼 인증 필터 - UsernamePasswordAuthenticationFilter
 
 - 스프링 시큐리티는 **AbstractAuthenticationProcessingFilter** 클래스를 사용자의 자격 증명을 인증하는 기본 필터로 사용한다.
@@ -60,6 +90,35 @@ public class SecurityConfig {
 - 커스텀 구현하려면 **AbstractAuthenticationProcessingFilter** 의 `attemptAuthentication()` 메서드를 재정의 해야 한다. 
 
 ![img_3.png](image/img_3.png)
+
+---
+
+# 인증 과정 디버깅
+
+## 1. `AbstractAuthenticationProcessingFilter`
+
+- `AbstractAuthenticationProcessingFilter`에서 먼저 요청을 받고, 현재 요청이 인증이 필요한 요청인지 확인한다.
+- 인증이 필요하지 않으면 바로 다음 필터로 넘어가고, 인증이 필요한 요청이면 `UsernamePasswordAuthenticationFilter`에서 재정의한
+  `attemptAuthentication()` 메서드를 호출한다.
+
+![img_6.png](image_1/img_6.png)
+
+## 2. `UsernamePasswordAuthenticationFilter`
+
+- 파라미터 정보에서 `username`과 `password`를 추출한 뒤, `Authentication`을 생성한다. (`UsernamePasswordAuthenticationToken`)
+- 그리고 부모 클래스에 있는 `AuthenticationManger`를 가져와 이후 인증 과정을 수행한다.
+
+![img_7.png](image_1/img_7.png)
+
+## 3. `AbstractAuthenticationProcessingFilter`
+
+- 인증 과정이 모두 수행되면 다시 부모 클래스로 돌아와 이후 과정을 수행한다.
+
+![img_8.png](image_1/img_8.png)
+
+![img_9.png](image_1/img_9.png)
+
+![img_10.png](image_1/img_10.png)
 
 ---
 
