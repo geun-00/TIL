@@ -1,7 +1,5 @@
 # 인증 상태 영속성
 
----
-
 ## SecurityContextRepository
 
 - 스프링 시큐리티에서 사용자가 인증을 한 이후 요청에 대해 계속 사용자의 인증을 유지하기 위해 사용되는 클래스다.
@@ -20,6 +18,8 @@
 ---
 
 ## SecurityContextHolderFilter
+
+![img.png](image_1/img.png)
 
 - `SecurityContextRepository`를 사용하여 **SecurityContext**를 얻고 이를 `SecurityContextHolder`에 설정하는 필터 클래스이다.
 - 이 필터 클래스는 `SecurityContextRepository.saveContext()`를 강제로 실행시키지 않고 사용자가 명시적으로 호출해야 `SecurityContext`를 저장할 수 있는데 이는 `SecurityContextPersistenceFilter`(**Deprecated**)와 다른 점이다.
@@ -142,6 +142,82 @@ public class CustomAuthenticationFilter extends AbstractAuthenticationProcessing
     }
 }
 ```
+
+---
+
+# 초기화 과정 디버깅
+
+## 1. SecurityContextConfigurer
+
+- 스프링 시큐리티 초기화 과정에서 기본적으로 `DelegatingSecurityContextRepository`를 사용한다.
+- 또한 `requireExplicitSave` 여부(기본값 `true`)에 따라 `SecurityContextHolderFilter`를 사용할지
+`SecurityContextPersistenceFilter`를 사용할지 결정한다.
+
+![img_1.png](image_1/img_1.png)
+
+## 2. AbstractAuthenticationFilterConfigurer
+
+- 인증 필터 초기화 과정에서 `SecurityContextRepository`를 가져와 설정하는 것을 확인할 수 있다.
+
+![img_2.png](image_1/img_2.png)
+
+---
+
+# 익명 사용자 요청 과정 디버깅
+
+## 1. SecurityContextHolderFilter
+
+- 우선 `securityContextRepository`로부터 `SecurityContext`를 가져온다. 이때 **바로 가져오는 것이 아니라
+`Supplier`로 래핑되어 있다는 것을 주목하자.**
+- 아직 생성되지 않은 `Supplier`로 래핑된 `SecurityContext`를 `SecurityContextHolder`에 저장하고 다음 필터로 넘어간다.
+- 그리고 `finally`에서 컨텍스트를 삭제한다. 이전 과정에서 세션에 이미 컨텍스트가 저장되기 때문에 삭제되어도 인증 상태를
+유지할 수 있다.
+
+![img_3.png](image_1/img_3.png)
+
+## 2. AnonymousAuthenticationFilter
+
+- 인증 필터에서도 역시 `SecurityContextHolder`에서 `SecurityContext`를 가져오는데 `Supplier` 래핑을 유지한다.
+- 스프링 시큐리티 인증 과정에서 중요한 주체는 `Authentication` 객체이기 때문에 `Authentication`을 생성하는 시점까지
+`SecurityContext`를 `Supplier`로 유지하는 것이다.
+
+![img_4.png](image_1/img_4.png)
+
+## 3. AuthorizationFilter
+
+- 최종 인증된 `Authentication` 객체로 인가 과정을 수행해야 하기 때문에 이제 여태까지 래핑된 `Supplier`의 `get()`을
+호출한다.
+
+![img_5.png](image_1/img_5.png)
+
+![img_6.png](image_1/img_6.png)
+
+![img_7.png](image_1/img_7.png)
+
+---
+
+# 인증 요청 과정 디버깅
+
+## 1. SecurityContextHolderFilter
+
+- 어떤 요청이든 항상 `Supplier`로 지연된 `SecurityContext`를 가져오며, `finally`에서 컨텍스트를 삭제한다.
+
+![img_8.png](image_1/img_8.png)
+
+## 2. UsernamePasswordAuthenticationFilter
+
+- 이후 모든 인증 과정을 거치고 `SecurityContextHolder`와 `SecurityContextRepository`에 컨텍스트를 저장한다.
+
+![img_9.png](image_1/img_9.png)
+
+![img_10.png](image_1/img_10.png)
+
+## 3. SecurityContextHolderFilter
+
+- 인증 이후 리다이렉트 되어 다시 `SecurityContextHolderFilter`로 넘어왔다.
+- 인증 처리가 다 되었기 때문에 이후 각 필터에서는 세션에서 컨텍스트를 얻을 수 있게 된다.
+
+![img_11.png](image_1/img_11.png)
 
 ---
 
