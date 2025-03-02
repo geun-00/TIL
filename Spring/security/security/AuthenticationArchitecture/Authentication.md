@@ -25,6 +25,34 @@
 
 ---
 
+# 인증 과정 디버깅 (예: 폼 인증)
+
+## 1. UsernamePasswordAuthenticationFilter
+
+- 인증 처리 전 `Authentication` 객체를 생성하고 `AuthenticationManager`에게 전달한다.
+
+![img.png](image_1/img.png)
+
+## 2. ProviderManager
+
+- `AuthenticationManager` 구현체 중 하나인 `ProviderManager`에게 인증 처리 수행을 요청한다.
+- `ProviderManager`는 자신이 갖고 있는 `AuthenticationProvider` 중 처리할 수 있는 클래스에게 인증 처리를 위임한다.
+- 인증 처리 후 완성된 `Authentication` 객체를 다시 반환한다.
+
+![img_1.png](image_1/img_1.png)
+
+## 3. AbstractUserDetailsAuthenticationProvider
+
+- 각각의 인증 방식을 처리할 수 있는 `AuthenticationProvider`가 자신의 방식대로 인증 과정을 수행한다.
+  - 예를 들어 폼 인증의 경우 `AbstractUserDetailsAuthenticationProvider`가 인증 과정을 수행
+- 최종적으로 인증 처리가 된 `Authentication` 객체를 생성해 반환하는 것을 확인할 수 있다.
+
+![img_2.png](image_1/img_2.png)
+
+![img_3.png](image_1/img_3.png)
+
+---
+
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 
 [다음 ↪️ - 인증 컨텍스트(`SecurityContext & SecurityContextHolder`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationArchitecture/SecurityContext.md)

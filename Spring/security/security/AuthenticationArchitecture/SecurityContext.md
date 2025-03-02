@@ -14,6 +14,8 @@
 
 ## SecurityContextHolder
 
+![img_4.png](image_1/img_4.png)
+
 - **SecurityContext 저장** : 현재 인증된 사용자의 `Authentication` 객체를 담고 있는 `SecurityContext` 객체를 저장한다.
 - **전략 패턴 사용** : 다양한 저장 전략을 지원하기 위해 `SecurityContextHolderStrategy` 인터페이스를 사용한다.
   - `MODE_THREADLOCAL` : 기본 모드, 각 스레드가 독립적인 보안 컨텍스트를 가진다. 대부분의 서버 환경에 적합하다.
