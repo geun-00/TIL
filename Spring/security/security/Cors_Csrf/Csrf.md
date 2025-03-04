@@ -133,6 +133,31 @@ public class SecurityConfig {
 
 ---
 
+# CsrfFilter
+
+![img_29.png](image/img_29.png)
+
+스프링 시큐리티는 `CsrfFilter`를 다음과 같은 구성 요소에 의해 제공되며, CSRF 보호는 두 부분으로 나뉜다.
+1. `CsrfTokenRequestHandler`에 위임하여 `CsrfToken`을 사용할 수 있도록 한다.
+2. 요청이 CSRF 보호가 필요한 요청이지 확인하고, 토큰을 로드 및 검증하며, `AccessDeniedException`을 처리한다.
+
+![img.png](image_1/img.png)
+
+![img_1.png](image_1/img_1.png)
+
+1. 먼저 `DeferredCsrfToken`이 로드되는데, 이는 `CsrfTokenRepository`에 대한 참조를 가지고 있어서
+나중에 저장된 `CsrfToken`을 불러올 수 있도록 한다. (4번에서)
+2. `DeferredCsrfToken`에서 생성된 `Supplier<CsrfToken>`이 `CsrfTokenRequestHandler`에 전달되며, 
+이는 요청 속성을 채워서 애플리케이션의 다른 부분에서 `CsrfToken`을 사용할 수 있도록 하는 역할을 한다.
+3. 주요 CSRF 보호 처리가 시작되며 현재 요청이 CSRF 보호가 필요한지 확인한다. 만약 필요하지 않다면 
+필터 체인이 계속 진행되며 처리는 종료된다.
+4. CSRF 보호가 필요하다면, `DeferredCsrfToken`에서 저장된 `CsrfToken`이 최종적으로 로드된다.
+5. 클라이언트가 제공한 실제 CSRF 토큰(있다면)이 `CsrfTokenRequestHandler`를 사용하여 확인한다.
+6. 실제 CSRF 토큰이 저장된 `CsrfToken`과 비교된다. 유효한 경우 필터 체인이 계속 진행되며 처리는 종료된다.
+7. 실제 CSRF 토큰이 유효하지 않거나 존재하지 않는 경우, `AccessDeniedException`이 `AccessDeniedHandler`로 전달되며 처리는 종료된다.
+
+---
+
 [이전 ↩️ - CORS](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/Cors_Csrf/Cors.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)

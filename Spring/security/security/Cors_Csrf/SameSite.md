@@ -26,24 +26,16 @@
 
 ![img_32.png](image/img_32.png)
 
----
-
 ![img_33.png](image/img_33.png)
-
-- 대부분의 현재 브라우저는 `SameSite` 속성을 지원하지만, 여전히 사용 중인 오래된 브라우저는 지원하지 않을 수 있다.
-- `SameSite`를 `CSRF` 공격에 대한 유일한 방어 수단으로서가 아닌, 심층적으로 강화된 방어의 일환으로 사용하는 것을 권장하고 있다.
 
 ---
 
 ## Spring Session 으로 SameSite 적용
 
+spring session 라이브러리 추가
 ```text
- implementation 'org.springframework.session:spring-session-core:3.2.1'
+implementation 'org.springframework.session:spring-session-core'
 ```
-
-![img_34.png](image/img_34.png)
-
----
 
 ```java
 @Configuration
