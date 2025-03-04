@@ -1,7 +1,5 @@
 # 표현식 및 커스텀 권한 구현
 
----
-
 ## 표현식 권한 규칙 설정
 
 - 스프링 시큐리티는 표현식을 사용해서 권한 규칙을 설정하도록 **WebExpressionAuthorizationManager**를 제공한다.
@@ -42,15 +40,15 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/user/{name}")
-                        .access(new WebExpressionAuthorizationManager("#name == authentication.name"))
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/user/{name}")
+                .access(new WebExpressionAuthorizationManager("#name == authentication.name"))
 
-                        .requestMatchers("/admin/db")
-                        .access(new WebExpressionAuthorizationManager("hasAnyAuthority('ROLE_DB') or hasAnyAuthority('ROLE_ADMIN')"))
+                .requestMatchers("/admin/db")
+                .access(new WebExpressionAuthorizationManager("hasAnyAuthority('ROLE_DB') or hasAnyAuthority('ROLE_ADMIN')"))
 
-                        .anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults())
+                .anyRequest().authenticated())
+            .formLogin(Customizer.withDefaults())
         ;
         return http.build();
     }
@@ -120,6 +118,7 @@ public class IndexController {
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+    
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity http, ApplicationContext context) throws Exception {
 
@@ -132,19 +131,19 @@ public class SecurityConfig {
     authorizationManager.setExpressionHandler(expressionHandler);
 
     http
-            .authorizeHttpRequests(authorize -> authorize
-                    .requestMatchers("/custom/**").access(authorizationManager)
-                    .anyRequest().authenticated())
-            .formLogin(Customizer.withDefaults())
+        .authorizeHttpRequests(authorize -> authorize
+            .requestMatchers("/custom/**").access(authorizationManager)
+            .anyRequest().authenticated())
+        .formLogin(Customizer.withDefaults())
     ;
     return http.build();
   }
 }
 ```
 ```java
-@Component("customWebSecurity")
+@Component
 public class CustomWebSecurity {
-
+    
     public boolean check(Authentication authentication, HttpServletRequest request){
         return authentication.isAuthenticated();
     }
@@ -179,10 +178,10 @@ public class SecurityConfig {
   public SecurityFilterChain securityFilterChain(HttpSecurity http, ApplicationContext context) throws Exception {
 
     http
-            .authorizeHttpRequests(authorize -> authorize
-                    .requestMatchers(new CustomRequestMatcher("/admin")).hasAuthority("ROLE_ADMIN")
-                    .anyRequest().authenticated())
-            .formLogin(Customizer.withDefaults())
+        .authorizeHttpRequests(authorize -> authorize
+              .requestMatchers(new CustomRequestMatcher("/admin")).hasAuthority("ROLE_ADMIN")
+              .anyRequest().authenticated())
+        .formLogin(Customizer.withDefaults())
     ;
     return http.build();
   }

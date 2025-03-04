@@ -1,7 +1,5 @@
 # 메서드 기반 권한 부여
 
----
-
 ## @PreFilter
 
 - `@PreFilter` 어노테이션은 메서드가 실행되기 전에 메서드에 전달된 컬렉션 타입의 파라미터에 대한 필터링을 수행하는 데 사용된다.
@@ -31,16 +29,15 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain1(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults())
-                .csrf(AbstractHttpConfigurer::disable)
+            .authorizeHttpRequests(authorize -> authorize
+                .anyRequest().authenticated())
+            .formLogin(Customizer.withDefaults())
+            .csrf(AbstractHttpConfigurer::disable)
         ;
         return http.build();
     }
 
-
-   @Bean
+    @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
                 .password("{noop}1111")
@@ -75,13 +72,11 @@ public class MethodController {
 
     @PostMapping("/writeList")
     public List<Account> writeList(@RequestBody List<Account> data) {
-
         return dataService.writeList(data);
     }
 
     @PostMapping("/writeMap")
     public Map<String, Account> writeMap(@RequestBody List<Account> data) {
-        
         Map<String, Account> dataMap = data.stream()
                 .collect(Collectors.toMap(Account::getOwner, account -> account));
         
@@ -115,26 +110,25 @@ public class DataService {
 
     @PostFilter("filterObject.owner == authentication.name")
     public List<Account> readList() {
-        return new ArrayList<>(List.of(
+        return List.of(
                 new Account("user", false),
                 new Account("db", false),
                 new Account("admin", false)
-        ));
+        );
     }
 
     @PostFilter("filterObject.value.owner == authentication.name")
     public Map<String, Account> readMap() {
-        return new HashMap<>(Map.of(
+        return Map.of(
                 "user", new Account("user", false),
                 "db", new Account("db", false),
                 "admin", new Account("admin", false)
-        ));
+        );
     }
 }
 ```
 ```java
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Account {

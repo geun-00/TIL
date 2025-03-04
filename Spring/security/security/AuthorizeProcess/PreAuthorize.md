@@ -40,15 +40,15 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain1(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults())
+            .authorizeHttpRequests(authorize -> authorize
+                .anyRequest().authenticated()
+            )
+            .formLogin(Customizer.withDefaults())
         ;
         return http.build();
     }
-
-
-   @Bean
+    
+    @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
                 .password("{noop}1111")
@@ -120,9 +120,11 @@ public class Account {
 }
 ```
 
+> [참고 - `@P` 애노테이션 관련 스프링 공식 문서](https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html#using_method_parameters)
+
 ---
 
-[이전 ↩️ - 요청 기반 권한 부여(`HttpSecurity.securityMatcher()`)](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthorizeProcess/security/securityMatcher.md)
+[이전 ↩️ - 요청 기반 권한 부여(`HttpSecurity.securityMatcher()`)](https://github.com/geun-00/TIL/blob/main/Spring/security/security/AuthorizeProcess/SecurityMatcher.md)
 
 [메인 ⏫](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/main.md)
 

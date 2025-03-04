@@ -1,7 +1,5 @@
 # 메서드 기반 권한 부여
 
---- 
-
 ## @Secured
 
 - `@Secured` 어노테이션을 메서드에 적용하면 지정된 권한(역할)을 가진 사용자만 해당 메서드를 호출할 수 있으며 더 풍부한 형식을 지원하는 `@PreAuthorize` 사용을 권장한다.
@@ -59,19 +57,18 @@
 public class SecurityConfig {
 
     @Bean
-    public SecurityFilterChain securityFilterChain1(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .anyRequest().permitAll())
-                .formLogin(Customizer.withDefaults())
-                .csrf(AbstractHttpConfigurer::disable)
+            .authorizeHttpRequests(authorize -> authorize
+                .anyRequest().permitAll())
+            .formLogin(Customizer.withDefaults())
+            .csrf(AbstractHttpConfigurer::disable)
         ;
         return http.build();
     }
-
-
-   @Bean
+    
+    @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
                 .password("{noop}1111")
@@ -94,21 +91,20 @@ public class SecurityConfig {
 ```
 ```java
 @Documented
-@Retention(RUNTIME)
-@Target({TYPE, METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.TYPE, ElementType.METHOD})
 @PreAuthorize("hasRole('ADMIN')")
 public @interface IsAdmin {}
 ```
 ```java
 @Documented
-@Retention(RUNTIME)
-@Target({TYPE, METHOD})
+@Retention(RetentionPolicy.RUNTIME)
+@Target({ElementType.TYPE, ElementType.METHOD})
 @PostAuthorize("returnObject.owner == authentication.name")
 public @interface OwnerShip {}
 ```
 ```java
 @RestController
-@RequiredArgsConstructor
 public class MethodController {
 
     @GetMapping("/user")
@@ -165,7 +161,6 @@ public class MyAuthorizer {
 ```
 ```java
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Account {

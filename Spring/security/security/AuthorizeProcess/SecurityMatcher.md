@@ -1,7 +1,5 @@
 # 요청 기반 권한 부여
 
----
-
 ## securityMatcher()
 
 - `securityMatcher()` 메서드는 특정 패턴에 해당하는 요청에만 보안 규칙을 적용하도록 설정할 수 있으며 중복해서 정의할 경우 마지막에 설정한 것으로 대체한다.
@@ -38,9 +36,10 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain1(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults())
+            .authorizeHttpRequests(authorize -> authorize
+                .anyRequest().authenticated()
+            )
+            .formLogin(Customizer.withDefaults())
         ;
         return http.build();
     }
@@ -50,17 +49,17 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain2(HttpSecurity http) throws Exception {
 
         http
-                .securityMatchers(matchers -> matchers
-                        .requestMatchers("/api/**", "/oauth/**"))
-
-                .authorizeHttpRequests(authorize -> authorize
-                        .anyRequest().permitAll())
+            .securityMatchers(matchers -> matchers
+                .requestMatchers("/api/**", "/oauth/**")
+            )
+            .authorizeHttpRequests(authorize -> authorize
+                .anyRequest().permitAll()
+            )
         ;
         return http.build();
     }
-
-
-   @Bean
+    
+    @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
                 .password("{noop}1111")
@@ -102,6 +101,22 @@ public class IndexController {
     }
 }
 ```
+
+- 위와 같이 설정하면 총 두 개의 `SecurityFilterChain`이 `FilterChainProxy`에 등록된다.
+- 그리고 루트 경로(`"/"`)에 접근하면 `securityFilterChain1`의 필터 체인이 동작하고, `"/api/**"` 또는 `"oauth/**"`에 접근하면
+`securityFilterChain2`의 필터 체인이 동작한다.
+
+> **🙄 만약 `securityFilterChain1`에 `@Order(1)`을 설정하면?**
+> - `securityFilterChain1`에 `@Order(1)`을 설정한다면 에러가 발생해 애플리케이션이 실행되지 않는다.
+> - 그 이유는 `WebSecurity` 클래스의 초기화 과정에서 알 수 있다. 다음은 `WebSecurity`의 `performBuild()` 메서드
+> 로직 중에 일부다.
+> 
+> ![img.png](image_1/img.png)
+> 
+> - 위 과정에서 `securityMatcher`를 설정하지 않은 `SecurityFilterChain`, 즉 `anyRequestFilterChain`이 모든 
+> 필터 체인(들)보다 항상 뒤에 있어야 한다는 것을 보장하기 위한 유효성 검사를 하는 것을 알 수 있다.
+> - 즉 초기화 과정 중에 하나의 `anyRequestFilterChain`이라도 `securityMatcher`를 설정한 `SecurityFilterChain`보다 앞에 있으면
+> 무조건 에러를 발생시키는 것이다.
 
 ---
 

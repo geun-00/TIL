@@ -38,29 +38,38 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/user").hasRole("USER")
-                        .requestMatchers("/db").hasRole("DB")
-                        .requestMatchers("/admin").hasRole("ADMIN")
-                        .anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults())
-                .csrf(AbstractHttpConfigurer::disable)
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/user").hasRole("USER")
+                .requestMatchers("/db").hasRole("DB")
+                .requestMatchers("/admin").hasRole("ADMIN")
+                .anyRequest().authenticated())
+            .formLogin(Customizer.withDefaults())
+            .csrf(AbstractHttpConfigurer::disable)
         ;
         return http.build();
     }
 
+  @Bean
+  public RoleHierarchy roleHierarchy() {
+/*
+        //방법 1
+        return RoleHierarchyImpl.fromHierarchy(
+            """
+            ROLE_ADMIN > ROLE_DB
+            ROLE_DB > ROLE_USER
+            ROLE_USER > ROLE_ANONYMOUS
+            """
+        );
+*/
+    //방법 2
+    return RoleHierarchyImpl.withDefaultRolePrefix() //Default Role Prefix = "ROLE_"
+                            .role("ADMIN").implies("DB")
+                            .role("DB").implies("USER")
+                            .role("USER").implies("ANONYMOUS")
+                            .build();
+  }
+    
     @Bean
-    public RoleHierarchy roleHierarchy() {
-        RoleHierarchyImpl roleHierarchy = new RoleHierarchyImpl();
-        roleHierarchy.setHierarchy("ROLE_ADMIN > ROLE_DB\n" +
-                                   "ROLE_DB > ROLE_USER\n" +
-                                   "ROLE_USER > ROLE_ANONYMOUS");
-
-        return roleHierarchy;
-    }
-
-
-   @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
                 .password("{noop}1111")
@@ -106,6 +115,11 @@ public class IndexController {
     }
 }
 ```
+
+- 다음 클래스에서 인가 처리를 진행하면서 빈으로 등록한 `RoleHierarchyImpl`이 사용된다.
+- 등록하지 않으면 기본값으로 `NullRoleHierarchy`를 사용하며 아무런 처리도 하지 않는다.
+
+![img_11.png](image_1/img_11.png)
 
 ---
 
