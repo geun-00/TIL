@@ -10,7 +10,7 @@
 
 - HTML 폼을 서버에 제출하려면 `CSRF` 토큰을 `hidden` 값으로 **Form**에 포함해야 한다.
 
-![img_23.png](image/img_23.png)
+![img_23.png](../image/img_23.png)
 
 - **Thymeleaf**는 위와 같이 직접 작성하지 않아도 `CSRF` 토큰을 자동으로 폼에 포함해준다.
 
@@ -24,7 +24,7 @@
 2. 사용자 정의 **CsrfTokenRequestHandler**를 만들어 클라이언트가 요청 헤더나 요청 파라미터로 `CSRF` 토큰을 제출할 경우 이를 검증하도록 구현한다.
 3. 클라이언트의 요청에 의해 `CSRF` 토큰을 쿠키에 렌더링해서 응답할 수 있도록 필터를 구현한다.
 
-![img_24.png](image/img_24.png)
+![img_24.png](../image/img_24.png)
 
 ### Multi Page Application
 
@@ -32,17 +32,11 @@
 
 **HTML 메타 태그에 `CSRF` 토큰 포함**
 
-![img_25.png](image/img_25.png)
+![img_25.png](../image/img_25.png)
 
 **AJAX 요청에서 `CSRF` 토큰 포함**
 
-![img_26.png](image/img_26.png)
-
----
-
-## CsrfFilter
-
-![img_29.png](image/img_29.png)
+![img_26.png](../image/img_26.png)
 
 ---
 
@@ -59,7 +53,8 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/csrf", "/csrfToken", "/form", "/formCsrf").permitAll()
-                        .anyRequest().authenticated())
+                        .anyRequest().authenticated()
+                )
                 .formLogin(Customizer.withDefaults())
                 .csrf(Customizer.withDefaults())
         ;
@@ -88,6 +83,7 @@ public class ViewController {
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         ...
+    </style>
 </head>
 <body>
 <div class="container-fluid">
@@ -113,13 +109,56 @@ public class ViewController {
 </html>
 ```
 
-![img_27.png](image/img_27.png)
-
 - 이렇게 타임리프 문법으로 폼 태그에 `hidden` 타입으로 `CSRF` 토큰이 만들어지는 것을 볼 수 있다.
+
+![img_27.png](../image/img_27.png)
+
+```java
+@PostMapping("/formCsrf")
+public CsrfToken formCsrf(CsrfToken csrfToken) {
+    return csrfToken;
+}
+```
+
+- 스프링 시큐리티는 스프링 MVC 파라미터에 대한 현재 `CsrfToken`을 자동으로 확인할 수 있는 `CsrfTokenArgumentResolver`를 제공한다.
+- `@EnableWebSecurity`를 구성하면 스프링 MVC 구성에 자동으로 추가된다.
+
+![img_17.png](../img_17.png)
 
 ---
 
 ## 쿠키로 전송
+
+```java
+@Configuration
+@EnableWebSecurity
+public class SecurityConfig {
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+
+        http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/csrf", "/csrfToken", "/form", "/formCsrf", "/cookieCsrf", "/cookie").permitAll()
+                .anyRequest().authenticated())
+            .formLogin(Customizer.withDefaults())
+            .csrf(csrf -> csrf
+                //자바스크립트에서 쿠키를 읽을 수 있도록 HttpOnly를 false로 설정
+                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+                .csrfTokenRequestHandler(new SpaCsrfTokenRequestHandler())
+            )
+            .addFilterBefore(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
+        ;
+
+        return http.build();
+    }
+}
+```
+
+- `XorCsrfTokenRequestAttributeHandler`와 `CsrfTokenRequestAttributeHandler` 는 `CSRF` 토큰의 유효성 검증 기능 로직을 구현하고 있고,
+  `XorCsrfTokenRequestAttributeHandler`는 여기에 더해 `CSRF` 토큰에 대해 인코딩 및 디코딩 기능을 지원한다.
+- 직접 만들 `SpaCsrfTokenRequestHandler` 에서는 인코딩된 토큰이 오면 `XorCsrfTokenRequestAttributeHandler`에게 위임하고, 
+인코딩 되지 않은 토큰이 오면 `CsrfTokenRequestAttributeHandler`에게 위임한다.
+
 
 ```java
 public class SpaCsrfTokenRequestHandler extends CsrfTokenRequestAttributeHandler {
@@ -133,23 +172,32 @@ public class SpaCsrfTokenRequestHandler extends CsrfTokenRequestAttributeHandler
 
     @Override
     public String resolveCsrfTokenValue(HttpServletRequest request, CsrfToken csrfToken) {
-        if (StringUtils.hasText(request.getHeader(csrfToken.getHeaderName()))) {
-            return super.resolveCsrfTokenValue(request, csrfToken);
-        }
+      /*
+       * 요청 헤더에 CSRF 토큰이 포함된 경우
+       * 인코딩 되지 않은 토큰을 처리하는 부모에게 위임
+       */
+      if (StringUtils.hasText(request.getHeader(csrfToken.getHeaderName()))) {
+        return super.resolveCsrfTokenValue(request, csrfToken);
+      }
 
+      /*
+       * 요청 파라미터에 CSRF 토큰이 포함된 경우
+       * 인코딩 된 토큰을 처리하는 클래스에게 위임
+       */
         return delegate.resolveCsrfTokenValue(request, csrfToken);
     }
 }
 ```
 
-![img_28.png](image/img_28.png)
-
-- `XorCsrfTokenRequestAttributeHandler`와 `CsrfTokenRequestAttributeHandler` 는 `CSRF` 토큰의 유효성 검증 기능 로직을 구현하고 있고, 
-    `XorCsrfTokenRequestAttributeHandler`는 여기에 더해 `CSRF` 토큰에 대해 인코딩 및 디코딩 기능을 지원한다.
-- 직접 만들 `SpaCsrfTokenRequestHandler` 에서는 인코딩된 토큰이 오면 `XorCsrfTokenRequestAttributeHandler`에게 위임하고, 인코딩 되지 않은 토큰이 오면 `CsrfTokenRequestAttributeHandler`에게 위임한다.
+![img_18.png](../img_18.png)
 
 ```java
+/**
+ * getToken()을 실행하여 Supplier로 래핑되어 있는 CsrfToken을 강제로 초기화하여
+ * 어떤 요청이든 항상 CsrfToken이 전달되도록 하는 필터
+ */
 public class CsrfCookieFilter extends OncePerRequestFilter {
+    
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         CsrfToken csrfToken = (CsrfToken) request.getAttribute("_csrf");
@@ -161,30 +209,7 @@ public class CsrfCookieFilter extends OncePerRequestFilter {
     }
 }
 ```
-```java
-@Configuration
-@EnableWebSecurity
-@Slf4j
-public class SecurityConfig {
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        http
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/csrf", "/csrfToken", "/form", "/formCsrf", "/cookieCsrf", "/cookie").permitAll()
-                        .anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults())
-                .csrf(csrf -> csrf
-                        .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-                        .csrfTokenRequestHandler(new SpaCsrfTokenRequestHandler())
-                )
-                .addFilterBefore(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
-        ;
-
-        return http.build();
-    }
-}
-```
 ```java
 @Controller
 public class ViewController {
@@ -256,6 +281,8 @@ public CsrfToken cookieCsrf(CsrfToken csrfToken) {
     return csrfToken;
 }
 ```
+
+![img_19.png](../img_19.png)
 
 ---
 
