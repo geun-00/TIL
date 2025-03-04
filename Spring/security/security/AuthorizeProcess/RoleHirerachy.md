@@ -14,12 +14,12 @@
 
 ## 구조
 
-![img_30.png](image/img_30.png)
+![img.png](image_1/img_12.png)
 
-- **SetHirerachy**
+- **`setHierarachy()`** (Deprecated)
   - 역할 계층을 설정하고 각 역할에 대해 해당 역할의 하위 계층에 속하는 모든 역할 집합을 미리 정해 놓는다.
     - 역할 계층 : `ROLE_A` > `ROLE_B` > `ROLE_C`
-- **getReachableGrantedAuthorities**
+- **`getReachableGrantedAuthorities()`**
   - 모든 도달 가능한 권한의 배열을 반환한다.
   - 도달 가능한 권한은 직접 할당된 권한에 더해 역할 계층에서 이들로부터 도달 가능한 모든 권한을 의미한다.
     - 직접 할당된 권한 : `ROLE_B`
