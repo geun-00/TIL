@@ -1,7 +1,5 @@
 # 인증 이벤트
 
----
-
 ## 커스텀 예외, 이벤트 추가
 
 ![img_5.png](image/img_5.png)
@@ -27,15 +25,17 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/user").hasAuthority("ROLE_USER")
-                        .requestMatchers("/db").hasAuthority("ROLE_DB")
-                        .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
-                        .anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults())
-                .csrf(AbstractHttpConfigurer::disable)
-                .authenticationProvider(customAuthenticationProvider())
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/user").hasAuthority("ROLE_USER")
+                .requestMatchers("/db").hasAuthority("ROLE_DB")
+                .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
+                .anyRequest().authenticated()
+            )
+            .formLogin(Customizer.withDefaults())
+            .csrf(AbstractHttpConfigurer::disable)
+            .authenticationProvider(customAuthenticationProvider())
         ;
+        
         return http.build();
     }
 
@@ -49,14 +49,14 @@ public class SecurityConfig {
         Map<Class<? extends AuthenticationException>, Class<? extends AbstractAuthenticationFailureEvent>> mapping =
                 Collections.singletonMap(CustomException.class, CustomAuthenticationFailureEvent.class);
 
-        DefaultAuthenticationEventPublisher authenticationEventPublisher = new DefaultAuthenticationEventPublisher();
+        DefaultAuthenticationEventPublisher authenticationEventPublisher = new DefaultAuthenticationEventPublisher(applicationEventPublisher);
         authenticationEventPublisher.setAdditionalExceptionMappings(mapping);
         authenticationEventPublisher.setDefaultAuthenticationFailureEvent(DefaultAuthenticationFailureEvent.class);
 
         return authenticationEventPublisher;
     }
 
-   @Bean
+    @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
                 .password("{noop}1111")
@@ -68,7 +68,7 @@ public class SecurityConfig {
                 .roles("DB")
                 .build();
 
-       UserDetails admin = User.withUsername("admin")
+        UserDetails admin = User.withUsername("admin")
                .password("{noop}1111")
                .roles("ADMIN", "SECURE")
                .build();
@@ -148,10 +148,6 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 @Component
 @Slf4j
 public class AuthenticationEvents {
-
-    /*
-            ...
-     */
 
     @EventListener
     public void onFailure(CustomAuthenticationFailureEvent failures) {
