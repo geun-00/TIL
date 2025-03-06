@@ -21,15 +21,9 @@
 
 ![img_20.png](image/img_20.png)
 
-![img_21.png](image/img_21.png)
-
-![img_22.png](image/img_22.png)
-
 - 요청에 대한 권한 검사를 `RequestMatcherDelegatingAuthorizationManager` 객체가 수행하도록 한다.
 - `RequestMatcherDelegatingAuthorizationManager` > **CustomRequestMatcherDelegatingAuthorizationManager** > `RequestMatcherDelegatingAuthorizationManager`
   구조는 개선이 필요하다.
-
----
 
 ```java
 @Configuration
@@ -40,10 +34,11 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .anyRequest().access(authorizationManager(null)))
-                .formLogin(Customizer.withDefaults())
-                .csrf(AbstractHttpConfigurer::disable)
+            .authorizeHttpRequests(authorize -> authorize
+                  .anyRequest().access(authorizationManager(null))
+            )
+            .formLogin(Customizer.withDefaults())
+            .csrf(AbstractHttpConfigurer::disable)
         ;
         return http.build();
     }
@@ -51,31 +46,40 @@ public class SecurityConfig {
     @Bean
     public AuthorizationManager<RequestAuthorizationContext> authorizationManager(HandlerMappingIntrospector introspector) {
         List<RequestMatcherEntry<AuthorizationManager<RequestAuthorizationContext>>> mappings = new ArrayList<>();
-
-        RequestMatcherEntry<AuthorizationManager<RequestAuthorizationContext>> requestMatcherEntry1 =
-                new RequestMatcherEntry<>(new MvcRequestMatcher(introspector, "/user"),
-                                                    AuthorityAuthorizationManager.hasAuthority("ROLE_USER"));
-
-        RequestMatcherEntry<AuthorizationManager<RequestAuthorizationContext>> requestMatcherEntry2 =
-                new RequestMatcherEntry<>(new MvcRequestMatcher(introspector, "/db"),
-                        AuthorityAuthorizationManager.hasAuthority("ROLE_DB"));
-
-        RequestMatcherEntry<AuthorizationManager<RequestAuthorizationContext>> requestMatcherEntry3 =
-                new RequestMatcherEntry<>(new MvcRequestMatcher(introspector, "/admin"),
-                        AuthorityAuthorizationManager.hasAuthority("ROLE_ADMIN"));
-
-        RequestMatcherEntry<AuthorizationManager<RequestAuthorizationContext>> requestMatcherEntry4 =
-                new RequestMatcherEntry<>(AnyRequestMatcher.INSTANCE, new AuthenticatedAuthorizationManager<>());
-
-        mappings.add(requestMatcherEntry1);
-        mappings.add(requestMatcherEntry2);
-        mappings.add(requestMatcherEntry3);
-        mappings.add(requestMatcherEntry4);
+    
+        RequestMatcherEntry<AuthorizationManager<RequestAuthorizationContext>> userEntry =
+                new RequestMatcherEntry<>(
+                        new MvcRequestMatcher(introspector, "/user"),
+                        AuthorityAuthorizationManager.hasAuthority("ROLE_USER")
+                );
+    
+        RequestMatcherEntry<AuthorizationManager<RequestAuthorizationContext>> dbEntry =
+                new RequestMatcherEntry<>(
+                        new MvcRequestMatcher(introspector, "/db"),
+                        AuthorityAuthorizationManager.hasAuthority("ROLE_DB")
+                );
+    
+        RequestMatcherEntry<AuthorizationManager<RequestAuthorizationContext>> adminEntry =
+                new RequestMatcherEntry<>(
+                        new MvcRequestMatcher(introspector, "/admin"),
+                        AuthorityAuthorizationManager.hasAuthority("ROLE_ADMIN")
+                );
+    
+        RequestMatcherEntry<AuthorizationManager<RequestAuthorizationContext>> anyEntry =
+                new RequestMatcherEntry<>(
+                        AnyRequestMatcher.INSTANCE,
+                        new AuthenticatedAuthorizationManager<>()
+                );
+    
+        mappings.add(userEntry);
+        mappings.add(dbEntry);
+        mappings.add(adminEntry);
+        mappings.add(anyEntry);
 
         return new CustomRequestMatcherDelegatingAuthorizationManager(mappings);
     }
     
-   @Bean
+    @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
                 .password("{noop}1111")
@@ -92,21 +96,25 @@ public class SecurityConfig {
                .roles("ADMIN", "SECURE")
                .build();
 
-        return new InMemoryUserDetailsManager(user, manager, admin);
+       return new InMemoryUserDetailsManager(user, manager, admin);
     }
 }
 ```
+
+> 👏 참고 - [`HandlerMappingIntrospector`관련 스프링 공식 문서](https://docs.spring.io/spring-security/reference/servlet/integrations/mvc.html#mvc-requestmatcher)
+> 
+
 ```java
 public class CustomRequestMatcherDelegatingAuthorizationManager implements AuthorizationManager<RequestAuthorizationContext> {
 
-    RequestMatcherDelegatingAuthorizationManager manager;
+    private final RequestMatcherDelegatingAuthorizationManager manager;
 
     public CustomRequestMatcherDelegatingAuthorizationManager(
             List<RequestMatcherEntry<AuthorizationManager<RequestAuthorizationContext>>> mappings) {
         
-        manager = RequestMatcherDelegatingAuthorizationManager.builder()
-                                                              .mappings(maps -> maps.addAll(mappings))
-                                                              .build();
+        this.manager = RequestMatcherDelegatingAuthorizationManager.builder()
+                                                                   .mappings(maps -> maps.addAll(mappings))
+                                                                   .build();
     }
 
     @Override
@@ -120,6 +128,15 @@ public class CustomRequestMatcherDelegatingAuthorizationManager implements Autho
     }
 }
 ```
+
+> 👏 참고 - `RequestMatcherDelegatingAuthorizationManager.builder().mappings()` 메서드는`Consumer`를 인자로 받는다.
+> 
+> ![img_16.png](image_1/img_16.png)
+
+- 스프링 시큐리티 초기화 시 생성되는 `RequestMatcherDelegatingAuthorizationManager`가 **CustomRequestMatcherDelegatingAuthorizationManager**에게 위임하고,
+또 `RequestMatcherDelegatingAuthorizationManager`에게 위임하는 구조가 되는 것을 확인할 수 있다.
+
+![img_17.png](image_1/img_17.png)
 
 ---
 

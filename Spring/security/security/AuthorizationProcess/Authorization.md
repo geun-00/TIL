@@ -1,7 +1,5 @@
 # 인가
 
----
-
 ## Authorization
 
 - 인가, 즉 권한 부여는 특정 자원에 접근할 수 있는 사람을 결정하는 것을 말한다.
@@ -23,7 +21,7 @@
 
 - 기본적으로 역할 기반의 인가 규칙은 역할 앞에 `ROLE_`을 접두사로 사용한다. 즉 `USER` 역할을 가진 보안 컨텍스트가 필요한 인가 규칙이 있다면 스프링 시큐리티는 기본적으로
  `ROLE_USER`를 반환하는 `GrantedAuthority.getAuthority`를 찾는다.
-- `GrantedAuthorityDefaults`로 사용하 지정할 수 있으며 `GrantedAuthorityDefaults`는 역할 기반 인가 규칙에 사용할 접두사를 사용자 정의하는 데 사용된다.
+- `GrantedAuthorityDefaults`로 사용자 지정할 수 있으며 `GrantedAuthorityDefaults`는 역할 기반 인가 규칙에 사용할 접두사를 사용자 정의하는 데 사용된다.
 
 ![img_2.png](image/img_2.png)
 
@@ -38,13 +36,14 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/user").hasRole("USER")
-                        .requestMatchers("/db").hasRole("DB")
-                        .requestMatchers("/admin").hasRole("ADMIN")
-                        .anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults())
-                .csrf(AbstractHttpConfigurer::disable)
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/user").hasRole("USER")
+                .requestMatchers("/db").hasRole("DB")
+                .requestMatchers("/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .formLogin(Customizer.withDefaults())
+            .csrf(AbstractHttpConfigurer::disable)
         ;
         return http.build();
     }
@@ -54,7 +53,7 @@ public class SecurityConfig {
         return new GrantedAuthorityDefaults("MYPREFIX_");
     }
 
-   @Bean
+    @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
                 .password("{noop}1111")
@@ -73,9 +72,15 @@ public class SecurityConfig {
 
         return new InMemoryUserDetailsManager(user, manager, admin);
     }
-
 }
 ```
+
+- 여기서 중요한 것은 `GrantedAuthorityDefaults`에서 설정한 사용자 정의 접두어는 요청 기반 권한 부여의 `hasRole()`의
+접두어만 변경된다는 점이다.
+- 그러니까 `User` 객체를 생성할 때는 사용자 정의 접두어와는 관련이 없다. 즉 일반적인 `roles()` 메서드로 권한을 부여하면
+`ROLE_` 접두어를 기본으로 사용하고 사용자 정의 접두어와 다르기 때문에 기대하지 못한 결과를 가질 수 있다.
+- 따라서 `GrantedAuthorityDefaults`로 접두어를 변경했다면, 권한을 부여할 때 `roles()` 대신 위 코드와 같이 `authorities()`와 같은
+메서드를 사용해 사용자 정의 접두어까지 적용된 권한을 명시적으로 부여해야한다.
 
 ---
 

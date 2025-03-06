@@ -22,9 +22,9 @@
 
 ![img_35.png](image/img_35.png)
 
-![img_36.png](image/img_36.png)
-
 ---
+
+## 코드 구현
 
 ```java
 import org.aopalliance.intercept.MethodInterceptor;
@@ -38,6 +38,7 @@ public class CustomMethodInterceptor implements MethodInterceptor {
 
     private final AuthorizationManager<MethodInvocation> authorizationManager;
 
+    //생성자에서 메서드 보안 검사를 수행할 인가 관리자를 주입
     public CustomMethodInterceptor(AuthorizationManager<MethodInvocation> authorizationManager) {
         this.authorizationManager = authorizationManager;
     }
@@ -46,8 +47,8 @@ public class CustomMethodInterceptor implements MethodInterceptor {
     public Object invoke(MethodInvocation invocation) throws Throwable {
 
         Authentication authentication = SecurityContextHolder.getContextHolderStrategy().getContext().getAuthentication();
-        if (authorizationManager.check(() -> authentication, invocation).isGranted()) {
-            return invocation.proceed();
+        if (authorizationManager.authorize(() -> authentication, invocation).isGranted()) {
+            return invocation.proceed(); //실제 대상 객체 호출
         }
 
         throw new AccessDeniedException("Access Denied");
@@ -62,13 +63,13 @@ public class MethodSecurityConfig {
     @Bean
     public MethodInterceptor methodInterceptor() {
         AuthorizationManager<MethodInvocation> authorizationManager = new AuthenticatedAuthorizationManager<>();
-        return new CustomMethodInterceptor(authorizationManager);
+        return new CustomMethodInterceptor(authorizationManager); //AOP 어라운드 아드바이스를 선언
     }
 
     @Bean
     public Pointcut pointcut() {
         AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
-        pointcut.setExpression("execution(* io.security.springsecuritymaster.DataService.*(..))");
+        pointcut.setExpression("execution(* io.security.springsecuritymaster.DataService.*(..))"); //AOP 수행 대상 클래스와 대상 메서드를 지정
         return pointcut;
     }
 

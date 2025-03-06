@@ -4,7 +4,7 @@
 - `AuthorizationManager`는 스프링 시큐리티의 요청 기반, 메서드 기반의 인가 구성 요소에서 호출되며 최종 액세스 제어 결정을 수행한다.
 - `AuthorizationManager`는 스프링 시큐리티의 필수 구성 요소로서 권한 부여 처리는 `AuthorizationFilter`를 통해 이루어지며 `AuthorizationFilter`는 `AuthorizationManager`를 호출하여 권한 부여 결정을 내린다.
 
-![img_3.png](image/img_3.png)
+![img.png](image_1/img.png)
 
 - **check()**
   - 권한 부여 결정을 내릴 때 필요한 모든 관련 정보(인증 객체, 체크 대상(권한 정보, 요청 정보, 호출 정보 등))가 전달된다.
