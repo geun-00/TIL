@@ -1,7 +1,5 @@
 # Spring MVC 통합
 
----
-
 ## @AuthenticationPrincipal
 
 - 스프링 시큐리티는 Spring MVC 인수에 대한 현재 `Authentication.getPrincipal()`을 자동으로 해결할 수 있는 **AuthenticationPrincipalArgumentResolver**를 제공한다.
@@ -27,6 +25,8 @@
 
 ---
 
+## 예제 코드
+
 ```java
 @Configuration
 @EnableWebSecurity
@@ -36,18 +36,20 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/user").hasAuthority("ROLE_USER")
-                        .requestMatchers("/db").hasAuthority("ROLE_DB")
-                        .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
-                        .anyRequest().permitAll())
-                .formLogin(Customizer.withDefaults())
-                .csrf(AbstractHttpConfigurer::disable)
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/user").hasAuthority("ROLE_USER")
+                .requestMatchers("/db").hasAuthority("ROLE_DB")
+                .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
+                .anyRequest().permitAll()
+            )
+            .formLogin(Customizer.withDefaults())
+            .csrf(AbstractHttpConfigurer::disable)
         ;
+        
         return http.build();
     }
 
-   @Bean
+    @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
                 .password("{noop}1111")
@@ -59,7 +61,7 @@ public class SecurityConfig {
                 .roles("DB")
                 .build();
 
-       UserDetails admin = User.withUsername("admin")
+        UserDetails admin = User.withUsername("admin")
                .password("{noop}1111")
                .roles("ADMIN", "SECURE")
                .build();
@@ -69,9 +71,6 @@ public class SecurityConfig {
 }
 ```
 ```java
-/*
-        ...
- */
 import org.springframework.security.core.userdetails.User;
 
 @RestController
@@ -104,16 +103,6 @@ public class IndexController {
     public String currentUser2(@CurrentUsername String username) {
         return username;
     }
-
-    @GetMapping("/db")
-    public String db() {
-        return "db";
-    }
-
-    @GetMapping("/admin")
-    public String admin() {
-        return "admin";
-    }
 }
 ```
 ```java
@@ -135,6 +124,17 @@ public @interface CurrentUsername {}
 - `/user` : 바로 `Principal` 객체 가져오기
 - `/user2` : `Principal` 객체를 바로 가져와서 내부 필드 꺼내기(없는 필드 선언 시 예외 발생)
 - `/currentUser`, `/currentUser2` : 스프링 시큐리티에 전혀 종속적이지 않으면서 스프링 시큐리티 기술 사용
+
+애노테이션을 사용한 4개의 메서드 모두 `AuthenticationPrincipalArgumentResolver`에 의해 바인딩된다. `"/user2"`나 `"/currentUser2"`
+의 경우는 표현식이 있으므로 추가적인 처리를 하고 바인딩을 해준다.
+
+![img_9.png](image_1/img_9.png)
+
+![img_10.png](image_1/img_10.png)
+
+![img_11.png](image_1/img_11.png)
+
+![img_12.png](image_1/img_12.png)
 
 ---
 

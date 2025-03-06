@@ -27,34 +27,34 @@
 
 ![img_1.png](image/img_1.png)
 
-### 예제 코드
-
-![img_2.png](image/img_2.png)
-
 ---
+
+# 초기화 과정 디버깅
+
+- 현재 설정을 보면 폼 인증이나 기본 인증 등의 인증 관련 설정을 전혀 하지 않았기 때문에 필터 체인 인증 과정에서
+인증 처리가 전혀 이루어지지 않는다.
 
 ```java
 @Configuration
 @EnableWebSecurity
-@RequiredArgsConstructor
 public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/user").hasAuthority("ROLE_USER")
-                        .requestMatchers("/db").hasAuthority("ROLE_DB")
-                        .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
-                        .anyRequest().permitAll())
-//                .formLogin(Customizer.withDefaults())
-                .csrf(AbstractHttpConfigurer::disable)
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/user").hasAuthority("ROLE_USER")
+                .requestMatchers("/db").hasAuthority("ROLE_DB")
+                .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
+                .anyRequest().permitAll()
+            )
+            .csrf(AbstractHttpConfigurer::disable)
         ;
         return http.build();
     }
 
-   @Bean
+    @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
                 .password("{noop}1111")
@@ -66,7 +66,7 @@ public class SecurityConfig {
                 .roles("DB")
                 .build();
 
-       UserDetails admin = User.withUsername("admin")
+        UserDetails admin = User.withUsername("admin")
                .password("{noop}1111")
                .roles("ADMIN", "SECURE")
                .build();
@@ -75,48 +75,53 @@ public class SecurityConfig {
     }
 }
 ```
+
+![img_7.png](image_1/img_7.png)
+
+- `SecurityContextHolderAwareRequestFilter`에는 인증 처리, 인증 유지, 로그아웃 등의 인증과 관련된 속성들을 갖고 있다.
+- 스프링 시큐리티 초기화 과정에서 이 속성들의 값을 주입 시켜 주고 있다.
+
+![img.png](image_1/img.png)
+
+![img_1.png](image_1/img_1.png)
+
+- 그리고 `HttpServletRequestFactory`를 생성하고 이 속성 값들을 전달하면서 초기화한다.
+
+![img_2.png](image_1/img_2.png)
+
+---
+
+# 요청 과정 디버깅
+
 ```java
-@RestController
-@Slf4j
-public class IndexController {
-
-    @GetMapping("/")
-    public String index() {
-        return "index";
-    }
-
-    @GetMapping("/user")
-    public String user() {
-        return "user";
-    }
-
-    @GetMapping("/db")
-    public String db() {
-        return "db";
-    }
-
-    @GetMapping("/admin")
-    public String admin() {
-        return "admin";
-    }
-
-    @GetMapping("/login")
-    public String login(HttpServletRequest request, @ModelAttribute MemberDto memberDto) throws ServletException {
-        request.login(memberDto.getUsername(), memberDto.getPassword());
-        log.info("login is successful");
-        return "login";
-    }
-
-    @GetMapping("/users")
-    public List<MemberDto> users(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        boolean authenticate = request.authenticate(response);
-        if (authenticate) {
-            return List.of(new MemberDto("user1", "1111"));
-        }
-        return Collections.emptyList();
-    }
+@GetMapping("/login")
+public Authentication login(HttpServletRequest request,
+                            @RequestParam("username") String username,
+                            @RequestParam("password") String password) throws ServletException {
+    request.login(username, password);
+    log.info("login is successful");
+    Principal principal = request.getUserPrincipal();
+    return (Authentication) principal;
 }
 ```
+
+- `SecurityContextHolderAwareRequestFilter`는 이전 필터에서 넘어온 `request`, `response`를
+`Servlet3SecurityContextHolderAwareRequestWrapper`로 감싸서 다음 필터로 전달하는 역할만 갖는 필터이다.
+
+![img_3.png](image_1/img_3.png)
+
+![img_4.png](image_1/img_4.png)
+
+- 이렇게 해서 마지막 필터까지 가고 스프링 MVC까지 왔을 때 래핑된 객체가 전달된다.
+
+![img_5.png](image_1/img_5.png)
+
+![img_6.png](image_1/img_6.png)
+
+- `request.login()` 과정을 보면 앞서 `HttpServletRequestFactory`에 저장된 속성들을 사용해 처리하는 것을 알 수 있다.
+- 즉 서블릿 단에서 스프링 시큐리티 기술을 사용하는 것이다.
+
+![img_8.png](image_1/img_8.png)
 
 ---
 

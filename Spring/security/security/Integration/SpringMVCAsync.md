@@ -29,19 +29,11 @@
 
 ![img_7.png](image/img_7.png)
 
----
-
-## Callable 적용
-
 ```java
-@RestController
 @Slf4j
+@RestController
 public class IndexController {
-
-    /*
-        ...
-    */
-
+    
     @GetMapping("/callable")
     public Callable<Authentication> call() {
         SecurityContext context = SecurityContextHolder.getContextHolderStrategy().getContext();
@@ -70,6 +62,56 @@ Child Thread = task-1
 
 - 스레드는 다르지만, `SecurityContext`는 같은 것을 확인할 수 있다.
 
+### 과정 디버깅
+
+- 일단 `WebAsyncManagerIntegrationFilter`는 `HttpSecurity` 빈을 생성하는 과정에서 초기화된다.
+
+![img_13.png](image_1/img_13.png)
+
+- 그리고 `"/callable"`로 요청을 했을 때 `WebAsyncManagerIntegrationFilter`로 온다.
+
+![img_14.png](image_1/img_14.png)
+
+- 이 필터에서는 `WebAsyncManager`를 생성하고 `SecurityContextCallableProcessingInterceptor`에 
+`securityContextHolderStrategy`를 저장한다.
+- 그리고 `WebAsyncManager`에 `SecurityContextCallableProcessingInterceptor`를 등록한다.
+
+![img_15.png](image_1/img_15.png)
+
+- 이후 필터들을 모두 거치고 스프링 MVC로 왔다.
+- 이제 `callable`이 반환되면서 비동기 스레드에서 `call()`이 실행될 것이다.
+
+![img_16.png](image_1/img_16.png)
+
+- 현재 스레드는 메인 스레드로, 비동기 실행을 하기 전에 `SecurityContext`를 저장하는 것을 확인할 수 있다.
+
+![img_17.png](image_1/img_17.png)
+
+![img_18.png](image_1/img_18.png)
+
+![img_19.png](image_1/img_19.png)
+
+- 그리고 `WebAsyncManager`에서 스레드 풀을 이용해 별도의 스레드에서 비동기로 `Callable`을 실행한다.
+
+![img_20.png](image_1/img_20.png)
+
+![img_21.png](image_1/img_21.png)
+
+- 이때 `Callable`을 실행하기 전에 부모 스레드에서 저장해놓았던 `SecurityContext`를 현재 비동기 스레드에 저장한다.
+- 참고로 `SecurityContext` 필드는 `volatile` 필드이다.
+
+![img_22.png](image_1/img_22.png)
+
+![img_23.png](image_1/img_23.png)
+
+- 이렇게 하고 나서 `Callable`을 호출하면 당연히 메인 스레드와 비동기 스레드가 같은 `SecurityContext`를 참조할 수 있는 것이다.
+
+![img_24.png](image_1/img_24.png)
+
+- 마지막으로 비동기 수행을 모두 마치고 나서 스레드 세이프를 위해 다시 비워주는 작업을 한다.
+
+![img_25.png](image_1/img_25.png)
+
 ## 다른 비동기 기술 적용
 
 ```java
@@ -92,10 +134,6 @@ public class AsyncService {
 public class IndexController {
 
     private final AsyncService asyncService;
-    
-    /*
-            ...
-     */
 
     @GetMapping("/async")
     public Authentication async() {
@@ -114,7 +152,7 @@ public class IndexController {
 ```
 ```java
 @SpringBootApplication
-@EnableAsync
+@EnableAsync //추가
 public class SpringsecuritymasterApplication {
 
     public static void main(String[] args) {
@@ -141,20 +179,20 @@ Child Thread = task-1
 ```java
 @Configuration
 @EnableWebSecurity
-@RequiredArgsConstructor
 public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/user").hasAuthority("ROLE_USER")
-                        .requestMatchers("/db").hasAuthority("ROLE_DB")
-                        .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
-                        .anyRequest().permitAll())
-                .formLogin(Customizer.withDefaults())
-                .csrf(AbstractHttpConfigurer::disable)
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/user").hasAuthority("ROLE_USER")
+                .requestMatchers("/db").hasAuthority("ROLE_DB")
+                .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
+                .anyRequest().permitAll()
+            )
+            .formLogin(Customizer.withDefaults())
+            .csrf(AbstractHttpConfigurer::disable)
         ;
 
         //부모 스레드로부터 자식 스레드로 보안 컨텍스트가 상속하는 설정
