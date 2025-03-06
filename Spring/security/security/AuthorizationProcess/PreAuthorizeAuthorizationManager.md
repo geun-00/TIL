@@ -196,7 +196,7 @@ public class DataService {
 
 ![img_37.png](image_1/img_37.png)
 
-- `@PostAuthroize`는 `@PreAuthorize`와 반대로 먼제 실제 객체를 호출하고, 반환받은 값으로 `attemptAuthorization()`를 호출하여
+- `@PostAuthroize`는 `@PreAuthorize`와 반대로 먼저 실제 객체를 호출하고, 반환받은 값으로 `attemptAuthorization()`를 호출하여
 권한 심사가 이루어진다.
 
 ![img_38.png](image_1/img_38.png)
