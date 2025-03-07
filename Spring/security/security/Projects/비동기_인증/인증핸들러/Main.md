@@ -1,12 +1,11 @@
 # 비동기 인증 - Rest 인증 성공 및 실패 핸들러
 
----
-
 ## RestAuthenticationSuccessHandler
 
 ```java
 @Component("restSuccessHandler")
 public class RestAuthenticationSuccessHandler implements AuthenticationSuccessHandler {
+    
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -78,10 +77,38 @@ public class SecurityConfig {
     private final RestAuthenticationSuccessHandler restSuccessHandler;
     private final RestAuthenticationFailureHandler restFailureHandler;
 
-
+    /**
+     * 폼 인증 설정
+     */
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {...}
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/", "/signup", "/login*").permitAll()
+                .requestMatchers("/user").hasRole("USER")
+                .requestMatchers("/manager").hasRole("MANAGER")
+                .requestMatchers("/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .formLogin(form -> form
+                .loginPage("/login").permitAll()
+                .authenticationDetailsSource(authenticationDetailsSource)
+                .successHandler(authenticationSuccessHandler)
+                .failureHandler(authenticationFailureHandler)
+            )
+            .authenticationProvider(authenticationProvider)
+            .exceptionHandling(exception -> exception
+                .accessDeniedHandler(new FormAccessDeniedHandler("/denied"))
+            )
+        ;
 
+        return http.build();
+    }
+
+    /**
+     * 비동기 인증 설정
+     */
     @Bean
     @Order(1)
     public SecurityFilterChain restSecurityFilterChain(HttpSecurity http) throws Exception {
@@ -91,14 +118,14 @@ public class SecurityConfig {
         AuthenticationManager authenticationManager = managerBuilder.build();
 
         http
-                .securityMatcher("/api/login")
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
-                        .anyRequest().permitAll()
-                )
-                .csrf(AbstractHttpConfigurer::disable)
-                .addFilterBefore(restAuthenticationFilter(authenticationManager), UsernamePasswordAuthenticationFilter.class)
-                .authenticationManager(authenticationManager)
+            .securityMatcher("/api/login")
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .anyRequest().permitAll()
+            )
+            .csrf(AbstractHttpConfigurer::disable)
+            .addFilterBefore(restAuthenticationFilter(authenticationManager), UsernamePasswordAuthenticationFilter.class)
+            .authenticationManager(authenticationManager)
         ;
 
         return http.build();
@@ -107,8 +134,8 @@ public class SecurityConfig {
     private RestAuthenticationFilter restAuthenticationFilter(AuthenticationManager authenticationManager) {
         RestAuthenticationFilter restAuthenticationFilter = new RestAuthenticationFilter();
         restAuthenticationFilter.setAuthenticationManager(authenticationManager);
-        restAuthenticationFilter.setAuthenticationSuccessHandler(restSuccessHandler);
-        restAuthenticationFilter.setAuthenticationFailureHandler(restFailureHandler);
+        restAuthenticationFilter.setAuthenticationSuccessHandler(restSuccessHandler); //추가
+        restAuthenticationFilter.setAuthenticationFailureHandler(restFailureHandler); //추가
 
         return restAuthenticationFilter;
     }

@@ -1,7 +1,5 @@
 # 비동기 인증 - Rest 인증 필터 구현
 
----
-
 ## 스프링 시큐리티 필터 설정
 
 - 스프링 시큐리티는 **HttpSecurity** 설정을 통해 애플리케이션의 보안 요구사항에 맞게 필터 체인을 추가할 수 있도록 제공한다.
@@ -13,11 +11,15 @@
 - 주로 특정 처리가 다른 필터보다 먼저 실행되어야 할 때 사용된다.
 - `http.addFilterBefore(커스텀 필터, 기존 필터.class)` : 커스텀 필터가 기존 필터 이전에 실행되도록 한다.
 
+![img.png](img.png)
+
 ### addFilterAfter
 
 - 지정된 필터를 필터 체인의 특정 필터 이후에 추가한다.
 - 특정 작업이 다른 필터의 처리를 따라야 할 때 유용하다.
 - `http.addFilterAfter(커스텀 필터, 기존 필터.class)` : 커스텀 필터가 기존 필터 이후에 실행되도록 한다.
+
+![img_1.png](img_1.png)
 
 ### addFilter
 
@@ -25,10 +27,16 @@
 - 추가하는 필터가 **스프링 시큐리티의 필터를 상속받을 경우**에 해당하며 그렇지 않을 경우 예외가 발생한다.
 - `http.addFilter(커스텀 필터)`
 
+![img_2.png](img_2.png)
+
 ### addFilterAt
 
 - 지정된 필터를 필터 체인의 특정 필터 위치에 추가하며 이때 특정 필터를 대체하지는 않는다.
 - `http.addFilterAt(커스텀 필터, 기존 필터.class)`
+
+![img_3.png](img_3.png)
+
+> ![img_4.png](img_4.png)
 
 ---
 
@@ -53,7 +61,8 @@ public class RestAuthenticationFilter extends AbstractAuthenticationProcessingFi
             throw new AuthenticationServiceException("Username or Password is not provided");
         }
 
-        RestAuthenticationToken authenticationToken = new RestAuthenticationToken(accountDto.getUsername(), accountDto.getPassword());
+        RestAuthenticationToken authenticationToken =
+            RestAuthenticationToken.unauthenticated(accountDto.getUsername(), accountDto.getPassword());
 
         return getAuthenticationManager().authenticate(authenticationToken);
     }
@@ -108,6 +117,15 @@ public class RestAuthenticationToken extends AbstractAuthenticationToken {
         setAuthenticated(false);
     }
 
+    public static RestAuthenticationToken unauthenticated(Object principal, Object credentials) {
+        return new RestAuthenticationToken(principal, credentials);
+    }
+
+    public static RestAuthenticationToken authenticated(Object principal, Object credentials,
+                                                        Collection<? extends GrantedAuthority> authorities) {
+        return new RestAuthenticationToken(authorities, principal, credentials);
+    }
+
     @Override
     public Object getCredentials() {
         return this.credentials;
@@ -135,9 +153,38 @@ public class SecurityConfig {
     private final AuthenticationSuccessHandler authenticationSuccessHandler;
     private final AuthenticationFailureHandler authenticationFailureHandler;
 
+    /**
+     * 폼 인증 설정
+     */
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{...}
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+        http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/", "/signup", "/login*").permitAll()
+                .requestMatchers("/user").hasRole("USER")
+                .requestMatchers("/manager").hasRole("MANAGER")
+                .requestMatchers("/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .formLogin(form -> form
+                .loginPage("/login").permitAll()
+                .authenticationDetailsSource(authenticationDetailsSource)
+                .successHandler(authenticationSuccessHandler)
+                .failureHandler(authenticationFailureHandler)
+            )
+            .authenticationProvider(authenticationProvider)
+            .exceptionHandling(exception -> exception
+                .accessDeniedHandler(new FormAccessDeniedHandler("/denied"))
+            )
+        ;
 
+        return http.build();
+    }
+
+    /**
+     * 비동기 인증 설정
+     */
     @Bean
     @Order(1)
     public SecurityFilterChain restSecurityFilterChain(HttpSecurity http) throws Exception {
@@ -146,14 +193,14 @@ public class SecurityConfig {
         AuthenticationManager authenticationManager = managerBuilder.build();
 
         http
-                .securityMatcher("/api/login")
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
-                        .anyRequest().permitAll()
-                )
-                .csrf(AbstractHttpConfigurer::disable)
-                .addFilterBefore(restAuthenticationFilter(authenticationManager), UsernamePasswordAuthenticationFilter.class)
-                .authenticationManager(authenticationManager)
+            .securityMatcher("/api/login")
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .anyRequest().permitAll()
+            )
+            .csrf(AbstractHttpConfigurer::disable)
+            .addFilterBefore(restAuthenticationFilter(authenticationManager), UsernamePasswordAuthenticationFilter.class)
+            .authenticationManager(authenticationManager)
         ;
 
         return http.build();

@@ -1,14 +1,6 @@
 # 비동기 인증 - Rest 인증 보안 및 화면 구성
 
----
-
-![img.png](image/img.png)
-
 > [다중 보안 설정](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/MultiSecurity/MultiSecurity.md)으로 비동기 인증과 폼 인증을 각각 처리하도록 한다.
-
-![img_1.png](image/img_1.png)
-
----
 
 ### SecurityConfig
 
@@ -23,13 +15,40 @@ public class SecurityConfig {
     private final AuthenticationSuccessHandler authenticationSuccessHandler;
     private final AuthenticationFailureHandler authenticationFailureHandler;
 
+    /**
+     * 폼 인증 설정
+     */ 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        ...
+        http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/", "/signup", "/login*").permitAll()
+                .requestMatchers("/user").hasRole("USER")
+                .requestMatchers("/manager").hasRole("MANAGER")
+                .requestMatchers("/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .formLogin(form -> form
+                .loginPage("/login").permitAll()
+                .authenticationDetailsSource(authenticationDetailsSource)
+                .successHandler(authenticationSuccessHandler)
+                .failureHandler(authenticationFailureHandler)
+            )
+            .authenticationProvider(authenticationProvider)
+            .exceptionHandling(exception -> exception
+                .accessDeniedHandler(new FormAccessDeniedHandler("/denied"))
+            )
+        ;
+
+        return http.build();
     }
 
+    /**
+     * 비동기 인증 설정
+     */
     @Bean
-    @Order(1)
+    @Order(1) //Rest 방식의 요청을 먼저 처리하도록 순서를 지정
     public SecurityFilterChain restSecurityFilterChain(HttpSecurity http) throws Exception {
         http
                 .securityMatcher("/api/login")
@@ -37,7 +56,8 @@ public class SecurityConfig {
                         .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
                         .anyRequest().permitAll()
                 )
-                .csrf(AbstractHttpConfigurer::disable)
+                .csrf(AbstractHttpConfigurer::disable) 
+                //Rest 방식의 비동기 설정은 클라이언트에서 직접 CSRF 값을 직접 전달해 주어야 한다. 일단 비활성화
         ;
 
         return http.build();
@@ -50,15 +70,10 @@ public class SecurityConfig {
 @Controller
 public class LoginController {
     
-    /*...*/
-    
     @GetMapping("/api/login")
     public String restLogin() {
         return "rest/login";
     }
-    
-    /*...*/
-    
 }
 ```
 
@@ -77,7 +92,7 @@ public class LoginController {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-Requested-With': 'XMLHttpRequest'
+                    'X-Requested-With': 'XMLHttpRequest' //Ajax 통신임을 서버에 전달하기 위한 헤더 설정
                 },
                 body: JSON.stringify({ username, password }),
             })
@@ -122,16 +137,6 @@ public class LoginController {
 <div class="footer" th:replace="~{layout/footer::footer}"></div>
 </body>
 </html>
-```
-```java
-@RestController
-public class RestLoginController {
-
-    @PostMapping("/api/login")
-    public String restLogin() {
-        return "restLogin";
-    }
-}
 ```
 
 ---

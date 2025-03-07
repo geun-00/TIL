@@ -1,9 +1,39 @@
 # 비동기 인증 - RestAuthenticationProvider 구현
 
----
-
 ## RestAuthenticationProvider
 
+```java
+@Component("restAuthenticationProvider")
+@RequiredArgsConstructor
+public class RestAuthenticationProvider implements AuthenticationProvider {
+
+    private final UserDetailsService userDetailsService;
+    private final PasswordEncoder passwordEncoder;
+
+    @Override
+    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+        String loginId = authentication.getName();
+        String password = (String) authentication.getCredentials();
+
+        AccountContext accountContext = (AccountContext) userDetailsService.loadUserByUsername(loginId);
+
+        if (!passwordEncoder.matches(password, accountContext.getPassword())) {
+            throw new BadCredentialsException("Invalid password");
+        }
+
+        return RestAuthenticationToken.authenticated(
+            accountContext.getAccountDto(), null, accountContext.getAuthorities()
+        );
+    }
+
+    @Override
+    public boolean supports(Class<?> authentication) {
+        return authentication.isAssignableFrom(RestAuthenticationToken.class);
+    }
+}
+```
+
+## SecurityConfig
 ```java
 @Configuration
 @EnableWebSecurity
@@ -18,27 +48,55 @@ public class SecurityConfig {
     private final FormAuthenticationSuccessHandler formSuccessHandler;
     private final FormAuthenticationFailureHandler formFailureHandler;
 
-
+    /**
+     * 폼 인증 설정
+     */
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {...}
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/", "/signup", "/login*").permitAll()
+                .requestMatchers("/user").hasRole("USER")
+                .requestMatchers("/manager").hasRole("MANAGER")
+                .requestMatchers("/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .formLogin(form -> form
+                .loginPage("/login").permitAll()
+                .authenticationDetailsSource(authenticationDetailsSource)
+                .successHandler(authenticationSuccessHandler)
+                .failureHandler(authenticationFailureHandler)
+            )
+            .authenticationProvider(authenticationProvider)
+            .exceptionHandling(exception -> exception
+                .accessDeniedHandler(new FormAccessDeniedHandler("/denied"))
+            )
+        ;
 
+        return http.build();
+    }
+
+    /**
+     * 비동기 인증 설정
+     */
     @Bean
     @Order(1)
     public SecurityFilterChain restSecurityFilterChain(HttpSecurity http) throws Exception {
 
         AuthenticationManagerBuilder managerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
-        managerBuilder.authenticationProvider(restAuthenticationProvider);
+        managerBuilder.authenticationProvider(restAuthenticationProvider); //추가
         AuthenticationManager authenticationManager = managerBuilder.build();
 
         http
-                .securityMatcher("/api/login")
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
-                        .anyRequest().permitAll()
-                )
-                .csrf(AbstractHttpConfigurer::disable)
-                .addFilterBefore(restAuthenticationFilter(authenticationManager), UsernamePasswordAuthenticationFilter.class)
-                .authenticationManager(authenticationManager)
+            .securityMatcher("/api/login")
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .anyRequest().permitAll()
+            )
+            .csrf(AbstractHttpConfigurer::disable)
+            .addFilterBefore(restAuthenticationFilter(authenticationManager), UsernamePasswordAuthenticationFilter.class)
+            .authenticationManager(authenticationManager)
         ;
 
         return http.build();

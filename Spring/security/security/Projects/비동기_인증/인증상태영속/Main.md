@@ -1,10 +1,6 @@
 # 비동기 인증 - Rest 인증 상태 영속하기
 
----
-
 ## [SecurityContextRepository](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationPersistence/ContextRepository.md) 설정
-
-![img.png](img.png)
 
 > - 인증에 성공했을 때는 다음 두 가지 중요한 후속처리를 해야 한다.
 >   - 인증 객체(`Authentication`)를 **SecurityContext**에 저장하고 이것을 다시 `ThreadLocal`에 저장시킨다.
@@ -29,9 +25,10 @@ public class RestAuthenticationFilter extends AbstractAuthenticationProcessingFi
 
     public RestAuthenticationFilter(HttpSecurity http) {
         super(new AntPathRequestMatcher("/api/login", "POST"));
-        setSecurityContextRepository(getSecurityContextRepository(http));
+        setSecurityContextRepository(getSecurityContextRepository(http)); //추가
     }
 
+    //추가
     private SecurityContextRepository getSecurityContextRepository(HttpSecurity http) {
         SecurityContextRepository scr = http.getSharedObject(SecurityContextRepository.class);
         if (scr == null) {
@@ -78,9 +75,38 @@ public class SecurityConfig {
     private final RestAuthenticationSuccessHandler restSuccessHandler;
     private final RestAuthenticationFailureHandler restFailureHandler;
 
+    /**
+     * 폼 인증 설정
+     */
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{...}
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+        http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/", "/signup", "/login*").permitAll()
+                .requestMatchers("/user").hasRole("USER")
+                .requestMatchers("/manager").hasRole("MANAGER")
+                .requestMatchers("/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .formLogin(form -> form
+                .loginPage("/login").permitAll()
+                .authenticationDetailsSource(authenticationDetailsSource)
+                .successHandler(authenticationSuccessHandler)
+                .failureHandler(authenticationFailureHandler)
+            )
+            .authenticationProvider(authenticationProvider)
+            .exceptionHandling(exception -> exception
+                .accessDeniedHandler(new FormAccessDeniedHandler("/denied"))
+            )
+        ;
 
+        return http.build();
+    }
+
+    /**
+     * 비동기 인증 설정
+     */
     @Bean
     @Order(1)
     public SecurityFilterChain restSecurityFilterChain(HttpSecurity http) throws Exception {
@@ -90,14 +116,14 @@ public class SecurityConfig {
         AuthenticationManager authenticationManager = managerBuilder.build();
 
         http
-                .securityMatcher("/api/login")
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
-                        .anyRequest().permitAll()
-                )
-                .csrf(AbstractHttpConfigurer::disable)
-                .addFilterBefore(restAuthenticationFilter(http, authenticationManager), UsernamePasswordAuthenticationFilter.class)
-                .authenticationManager(authenticationManager)
+            .securityMatcher("/api/login")
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .anyRequest().permitAll()
+            )
+            .csrf(AbstractHttpConfigurer::disable)
+            .addFilterBefore(restAuthenticationFilter(http, authenticationManager), UsernamePasswordAuthenticationFilter.class)
+            .authenticationManager(authenticationManager)
         ;
 
         return http.build();

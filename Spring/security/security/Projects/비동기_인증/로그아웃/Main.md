@@ -1,7 +1,5 @@
 # 비동기 인증 - Rest 로그아웃 구현
 
----
-
 ![img.png](img.png)
 
 > 폼 방식과 비동기 방식의 로그아웃 요청은 다를 수 있겠지만, 서버에서 로그아웃 처리는 폼 방식과 다를 것이 없다.
@@ -16,9 +14,6 @@
 @RestController
 @RequestMapping("/api")
 public class RestApiController {
-    /**
-     * ...
-     */
 
     @GetMapping("/logout")
     public String logout(HttpServletRequest request, HttpServletResponse response) {

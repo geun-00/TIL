@@ -1,7 +1,5 @@
 # 비동기 인증 - Rest DSLs 구현
 
----
-
 ## [Custom DSL](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/MultiSecurity/CustomDSL.md) 설정
 
 ![img.png](image/img.png)
@@ -55,7 +53,7 @@ public class RestApiDsl <H extends HttpSecurityBuilder<H>> extends
             getAuthenticationFilter().setRememberMeServices(rememberMeServices);
         }
 
-        http.setSharedObject(RestAuthenticationFilter.class,getAuthenticationFilter());
+        http.setSharedObject(RestAuthenticationFilter.class, getAuthenticationFilter());
         http.addFilterBefore(getAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
@@ -84,6 +82,10 @@ public class RestApiDsl <H extends HttpSecurityBuilder<H>> extends
 }
 ```
 
+> **전체적인 구조**
+> 
+> ![img.png](image/img_2.png)
+
 ### RestAuthenticationFilter
 
 ```java
@@ -95,6 +97,7 @@ public class RestAuthenticationFilter extends AbstractAuthenticationProcessingFi
         super(new AntPathRequestMatcher("/api/login", "POST"));
     }
 
+    //수정
     public SecurityContextRepository getSecurityContextRepository(HttpSecurity http) {
         SecurityContextRepository scr = http.getSharedObject(SecurityContextRepository.class);
         if (scr == null) {
@@ -141,9 +144,38 @@ public class SecurityConfig {
     private final RestAuthenticationSuccessHandler restSuccessHandler;
     private final RestAuthenticationFailureHandler restFailureHandler;
 
+    /**
+     * 폼 인증 설정
+     */
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {...}
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
+        http
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/", "/signup", "/login*").permitAll()
+                .requestMatchers("/user").hasRole("USER")
+                .requestMatchers("/manager").hasRole("MANAGER")
+                .requestMatchers("/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .formLogin(form -> form
+                .loginPage("/login").permitAll()
+                .authenticationDetailsSource(authenticationDetailsSource)
+                .successHandler(authenticationSuccessHandler)
+                .failureHandler(authenticationFailureHandler)
+            )
+            .authenticationProvider(authenticationProvider)
+            .exceptionHandling(exception -> exception
+                .accessDeniedHandler(new FormAccessDeniedHandler("/denied"))
+            )
+        ;
 
+        return http.build();
+    }
+
+    /**
+     * 비동기 인증 설정
+     */
     @Bean
     @Order(1)
     public SecurityFilterChain restSecurityFilterChain(HttpSecurity http) throws Exception {
@@ -153,29 +185,28 @@ public class SecurityConfig {
         AuthenticationManager authenticationManager = managerBuilder.build();
 
         http
-                .securityMatcher("/api/**")
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
-                        .requestMatchers("/api", "/api/login").permitAll()
-                        .requestMatchers("/api/user").hasRole("USER")
-                        .requestMatchers("/api/manager").hasRole("MANAGER")
-                        .requestMatchers("/api/admin").hasRole("ADMIN")
-                        .anyRequest().authenticated()
-                )
-//                .csrf(AbstractHttpConfigurer::disable)
-                .authenticationManager(authenticationManager)
-                .exceptionHandling(
-                        exception -> exception
-                                .authenticationEntryPoint(new RestAuthenticationEntryPoint())
-                                .accessDeniedHandler(new RestAccessDeniedHandler())
-                )
-                .with(
-                        new RestApiDsl<>(), restDsl -> restDsl
-                                .restSuccessHandler(restSuccessHandler)
-                                .restFailureHandler(restFailureHandler)
-                                .loginPage("/api/login")
-                                .loginProcessingUrl("/api/login")
-                )
+            .securityMatcher("/api/**")
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/api", "/api/login").permitAll()
+                .requestMatchers("/api/user").hasRole("USER")
+                .requestMatchers("/api/manager").hasRole("MANAGER")
+                .requestMatchers("/api/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .csrf(AbstractHttpConfigurer::disable)
+            .authenticationManager(authenticationManager)
+            .exceptionHandling(exception -> exception
+                .authenticationEntryPoint(new RestAuthenticationEntryPoint())
+                .accessDeniedHandler(new RestAccessDeniedHandler())
+            )
+            //추가
+            .with(new RestApiDsl<>(), restDsl -> restDsl
+                            .restSuccessHandler(restSuccessHandler)
+                            .restFailureHandler(restFailureHandler)
+                            .loginPage("/api/login")
+                            .loginProcessingUrl("/api/login")
+            )
         ;
 
         return http.build();
