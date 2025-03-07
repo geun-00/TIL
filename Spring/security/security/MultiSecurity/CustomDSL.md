@@ -11,6 +11,8 @@
   - `init(B builder)` : `HttpSecurity`의 구성요소를 설정 및 공유하는 작업 등
   - `confiture(B builder)` : 공통 클래스를 구성하거나 사용자 정의 필터를 생성하는 작업 등
 
+![img_4.png](image_1/img_4.png)
+
 ### API
 
 - **HttpSecurity.with(C Configure, Customizer<c> customizer)**
@@ -25,36 +27,34 @@
 
 ## 예제 코드
 
-![img_4.png](image/img_4.png)
-
----
-
 ```java
 public class MyCustomDsl extends AbstractHttpConfigurer<MyCustomDsl, HttpSecurity> {
 
     private boolean flag;
-
+    
+    public static MyCustomDsl customDsl() {
+        return new MyCustomDsl();
+    }
+    
     @Override
     public void init(HttpSecurity http) throws Exception {
         super.init(http);
     }
-
+    
     @Override
     public void configure(HttpSecurity http) throws Exception {
         MyCustomFilter myCustomFilter = new MyCustomFilter();
         myCustomFilter.setFlag(flag);
         http.addFilterAfter(myCustomFilter, SecurityContextHolderAwareRequestFilter.class);
     }
-
-    public static MyCustomDsl customDsl() {
-        return new MyCustomDsl();
-    }
-
+    
     public void setFlag(boolean flag) {
         this.flag = flag;
     }
 }
 ```
+> `MyCustomFilter`에서 서블릿 API 통합 기능을 사용할 것이기 때문에 `SecurityContextHolderAwareRequestFilter`
+> 뒤에 위치하도록 했다.
 ```java
 @Slf4j
 public class MyCustomFilter extends OncePerRequestFilter {
@@ -68,10 +68,11 @@ public class MyCustomFilter extends OncePerRequestFilter {
                 String username = request.getParameter("username");
                 String password = request.getParameter("password");
                 request.login(username, password);
-            }catch (Exception e){
+            } catch (Exception e){
                 log.error(e.getMessage());
             }
         }
+        
         filterChain.doFilter(request, response);
     }
 
@@ -89,20 +90,23 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/user").hasAuthority("ROLE_USER")
-                        .requestMatchers("/db").hasAuthority("ROLE_DB")
-                        .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
-                        .anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults())
-                .with(MyCustomDsl.customDsl(),dsl -> dsl.setFlag(true))
+            .authorizeHttpRequests(authorize -> authorize
+                  .requestMatchers("/user").hasAuthority("ROLE_USER")
+                  .requestMatchers("/db").hasAuthority("ROLE_DB")
+                  .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
+                  .anyRequest().authenticated()
+            )
+            .formLogin(Customizer.withDefaults())
+            .with(MyCustomDsl.customDsl(), dsl -> dsl.setFlag(true))
+
+//            .with(new MyCustomDsl(), AbstractHttpConfigurer::disable); //비활성화
+//            .with(new MyCustomDsl(), Customizer.withDefaults());       //기본값으로 설정
         ;
 
         return http.build();
     }
-
-
-   @Bean
+    
+    @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
                 .password("{noop}1111")
@@ -114,20 +118,27 @@ public class SecurityConfig {
                 .roles("DB")
                 .build();
 
-       UserDetails admin = User.withUsername("admin")
+        UserDetails admin = User.withUsername("admin")
                .password("{noop}1111")
                .roles("ADMIN", "SECURE")
                .build();
 
         return new InMemoryUserDetailsManager(user, manager, admin);
     }
-
 }
 ```
 
-![img_5.png](image/img_5.png)
+## 초기화 과정 디버깅
 
-- 스프링 시큐리티 초기화 시 생성되는 `Configurer`들 중에 직접 만든 `MyCustomDsl` 클래스도 추가되었다.
+- 스프링 시큐리티가 내부적으로 생성하는 설정 클래스들의 마지막으로 직접 만든 클래스가 저장된 것을 확인할 수 있다.
+
+![img_5.png](image_1/img_5.png)
+
+![img_6.png](image_1/img_6.png)
+
+- `init()`과 `configure()`를 실행하면 `MyCustomDsl`이 호출된다.
+
+![img_7.png](image_1/img_7.png)
 
 ---
 

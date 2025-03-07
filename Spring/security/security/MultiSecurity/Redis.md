@@ -5,17 +5,26 @@
 - 스프링 시큐리티는 사용자 세션을 안전하게 관리하며 이중화된 환경에서 세션 정보를 공유할 수 있는 메커니즘을 제공하며 대표적으로 **레디스** 같은 분산 캐시를 사용하여
     세션 정보를 여러 서버 간에 공유할 수 있다.
 
+**레디스 세션 서버**
+- 로컬 환경 (Linux)
+  - `sudo apt-get install redis-server` 또는 `sudo yum install redis` 명령어로 레디스 설치
+  - 설치 후 `sudo service redis-server start` 명령어로 레디스 서버를 시작
+- Docker
+  - `docker run --name redis -p 6379:6379 -d redis`
+  - 레디스 이미지를 다운로드하고, 이름이 `redis`인 컨테이너를 백그라운드에서 실행
+  - 포트 6379를 사용하여 로컬 호스트와 연결한다.
+
 ---
 
-- 라이브러리 추가
+## 예제 코드
 
+- 라이브러리 추가
 ```text
 implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 implementation 'org.springframework.session:spring-session-data-redis'
 ```
 
 - 레디스 설정 클래스
-
 ```java
 @Configuration
 @EnableRedisHttpSession
@@ -31,7 +40,6 @@ public class RedisConfig {
     public RedisConnectionFactory redisConnectionFactory() {
         return new LettuceConnectionFactory(host, port);
     }
-
 }
 ```
 ```yaml
@@ -41,7 +49,6 @@ spring:
       host: localhost
       port: 6379
 ```
-
 ```java
 @Configuration
 @EnableWebSecurity
@@ -51,19 +58,19 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/user").hasAuthority("ROLE_USER")
-                        .requestMatchers("/db").hasAuthority("ROLE_DB")
-                        .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
-                        .anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults())
+            .authorizeHttpRequests(authorize -> authorize
+                .requestMatchers("/user").hasAuthority("ROLE_USER")
+                .requestMatchers("/db").hasAuthority("ROLE_DB")
+                .requestMatchers("/admin").hasAuthority("ROLE_ADMIN")
+                .anyRequest().authenticated()
+            )
+            .formLogin(Customizer.withDefaults())
         ;
 
         return http.build();
     }
-
-
-   @Bean
+    
+    @Bean
     public UserDetailsService userDetailsService() {
         UserDetails user = User.withUsername("user")
                 .password("{noop}1111")
@@ -75,7 +82,7 @@ public class SecurityConfig {
                 .roles("DB")
                 .build();
 
-       UserDetails admin = User.withUsername("admin")
+        UserDetails admin = User.withUsername("admin")
                .password("{noop}1111")
                .roles("ADMIN", "SECURE")
                .build();
