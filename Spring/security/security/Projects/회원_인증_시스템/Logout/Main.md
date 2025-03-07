@@ -84,7 +84,7 @@ public class LoginController {
 
 > `LogoutHandler`의 구현체는 여러 가지가 있으며 `SecurityContextLogoutHandler`는 세션을 무효화 시키고 **SecurityContext**에서 `Authentication`을 제거하는 등의 수행을 한다.
 > 
-> ![img.png](img.png)
+> ![img.png](image/img.png)
 
 이렇게 `GET` 방식으로도 로그아웃을 간단하게 구현할 수 있지만 `POST` 요청으로 **LogoutFilter**가 로그아웃을 처리하도록 하는 것이 안전한 방법이다.
 
