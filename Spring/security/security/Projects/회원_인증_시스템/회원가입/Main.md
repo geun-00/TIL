@@ -1,7 +1,5 @@
 # 회원 인증 시스템 - 회원가입
 
----
-
 ## PasswordEncoder
 
 - 스프링 시큐리티의 `PasswordEncoder` 인터페이스는 비밀번호를 안전하게 저장하기 위해 비밀번호의 **단방향 변환**을 수행하는 데 사용된다.
@@ -32,9 +30,7 @@
 
 ![img_2.png](image/img_2.png)
 
-![img_4.png](image/img_4.png)
-
-![img_5.png](image/img_5.png)
+![img.png](img.png)
 
 > 스프링 시큐리티는 여러가지 암호화 알고리즘 유형을 지원하며, 기본적으로 `BCrypt`를 사용하는 것을 확인할 수 있다.
 
@@ -44,7 +40,9 @@
 
 ---
 
-### build.gradle 추가
+## 코드 구현
+
+### 라이브러리 추가
 
 ```text
 implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -68,12 +66,11 @@ public class SpringSecurityMasterApplication {
                 .setFieldMatchingEnabled(true);
         return mapper;
     }
-
 }
 ```
 > `ModelMapper`의 기본 전략은 기본 생성자로 생성 후 `setter`로 값을 초기화하여 변환한다. `setter` 없이 변환 가능하도록 하기 위해 위와 같이 설정할 수 있다.
 > 
-> [참고 - `ModelMapper`보다는 `MapStruct`를 사용하자.](https://dev-splin.github.io/spring/Spring-ModelMapper,MapStruct/#%EC%9D%98%EC%A1%B4%EC%84%B1-%EC%84%A4%EC%A0%95)
+> [참고 - `ModelMapper`보다는 `MapStruct`를 사용하자.](https://velog.io/@xav/24.05.29.-ModelMapper-vs-MapStruct)
 
 ### application.yml
 ```yaml
@@ -211,11 +208,14 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
-                        .requestMatchers("/", "/signup").permitAll()
-                        .anyRequest().authenticated())
-                .formLogin(form -> form.loginPage("/login").permitAll()); //커스텀 로그인 페이지
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/", "/signup").permitAll()
+                .anyRequest().authenticated()
+            )
+            .formLogin(form -> form
+                .loginPage("/login").permitAll()  //커스텀 로그인 페이지
+            );
 
         return http.build();
     }

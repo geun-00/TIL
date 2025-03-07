@@ -1,7 +1,5 @@
 # 회원 인증 시스템 - 커스텀 접근 제한하기
 
----
-
 ### FormAccessDeniedHandler
 
 ```java
@@ -38,22 +36,24 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
-                        .requestMatchers("/", "/signup", "/login*").permitAll()
-                        .requestMatchers("/user").hasRole("USER")
-                        .requestMatchers("/manager").hasRole("MANAGER")
-                        .requestMatchers("/admin").hasRole("ADMIN")
-                        .anyRequest().authenticated())
-                .formLogin(form -> form
-                        .loginPage("/login").permitAll() //커스텀 로그인 페이지
-                        .authenticationDetailsSource(authenticationDetailsSource)
-                        .successHandler(authenticationSuccessHandler)
-                        .failureHandler(authenticationFailureHandler)
-                )
-                .authenticationProvider(authenticationProvider)
-                .exceptionHandling(exception -> exception
-                        .accessDeniedHandler(new FormAccessDeniedHandler("/denied")))
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/", "/signup", "/login*").permitAll()
+                .requestMatchers("/user").hasRole("USER")
+                .requestMatchers("/manager").hasRole("MANAGER")
+                .requestMatchers("/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .formLogin(form -> form
+                    .loginPage("/login").permitAll()
+                    .authenticationDetailsSource(authenticationDetailsSource)
+                    .successHandler(authenticationSuccessHandler)
+                    .failureHandler(authenticationFailureHandler)
+            )
+            .authenticationProvider(authenticationProvider)
+            .exceptionHandling(exception -> exception
+                    .accessDeniedHandler(new FormAccessDeniedHandler("/denied")) //추가
+            )
         ;
 
         return http.build();
@@ -78,6 +78,12 @@ public class LoginController {
     }
 }
 ```
+> `FormAuthenticationProvider`에서 인증 객체 `Principal` 속성에 `AccountDto`로 설정했기 때문에 `@AuthenticationPrincipal`에서
+> `AccountDto`를 참조할 수 있다. ([참고](https://github.com/geun-00/TIL/blob/main/Spring/security/security/Integration/SpringMVC.md))
+> 
+> ![img.png](img.png)
+> 
+
 ### login/denied.html
 
 ```html

@@ -1,13 +1,5 @@
 # 회원 인증 시스템 - 커스텀 AuthenticationProvider 구현
 
----
-
-## [AuthenticationProvider](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationArchitecture/AuthenticationProvider.md) 구현
-
-![img.png](image/img.png)
-
----
-
 ### FormAuthenticationProvider
 
 ```java
@@ -29,8 +21,9 @@ public class FormAuthenticationProvider implements AuthenticationProvider {
             throw new BadCredentialsException("Invalid password");
         }
 
-        return new UsernamePasswordAuthenticationToken(
-                accountContext.getAccountDto(), null, accountContext.getAuthorities()
+        //Authentication의 principal 속성으로 AccountDto를 설정한다.
+        return UsernamePasswordAuthenticationToken.authenticated(
+            accountContext.getAccountDto(), null, accountContext.getAuthorities()
         );
     }
 
@@ -40,10 +33,6 @@ public class FormAuthenticationProvider implements AuthenticationProvider {
     }
 }
 ```
-
-- `UsernamePasswordAuthenticationToken`는 두 개의 생성자가 있다.
-
-![img_3.png](image/img_3.png)
 
 <details>
     <summary> 참고 - UsernamePasswordAuthenticationToken</summary>
@@ -90,8 +79,11 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
                         .requestMatchers("/", "/signup").permitAll()
-                        .anyRequest().authenticated())
-                .formLogin(form -> form.loginPage("/login").permitAll()) //커스텀 로그인 페이지
+                        .anyRequest().authenticated()
+                )
+                .formLogin(form -> form
+                    .loginPage("/login").permitAll()
+                )
                 .authenticationProvider(authenticationProvider)
         ;
 

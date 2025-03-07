@@ -1,7 +1,5 @@
 # 회원 인증 시스템 - 커스텀 인증성공 핸들러
 
----
-
 ### FormAuthenticationSuccessHandler
 
 ```java
@@ -29,6 +27,8 @@ public class FormAuthenticationSuccessHandler extends SimpleUrlAuthenticationSuc
 
 > 사용자가 인증 정보를 제공하기 전에 어떤 요청 정보가 있을 때는 인증이 된 후에 이전 요청 정보로 리다이렉트 하도록 한다. 요청 정보가 없으면 루트(`/`)로 리다이렉트 하도록 한다.
 
+![img.png](img.png)
+
 ### SecurityConfig
 ```java
 @Configuration
@@ -43,16 +43,16 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
-                        .requestMatchers("/", "/signup").permitAll()
-                        .anyRequest().authenticated())
-                .formLogin(form -> form
-                        .loginPage("/login").permitAll() //커스텀 로그인 페이지
-                        .authenticationDetailsSource(authenticationDetailsSource)
-                        .successHandler(authenticationSuccessHandler)
-                )
-                .authenticationProvider(authenticationProvider)
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/", "/signup").permitAll()
+                .anyRequest().authenticated())
+            .formLogin(form -> form
+                .loginPage("/login").permitAll()
+                .authenticationDetailsSource(authenticationDetailsSource)
+                .successHandler(authenticationSuccessHandler) //추가
+            )
+            .authenticationProvider(authenticationProvider)
         ;
 
         return http.build();

@@ -1,7 +1,5 @@
 # 회원 인증 시스템 - 커스텀 인증실패 핸들러
 
----
-
 ### FormAuthenticationFailureHandler
 
 ```java
@@ -15,20 +13,37 @@ public class FormAuthenticationFailureHandler extends SimpleUrlAuthenticationFai
 
         if (exception instanceof BadCredentialsException) {
             errorMessage = "Invalid Username or Password";
-        } else if (exception instanceof UsernameNotFoundException) {
+        } 
+        else if (exception instanceof UsernameNotFoundException) {
             errorMessage = "User not exists";
-        } else if (exception instanceof CredentialsExpiredException) {
+        }
+        else if (exception instanceof CredentialsExpiredException) {
             errorMessage = "Expired password";
-        } else if (exception instanceof SecretException) {
+        } 
+        else if (exception instanceof SecretException) {
             errorMessage = "Invalid Secret Key";
         }
+        
         setDefaultFailureUrl("/login?error=true&exception=" + errorMessage);
-
         super.onAuthenticationFailure(request, response, exception);
     }
 }
 ```
 > 예외 타입에 따라 사용자에게 보여지는 메시지를 다르게 처리한다.
+
+![img.png](image/img.png)
+
+> **👏 참고 - `setDefaultFailureUrl("/login?error=true&exception=" + errorMessage);`는 Thread Safe 하지 않을 수 있다.**
+> 
+> ![img_1.png](image/img_1.png)
+> 
+> ![img_2.png](image/img_2.png)
+> 
+> - `onAuthenticationFailure`에서 사용되는 `errorMessage` 변수는 지역 변수이기 때문에 여기까지는 동시성의 문제가 없다.
+> - 하지만 `setDefaultFailureUrl`을 설정하는 부분은 모든 스레드가 접근할 수 있다.
+> - 따라서 `/login?error=true` 정도까지만 설정하는 것이 안전할 수 있으며, 대안으로 다음과 같이 설정할 수 있다.
+> 
+> ![img_3.png](image/img_3.png)
 
 ### Controller
 
@@ -44,8 +59,6 @@ public class LoginController {
         model.addAttribute("exception", exception);
         return "login/login";
     }
-    
-    /*...*/
 }
 ```
 
@@ -65,17 +78,18 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
-                        .requestMatchers("/", "/signup", "/login*").permitAll()
-                        .anyRequest().authenticated())
-                .formLogin(form -> form
-                        .loginPage("/login").permitAll() //커스텀 로그인 페이지
-                        .authenticationDetailsSource(authenticationDetailsSource)
-                        .successHandler(authenticationSuccessHandler)
-                        .failureHandler(authenticationFailureHandler)
-                )
-                .authenticationProvider(authenticationProvider)
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/", "/signup", "/login*").permitAll()
+                .anyRequest().authenticated()
+            )
+            .formLogin(form -> form
+                .loginPage("/login").permitAll()
+                .authenticationDetailsSource(authenticationDetailsSource)
+                .successHandler(authenticationSuccessHandler)
+                .failureHandler(authenticationFailureHandler) //추가
+            )
+            .authenticationProvider(authenticationProvider)
         ;
 
         return http.build();

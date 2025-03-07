@@ -1,7 +1,5 @@
 # 회원 인증 시스템 - 사용자 정의 보안 설정 및 기본 사용자 구성
 
----
-
 ```java
 @Configuration
 @EnableWebSecurity
@@ -10,18 +8,21 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/").permitAll() //루트 경로(/) 전체 허용
-                        .anyRequest().authenticated() //나머지 경로 
-                )
-                .formLogin(Customizer.withDefaults()); //폼 로그인 방식 스프링 시큐리티 기본 구성 사용
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/").permitAll() //루트 경로(/) 전체 허용
+                .anyRequest().authenticated() //나머지 경로 
+            )
+            .formLogin(Customizer.withDefaults()); //폼 로그인 방식 스프링 시큐리티 기본 구성 사용
 
         return http.build();
     }
 
     @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails user = User.withUsername("user").password("{noop}1111").roles("USER").build();
+        UserDetails user = User.withUsername("user")
+                               .password("{noop}1111")
+                               .roles("USER")
+                               .build();
         return new InMemoryUserDetailsManager(user);
     }
 }

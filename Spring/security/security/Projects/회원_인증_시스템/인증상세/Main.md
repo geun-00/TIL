@@ -1,11 +1,11 @@
 # 회원 인증 시스템 - 커스텀 인증상세 구현
 
----
-
 ## WebAuthenticationDetails
 
 - HTTP 요청과 관련된 인증 세부 정보를 포함하는 클래스로서 기본적으로 사용자의 IP 주소와 세션 ID와 같은 정보를 가지고 있다.
 - 특정 인증 메커니즘에서 요청의 추가적인 정보를 인증 객체에 추가할 때 사용할 수 있으며 `Authentication` 객체와 함께 사용된다.
+
+![img_1.png](image/img_1.png)
 
 ---
 
@@ -14,7 +14,9 @@
 - 인증 과정 중에 `Authentication` 객체에 세부 정보를 제공하는 소스 역할을 한다.
 - **WebAuthenticationDetails** 객체를 생성하는 데 사용되며 인증 필터에서 참조한다.
 
-![img.png](img.png)
+![img_2.png](image/img_2.png)
+
+![img.png](image/img.png)
 
 ---
 
@@ -67,6 +69,7 @@ public class FormAuthenticationDetails extends WebAuthenticationDetails {
 
     private final String secretKey;
 
+    //IP 주소와 세션 ID + SecretKey 정보
     public FormAuthenticationDetails(HttpServletRequest request) {
         super(request);
         this.secretKey = request.getParameter("secret_key");
@@ -98,15 +101,15 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
-                        .requestMatchers("/", "/signup").permitAll()
-                        .anyRequest().authenticated())
-                .formLogin(form -> form
-                        .loginPage("/login").permitAll() //커스텀 로그인 페이지
-                        .authenticationDetailsSource(authenticationDetailsSource)
-                )
-                .authenticationProvider(authenticationProvider)
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/", "/signup").permitAll()
+                .anyRequest().authenticated())
+            .formLogin(form -> form
+                .loginPage("/login").permitAll()
+                .authenticationDetailsSource(authenticationDetailsSource) //추가
+            )
+            .authenticationProvider(authenticationProvider)
         ;
 
         return http.build();
@@ -163,6 +166,12 @@ public class SecretException extends AuthenticationException {
 ```
 
 > 기존에 `username`과 `password`만 검증하던 과정에 추가적인 정보까지 검증하는 과정을 추가했다.
+
+- 별다른 설정을 하지 않으면 기본값으로 `WebAuthenticationDetailsSource`를 사용한다.
+
+![img_3.png](image/img_3.png)
+
+![img_4.png](image/img_4.png)
 
 ---
 

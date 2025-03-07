@@ -1,12 +1,10 @@
 # 회원 인증 시스템 - 프로젝트 생성 및 기본 구성
 
----
-
 ### build.gradle
 ```text
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.2.5'
+    id 'org.springframework.boot' version '3.4.3'
     id 'io.spring.dependency-management' version '1.1.4'
 }
 
@@ -38,25 +36,26 @@ dependencies {
 ```java
 @Controller
 public class HomeController {
-	@GetMapping("/")
-	public String dashboard() {
-		return "/dashboard";
-	}
-
-	@GetMapping("/user")
-	public String user() {
-		return "/user";
-	}
-
-	@GetMapping("/manager")
-	public String manager() {
-		return "/manager";
-	}
-
-	@GetMapping("/admin")
-	public String admin() {
-		return "/admin";
-	}
+    
+    @GetMapping("/")
+    public String dashboard() {
+       return "/dashboard";
+    }
+    
+    @GetMapping("/user")
+    public String user() {
+       return "/user";
+    }
+    
+    @GetMapping("/manager")
+    public String manager() {
+       return "/manager";
+    }
+    
+    @GetMapping("/admin")
+    public String admin() {
+       return "/admin";
+    }
 }
 ```
 

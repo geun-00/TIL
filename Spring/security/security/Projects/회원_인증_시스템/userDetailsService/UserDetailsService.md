@@ -1,15 +1,5 @@
 # 회원 인증 시스템 - 커스텀 UserDetailsService 구현
 
----
-
-## [UserDetailsService](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/AuthenticationArchitecture/UserDetailsService.md) 구현
-
-![img.png](img.png)
-
-- 반환되는 타입이 `UserDetails` 이기 때문에 DTO를 감싸서 반환하도록 한다.
-
----
-
 ### FormUserDetailsService - 폼 인증 기반
 
 ```java
@@ -35,6 +25,9 @@ public class FormUserDetailsService implements UserDetailsService {
     }
 }
 ```
+
+- `UserDetailsService`는 `UserDetails`를 반환해야 한다.
+- `AccountContext`는 `UserDetails`를 구현한 클래스로, `AccountDto`를 래핑해서 반환한다.
 
 ### AccountContext
 
@@ -63,26 +56,6 @@ public class AccountContext implements UserDetails {
     public String getUsername() {
         return accountDto.getUsername();
     }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
 }
 ```
 
@@ -99,12 +72,15 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
-                        .requestMatchers("/", "/signup").permitAll()
-                        .anyRequest().authenticated())
-                .formLogin(form -> form.loginPage("/login").permitAll()) //커스텀 로그인 페이지
-                .userDetailsService(userDetailsService);
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/", "/signup").permitAll()
+                .anyRequest().authenticated()
+            )
+            .formLogin(form -> form
+                .loginPage("/login").permitAll()
+            )
+            .userDetailsService(userDetailsService);
 
         return http.build();
     }
@@ -115,6 +91,8 @@ public class SecurityConfig {
     }
 }
 ```
+
+- 참고로 `UserDetailsService`를 빈으로 등록하면 스프링 시큐리티가 자동으로 `HttpSecurity` 속성에 저장한다.
 
 ---
 
