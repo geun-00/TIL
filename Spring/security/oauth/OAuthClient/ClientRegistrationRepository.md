@@ -7,15 +7,7 @@
 - `ClientRegistrationRepository`의 기본 구현체는 **InMemoryClientRegistrationRepository** 이다.
 - 자동 설정을 사용하면 `ClientRegistrationRepository`도 빈으로 등록되므로 원하는 곳에 의존성을 주입할 수 있다.
 
-![img_12.png](image/img_12.png)
-
----
-
-## ClientRegistration / ClientRegistrationRepository 수동 빈 등록
-
-![img_13.png](image/img_13.png)
-
----
+### ClientRegistration / ClientRegistrationRepository 수동 빈 등록 예제
 
 ```java
 @Configuration
@@ -25,41 +17,49 @@ public class OAuth2ClientConfig {
     public ClientRegistrationRepository clientRegistrationRepository() {
         return new InMemoryClientRegistrationRepository(keyCloakClientRegistration());
     }
-
+    
     private ClientRegistration keyCloakClientRegistration() {
         return ClientRegistrations.fromIssuerLocation("http://localhost:8080/realms/oauth2")
-                .registrationId("keycloak")
-                .scope("openid")
-                .clientId("oauth2-client-app")
-                .clientSecret("ANwKmYvCcxiQbjsi4jh1JHqUWikngjec")
-                .redirectUri("http://localhost:8081/login/oauth2/code/keycloak")
-                .build();
+                                  .registrationId("keycloak")
+                                  .clientId("oauth2-client-app")
+                                  .clientSecret("ANwKmYvCcxiQbjsi4jh1JHqUWikngjec")
+                                  .redirectUri("http://localhost:8081/login/oauth2/code/keycloak")
+                                  .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
+                                  .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
+                                  .scope("openid", "profile", "email")
+                                  .build();
     }
 }
 ```
+
+### ClientRegistrationRepository 사용 예제
+
 ```java
 @RestController
 @RequiredArgsConstructor
-public class IndexController {
+public class TestController {
 
+    //DI
     private final ClientRegistrationRepository clientRegistrationRepository;
-
+    
     @GetMapping("/")
-    public String index() {
+    public ClientRegistration test() {
         ClientRegistration clientRegistration = clientRegistrationRepository.findByRegistrationId("keycloak");
-
+        
         String clientId = clientRegistration.getClientId();
         System.out.println("clientId = " + clientId);
-
+        
         String registrationId = clientRegistration.getRegistrationId();
         System.out.println("registrationId = " + registrationId);
-
+        
         String redirectUri = clientRegistration.getRedirectUri();
         System.out.println("redirectUri = " + redirectUri);
-        return "index";
+        return clientRegistration;
     }
 }
 ```
+
+![img_20.png](image_1/img_20.png)
 
 ---
 

@@ -2,31 +2,31 @@
 
 ![img_14.png](image/img_14.png)
 
+![img_19.png](image/img_19.png)
+
+![img_22.png](image_1/img_22.png)
+
 ---
+
+# 초기화 과정 디버깅
 
 ## OAuth2ImportSelector
 
-![img_15.png](image/img_15.png)
-
-## OAuth2ClientAutoConfiguration
-
-![img_16.png](image/img_16.png)
-
-## OAuth2ClientRegistrationRepositoryConfiguration
-
-![img_17.png](image/img_17.png)
+![img_21.png](image_1/img_21.png)
 
 ## OAuth2WebSecurityConfiguration
 
-![img_18.png](image/img_18.png)
+![img_23.png](image_1/img_23.png)
 
----
+## OAuth2ClientRegistrationRepositoryConfiguration
 
-![img_19.png](image/img_19.png)
+![img_24.png](image_1/img_24.png)
 
-## OAuth2AuthorizedClient
+## OAuth2ClientWebMvcSecurityConfiguration
 
-![img_20.png](image/img_20.png)
+![img_25.png](image_1/img_25.png)
+
+![img_26.png](image_1/img_26.png)
 
 ---
 
