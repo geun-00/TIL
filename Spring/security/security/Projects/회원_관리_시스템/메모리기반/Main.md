@@ -100,7 +100,7 @@ public class CustomDynamicAuthorizationManager implements AuthorizationManager<R
     }
 
     /**
-     * RequestMatcherDelegatingAuthorizationManager 클래스에 check() 메서드 그대로
+     * {@link RequestMatcherDelegatingAuthorizationManager} check() 메서드 그대로
      */
     @Override
     public AuthorizationDecision check(Supplier<Authentication> authentication, RequestAuthorizationContext request) {
@@ -153,27 +153,66 @@ public class SecurityConfig {
     private final RestAuthenticationFailureHandler restFailureHandler;
     private final AuthorizationManager<RequestAuthorizationContext> authorizationManager;
 
+    /**
+     * 폼 인증 설정
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .anyRequest().access(authorizationManager))
+                        .anyRequest().access(authorizationManager)) //추가
                 .formLogin(form -> form
-                        .loginPage("/login").permitAll() //커스텀 로그인 페이지
+                        .loginPage("/login").permitAll()
                         .authenticationDetailsSource(authenticationDetailsSource)
                         .successHandler(formSuccessHandler)
                         .failureHandler(formFailureHandler)
                 )
                 .authenticationProvider(formAuthenticationProvider)
-                .exceptionHandling(exception -> exception.accessDeniedHandler(new FormAccessDeniedHandler("/denied")))
+                .exceptionHandling(exception -> exception
+                    .accessDeniedHandler(new FormAccessDeniedHandler("/denied"))
+                )
         ;
 
         return http.build();
     }
 
+    /**
+     * 비동기 인증 설정
+     */
     @Bean
     @Order(1)
-    public SecurityFilterChain restSecurityFilterChain(HttpSecurity http) throws Exception {...}
+    public SecurityFilterChain restSecurityFilterChain(HttpSecurity http) throws Exception {
+
+        AuthenticationManagerBuilder managerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
+        managerBuilder.authenticationProvider(restAuthenticationProvider);
+        AuthenticationManager authenticationManager = managerBuilder.build();
+
+        http
+            .securityMatcher("/api/**")
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/api", "/api/login").permitAll()
+                .requestMatchers("/api/user").hasRole("USER")
+                .requestMatchers("/api/manager").hasRole("MANAGER")
+                .requestMatchers("/api/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .csrf(AbstractHttpConfigurer::disable)
+            .authenticationManager(authenticationManager)
+            .exceptionHandling(exception -> exception
+                .authenticationEntryPoint(new RestAuthenticationEntryPoint())
+                .accessDeniedHandler(new RestAccessDeniedHandler())
+            )
+            .with(new RestApiDsl<>(), restDsl -> restDsl
+                .restSuccessHandler(restSuccessHandler)
+                .restFailureHandler(restFailureHandler)
+                .loginPage("/api/login")
+                .loginProcessingUrl("/api/login")
+            )
+        ;
+
+        return http.build();
+    }
 }
 ```
 

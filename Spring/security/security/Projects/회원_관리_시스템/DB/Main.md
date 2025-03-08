@@ -17,7 +17,7 @@ public interface UrlRoleMapper {
 ### PersistentUrlRoleMapper
 
 ```java
-public class PersistentUrlRoleMapper implements UrlRoleMapper{
+public class PersistentUrlRoleMapper implements UrlRoleMapper {
 
     private final LinkedHashMap<String, String> urlRoleMappings = new LinkedHashMap<>();
     private final ResourcesRepository resourcesRepository;
@@ -43,7 +43,7 @@ public class PersistentUrlRoleMapper implements UrlRoleMapper{
 
 > 하나의 자원에는 여러 권한을 가지고 있다. 
 
-### 
+### CustomDynamicAuthorizationManager
 
 ```java
 @Component
@@ -82,7 +82,7 @@ public class CustomDynamicAuthorizationManager implements AuthorizationManager<R
     }
 
     /**
-     * RequestMatcherDelegatingAuthorizationManager 클래스에 check() 메서드 그대로
+     * {@link RequestMatcherDelegatingAuthorizationManager} check() 메서드 그대로
      */
     @Override
     public AuthorizationDecision check(Supplier<Authentication> authentication, RequestAuthorizationContext request) {

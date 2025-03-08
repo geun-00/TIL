@@ -1,11 +1,5 @@
 # 회원 관리 시스템 - 계층적 권한 적용
 
-![img.png](image/img.png)
-
-![img_1.png](image/img_1.png)
-
----
-
 ### RoleHierarchy Entity
 
 ```java
@@ -69,13 +63,25 @@ public class RoleHierarchyServiceImpl implements RoleHierarchyService {
 }
 ```
 
+```postgresql
+INSERT INTO role_hierarchy (id, role_name, parent_id) VALUES
+                            (1, 'ROLE_ADMIN', NULL),
+                            (2, 'ROLE_MANAGER', 1),
+                            (3, 'ROLE_DBA', 1),
+                            (4, 'ROLE_USER', 2),
+                            (5, 'ROLE_USER', 3);
+```
+
+```text
+ROLE_ADMIN > ROLE_MANAGER
+ROLE_ADMIN > ROLE_DBA
+ROLE_MANAGER > ROLE_USER
+ROLE_DBA > ROLE_USER
+```
+
 ### AuthConfig
 
 ```java
-...
-import org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl;
-...
-
 @Configuration
 public class AuthConfig {
 
@@ -84,12 +90,11 @@ public class AuthConfig {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 
+    //추가
     @Bean
     public RoleHierarchyImpl roleHierarchy(RoleHierarchyService roleHierarchyService) {
         String allHierarchy = roleHierarchyService.findAllHierarchy();
-        RoleHierarchyImpl roleHierarchy = new RoleHierarchyImpl();
-        roleHierarchy.setHierarchy(allHierarchy);
-        return roleHierarchy;
+        return RoleHierarchyImpl.fromHierarchy(allHierarchy);
     }
 }
 ```
@@ -107,8 +112,8 @@ public class CustomDynamicAuthorizationManager implements AuthorizationManager<R
     private static final AuthorizationDecision DENY = new AuthorizationDecision(false);
 
     private final HandlerMappingIntrospector handlerMappingIntrospector;
-    private final ResourcesRepository resourcesRepository;
-    private final RoleHierarchyImpl roleHierarchy;
+    private final ResourcesRepository resourcesRepository;  //추가
+    private final RoleHierarchyImpl roleHierarchy;          //추가
 
     @PostConstruct
     public void mapping() {
@@ -117,7 +122,7 @@ public class CustomDynamicAuthorizationManager implements AuthorizationManager<R
     }
 
     /**
-     * RequestMatcherDelegatingAuthorizationManager 클래스에 check() 메서드 그대로
+     * {@link RequestMatcherDelegatingAuthorizationManager} check() 메서드 그대로
      */
     @Override
     public AuthorizationDecision check(Supplier<Authentication> authentication, RequestAuthorizationContext request) {
@@ -156,15 +161,16 @@ public class CustomDynamicAuthorizationManager implements AuthorizationManager<R
                 .collect(Collectors.toList());
     }
 
+    //수정
     private AuthorizationManager<RequestAuthorizationContext> customAuthorizationManager(String role) {
         if (role.startsWith("ROLE")) {
-
             AuthorityAuthorizationManager<RequestAuthorizationContext> authorizationManager =
                                                     AuthorityAuthorizationManager.hasAuthority(role);
             authorizationManager.setRoleHierarchy(roleHierarchy);
 
             return authorizationManager;
-        } else {
+        } 
+        else {
             DefaultHttpSecurityExpressionHandler handler = new DefaultHttpSecurityExpressionHandler();
             handler.setRoleHierarchy(roleHierarchy);
 

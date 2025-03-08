@@ -1,17 +1,5 @@
 # 회원 관리 시스템 - 인가 설정 실시간 반영하기
 
-- 자원을 추가하거나 삭제할 때 인가 규칙이 즉시 적용되도록 한다.
-
-![img.png](image/img.png)
-
-- 모든 인가 규칙을 담고 있는 `mappings` 속성을 업데이트 해 준다.
-
-![img_1.png](image/img_1.png)
-
-![img_2.png](image/img_2.png)
-
----
-
 ### ResourcesService
 
 ```java
@@ -44,11 +32,12 @@ public class ResourcesServiceImpl implements ResourcesService {
     }
 }
 ```
+> 자원을 추가하거나 삭제할 때 인가 규칙이 즉시 적용되도록 한다.
 
 ### PersistentUrlRoleMapper
 
 ```java
-public class PersistentUrlRoleMapper implements UrlRoleMapper{
+public class PersistentUrlRoleMapper implements UrlRoleMapper {
 
     private final LinkedHashMap<String, String> urlRoleMappings = new LinkedHashMap<>();
     private final ResourcesRepository resourcesRepository;
@@ -96,7 +85,7 @@ public class CustomDynamicAuthorizationManager implements AuthorizationManager<R
     }
 
     /**
-     * RequestMatcherDelegatingAuthorizationManager 클래스에 check() 메서드 그대로
+     * {@link RequestMatcherDelegatingAuthorizationManager} check() 메서드 그대로
      */
     @Override
     public AuthorizationDecision check(Supplier<Authentication> authentication, RequestAuthorizationContext request) {
@@ -111,6 +100,7 @@ public class CustomDynamicAuthorizationManager implements AuthorizationManager<R
                         new RequestAuthorizationContext(request.getRequest(), matchResult.getVariables()));
             }
         }
+        
         return ACCESS;
     }
 
@@ -119,6 +109,7 @@ public class CustomDynamicAuthorizationManager implements AuthorizationManager<R
         AuthorizationManager.super.verify(authentication, object);
     }
 
+    //추가
     public synchronized void reload() {
         this.mappings.clear();
         setMapping();
@@ -144,8 +135,8 @@ public class CustomDynamicAuthorizationManager implements AuthorizationManager<R
     }
 }
 ```
-
-> `reload()` 메서드에 **synchronized** 키워드는 관리자가 여러 명 일때를 고려한 것이다.(동시성)
+> - `reload()` 메서드에 **synchronized** 키워드는 관리자가 여러 명 일때를 고려한 것이다.(동시성)
+> - 모든 인가 규칙을 담고 있는 `mappings` 속성을 업데이트 해 준다.
 
 ---
 

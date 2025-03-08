@@ -7,7 +7,7 @@
 - 최종 구조는 사용자의 요청은 우선 `RequestMatcherDelegatingAuthorizationManager`가 받고, `CustomDynamicAuthorizationManager`의 **check()** 메서드를 호출한다.
 - 사용자의 요청을 처음부터 `CustomDynamicAuthorizationManager`에서 받으면 좀 더 괜찮은 구조가 될 수 있다.
 
-`access(authorizationManager)` 설정으로는 순서를 변경할 수 없고, 필터를 사용해야 한다.
+**`access(authorizationManager)` 설정으로는 순서를 변경할 수 없고, 필터를 사용해야 한다.**
 
 ---
 
@@ -16,7 +16,7 @@
 ![img.png](img.png)
 
 > 1. `AuthorizationFilter`는 **SecurityContextHolder**에서 `Authentication`을 가져오는 `Supplier`를 구성한다.
-> 2. `Supplice<Authentication>`과 **HttpServletRequest**를 `AuthorizationManager`에 전달한다. `AuthorizationManager`는 `authorizeHttpRequests`의 패턴과 요청을 매칭하고 해당 규칙을 실행한다.
+> 2. `Supplier<Authentication>`과 **HttpServletRequest**를 `AuthorizationManager`에 전달한다. `AuthorizationManager`는 `authorizeHttpRequests`의 패턴과 요청을 매칭하고 해당 규칙을 실행한다.
 >    - **인가 거부 됐을 때**
 >      - `AuthorizationDeniedEvent`가 발행되고, **AccessDeniedException**이 발생한다. 이 경우 [ExceptionTranslationFilter](https://github.com/genesis12345678/TIL/blob/main/Spring/security/security/exception/ExceptionTranslationFilter.md)가 **AccessDeniedException**을 처리한다.
 >    - **인가 허용 됐을 때**
@@ -28,7 +28,7 @@
 
 ---
 
-###
+### CustomAuthorizationFilter
 
 ```java
 @Getter
@@ -88,10 +88,8 @@ public class CustomAuthorizationFilter extends GenericFilterBean {
         if (DispatcherType.ERROR.equals(request.getDispatcherType()) && !this.filterErrorDispatch) {
             return true;
         }
-        if (DispatcherType.ASYNC.equals(request.getDispatcherType()) && !this.filterAsyncDispatch) {
-            return true;
-        }
-        return false;
+        
+        return DispatcherType.ASYNC.equals(request.getDispatcherType()) && !this.filterAsyncDispatch;
     }
 
     private boolean isApplied(HttpServletRequest request) {
@@ -189,9 +187,9 @@ public class RequestMatcherDynamicAuthorizationManager implements AuthorizationM
     private AuthorizationManager<RequestAuthorizationContext> customAuthorizationManager(String role) {
         if (role.startsWith("ROLE")) {
             return AuthorityAuthorizationManager.hasAuthority(role);
-        }else{
-            return new WebExpressionAuthorizationManager(role);
         }
+        
+        return new WebExpressionAuthorizationManager(role);
     }
 }
 ```
@@ -199,7 +197,7 @@ public class RequestMatcherDynamicAuthorizationManager implements AuthorizationM
 > 기존 `CustomDynamicAuthorizationManager`와 로직은 똑같고, 구현체만 다르다.
 > `CustomAuthorizationFilter` 생성자에 맞게 `AuthorizationManager`의 제네릭 타입만 변경해 주었다.
 
-### 
+### SecurityConfig
 
 ```java
 @Configuration
@@ -214,39 +212,76 @@ public class SecurityConfig {
     private final FormAuthenticationFailureHandler formFailureHandler;
     private final RestAuthenticationSuccessHandler restSuccessHandler;
     private final RestAuthenticationFailureHandler restFailureHandler;
-//    private final AuthorizationManager<RequestAuthorizationContext> authorizationManager;
     private final AuthorizationManager<HttpServletRequest> authorizationManager;
 
+    /**
+     * 폼 인증 설정
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(auth -> auth
-//                        .anyRequest().access(authorizationManager))
-                        .anyRequest().permitAll())
-                .formLogin(form -> form
-                        .loginPage("/login").permitAll() //커스텀 로그인 페이지
-                        .authenticationDetailsSource(authenticationDetailsSource)
-                        .successHandler(formSuccessHandler)
-                        .failureHandler(formFailureHandler)
-                )
-                .authenticationProvider(formAuthenticationProvider)
-                .exceptionHandling(exception -> exception
-                        .accessDeniedHandler(new FormAccessDeniedHandler("/denied"))
-                )
-                .addFilterAfter(customAuthorizationFilter(), ExceptionTranslationFilter.class) //필터 추가
+            .authorizeHttpRequests(auth -> auth
+                .anyRequest().permitAll()
+            )
+            .formLogin(form -> form
+                .loginPage("/login").permitAll()
+                .authenticationDetailsSource(authenticationDetailsSource)
+                .successHandler(formSuccessHandler)
+                .failureHandler(formFailureHandler)
+            )
+            .authenticationProvider(formAuthenticationProvider)
+            .exceptionHandling(exception -> exception
+                .accessDeniedHandler(new FormAccessDeniedHandler("/denied"))
+            )
+            .addFilterAfter(customAuthorizationFilter(), ExceptionTranslationFilter.class) //필터 추가
         ;
 
         return http.build();
     }
 
-    private CustomAuthorizationFilter customAuthorizationFilter() {
+    //추가
+    @Bean
+    public CustomAuthorizationFilter customAuthorizationFilter() {
         return new CustomAuthorizationFilter(authorizationManager);
     }
 
+    /**
+     * 비동기 인증 설정
+     */
     @Bean
     @Order(1)
     public SecurityFilterChain restSecurityFilterChain(HttpSecurity http) throws Exception {
-        ...
+        AuthenticationManagerBuilder managerBuilder = http.getSharedObject(AuthenticationManagerBuilder.class);
+        managerBuilder.authenticationProvider(restAuthenticationProvider);
+        AuthenticationManager authenticationManager = managerBuilder.build();
+
+        http
+            .securityMatcher("/api/**")
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
+                .requestMatchers("/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon.*", "/*/icon-*").permitAll() //정적 자원 관리
+                .requestMatchers("/api", "/api/login").permitAll()
+                .requestMatchers("/api/user").hasRole("USER")
+                .requestMatchers("/api/manager").hasRole("MANAGER")
+                .requestMatchers("/api/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .authenticationManager(authenticationManager)
+            .exceptionHandling(
+                exception -> exception
+                    .authenticationEntryPoint(new RestAuthenticationEntryPoint())
+                    .accessDeniedHandler(new RestAccessDeniedHandler())
+            )
+            .with(
+                new RestApiDsl<>(), restDsl -> restDsl
+                    .restSuccessHandler(restSuccessHandler)
+                    .restFailureHandler(restFailureHandler)
+                    .loginPage("/api/login")
+                    .loginProcessingUrl("/api/login")
+            )
+        ;
+
+        return http.build();
     }
 }
 ```
@@ -254,7 +289,7 @@ public class SecurityConfig {
 > - 이제 `SecurityFilterChain`의 인가 API는 별 의미가 없으니 `permitAll`로 열어 놓는다.
 > - 이렇게만 설정하면 스프링 시큐리티의 `AuthorizationFilter`와 직접 만든 `CustomAuthorizationFilter`의 기능이 겹치게 된다. 이 문제는 밑에 클래스에서 해결한다.
 
-###
+### SetupDataLoader
 
 ```java
 @Component
@@ -281,19 +316,19 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
     //추가
     private void disableAuthorizationFilter() {
         filterChainProxy.getFilterChains()
-                .forEach(sfc -> sfc.getFilters().remove(sfc.getFilters().size() - 1));
+                .forEach(sfc -> sfc.getFilters().removeLast());
     }
 
     private void setupData() {
-        ...
+        /*...*/
     }
 
     public Role createRoleIfNotFound(String roleName, String roleDesc) {
-        ...
+        /*...*/
     }
 
     public void createUserIfNotFound(final String userName, final String email, final String password, Set<Role> roleSet) {
-        ...
+        /*...*/
     }
 }
 ```
@@ -301,9 +336,8 @@ public class SetupDataLoader implements ApplicationListener<ContextRefreshedEven
 > - 스프링 시큐리티의 `AuthorizationFilter`는 필터들 중 항상 마지막에 위치해 있다. 
 > - 위 코드처럼 마지막 필터를 지우고 **SecurityConfig**에서 `addFilterAfter()`로 직접 만든 `CustomAuthorizationFilter`를 추가한 것이다.
 
----
-
-> 이 방식처럼 스프링 시큐리티가 이미 제공하는 있는 기능을 제거해 버리고 직접 구현한 코드로 대체하는 것은 위험 부담도 있고 스프링 시큐리티의 버전 변경에 따른 동기화가 되지 않지만 이것도 하나의 방법이라는 것이다.
+> 이 방식처럼 스프링 시큐리티가 이미 제공하는 있는 기능을 제거해 버리고 직접 구현한 코드로 대체하는 것은 위험 부담도 있고 
+> 스프링 시큐리티의 버전 변경에 따른 동기화가 되지 않지만 이것도 하나의 방법이라는 것이다.
 
 ---
 
