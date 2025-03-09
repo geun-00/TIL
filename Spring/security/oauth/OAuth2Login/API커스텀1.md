@@ -1,6 +1,6 @@
 # oauth2Login() - API 커스텀 `Authorization BaseUrl` & `Redirection BaseUrl`
 
-![img_29.png](image/img_29.png)
+![img_86.png](image_1/img_86.png)
 
 - ` authorizationEndpointConfig.baseUri("/oauth2/v1/authorization"))`
   - 권한 부여 요청 `BaseUri`를 커스텀 한다.
@@ -19,6 +19,9 @@
 ![img_31.png](image/img_31.png)
 
 ---
+
+## 예제 코드
+
 ### SecurityConfig
 
 ```java
@@ -29,42 +32,42 @@ public class OAuth2ClientConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(request -> request
-                        .requestMatchers("/login").permitAll()
-                        .anyRequest().authenticated()
-                )
-                .oauth2Login(oauth2 -> oauth2
-                        .loginPage("/login")
-//                        .loginProcessingUrl("/login/v1/oauth2/code/*")
-                        .authorizationEndpoint(authorizationEndpointConfig ->
-                                authorizationEndpointConfig.baseUri("/oauth2/v1/authorization"))
-                        .redirectionEndpoint(redirectionEndpointConfig ->
-                                redirectionEndpointConfig.baseUri("/login/v1/oauth2/code/*"))
-                )
-        ;
+            .authorizeHttpRequests(auth -> auth
+                  .requestMatchers("/login").permitAll()
+                  .anyRequest().authenticated()
+            )
+            .oauth2Login(oauth2Login -> oauth2Login
+                  .loginPage("/login")
+                  .loginProcessingUrl("/login/v1/oauth2/code/*") //참고
 
+                  //OAuth2AuthorizationRequestRedirectFilter -> DefaultOAuth2AuthorizationRequestResolver 에서 받는 uri를 변경
+                  //default : /oauth2/authorization
+                  .authorizationEndpoint(authorization -> authorization
+                          .baseUri("/oauth2/v1/authorization")
+                  )
+    
+                  //OAuth2LoginAuthenticationFilter 에서 받는 uri를 변경
+                  //default : "/login/oauth2/code/{registrationId}"
+                  .redirectionEndpoint(redirection -> redirection
+                          .baseUri("/login/v1/oauth2/code/*")
+                  )
+            )
+        ;
+    
         return http.build();
     }
 }
 ```
-> - `authorizationEndpoint`를 재정의 했기 때문에 클라이언트에서 요청 Uri도 변경해 주어야 한다.
-> - `redirectionEndpoint`를 재정의 했기 때문에 `application.yml`의 `redirect-uri`, 인가 서버의 `redirect-uri`도 변경해 주어야 한다.
+> - `authorizationEndpoint`를 재정의 하면 클라이언트에서 요청 Uri도 변경해 주어야 한다.
+> - `redirectionEndpoint`를 재정의 하면 `application.yml`의 `redirect-uri`, 인가 서버의 `redirect-uri`도 변경해 주어야 한다.
+> - `loginProcessingUr()`로 `redirectionEndpoint`를 재정의 한 것과 똑같은 효과를 가지며 `redirectionEndpoint()`로
+> 재정의한 것이 우선순위를 가진다.
 
 ### login.html
 
-```java
-@Controller
-public class LoginController {
-
-    @GetMapping("/login")
-    public String login() {
-        return "login";
-    }
-}
-```
 ```html
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -74,6 +77,7 @@ public class LoginController {
     <h2 class="form-signin-heading">Login with OAuth 2.0</h2><table class="table table-striped">
     <tr>
         <td><a href="/oauth2/v1/authorization/keycloak">oauth2-client-app</a></td>
+      <!--기본 설정은 "/oauth2/authorization/{registrationId}" 이지만 커스텀 변경-->
     </tr>
 </table>
 </div>
@@ -84,9 +88,6 @@ public class LoginController {
 ### application.yml
 
 ```yaml
-server:
-  port: 8081
-
 spring:
   security:
     oauth2:
@@ -94,7 +95,7 @@ spring:
         registration:
           keycloak:
            ...
-            redirect-uri: http://localhost:8081/login/v1/oauth2/code/keycloak
+            redirect-uri: http://localhost:8081/login/v1/oauth2/code/keycloak //수정
             ...
         provider:
           keycloak:

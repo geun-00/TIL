@@ -8,7 +8,7 @@
   - `DefaultOAuth2User` 는 `/userInfo` 엔드포인트 요청으로 받은 **User** 클레임 정보로 생성된 객체이다.
   - `DefaultOidcUser` 는 `OpenID Connect` 인증을 통해 **ID Token** 및 클레임 정보가 포함된 객체이다.
 
-![img_27.png](image/img_27.png)
+![img_79.png](image_1/img_79.png)
 
 ## @AuthenticationPrincipal
 
@@ -16,7 +16,12 @@
   - `AuthenticationPrincipalArgumentResolver` 클래스에서 요청을 가로채어 바인딩 처리를 한다.
   - **Authentication**을 `SecurityContext` 로부터 꺼내 와서 **Principal** 속성에 `OAuth2User` 또는 `OidcUser` 타입의 객체를 저장한다.
 
+> - [참고 - 스프링 시큐리티 MVC 통합](https://github.com/geun-00/TIL/blob/main/Spring/security/security/Integration/SpringMVC.md)
+> - [참고 - OAuth 2.0 User 모델](https://github.com/geun-00/TIL/blob/main/Spring/security/oauth/OAuth2Login/OAuthUser.md)
+
 ---
+
+## 예제 코드
 
 ```java
 @RestController
@@ -35,18 +40,44 @@ public class IndexController {
     @GetMapping("/oauth2User")
     public OAuth2User oauth2User(@AuthenticationPrincipal OAuth2User oAuth2User) {
         System.out.println("oAuth2User = " + oAuth2User);
-
         return oAuth2User;
     }
 
     @GetMapping("/oidcUser")
     public OidcUser oidcUser(@AuthenticationPrincipal OidcUser oidcUser) {
         System.out.println("oidcUser = " + oidcUser);
-
         return oidcUser;
     }
 }
 ```
+
+### `/userInfo` 엔드포인트 요청
+
+- `"/user"`
+
+![img_80.png](image_1/img_80.png)
+
+- `"/oauth2User"`
+
+![img_81.png](image_1/img_81.png)
+
+- `"/oidcUser"`
+
+![img_82.png](image_1/img_82.png)
+
+### `OpenID Connect` 인증
+
+- `"/user"`
+
+![img_83.png](image_1/img_83.png)
+
+- `"/oauth2User"`
+
+![img_84.png](image_1/img_84.png)
+
+- `"/oidcUser"`
+
+![img_85.png](image_1/img_85.png)
 
 ---
 
