@@ -47,7 +47,7 @@ public class OAuth2ClientConfig {
 
 ![img_3.png](image_1/img_3.png)
 
-- [`oauth2Login(https://github.com/geun-00/TIL/blob/main/Spring/security/oauth/OAuth2Login/OAuth2LoginConfigurer.md)` 초기화로 생성되는 필터]()와 비교했을 때
+- [`oauth2Login()` 초기화로 생성되는 필터](https://github.com/geun-00/TIL/blob/main/Spring/security/oauth/OAuth2Login/OAuth2LoginConfigurer.md)와 비교했을 때
 `OAuth2LoginAuthenticationFilter`와 같은 인증 처리를 하는 필터가 생성되지 않는다.
 - 즉 `oauth2Client()` 설정은 최종 사용자의 인증 처리는 제공하지 않는다.
 
