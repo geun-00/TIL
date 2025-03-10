@@ -5,11 +5,17 @@
 - 파라미터를 `OAuth2AuthorizedClient` 타입 인자로 바인딩 해준다.
 - `OAuth2AuthorizedClientArgumentResolver` 에서 요청을 가로채어 유형별로 권한 부여 흐름을 실행하도록 한다.
 
-![img_22.png](image/img_22.png)
-
 ![img_23.png](image/img_23.png)
 
+### OAuth2AuthorizedClientArgumentResolver
+
+![img_54.png](image_1/img_54.png)
+
 ---
+
+## 예제 코드
+
+### 컨트롤러
 
 ```java
 @Controller
@@ -43,11 +49,11 @@ public class LoginController {
             model.addAttribute("RefreshToken", authorizedClient.getRefreshToken().getTokenValue());
         }
 
-
         return "home";
     }
 }
 ```
+
 ---
 
 [이전 ↩️ - OAuth 2.0 Client(oauth2Client) - DefaultOAuth2AuthorizedClientManager - 필터 기반 구현](https://github.com/genesis12345678/TIL/blob/main/Spring/security/oauth/OAuth2Client/Filter.md)

@@ -56,7 +56,7 @@
 
 ### 2. DefaultOAuth2AuthorizationRequestResolver
 
-- 요청 저옵에서 `registrationId`를 추출하고, `OAuth2AuthorizationRequest`를 반환한다.
+- 요청 정보에서 `registrationId`를 추출하고, `OAuth2AuthorizationRequest`를 반환한다.
 
 ![img_18.png](image_1/img_18.png)
 

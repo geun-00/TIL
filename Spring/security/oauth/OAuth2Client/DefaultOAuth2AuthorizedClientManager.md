@@ -17,7 +17,7 @@
 
 ## DefaultOAuth2AuthorizedClientManager
 
-![img_15.png](image/img_15.png)
+![img_18.png](image_1/img_18.png)
 
 ### 특징
 
@@ -27,15 +27,11 @@
 
 ![img_14.png](image/img_14.png)
 
-### 빈 등록
-
-![img_16.png](image/img_16.png)
-
-- `OAuth2AuthorizedClientProviderBuilder`를 통해 각각의 권한 부여 방식을 설정해 준다.
-
 ---
 
-## 기본 환경 구성
+## 예제 코드
+
+### 기본 환경 구성
 
 - 스프링 시큐리티의 `oauth2Login()` 필터에 의한 자동 인증처리를 하지 않고 `DefaultOAuth2AuthorizedClientManager` 클래스를 사용하여 Spring MVC에서 직접 
     인증처리를 하는 로그인 기능을 구현한다.
