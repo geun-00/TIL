@@ -2,6 +2,7 @@
 서블릿과 JSP로 회원 관리 웹 애플리케이션 만들기 예제
 
 ## 순수하게 서블릿으로만
+
 도메인
 ```java
 @Getter @Setter
@@ -18,6 +19,7 @@ public class Member {
     }
 }
 ```
+
 레포지토리
 ```java
 public class MemberRepository {
@@ -57,7 +59,8 @@ public class MemberRepository {
     }
 }
 ```
-테스트코드
+
+테스트 코드
 ```java
 class MemberRepositoryTest {
 
@@ -129,7 +132,7 @@ public class MemberFormServlet extends HttpServlet {
 ```
 개발자가 일일이 HTML 폼을 자바코드로 적어줘야 한다.
 
-HTML Form에서 데이터를 입력하고 전송을 눌렀을 때 데이터를 처리할 서블릿
+HTML Form 데이터를 입력하고 전송을 눌렀을 때 데이터를 처리할 서블릿
 ```java
 @WebServlet(name = "memberSaveServlet", urlPatterns = "/servlet/members/save")
 public class MemberSaveServlet extends HttpServlet {
@@ -224,10 +227,10 @@ public class MemberListServlet extends HttpServlet {
 
 ## JSP
 build.gradle
-```java
+```text
 implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 implementation 'jakarta.servlet:jakarta.servlet-api' //스프링부트 3.0 이상
-implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api' //스프링부트3.0 이상
+implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api' //스프링부트 3.0 이상
 implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl' //스프링부트 3.0 이상
 ```
 
@@ -247,6 +250,7 @@ implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl' //스프링부트 3.
 </body>
 </html>
 ```
+
 회원 저장 JSP
 ```html
 <%@ page import="hello.servlet.domain.member.MemberRepository" %> //자바 import문과 동일
@@ -319,14 +323,10 @@ implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl' //스프링부트 3.
 
 ## 서블릿과 JSP 한계
 서블릿은 HTML 문서가 자바 코드에 섞여서 지저분하고 복잡하다.
-
 JSP를 사용하면 HTML 작업을 깔끔하게 가져가고, 중간중간 동적인 부분만 자바 코드를 적용했다.
-
 하지만 문제는 JSP에 자바 코드, 레포지토리 등 다양한 코드가 노출되어 있고 JSP가 너무 많은 역할을 한다. 이런 구조는 유지보수 하기가 매우 힘들다.
+이러한 문제를 해결하기 위해 **MVC 패턴**이 나온 것이다.
 
-이러한 문제를 해결하기 위해 MVC 패턴이 나온 것이다.
-
-<br>
 
 ## MVC 패턴
 > **Model View Controller**<br>
@@ -346,7 +346,7 @@ JSP를 사용하면 HTML 작업을 깔끔하게 가져가고, 중간중간 동�
 <br>
 
 ## MVC 패턴 적용
-> 서블릿이 컨트롤러, JSP가 뷰가 되고 ``HttpServletRequest`` 객체가 모델이 된다.<br>
+> **서블릿**이 컨트롤러, **JSP**가 뷰가 되고 **HttpServletRequest** 객체가 모델이 된다.<br>
 > ``request.setAttribute()``, ``request.getAttribute()``로 데이터를 보관하고 조회할 수 있다.
 
 ### 회원 등록
@@ -356,22 +356,22 @@ JSP를 사용하면 HTML 작업을 깔끔하게 가져가고, 중간중간 동�
 @WebServlet(name = "mvcMemberFormServlet", urlPatterns = "/servlet-mvc/members/new-form")
 public class MvcMemberFormServlet extends HttpServlet {
 
-        @Override
-        protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-                String viewPath = "/WEB-INF/views/new-form.jsp";
-                RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
-                dispatcher.forward(request, response);
-        }
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String viewPath = "/WEB-INF/views/new-form.jsp";
+        RequestDispatcher dispatcher = request.getRequestDispatcher(viewPath);
+        dispatcher.forward(request, response);
+    }
 }
 ```
-- dispatcher.forward()
+- `dispatcher.forward()`
   - 다른 서블릿이나 JSP로 이동할 수 있다. **서버 내부에서 다시 호출이 발생한다.**
-- /WEB-INF
-  - 이 경로안에 JSP가 있으면 외부에서 직접 JSP를 호출할 수 없다. 우리는 항상 컨트롤러를 통해서 JSP가 호출되기를 기대한다.
-- redirect vs forward
-  - redirect
-    - 실제 클라이언트에 응답이 나갔다가 클라이언트가 다시 redirect 경로로 다시 요청한다. 그래서 클라이언트가 인지할 수 있고 URL 경로도 실제 변경된다.
-  - forward
+- `/WEB-INF`
+  - 이 경로 안에 JSP가 있으면 외부에서 직접 JSP를 호출할 수 없다. 우리는 항상 컨트롤러를 통해서 JSP가 호출되기를 기대한다.
+- `redirect` vs `forward`
+  - `redirect`
+    - 실제 클라이언트에 응답이 나갔다가 클라이언트가 다시 `redirect` 경로로 다시 요청한다. 그래서 클라이언트가 인지할 수 있고 URL 경로도 실제 변경된다.
+  - `forward`
     - 서버 내부에서 일어나는 호출이기 때문에 클라이언트는 전혀 인지 못한다.
 
 회원 등록 폼 뷰
@@ -383,7 +383,7 @@ public class MvcMemberFormServlet extends HttpServlet {
     <title>Title</title>
 </head>
 <body>
-<!-- 상대경로 사용, [현재 URL이 속한 계층 경로 + /save] -->
+<!-- 상대 경로 사용, [현재 URL이 속한 계층 경로 + /save] -->
 <form action="save" method="post">
     username: <input type="text" name="username" />
     age:      <input type="text" name="age" />
@@ -442,9 +442,9 @@ public class MvcMemberSaveServlet extends HttpServlet {
 </body>
 </html>
 ```
-<%= request.getAttribute("member")%>로 모델에서 데이터를 꺼낼 수도 있지만 너무 복잡해진다.
+`<%= request.getAttribute("member")%>`로 모델에서 데이터를 꺼낼 수도 있지만 너무 복잡해진다.
 
-JSP는 ``${}``문법으로 편리하게 모델을 조회할 수 있다.
+JSP는 `${}` 문법으로 편리하게 모델을 조회할 수 있다.
 
 회원 목록 조회 컨트롤러
 ```java
@@ -498,14 +498,10 @@ public class MvcMemberListServlet extends HttpServlet {
 </html>
 ```
 
-<br>
-
 ## MVC 패턴의 한계
-MVC 패턴 적용으로 컨트롤러와 뷰의 역할을 명확하게 구분하여 전체적으로 깔끔해졌다.
-
+MVC 패턴 적용으로 **컨트롤러와 뷰의 역할을 명확하게 구분**하여 전체적으로 깔끔해졌다. 
 그런데 컨트롤러 부분은 중복이 많고 사용하지 않는 코드도 있다.
-
 기능이 복잡해질수록 컨트롤러에서 공통으로 처리해야 하는 부분이 점점 더 증가할텐데 현재 같은 구조로는 공통처리가 매우 어렵다.
+이 문제를 해결하기 위해서는 **컨트롤러 호출 전에 먼저 공통 기능**을 처리해야 한다.
 
-이 문제를 해결하기 위해서는 컨트롤러 호출 전에 먼저 공통 기능을 처리해야 한다.<br>
 이럴 때 **프론트 컨트롤러(Front Controller)** 를 도입하여 입구를 하나로 만들어 문제를 해결할 수 있다.
