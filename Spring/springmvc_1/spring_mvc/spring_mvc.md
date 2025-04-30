@@ -6,11 +6,11 @@
 구조는 전에 직접 만든 mvc 프레임워크랑 똑같다.
 
 명칭만 좀 다른데
-- FrontController -> DispatcherServlet
-- handlerMappingMap -> HandlerMapping
-- MyHandlerAdapter -> HandlerAdapter
-- viewResolver -> ViewResolver(인터페이스)
-- MyView -> View(인터페이스)
+- `FrontController` -> **DispatcherServlet**
+- `handlerMappingMap` -> **HandlerMapping**
+- `MyHandlerAdapter` -> **HandlerAdapter**
+- `viewResolver` -> **ViewResolver** (인터페이스)
+- `MyView` -> **View** (인터페이스)
 
 ### DispatcherServlet 구조
 > 스프링 MVC도 프론트 컨트롤러 패턴으로 구현되어 있는데 스프링 MVC의 프론트 컨트롤러가 ``DispatcherServlet``이다. 이것이 스프링 MVC의 핵심이다.

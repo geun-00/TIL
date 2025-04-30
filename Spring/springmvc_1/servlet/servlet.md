@@ -6,14 +6,15 @@
 @ServletComponentScan // 서블릿 자동 등록
 @SpringBootApplication
 public class ServletApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(ServletApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(ServletApplication.class, args);
+    }
 }
 ```
-@ServletComponentScan : 서블릿을 자동으로 등록하고 실행할 수 있도록 해준다.
+
+- `@ServletComponentScan`
+  - 서블릿을 자동으로 등록하고 실행할 수 있도록 해준다.
+  - `@WebServlet`, `@WebFilter`, `@WebListener` 와 같은 어노테이션으로 정의된 클래스들을 자동으로 스캔하고 등록한다.
 
 ```java
 // name : 서블릿 이름, urlPatterns : URL 매핑
@@ -36,12 +37,12 @@ public class HelloServlet extends HttpServlet {
     }
 }
 ```
-HTTP 요청을 통해 매핑된 URL 호출되면 서블릿 컨테이너는 service 메서드를 실행한다.
+HTTP 요청을 통해 매핑된 URL 호출되면 서블릿 컨테이너는 `service` 메서드를 실행한다.
 
 요청 URL : http://localhost:8080/hello?username=world
 
 콘솔 결과
-```http request
+```text
 HelloServlet.service
 request = org.apache.catalina.connector.RequestFacade@e223ed1
 response = org.apache.catalina.connector.ResponseFacade@e5c165
@@ -49,6 +50,7 @@ username = world
 ```
 
 ## 서블릿 컨테이너 동작 방식
+
 ![img.png](image/img.png)
 
 ![img_1.png](image/img_1.png)
@@ -59,7 +61,7 @@ username = world
 > HTTP 요청 메시지를 개발자가 직접 파싱해서 사용해도 되지만, 매우 불편할 것이다. 서블릿은 개발자가 HTTP 요청 메시지를 편리하게 사용할 수 있도록
 > 개발자 대신에 HTTP 요청 메시지를 파싱하고 그 결과를 ``HttpServletRequest``객체에 담아서 제공한다.
 
-```http request
+```text
 POST /save HTTP/1.1 // START LINE(HTTP Method, URL, 쿼리 스트링, 스키마, 프로토콜)
 Host: localhost:8080 // 헤더
 Content-Type: application/x-www-form-urlencoded // 헤더
@@ -76,8 +78,6 @@ username=kim&age=20 // 바디
 
 ### HttpServletRequest 기본 사용법
 ```java
-package hello.servlet.basic.request;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -100,16 +100,12 @@ public class RequestHeaderServlet extends HttpServlet {
 
     private void printStartLine(HttpServletRequest request) {
         System.out.println("--- REQUEST-LINE - start ---");
-        System.out.println("request.getMethod() = " + request.getMethod()); //GET
-        System.out.println("request.getProtocol() = " + request.getProtocol()); //HTTP/1.1
-        System.out.println("request.getScheme() = " + request.getScheme()); //http
-        // http://localhost:8080/request-header
+        System.out.println("request.getMethod() = " + request.getMethod());
+        System.out.println("request.getProtocol() = " + request.getProtocol());
+        System.out.println("request.getScheme() = " + request.getScheme());
         System.out.println("request.getRequestURL() = " + request.getRequestURL());
-        // /request-header
         System.out.println("request.getRequestURI() = " + request.getRequestURI());
-        //username=hi
-        System.out.println("request.getQueryString() = " +
-                request.getQueryString());
+        System.out.println("request.getQueryString() = " + request.getQueryString());
         System.out.println("request.isSecure() = " + request.isSecure()); //https 사용 유무
         System.out.println("--- REQUEST-LINE - end ---");
         System.out.println();
@@ -125,8 +121,9 @@ public class RequestHeaderServlet extends HttpServlet {
                 System.out.println(headerName + ": " + request.getHeader(headerName));
             }
         */
-        request.getHeaderNames().asIterator()
-                .forEachRemaining(headerName -> System.out.println(headerName + ": " + request.getHeader(headerName)));
+        request.getHeaderNames()
+               .asIterator()
+               .forEachRemaining(headerName -> System.out.println(headerName + ": " + request.getHeader(headerName)));
         System.out.println("--- Headers - end ---");
         System.out.println();
     }
@@ -141,8 +138,9 @@ public class RequestHeaderServlet extends HttpServlet {
         System.out.println();
 
         System.out.println("[Accept-Language 편의 조회]");
-        request.getLocales().asIterator()
-                .forEachRemaining(locale -> System.out.println("locale = " + locale));
+        request.getLocales()
+               .asIterator()
+               .forEachRemaining(locale -> System.out.println("locale = " + locale));
         System.out.println("request.getLocale() = " + request.getLocale());
 
         System.out.println();
@@ -189,7 +187,7 @@ public class RequestHeaderServlet extends HttpServlet {
 
 결과
 - printStartLine(request)
-```java
+```text
 --- REQUEST-LINE - start ---
 request.getMethod() = GET
 request.getProtocol() = HTTP/1.1
@@ -202,7 +200,7 @@ request.isSecure() = false
 ```
 
 -  printHeaders(request)
-```java
+```text
 --- Headers - start ---
 host: localhost:8080
 connection: keep-alive
@@ -224,7 +222,7 @@ cookie: Idea-52a55763=ae459913-83f5-4a79-976e-c1b95061b327
 ```
 
 - printHeaderUtils(request)
-```java
+```text
 --- Header 편의 조회 start ---
 [Host 편의 조회]
 request.getServerName() = localhost
@@ -246,8 +244,9 @@ request.getContentLength() = -1
 request.getCharacterEncoding() = UTF-8
 --- Header 편의 조회 end ---
 ```
+
 - printEtc(request)
-```java
+```text
 --- 기타 조회 start ---
 [Remote 정보]
 request.getRemoteHost() = 0:0:0:0:0:0:0:1
@@ -280,19 +279,21 @@ request.getLocalPort() = 8080
 ```java
 @WebServlet(name = "requestParamServlet", urlPatterns = "/request-param")
 public class RequestParamServlet extends HttpServlet {
+    
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("[전체 파라미터 조회] - start");
-        /*
-                Enumeration<String> parameterNames = request.getParameterNames();
-                while (parameterNames.hasMoreElements()) {
-                    String paramName = parameterNames.nextElement();
-                    System.out.println(paramName + "=" +
-        request.getParameter(paramName));
+        
+/*
+        Enumeration<String> parameterNames = request.getParameterNames();
+        while (parameterNames.hasMoreElements()) {
+            String paramName = parameterNames.nextElement();
+            System.out.println(paramName + "=" + request.getParameter(paramName));
         }
-        */
-        request.getParameterNames().asIterator()
-                .forEachRemaining(paramName -> System.out.println(paramName + "=" + request.getParameter(paramName)));
+*/
+        request.getParameterNames()
+               .asIterator()
+               .forEachRemaining(paramName -> System.out.println(paramName + "=" + request.getParameter(paramName)));
         System.out.println("[전체 파라미터 조회] - end");
 
         System.out.println();
@@ -319,7 +320,7 @@ public class RequestParamServlet extends HttpServlet {
 요청 : http://localhost:8080/request-param?username=hello&age=20&username=hello2
 
 결과
-```java
+```text
 [전체 파라미터 조회] - start
 username=hello
 age=20
@@ -363,19 +364,21 @@ Form
 ```java
 @WebServlet(name = "requestParamServlet", urlPatterns = "/request-param")
 public class RequestParamServlet extends HttpServlet {
+    
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("[전체 파라미터 조회] - start");
-        /*
-                Enumeration<String> parameterNames = request.getParameterNames();
-                while (parameterNames.hasMoreElements()) {
-                    String paramName = parameterNames.nextElement();
-                    System.out.println(paramName + "=" +
-        request.getParameter(paramName));
+        
+/*
+        Enumeration<String> parameterNames = request.getParameterNames();
+        while (parameterNames.hasMoreElements()) {
+            String paramName = parameterNames.nextElement();
+            System.out.println(paramName + "=" + request.getParameter(paramName));
         }
-        */
-        request.getParameterNames().asIterator()
-                .forEachRemaining(paramName -> System.out.println(paramName + "=" + request.getParameter(paramName)));
+*/
+        request.getParameterNames()
+               .asIterator()
+               .forEachRemaining(paramName -> System.out.println(paramName + "=" + request.getParameter(paramName)));
         System.out.println("[전체 파라미터 조회] - end");
 
         System.out.println();
@@ -408,14 +411,17 @@ POST HTML Form 형식은 HTTP 메시지 바디에 해당 데이터를 포함해�
 이렇게 폼으로 데이터를 전송하는 형식을 ``application/x-www-form-urlencoded``이라고 한다. 웬만하면 포스트맨으로 편리하게 테스트 해보자!
 
 ### API 메시지 바디
-서블릿(텍스트 메시지) - content-type: text-plain
+서블릿(텍스트 메시지) - `content-type: text-plain`
+
 ```java
 @WebServlet(name = "requestBodyStringServlet", urlPatterns = "/request-body-string")
 public class RequestBodyStringServlet extends HttpServlet {
+    
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ServletInputStream inputStream = request.getInputStream();
-        // 바이트->문자, 문자->바이트를 바꿀 때는 항상 인코딩 정보를 포함해줘야 한다.
+        
+        // 바이트 -> 문자, 문자 -> 바이트를 바꿀 때는 항상 인코딩 정보를 포함해줘야 한다.
         String messageBody = StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8);
         System.out.println("messageBody = " + messageBody);
 
@@ -424,12 +430,11 @@ public class RequestBodyStringServlet extends HttpServlet {
 }
 ```
 
-서블릿(JSON) - content-type: application/json
+서블릿(JSON) - `content-type: application/json`
 ```java
 //JSON 파싱할 객체
 @Getter @Setter
 public class HelloData {
-
     private String username;
     private int age;
 }
@@ -438,6 +443,7 @@ public class HelloData {
 ```java
 @WebServlet(name = "requestBodyJsonServlet", urlPatterns = "/request-body-json")
 public class RequestBodyJsonServlet extends HttpServlet {
+    
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
@@ -456,15 +462,15 @@ public class RequestBodyJsonServlet extends HttpServlet {
 }
 ```
 
-출력:<br>
-messageBody = {"username": "hello", "age": 20}<br>
-helloData.username = hello<br>
+출력
+```text
+messageBody = {"username": "hello", "age": 20}
+helloData.username = hello
 helloData.age = 20
+```
 
-JSON 결과를 파싱해서 자바 객체로 변환하려면 Jackson, Gson 같은 JSON 변환 라이브러리가 필요한데 스프링 부트는 기본적으로 ``ObjectMapper``라는 
-Jackson 라이브러리를 제공해준다.
-
-<br>
+> JSON 결과를 파싱해서 자바 객체로 변환하려면 Jackson, Gson 같은 JSON 변환 라이브러리가 필요한데 스프링 부트는 기본적으로 ``ObjectMapper``라는 
+> Jackson 라이브러리를 제공해준다.
 
 ## HttpServletResponse 기본 사용법
 - HTTP 응답 메시지 생성
@@ -472,25 +478,31 @@ Jackson 라이브러리를 제공해준다.
   - 헤더 생성
   - 바디 생성
 - 편의 기능
-  - Content-Type, 쿠키, Redirect
+  - Content-Type
+  - 쿠키
+  - Redirect
 
 서블릿
 ```java
 @WebServlet(name = "responseHeaderServlet", urlPatterns = "/response-header")
 public class ResponseHeaderServlet extends HttpServlet {
+    
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //[status-line]
         response.setStatus(HttpServletResponse.SC_OK); //200
+      
         //[response-headers]
         response.setHeader("Content-Type", "text/plain;charset=utf-8");
         response.setHeader("Cache-Control", "no-cache, no-store, must- revalidate");
         response.setHeader("Pragma", "no-cache");
         response.setHeader("my-header","hello");
+        
         //[Header 편의 메서드]
         content(response);
         cookie(response);
-        //redirect(response);
+        redirect(response);
+        
         //[message body]
         PrintWriter writer = response.getWriter();
         writer.println("ok");
@@ -531,11 +543,13 @@ public class ResponseHeaderServlet extends HttpServlet {
 ```java
 @WebServlet(name = "responseHtmlServlet", urlPatterns = "/response-html")
 public class ResponseHtmlServlet extends HttpServlet {
+    
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //Content-Type: text/html;charset=utf-8
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8");
+        
         PrintWriter writer = response.getWriter();
         writer.println("<html>");
         writer.println("<body>");
@@ -547,10 +561,12 @@ public class ResponseHtmlServlet extends HttpServlet {
 ```
 
 ### HTTP 응답 - API JSON
+
 서블릿
 ```java
 @WebServlet(name = "responseJsonServlet", urlPatterns = "/response-json")
 public class ResponseJsonServlet extends HttpServlet {
+    
     private ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
@@ -558,9 +574,11 @@ public class ResponseJsonServlet extends HttpServlet {
         //Content-Type: application/json
         response.setContentType("application/json");
         response.setCharacterEncoding("utf-8");
+        
         HelloData data = new HelloData();
         data.setUsername("kim");
         data.setAge(20);
+        
         //{"username":"kim","age":20}
         String result = objectMapper.writeValueAsString(data); //객체 -> JSON
         response.getWriter().write(result);
