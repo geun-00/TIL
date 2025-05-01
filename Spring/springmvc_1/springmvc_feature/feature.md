@@ -2,7 +2,7 @@
 
 ## 요청 매핑
 
-- 기본 매핑
+- **기본 매핑**
 ```java
 @RestController
 @Slf4j
@@ -18,17 +18,16 @@ public class MappingController {
     }
 }
 ```
-``@RestController``: ``@Controller``는 반환 값이 String 이면 뷰 이름으로 인식되고 뷰를 찾고 뷰를 렌더링한다. ``@RestController``는 뷰를 찾지 않고
-HTTP 메시지 바디에 바로 입력한다.
+> `@Controller`는 반환 값이 String 이면 뷰 이름으로 인식되고 뷰를 찾고 뷰를 렌더링한다. `@RestController`는 뷰를 찾지 않고
+> HTTP 메시지 바디에 바로 입력한다.
 
-- HTTP 메서드 매핑
+- **HTTP 메서드 매핑**
 ```java
 @RestController
 @Slf4j
 public class MappingController {
     /**
-     * method 특정 HTTP 메서드 요청만 허용
-     * GET, HEAD, POST, PUT, PATCH, DELETE
+     * 특정 HTTP 메서드 요청만 허용
      */
     @RequestMapping(value = "/mapping-get-v1", method = RequestMethod.GET)
     public String mappingGetV1() {
@@ -52,9 +51,9 @@ public class MappingController {
     }
 }
 ```
-지정한 HTTP 메서드와 다른 메서드로 요청이 오면 스프링 MVC는 405 상태코드(Method Not Allowed)를 반환한다.
+> 지정한 HTTP 메서드와 다른 메서드로 요청이 오면 스프링 MVC는 **405 상태코드(Method Not Allowed)** 를 반환한다.
 
-- PathVariable(경로 변수) 사용
+- **PathVariable(경로 변수) 사용**
 ```java
 @RestController
 @Slf4j
@@ -78,9 +77,9 @@ public class MappingController {
     }
 }
 ```
-최근 HTTP API는 리소스 경로에 식별자를 넣는 스타일을 선호한다.
+> 최근 HTTP API는 리소스 경로에 식별자를 넣는 스타일을 선호한다.
 
-- 특정 파라미터 조건 매핑
+- **특정 파라미터 조건 매핑**
 ```java
 @RestController
 @Slf4j
@@ -100,13 +99,11 @@ public class MappingController {
     }
 }
 ```
-특정 파라미터가 있거나 없는 조건을 추가할 수 있다.
-- http://localhost:8080/mapping-param?mode=debug : ok
-- http://localhost:8080/mapping-param : error
+> 특정 파라미터가 있거나 없는 조건을 추가할 수 있다.
+> - http://localhost:8080/mapping-param?mode=debug : ok
+> - http://localhost:8080/mapping-param : error
 
-<br>
-
-- 특정 헤더 조건 매핑
+- **특정 헤더 조건 매핑**
 ```java
 @RestController
 @Slf4j
@@ -125,9 +122,9 @@ public class MappingController {
     }
 }
 ```
-특정 파라미터 조건 매핑의 헤더 버전
+> 특정 파라미터 조건 매핑의 헤더 버전
 
-- 미디어 타입 조건 매핑
+- **미디어 타입 조건 매핑**
 ```java
 @RestController
 @Slf4j
@@ -160,11 +157,20 @@ public class MappingController {
     }
 }
 ```
-consumes : 들어오는 데이터 타입 정의(해당 URI를 호출하는 쪽에서는 Content-Type을 ``application/json``으로 명시 해줘야 한다.)
+> - `consumes` : 들어오는 데이터 타입 정의(해당 URI를 호출하는 쪽에서는 Content-Type을 `application/json`으로 명시 해줘야 한다.)
+> - `produces` : 반환하는 데이터 타입 정의(해당 URI를 호출하는 쪽에서는 Accept를 `Text/html`로 명시 해줘야 한다.)
 
-produces : 반환하는 데이터 타입 정의(해당 URI를 호출하는 쪽에서는 Accept를 ``Text/html``로 명시 해줘야 한다.)
-
-<br>
+> **1. `consumes` 속성과 `Content-Type` 헤더**
+>  - **일치할 경우** : 해당 요청을 정상적으로 처리한다.
+>  - **일치하지 않을 경우** : 서버는 **HTTP 415 (Unsupported Media Type)** 상태 코드를 반환할 수 있다. (서버가 클라이언트가 보낸 데이터 형식을 처리할 수 없음)
+>  - **`consumes` 속성 미지정** : 서버는 기본적으로 요청을 처리할 수 있는 미디어 타입에 대해 특별한 제한을 두지 않지만,
+>   클라이언트의 `Content-Type` 헤더와 서버의 처리 능력이 일치하지 않으면 요청이 처리되지 않을 수 있다.
+> 
+> **2. `produces` 속성과 `Accept` 헤더**
+>   - **일치할 경우** : 서버는 해당 미디어 타입으로 응답을 생성한다.
+>   - **일치하지 않을 경우** : 서버는 **HTTP 406 (Not Acceptable)** 상태 코드를 반환할 수 있다. (서버가 클라이언트가 요청한 형식으로 응답을 생성할 수 없음)
+>   - **`produces` 속성 미지정** : 서버는 클라이언트의 `Accept` 헤더와 일치하는 미디어 타입으로 응답을 생성하려고 시도하며
+>   이 경우 클라이언트가 요청한 형식과 서버가 반환할 수 있는 형식이 일치하면 그 형식으로 응답을 생성한다.
 
 ## 요청 매핑 - API
 - 회원 목록 조회: ``GET`` /users
@@ -173,9 +179,7 @@ produces : 반환하는 데이터 타입 정의(해당 URI를 호출하는 쪽�
 - 회원 수정: ``PATCH`` /users/{userId}
 - 회원 삭제: ``DELETE`` /users/{userId}
 
-<br>
-
-- 컨트롤러
+컨트롤러
 ```java
 @RestController
 @RequestMapping("/mapping/users")
@@ -222,11 +226,9 @@ public class MappingClassController {
 }
 ```
 
-<br>
-
 ## HTTP 요청 - 헤더 조회
 
-- 컨트롤러
+컨트롤러
 ```java
 @Slf4j
 @RestController
@@ -260,10 +262,8 @@ public class RequestHeaderController {
 - ``@CookieValue(value = "myCookie", required = false)`` : 특정 쿠키 조회
 - ``MultiValueMap`` : 하나의 키에 여러 값을 받을 수 있다.
 
-[``@Controller``의 사용 가능한 파라미터 목록](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/arguments.html)
-[``@Controller``의 사용 가능한 응답 값 목록](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/return-types.html)
-
-<br>
+> - [``@Controller``의 사용 가능한 파라미터 목록](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/arguments.html)
+> - [``@Controller``의 사용 가능한 응답 값 목록](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/return-types.html)
 
 ## HTTP 요청 - 쿼리 파라미터, HTML Form
 > ``GET`` 쿼리 파라미터와 ``POST`` HTML Form은 둘 다 쿼리 파라미터로 보내기 때문에 같은 방식으로 조회할 수 있다.
@@ -354,8 +354,6 @@ public class RequestParamController {
 }
 ```
 
-<br>
-
 ## HTTP 요청 파라미터 - @ModelAttribute
 > 스프링은 요청 파라미터를 받아서 객체로 만들고 그 객체에 값을 자동으로 넣어줄 수 있다.
 
@@ -389,13 +387,11 @@ public class MappingClassController {
     }
 }
 ```
-스프링 MVC는 ``@ModelAttribute`` 있으면 다음을 실행한다.
+스프링 MVC는 `@ModelAttribute`가 있으면 다음을 실행한다.
 - 객체를 생성한다.
 - 요청 파라미터의 이름으로 객체의 프로퍼티를 찾는다. 그리고 해당 프로퍼티의 ``setter``를 호출해서 파라미터의 입력 값을 바인딩 한다.
 
-``@ModelAttribute``와 ``@RequestParam``둘 다 생략이 가능해서 혼란이 올 수 있다.  
-
-<br>
+`@ModelAttribute`와 `@RequestParam`둘 다 생략이 가능해서 혼란이 올 수 있다.  
 
 ## HTTP 요청 - 단순 텍스트
 > HTTP message body에 데이터를 직접 담아서 요청하면 ``@ModelAttribute``와 ``@RequestParam``을 사용할 수 없다.
@@ -458,8 +454,6 @@ public class RequestBodyStringController {
     }
 }
 ```
-
-<br>
 
 ## HTTP 요청 - JSON
 
@@ -532,8 +526,6 @@ public class RequestBodyJsonController {
 }
 ```
 
-<br>
-
 ## HTTP 응답 - 정적 리소스, 뷰 템플릿
 - 스프링 서버에서 응답 데이터를 만드는 방법
   - 정적 리소스
@@ -586,8 +578,6 @@ public class ResponseViewController {
 }
 ```
 
-<br>
-
 ## HTTP 응답 - HTTP API, 메시지 바디 직접 입력
 
 - 컨트롤러
@@ -635,64 +625,46 @@ public class ResponseBodyController {
 }
 ```
 
-<br>
-
 ## HTTP 메시지 컨버터
-
-- @ResponseBody 사용 원리
 
 ![img.png](image/img.png)
 
 - HTTP body에 문자 내용을 직접 반환한다.
-- ``viewResolver`` 대신에 ``HttpMessageConverter``가 동작한다.
-- 기본 문자처리는 ``StringHttpMessageConverter``
-- 기본 객체처리는 ``MappingJackson2HttpMessageConverter``
+- `viewResolver` 대신에 `HttpMessageConverter`가 동작한다.
+- 기본 문자 처리는 `StringHttpMessageConverter`
+- 기본 객체 처리는 `MappingJackson2HttpMessageConverter`
 
 다음 경우 HTTP 메시지 컨버터 적용
-- HTTP 요청 : ``@RequestBody``, ``HttpEntity(RequestEntity)``
-- HTTP 응답 : ``@ResponseBody``, ``HttpEntity(ResponseEntity)``
+- HTTP 요청 : `@RequestBody`, `HttpEntity(RequestEntity)`
+- HTTP 응답 : `@ResponseBody`, `HttpEntity(ResponseEntity)`
 
-``HttpMessageConverter`` 인터페이스는 HTTP 요청, 응답 둘 다 사용된다.
-- ``canRead()``,``canWrite()``: 해당 클래스, 미디어타입을 지원하는지 확인
-- ``read()``, ``write()``: 메시지 컨버터를 통해서 메시지를 읽고 쓰는 기능
+`HttpMessageConverter` 인터페이스는 HTTP 요청, 응답 둘 다 사용된다.
+- `canRead()`, `canWrite()` : 해당 클래스, 미디어타입을 지원하는지 확인
+- `read()`, `write()` : 메시지 컨버터를 통해서 메시지를 읽고 쓰는 기능
 
 
 스프링 부트 주요 메시지 컨버터
-- 0 = ``ByteArrayHttpMessageConverter`` - byte[] 데이터 처리
-  - 클래스 타입:``byte[]``, 미디어타입:``*/*``
-  - 응답 미디어타입: ``application/octet-stream``
-- 1 = ``StringHttpMessageConverter`` - String 데이터 처리
-  - 클래스 타입:``String``, 미디어타입:``*/*``
-  - 응답 미디어타입: ``text/plain``
-- 2 = ``MappingJackson2HttpMessageConverter``
-  - 클래스 타입: 객체 또는 HashMap, 미디어타입: ``application/json`` 관련
-  - 응답 미디어타입: ``application/json`` 관련
-
-<br>
+- 0 = `ByteArrayHttpMessageConverter` - byte[] 데이터 처리
+  - 클래스 타입 : `byte[]`, 미디어타입 : `*/*`
+  - 응답 미디어타입 : `application/octet-stream`
+- 1 = `StringHttpMessageConverter` - String 데이터 처리
+  - 클래스 타입 : `String`, 미디어타입 : `*/*`
+  - 응답 미디어타입 : `text/plain`
+- 2 = `MappingJackson2HttpMessageConverter`
+  - 클래스 타입 : 객체 또는 HashMap, 미디어타입 : `application/json` 관련
+  - 응답 미디어타입 : `application/json` 관련
 
 ## 요청 매핑 핸들러 어댑터 구조
 
 ![img_1.png](image/img_1.png)
 
-어노테이션 기반 컨트롤러를 처리하는 ``RequestMappingHandlerAdaptor``는 ``ArgumentResolver``를 호출해서 컨트롤러(핸들러)가 필요로 하는
+어노테이션 기반 컨트롤러를 처리하는 `RequestMappingHandlerAdaptor`는 `ArgumentResolver`를 호출해서 컨트롤러(핸들러)가 필요로 하는
 파라미터를 생성해서 넘겨준다.
 
-```java
-public interface HandlerMethodArgumentResolver {
+![img.png](image/img_3.png)
 
-	boolean supportsParameter(MethodParameter parameter);
-
-	@Nullable
-	Object resolveArgument(MethodParameter parameter, @Nullable ModelAndViewContainer mavContainer,
-			NativeWebRequest webRequest, @Nullable WebDataBinderFactory binderFactory) throws Exception;
-
-}
-```
-``supportsParameter()``에서 해당 파라미터를 지원하는지 체크하고 지원하면 ``resolveArgument()``를 호출해서 실제 객체를 생성하고 컨트롤러 호출시 넘어간다.
-
+`supportsParameter()`에서 해당 파라미터를 지원하는지 체크하고 지원하면 `resolveArgument()`를 호출해서 실제 객체를 생성하고 컨트롤러 호출시 넘어간다.
 직접 이 인터페이스를 구현해서 원하는 ``ArgumentResolver``를 만들 수도 있다.
-
-<br>
 
 ### HTTP 메시지 컨버터
 

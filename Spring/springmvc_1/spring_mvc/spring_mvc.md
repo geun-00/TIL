@@ -60,11 +60,17 @@
 ---
 
 ## 스프링 MVC 
+
 > 스프링은 어노테이션 기반 컨트롤러를 제공해 매우 유연하고 실용적이다.
 
-가장 우선순위가 높은 핸들러 매핑과 어댑터는 ``RequestMappingHandlerMapping``, ``RequestMappingHandlerAdapter``이다.
-
+가장 우선순위가 높은 핸들러 매핑과 어댑터는 `RequestMappingHandlerMapping`, `RequestMappingHandlerAdapter`이다.
 `@RequestMapping`은 이것의 앞글자를 따서 만든 것인데 지금 스프링에서 주로 사용하는 어노테이션 기반의 핸들러 매핑과 어댑터이다.
+
+![img.png](img.png)
+
+- `@RequestMapping`은 특정 URL 경로에 대한 요청을 처리할 메서드를 매핑하는 데 사용되는 어노테이션이다.
+- `@RequestMapping`은 `@Controller` 및 `@RestController`로 선언된 클래스에서 사용되며 내부적으로 `RequestMappingHandlerMapping`
+클래스가 처리하고 있다.
 
 ### V1
 
@@ -81,7 +87,7 @@ public class SpringMemberFormControllerV1 {
 ```
 
 - `@Controller`
-  - 스프링이 자동으로 스프링 빈으로 등록한다.(내부에 `@Component`가 있어 ComponentScan의 대상이 된다.)
+  - 스프링이 자동으로 스프링 빈으로 등록한다. (내부에 `@Component`가 있어 ComponentScan의 대상이 된다.)
   - 스프링 MVC에서 어노테이션 기반 컨트롤러로 인식한다.
 - `@RequestMapping`
   - 요청 정보를 매핑한다. 해당 URL이 호출되면 이 메서드가 호출된다.
@@ -185,6 +191,7 @@ public class SpringMemberControllerV2 {
 @Controller
 @RequestMapping("/springmvc/v3/members")
 public class SpringMemberControllerV3 {
+    
     private final MemberRepository memberRepository = MemberRepository.getInstance();
 
     @GetMapping( "/new-form")
@@ -214,5 +221,5 @@ public class SpringMemberControllerV3 {
 ```
 - 컨트롤러에서 Model을 파라미터로 받을 수 있다.
 - 뷰의 논리 이름을 직접 반환할 수 있다.
-- HTTP 요청 파라미터를 ``@RequertParam``으로 받을 수 있다.
-- ``@GetMapping``, ``@PostMapping``: URL만 매핑하는 것이 아니라 HTTP Method도 구분할 수 있다.
+- HTTP 요청 파라미터를 `@RequertParam`으로 받을 수 있다.
+- `@GetMapping`, `@PostMapping`: URL만 매핑하는 것이 아니라 HTTP Method도 구분할 수 있다.
