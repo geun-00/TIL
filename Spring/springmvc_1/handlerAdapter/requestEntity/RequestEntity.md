@@ -114,4 +114,4 @@
 >    - `multipart/form-data` 요청에서 파일을 업로드 할 때, `MultipartFile`이나 `@RequestPart`를 사용하는 경우에는
 >       `MultipartResolver`가 요청을 처리한다.
 > 5. **컨트롤러에서 단순 문자열 반환 시 `@ResponseBody`나 `@RestController`가 없는 경우**
->    - 반환된 문자열은 뷰 이름으로 간주되며 이 경우에는 `ViewResolve`가 요청을 처리한다.
+>    - 반환된 문자열은 뷰 이름으로 간주되며 이 경우에는 `ViewResolver`가 요청을 처리한다.
