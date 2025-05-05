@@ -10,11 +10,12 @@
 - [MVC 프레임워크 만들기](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_1/make_mvc/mvc.md)
 - [스프링 MVC - 구조 이해](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_1/spring_mvc/spring_mvc.md)
 - [스프링 MVC - 기본 기능](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_1/springmvc_feature/feature.md)
-- [HandlerMapping 원리](https://github.com/geun-00/TIL/blob/main/Spring/springmvc_1/handlerMapping/HandlerMapping.md)
-- [HandlerAdapter 원리](https://github.com/geun-00/TIL/blob/main/Spring/springmvc_1/handlerAdapter/handlerAdapter.md)
-  - [@RequestParam 원리](https://github.com/geun-00/TIL/blob/main/Spring/springmvc_1/handlerAdapter/requestParam/RequestParam.md)
-  - [@PathVariable 원리](https://github.com/geun-00/TIL/blob/main/Spring/springmvc_1/handlerAdapter/pathVariable/PathVariable.md)
-  - [@ModelAttribute 원리](https://github.com/geun-00/TIL/blob/main/Spring/springmvc_1/handlerAdapter/modelAttribute/ModelAttribute.md)
+- [HandlerMapping 이해](https://github.com/geun-00/TIL/blob/main/Spring/springmvc_1/handlerMapping/HandlerMapping.md)
+- [HandlerAdapter 이해](https://github.com/geun-00/TIL/blob/main/Spring/springmvc_1/handlerAdapter/handlerAdapter.md)
+  - [@RequestParam 이해](https://github.com/geun-00/TIL/blob/main/Spring/springmvc_1/handlerAdapter/requestParam/RequestParam.md)
+  - [@PathVariable 이해](https://github.com/geun-00/TIL/blob/main/Spring/springmvc_1/handlerAdapter/pathVariable/PathVariable.md)
+  - [@ModelAttribute 이해](https://github.com/geun-00/TIL/blob/main/Spring/springmvc_1/handlerAdapter/modelAttribute/ModelAttribute.md)
+  - [Http 요청 본문 처리 이해]()
 
 > 전체 내용에 대한 출처 
 > - [인프런 - 김영한 님의 "스프링 MVC 1편 - 백엔드 웹 개발 핵심 기술"](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-mvc-1)
