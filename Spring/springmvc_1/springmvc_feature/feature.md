@@ -263,8 +263,15 @@ public class RequestHeaderController {
 - ``@CookieValue(value = "myCookie", required = false)`` : 특정 쿠키 조회
 - ``MultiValueMap`` : 하나의 키에 여러 값을 받을 수 있다.
 
-> - [``@Controller``의 사용 가능한 파라미터 목록](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/arguments.html)
-> - [``@Controller``의 사용 가능한 응답 값 목록](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-methods/return-types.html)
+> - `@RequestHeader` 
+>   - 클라이언트의 요청 헤더를 컨트롤러의 메서드 인자에 바인딩 하기 위해 사용
+>   - 내부적으로 `RequestHeaderMethodArgumentResolver`를 사용
+> - `@RequestAttribute`
+>   - HTTP 요청 속성(Request Attribute)을 메서드 파라미터에 바인딩할 때 사용하며 주로 필터나 인터셉터에서 설정한 값을 컨트롤러 메서드에서 사용할 때 유용하다.
+>   - 내부적으로 `RequestAttributeMethodArgumentResolver`를 사용
+> - `@CookieValue`
+>   - HTTP 요청의 쿠키 값을 메서드 파라미터에 바인딩할 때 사용
+>   - 내부적으로 `ServletCookieValueMethodArgumentResolver`를 사용
 
 ## HTTP 요청 - 쿼리 파라미터, HTML Form
 > ``GET`` 쿼리 파라미터와 ``POST`` HTML Form은 둘 다 쿼리 파라미터로 보내기 때문에 같은 방식으로 조회할 수 있다.
