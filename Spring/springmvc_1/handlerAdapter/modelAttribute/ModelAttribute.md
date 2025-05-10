@@ -73,4 +73,4 @@
 ---
 
 > 위 과정은 `@ModelAttribute`가 메서드에 선언되어 초기화 되는 과정이고, 파라미터에 선언되어 객체에 바인딩 되는 과정은
-> [바인딩 - DataBinder]()에서 알아보자.
+> [바인딩 - DataBinder](https://github.com/geun-00/TIL/blob/main/Spring/springmvc_1/handlerAdapter/dataBinder/DataBinder.md)에서 알아보자.
