@@ -1,48 +1,52 @@
 # 검증 V1
 
-- 컨트롤러
+- 전통적인 자바 검증 방식으로, 데이터를 검증하기 위해 조건문과 예외를 직접 사용하여 각 필드에 대해 수동으로 검증 로직을 작성한다.
+- 복잡한 객체나 컬렉션 검증을 위해서는 로직이 반복적으로 중복되거나 별도의 검증 메서드를 생성해야 한다.
+- 이 방식은 검증 로직의 일관성이 부족하고 코드의 양이 많아져 유지보수성이 떨어진다.
+
+컨트롤러
 ```java
 @PostMapping("/add")
-    public String addItem(@ModelAttribute Item item, RedirectAttributes redirectAttributes, Model model) {
+public String addItem(@ModelAttribute Item item, RedirectAttributes redirectAttributes, Model model) {
 
-        //검증 오류 결과를 보관
-        Map<String, String> errors = new HashMap<>();
+    //검증 오류 결과를 보관
+    Map<String, String> errors = new HashMap<>();
 
-        //검증 로직
-        if (!StringUtils.hasText(item.getItemName())) {
-            errors.put("itemName", "상품 이름은 필수입니다.");
-        }
-        if (item.getPrice() == null || item.getPrice() < 1000 || item.getPrice() > 1_000_000) {
-            errors.put("price", "가격은 1,000 ~ 1,000,000 까지 허용합니다.");
-        }
-        if (item.getQuantity() == null || item.getQuantity() >= 9999) {
-            errors.put("quantity", "수량은 최대 9,999 까지 허용합니다.");
-        }
-
-        //특정 필드가 아닌 복합 룰 검증
-        if (item.getPrice() != null && item.getQuantity() != null) {
-            int resultPrice = item.getPrice() * item.getQuantity();
-            if (resultPrice < 10000) {
-                errors.put("globalError", "가격 * 수량의 합은 10,000원 이상이어야 합니다. 현재 값 = " + resultPrice);
-            }
-        }
-
-        //검증에 실패하면 다시 입력 폼으로
-        if (!errors.isEmpty()) {
-            log.info("errors = {} ", errors);
-            model.addAttribute("errors", errors);
-            return "validation/v1/addForm";
-        }
-
-        //성공 로직
-        Item savedItem = itemRepository.save(item);
-        redirectAttributes.addAttribute("itemId", savedItem.getId());
-        redirectAttributes.addAttribute("status", true);
-        return "redirect:/validation/v1/items/{itemId}";
+    //검증 로직
+    if (!StringUtils.hasText(item.getItemName())) {
+        errors.put("itemName", "상품 이름은 필수입니다.");
     }
+    if (item.getPrice() == null || item.getPrice() < 1000 || item.getPrice() > 1_000_000) {
+        errors.put("price", "가격은 1,000 ~ 1,000,000 까지 허용합니다.");
+    }
+    if (item.getQuantity() == null || item.getQuantity() >= 9999) {
+        errors.put("quantity", "수량은 최대 9,999 까지 허용합니다.");
+    }
+
+    //특정 필드가 아닌 복합 룰 검증
+    if (item.getPrice() != null && item.getQuantity() != null) {
+        int resultPrice = item.getPrice() * item.getQuantity();
+        if (resultPrice < 10000) {
+            errors.put("globalError", "가격 * 수량의 합은 10,000원 이상이어야 합니다. 현재 값 = " + resultPrice);
+        }
+    }
+
+    //검증에 실패하면 다시 입력 폼으로
+    if (!errors.isEmpty()) {
+        log.info("errors = {} ", errors);
+        model.addAttribute("errors", errors);
+        return "validation/v1/addForm";
+    }
+
+    //성공 로직
+    Item savedItem = itemRepository.save(item);
+    redirectAttributes.addAttribute("itemId", savedItem.getId());
+    redirectAttributes.addAttribute("status", true);
+    return "redirect:/validation/v1/items/{itemId}";
+}
 ```
 
-- HTML
+HTML
 ```html
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
