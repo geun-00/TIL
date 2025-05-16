@@ -1,6 +1,8 @@
-# API 예외 처리 - @ExceptionHandler
+# API 예외 처리 
 
-- ErrorResult
+## @ExceptionHandler
+
+ErrorResult
 ```java
 @Data
 @AllArgsConstructor
@@ -10,7 +12,7 @@ public class ErrorResult {
 }
 ```
 
-- 컨트롤러
+컨트롤러
 ```java
 @RestController
 @Slf4j
@@ -86,9 +88,12 @@ public String ex(Exception e) {
 
 `RuntimeException`은 `Exception`의 자식 클래스 이기 때문에 `exHandler` 메서드가 호출된다.
 
+---
+
 ## @ControllerAdvice
 > `@ExceptionHandler`로 예외를 깔끔하게 처리할 수 있지만 정상 코드와 예외 처리 코드가 하나의 컨트롤러에 섞여 있다. `@ControllerAdvice`로 분리할 수 있다.
-- ControllerAdvice
+
+ControllerAdvice
 ```java
 @Slf4j
 @RestControllerAdvice
@@ -116,7 +121,14 @@ public class ExControllerAdvice {
     }
 }
 ```
-- 컨트롤러
+
+> - `@ControllerAdvice`는 예외 처리 외에도 `@ModelAttribute`나 `@InitBinder`와 함께 사용할 수 있다.
+> - 이 어노테이션을 `@ControllerAdvice`와 함께 사용하면 항상 메서드 실행 전에 컨트롤러의 모든 요청에 공통적으로 피룡한 데이터를 추가하거나,
+> 요청 파라미터를 특정 형식으로 변환하거나 검증 로직을 적용할 수 있다.
+> - 그리고 여러 개의 `@ControllerAdvice`가 선언된 클래스에서 동일한 예외 타입이 선언되어 있을 경우 어떤 클래스가 더 우선 순위가 높은지
+>   명시하기 위해 `@Order` 어노테이션을 사용할 수 있다. (숫자가 낮을수록 높은 우선 순위)
+
+컨트롤러
 ```java
 @RestController
 @Slf4j
@@ -125,16 +137,10 @@ public class ApiExceptionV2Controller {
     @GetMapping("/api2/members/{id}")
     public MemberDto getMember(@PathVariable("id") String id) {
 
-        if (id.equals("ex")) {
-            throw new RuntimeException("잘못된 사용자");
-        }
-
-        if (id.equals("bad")) {
-            throw new IllegalArgumentException("잘못된 입력 값");
-        }
-
-        if (id.equals("user-ex")) {
-            throw new UserException("사용자 오류");
+        switch (id) {
+            case "ex" -> throw new RuntimeException("잘못된 사용자");
+            case "bad" -> throw new IllegalArgumentException("잘못된 입력 값");
+            case "user-ex" -> throw new UserException("사용자 오류");
         }
 
         return new MemberDto(id, "hello " + id);
@@ -142,14 +148,17 @@ public class ApiExceptionV2Controller {
 
     @Data
     @AllArgsConstructor
-    static class MemberDto {
+    public static class MemberDto {
         private String memberId;
         private String name;
     }
 }
 ```
-- `@ControllerAdivce`는 대상으로 지정한 여러 컨트롤러에 `@ExceptionHandler`, `@InitBinder` 기능을 부여해주는 역할을 한다.
-- 대상 컨트롤러 지정 방법
+
+`@ControllerAdvice`의 속성을 사용해 대상 컨트롤러를 적절하게 선택할 수 있다.
+
+![img.png](image/img.png)
+
 ```java
 // Target all Controllers annotated with @RestController
 @ControllerAdvice(annotations = RestController.class)
@@ -164,4 +173,16 @@ public class ExampleAdvice2 {}
 public class ExampleAdvice3 {}
 ```
 - 특정 어노테이션이 있는 컨트롤러 지정, 특정 패키지를 직접 지정(해당 패키지와 그 하위에 있는 컨트롤러가 대상이 된다.), 특정 클래스를 지정할 수도 있다.
-  - 대상 컨트롤러 지정을 생략하면 모든 컨트롤러에 글로벌 하게 적용된다.
+- 대상 컨트롤러 지정을 생략하면 모든 컨트롤러에 글로벌 하게 적용된다.
+
+### @ControllerAdvice 초기화 및 처리 과정
+
+#### @ModelAttribute , @InitBinder 초기화
+
+![img_1.png](image/img_1.png)
+
+![img_2.png](image/img_2.png)
+
+#### @ModelAttribute , @InitBinder 처리
+
+![img.png](image/img_3.png)
