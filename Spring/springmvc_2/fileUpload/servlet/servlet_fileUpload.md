@@ -1,10 +1,10 @@
 # 서블릿 파일 업로드
 
 ## V1
-- 컨트롤러
+**컨트롤러**
 ```java
-@Controller
 @Slf4j
+@Controller
 @RequestMapping("/servlet/v1")
 public class ServletUploadControllerV1 {
 
@@ -25,7 +25,8 @@ public class ServletUploadControllerV1 {
     }
 }
 ```
-- upload-form.html
+
+**upload-form.html**
 ```html
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
@@ -49,40 +50,41 @@ public class ServletUploadControllerV1 {
 </body>
 </html>
 ```
-- application.properties
+
+**application.properties**
 ```properties
 logging.level.org.apache.coyote.http11=debug
+# HTTP 요청 메시지를 확인할 수 있는 옵션
 ```
-이 옵션은 HTTP 요청 메시지를 확인할 수 있다.
 
 실행해보면 로그에 `multipart/form-data`방식으로 전송이 됐다.
 
-- 멀티파트 사용 옵션
-```properties
-spring.servlet.multipart.max-file-size=1MB 
-spring.servlet.multipart.max-request-size=10MB
-```
-용량이 큰 파일이 무제한 업로드 되는 것을 제한할 수 있다. 사이즈를 넘으면 예외(`SizeLimitExceedException`)가 발생한다.
-- `max-file-size` : 파일 하나의 최대 사이즈, 기본 1MB
-- `max-request-size` : 요청 하나에 여러 파일들의 전체 합, 기본 10MB
-
-또 `spring.servlet.multipart.enabled=false` 가 있다.<br>
-멀티파트는 일반적인 폼 요청(`application/x-www-form-urlencoded`)보다 훨씬 복잡하다. 이 옵션을 끄면 서블릿 컨테이너는 멀티파트와 관련된 처리를 하지 않는다.
-(default: `true`)
-
-<br>
+> **멀티파트 사용 옵션**
+> ```properties
+> spring.servlet.multipart.max-file-size=1MB 
+> spring.servlet.multipart.max-request-size=10MB
+> ```
+> 용량이 큰 파일이 무제한 업로드 되는 것을 제한할 수 있다. 사이즈를 넘으면 예외(`SizeLimitExceedException`)가 발생한다.
+> - `max-file-size` : 파일 하나의 최대 사이즈, 기본 1MB
+> - `max-request-size` : 요청 하나에 여러 파일들의 전체 합, 기본 10MB
+> 
+> 또 `spring.servlet.multipart.enabled=false`가 있다.
+> 멀티파트는 일반적인 폼 요청(`application/x-www-form-urlencoded`)보다 훨씬 복잡하다. 이 옵션을 끄면 서블릿 컨테이너는 멀티파트와 관련된 처리를 하지 않는다.
+> (default: `true`)
 
 ## V2
 
 이제 파일을 받아야 하는데 파일이 저장되는 경로가 필요하다.
-- application.properties
+
+**application.properties**
 ```properties
 file.dir=C:/Users/User/file/
 ```
-- 컨트롤러
+
+**컨트롤러**
 ```java
-@Controller
 @Slf4j
+@Controller
 @RequestMapping("/servlet/v2")
 public class ServletUploadControllerV2 {
 
@@ -131,6 +133,7 @@ public class ServletUploadControllerV2 {
     }
 }
 ```
+
 멀티파트 형식은 전송 데이터를 하나하나 각각 부분(`Part`)으로 나누어 전송하는데 `parts`에는 이렇게 나누어진 데이터가 각각 담긴다. 서블릿이 제공하는 `Part`는
 멀티파트 형식을 편리하게 읽을 수 있는 다양한 메서드를 제공한다.
 - `part.getSubmittedFileName()` : 클라이언트가 전달한 파일명
