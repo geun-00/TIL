@@ -24,7 +24,7 @@ public class MemberServiceV1 {
 }
 ```
 
-- 테스트 코드
+**테스트 코드**
 ```java
 /**
  * 기본 동작, 트랜잭션이 없어서 문제 발생
@@ -50,7 +50,6 @@ class MemberServiceV1Test {
         memberRepository.delete(MEMBER_A);
         memberRepository.delete(MEMBER_B);
         memberRepository.delete(MEMBER_EX);
-
     }
 
     @Test
@@ -96,16 +95,19 @@ class MemberServiceV1Test {
 }
 ```
 
+---
+
 ## 트랜잭션 활용
-- 트랜잭션은 비즈니스 로직이 있는 서비스 계층에서 시작해야 한다. 비즈니스 로직이 잘못 되면 해당 비즈니스 로직으로 인해 문제가 되는 부분을 함께 `롤백`해야 하기 때문이다.
+
+- 트랜잭션은 비즈니스 로직이 있는 서비스 계층에서 시작해야 한다. 비즈니스 로직이 잘못 되면 해당 비즈니스 로직으로 인해 문제가 되는 부분을 함께 **롤백**해야 하기 때문이다.
 - 그런데 트랜잭션을 시작하려면 커넥션이 필요하다. 서비스 계층에서 커넥션을 만들고 트랜잭션 커밋 이후에 커넥션을 종료해야 한다.
 - 애플리케이션에서 DB 트랜잭션을 사용하려면 **트랜잭션을 사용하는 동안 같은 커넥션을 유지해야 한다.** 그래야 같은 세션을 사용할 수 있다.
 
 ![img.png](img.png)
 
-같은 커넥션을 유지하는 가장 단순한 방법은 커넥션을 파라미터로 전달해서 같은 커넥션이 사용되도록 유지하는 것이다.
+- 같은 커넥션을 유지하는 가장 단순한 방법은 커넥션을 파라미터로 전달해서 같은 커넥션이 사용되도록 유지하는 것이다.
 
-- 레포지토리
+**레포지토리**
 ```java
 /**
  * JDBC - ConnectionParam
@@ -147,7 +149,7 @@ public class MemberRepositoryV2 {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
-        try{
+        try {
             con = getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, memberId);
@@ -165,7 +167,7 @@ public class MemberRepositoryV2 {
         } catch (SQLException e) {
             log.error("db error", e);
             throw e;
-        }finally {
+        } finally {
             close(con, pstmt, rs);
         }
     }
@@ -176,7 +178,7 @@ public class MemberRepositoryV2 {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
-        try{
+        try {
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, memberId);
 
@@ -193,7 +195,7 @@ public class MemberRepositoryV2 {
         } catch (SQLException e) {
             log.error("db error", e);
             throw e;
-        }finally {
+        } finally {
             //connection은 여기서 닫지 않는다.
             JdbcUtils.closeResultSet(rs);
             JdbcUtils.closeStatement(pstmt);
@@ -207,7 +209,7 @@ public class MemberRepositoryV2 {
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
-        try{
+        try {
             con = getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,money);
@@ -219,7 +221,7 @@ public class MemberRepositoryV2 {
         } catch (SQLException e) {
             log.error("db error", e);
             throw e;
-        }finally {
+        } finally {
             close(con, pstmt, rs);
         }
     }
@@ -229,7 +231,7 @@ public class MemberRepositoryV2 {
 
         PreparedStatement pstmt = null;
 
-        try{
+        try {
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,money);
             pstmt.setString(2, memberId);
@@ -240,7 +242,7 @@ public class MemberRepositoryV2 {
         } catch (SQLException e) {
             log.error("db error", e);
             throw e;
-        }finally {
+        } finally {
             JdbcUtils.closeStatement(pstmt);
         }
     }
@@ -251,7 +253,7 @@ public class MemberRepositoryV2 {
         Connection con = null;
         PreparedStatement pstmt = null;
 
-        try{
+        try {
             con = getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, memberId);
@@ -260,17 +262,15 @@ public class MemberRepositoryV2 {
         } catch (SQLException e) {
             log.error("db error", e);
             throw e;
-        }finally {
+        } finally {
             close(con, pstmt, null);
         }
     }
 
     private void close(Connection con, Statement stmt, ResultSet rs) {
-
         JdbcUtils.closeResultSet(rs);
         JdbcUtils.closeStatement(stmt);
         JdbcUtils.closeConnection(con);
-
     }
 
     private Connection getConnection() throws SQLException {
@@ -280,39 +280,41 @@ public class MemberRepositoryV2 {
     }
 }
 ```
-커넥션 유지가 필요한 두 메서드가 추가되었다. 계좌이체 서비스 로직에서 호출하는 메서드이다.
-- `findById(Connection con, String memberId)`
-- `update(Connection con, String memberId, int money)`
+- 커넥션 유지가 필요한 두 메서드가 추가되었다. 계좌이체 서비스 로직에서 호출하는 메서드이다.
+  - `findById(Connection con, String memberId)`
+  - `update(Connection con, String memberId, int money)`
 - 커넥션 유지가 필요한 두 메서드는 파라미터로 넘어온 커넥션을 사용해야 하기에 `getConnection()`코드가 있으면 안 된다.
 - 그리고 레포지토리에서 커넥션을 닫으면 안 된다. 커넥션을 전달 받은 레포지토리 뿐만 아니라 이후에도 커넥션을 계속 이어서 사용하기 때문에 이후 서비스 로직이 
 끝날 때 트랜잭션을 종료하고 닫아야 한다.
 
-- 서비스 로직
+**서비스 로직**
 ```java
 /**
  * 트랜잭션 - 파라미터를 연동, 풀을 고려한 종료
  */
-@RequiredArgsConstructor
 @Slf4j
+@RequiredArgsConstructor
 public class MemberServiceV2 {
 
     private final DataSource dataSource;
     private final MemberRepositoryV2 memberRepository;
 
     public void accountTransfer(String fromId, String toId, int money) throws SQLException {
-
+        //서비스 계층에서 커넥션 획득
         Connection con = dataSource.getConnection();
+        
         try {
-            // 트랜잭션 시작
+            // 수동 커밋 모드 변경 = 트랜잭션 시작
             con.setAutoCommit(false);
-            // 비즈니스 로직 시작
-            bisLogic(con, fromId, toId, money);
-
-            con.commit(); // 성공 시 커밋
-        } catch (Exception e) {
+            // 비즈니스 로직 시작 (커넥션 전달)
+            bisLogic(con, fromId, toId, money); 
+            // 성공 시 커밋
+            con.commit();
+        } 
+        catch (Exception e) {
             con.rollback(); // 실패 시 롤백
             throw new IllegalStateException(e);
-        }finally {
+        } finally {
             release(con);
         }
     }
@@ -344,7 +346,8 @@ public class MemberServiceV2 {
     }
 }
 ```
-- 테스트 코드
+
+**테스트 코드**
 ```java
 /**
  * 트랜잭션 - 커넥션 파라미터 전달 방식 동기화
