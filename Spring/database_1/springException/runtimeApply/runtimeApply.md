@@ -1,6 +1,6 @@
 # 런타임 예외 적용
 
-## 인터페이스 도입
+**인터페이스 도입**
 ```java
 public interface MemberRepository {
     Member save(Member member);
@@ -11,25 +11,28 @@ public interface MemberRepository {
 ```
 ![img.png](img.png)
 
-인터페이스의 도입으로 `MemberService`는 `MemberRepository`인터페이스만 의존하면 된다. 구현 기술이 변경되더라도 DI를 사용해서 `MemberService`의 코드 변경 없이 가능해진다.
+> 인터페이스의 도입으로 `MemberService`는 `MemberRepository`인터페이스만 의존하면 된다. 구현 기술이 변경되더라도 DI를 사용해서 `MemberService`의 코드 변경 없이 가능해진다.
 
-- MyDbException (런타임 예외)
+**MyDbException (런타임 예외)**
 ```java
 public class MyDbException extends RuntimeException {
-    public MyDbException() {
-    }
+    public MyDbException() { }
+    
     public MyDbException(String message) {
         super(message);
     }
+    
     public MyDbException(String message, Throwable cause) {
         super(message, cause);
     }
+    
     public MyDbException(Throwable cause) {
         super(cause);
     }
 }
 ```
-- 레포지토리
+
+**레포지토리**
 ```java
 /**
  * 예외 누수 문제 해결
@@ -38,7 +41,7 @@ public class MyDbException extends RuntimeException {
  * throws SQLException 제거
  */
 @Slf4j
-public class MemberRepositoryV4_1 implements MemberRepository{
+public class MemberRepositoryV4_1 implements MemberRepository {
 
     private final DataSource dataSource;
 
@@ -75,7 +78,7 @@ public class MemberRepositoryV4_1 implements MemberRepository{
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
-        try{
+        try {
             con = getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, memberId);
@@ -105,7 +108,7 @@ public class MemberRepositoryV4_1 implements MemberRepository{
         PreparedStatement pstmt = null;
         ResultSet rs = null;
 
-        try{
+        try {
             con = getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setInt(1,money);
@@ -116,7 +119,7 @@ public class MemberRepositoryV4_1 implements MemberRepository{
 
         } catch (SQLException e) {
             throw new MyDbException(e);
-        }finally {
+        } finally {
             close(con, pstmt, rs);
         }
     }
@@ -128,7 +131,7 @@ public class MemberRepositoryV4_1 implements MemberRepository{
         Connection con = null;
         PreparedStatement pstmt = null;
 
-        try{
+        try {
             con = getConnection();
             pstmt = con.prepareStatement(sql);
             pstmt.setString(1, memberId);
@@ -136,7 +139,7 @@ public class MemberRepositoryV4_1 implements MemberRepository{
             pstmt.executeUpdate();
         } catch (SQLException e) {
             throw new MyDbException(e);
-        }finally {
+        } finally {
             close(con, pstmt, null);
         }
     }
@@ -156,9 +159,9 @@ public class MemberRepositoryV4_1 implements MemberRepository{
     }
 }
 ```
-**중요한 부분은 `SQLException` 체크 예외를 `MyDbException` 런타임 예외로 변환해서 던진다. 그리고 기존 예외를 생성자를 통해서 포함한다.**
+> **중요한 부분은 `SQLException` 체크 예외를 `MyDbException` 런타임 예외로 변환해서 던진다. 그리고 기존 예외를 생성자를 통해서 포함한다.**
 
-- 서비스
+**서비스**
 ```java
 /**
  * 예외 누수 문제 해결
@@ -196,9 +199,9 @@ public class MemberServiceV4 {
     }
 }
 ```
-`MemberRepository` 인터페이스에 의존한다. `throws SQLException`도 제거가 됐다. 순수한 서비스 코드가 됐다.
+> `MemberRepository` 인터페이스에 의존한다. `throws SQLException`도 제거가 됐다. 순수한 서비스 코드가 됐다.
 
-- 테스트 코드
+**테스트 코드**
 ```java
 /**
  * 예외 누수 문제 해결
@@ -219,7 +222,7 @@ class MemberServiceV4Test {
 
     @TestConfiguration
     @RequiredArgsConstructor
-    static class TestConfig{
+    static class TestConfig {
         @Autowired private final DataSource dataSource;
 
         @Bean
@@ -236,7 +239,7 @@ class MemberServiceV4Test {
     }
 
     @AfterEach
-    void afterEach(){
+    void afterEach() {
         memberRepository.delete(MEMBER_A);
         memberRepository.delete(MEMBER_B);
         memberRepository.delete(MEMBER_EX);
@@ -253,7 +256,7 @@ class MemberServiceV4Test {
 
     @Test
     @DisplayName("정상 이체")
-    void accountTransfer(){
+    void accountTransfer() {
         //given
         Member memberA = new Member(MEMBER_A, 10000);
         Member memberB = new Member(MEMBER_B, 10000);
@@ -294,16 +297,19 @@ class MemberServiceV4Test {
 }
 ```
 
-체크 예외를 런타임 예외로 변환하면서 인터페이스와 서비스 계층을 순수하게 유지할 수 있게 되었다. 향후 JDBC에서 다른 구현 기술로 변경하더라도 서비스 로직은 변경 없이 유지할 수 있다.
+체크 예외를 런타임 예외로 변환하면서 인터페이스와 서비스 계층을 순수하게 유지할 수 있게 되었다. 
+향후 JDBC에서 다른 구현 기술로 변경하더라도 서비스 로직은 변경 없이 유지할 수 있다.
+
+---
 
 ## 데이터 접근 예외 직접 만들기
-> DB 오류에 따라서 특정 예외는 복구를 할 수 있다.
 
-- MyDuplicateKeyException
+데이터베이스 오류에 따라서 특정 예외는 복구를 할 수 있도록 해보자.
+
+**MyDuplicateKeyException**
 ```java
 public class MyDuplicateKeyException extends MyDbException{
-    public MyDuplicateKeyException() {
-    }
+    public MyDuplicateKeyException() { }
 
     public MyDuplicateKeyException(String message) {
         super(message);
@@ -318,9 +324,10 @@ public class MyDuplicateKeyException extends MyDbException{
     }
 }
 ```
-기존 `MyDbException`을 상속받아서 의미있는 계층을 형성했다. 이 예외는 직접 만든 것이기 때문에 JDBC나 JPA 같은 특정 기술에 종속적이지 않다.
 
-- 테스트 코드
+> 기존 `MyDbException`을 상속받아서 의미있는 계층을 형성했다. 이 예외는 직접 만든 것이기 때문에 JDBC나 JPA 같은 특정 기술에 종속적이지 않다.
+
+**테스트 코드**
 ```java
 @Slf4j
 public class ExTranslatorV1Test {
@@ -340,11 +347,10 @@ public class ExTranslatorV1Test {
         service.create("myId");
         service.create("myId");
     }
-
-
+    
     @Slf4j
     @RequiredArgsConstructor
-    static class Service{
+    static class Service {
         private final Repository repository;
 
         public void create(String memberId) {
@@ -365,11 +371,10 @@ public class ExTranslatorV1Test {
         private String generateNewId(String memberId) {
             return memberId + new Random().nextInt();
         }
-
     }
 
     @RequiredArgsConstructor
-    static class Repository{
+    static class Repository {
         private final DataSource dataSource;
 
         public Member save(Member member) {
@@ -391,7 +396,7 @@ public class ExTranslatorV1Test {
                     throw new MyDuplicateKeyException(e);
                 }
                 throw new MyDbException(e);
-            }finally {
+            } finally {
                 JdbcUtils.closeStatement(pstmt);
                 JdbcUtils.closeConnection(con);
             }
@@ -399,5 +404,5 @@ public class ExTranslatorV1Test {
     }
 }
 ```
-같은 ID로 저장을 시도하면 H2는 키 중복 오류 `23505` 에러코드를 반환하는데 예외를 잡아서 새로운 ID 생성 시도 후 저장해 예외를 복구했다.
-만약 복구할 수 없는 예외(`MyDbException`)면 로그만 남기고 다시 예외를 던진다.
+> 같은 ID로 저장을 시도하면 H2는 키 중복 오류 `23505` 에러코드를 반환하는데 예외를 잡아서 새로운 ID 생성 시도 후 저장해 예외를 복구했다.
+> 만약 복구할 수 없는 예외(`MyDbException`)면 로그만 남기고 다시 예외를 던진다.
