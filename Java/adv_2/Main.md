@@ -2,12 +2,12 @@
 
 ### 람다
 
-- [람다가 필요한 이유]()
-- [람다란?]()
-- [함수형 인터페이스]()
-- [람다 활용 예제]()
-- [람다 vs 익명 클래스]()
-- [메서드 참조]()
+- [람다가 필요한 이유](https://github.com/geun-00/TIL/blob/main/Java/adv_2/lambda/%ED%95%84%EC%9A%94%ED%95%9C%EC%9D%B4%EC%9C%A0.md)
+- [람다란?](https://github.com/geun-00/TIL/blob/main/Java/adv_2/lambda/%EB%9E%8C%EB%8B%A4.md)
+- [함수형 인터페이스](https://github.com/geun-00/TIL/blob/main/Java/adv_2/lambda/%ED%95%A8%EC%88%98%ED%98%95%20%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4.md)
+- [람다 활용 예제](https://github.com/geun-00/TIL/blob/main/Java/adv_2/lambda/%EB%9E%8C%EB%8B%A4%ED%99%9C%EC%9A%A9.md)
+- [람다 vs 익명 클래스](https://github.com/geun-00/TIL/blob/main/Java/adv_2/lambda/%EB%9E%8C%EB%8B%A4vs%EC%9D%B5%EB%AA%85%ED%81%B4%EB%9E%98%EC%8A%A4.md)
+- [메서드 참조](https://github.com/geun-00/TIL/blob/main/Java/adv_2/lambda/%EB%A9%94%EC%84%9C%EB%93%9C%EC%B0%B8%EC%A1%B0.md)
 
 ---
 

@@ -25,6 +25,7 @@
 - [중급 - 1](https://github.com/genesis12345678/TIL/blob/main/Java/mid_1/Main.md)
 - [중급 - 2](https://github.com/genesis12345678/TIL/blob/main/Java/mid_2/Main.md)
 - [고급 - 1](https://github.com/genesis12345678/TIL/blob/main/Java/adv_1/Main.md)
+- [고급 - 2](https://github.com/geun-00/TIL/blob/main/Java/adv_2/Main.md)
 
 </details>
 
