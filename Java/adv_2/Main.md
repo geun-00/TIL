@@ -10,9 +10,9 @@
 - [메서드 참조](https://github.com/geun-00/TIL/blob/main/Java/adv_2/lambda/%EB%A9%94%EC%84%9C%EB%93%9C%EC%B0%B8%EC%A1%B0.md)
 
 ### 스트림 API
-- [스트림 API 기본 개념]()
-- [스트림 API 기능]()
-- [스트림 API 컬렉터]()
+- [스트림 API 기본 개념](https://github.com/geun-00/TIL/blob/main/Java/adv_2/stream/%EA%B8%B0%EB%B3%B8.md)
+- [스트림 API 기능](https://github.com/geun-00/TIL/blob/main/Java/adv_2/stream/%EA%B8%B0%EB%8A%A5.md)
+- [스트림 API 컬렉터](https://github.com/geun-00/TIL/blob/main/Java/adv_2/stream/Collector.md)
 
 ---
 
