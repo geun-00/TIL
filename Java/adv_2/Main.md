@@ -18,6 +18,8 @@
 - [Optional 사용법](https://github.com/geun-00/TIL/blob/main/Java/adv_2/optional/Optional.md)
 - [Optional 베스트 프랙티스](https://github.com/geun-00/TIL/blob/main/Java/adv_2/optional/BestPractice.md)
 
+### [디폴트 메서드](https://github.com/geun-00/TIL/blob/main/Java/adv_2/defaultMethod/DefaultMethod.md)
+
 ---
 
 > 내용 참고 : [인프런 - 김영한의 실전 자바 - 고급 3편](https://www.inflearn.com/course/%EA%B9%80%EC%98%81%ED%95%9C%EC%9D%98-%EC%8B%A4%EC%A0%84-%EC%9E%90%EB%B0%94-%EA%B3%A0%EA%B8%89-3/dashboard)
