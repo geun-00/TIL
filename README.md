@@ -14,7 +14,13 @@
 
 ---
 
-### Java <img width="30" height="50" alt="image" src="https://github.com/user-attachments/assets/7ea087b7-135f-4687-a66b-0f7e2962c56d" />
+<h3 style="font-size: 24px; font-weight: 600;">
+  Java
+  <img 
+    src="https://github.com/user-attachments/assets/7ea087b7-135f-4687-a66b-0f7e2962c56d"
+    style="height: 21px; max-height: 21px; vertical-align: middle; position: relative; top: -2px; margin-left: 6px;"
+  />
+</h3>
 
 <details>
   <summary>기본 및 기타</summary>
@@ -327,15 +333,15 @@
 
 ---
 
-<h3>
+<h3 style="font-size: 24px; font-weight: 600;">
   Spring
-  <img
+  <img 
     src="https://github.com/user-attachments/assets/b0849476-774c-42cd-bbfc-acb113e7410d"
-    width="25"
-    height="25"
-    style="vertical-align: middle; position: relative; top: 10px; margin-left: 6px;"
+    alt="Spring Icon"
+    style="height: 21px; max-height: 21px; vertical-align: middle; position: relative; top: -2px; margin-left: 6px;"
   />
 </h3>
+
 
 <details>
     <summary>스프링 핵심 원리</summary>
@@ -515,13 +521,11 @@
 
 ---
 
-<h3>
+<h3 style="font-size: 24px; font-weight: 600;">
   JPA
-  <img
+  <img 
     src="https://github.com/user-attachments/assets/332c47d0-b9fe-46bf-9a28-4d11e6677649"
-    width="25"
-    height="25"
-    style="vertical-align: middle; position: relative; top: 10px; margin-left: 6px;"
+    style="height: 21px; max-height: 21px; vertical-align: middle; position: relative; top: -2px; margin-left: 6px;"
   />
 </h3>
 
@@ -685,17 +689,16 @@
 
 ---
 
-<h3>
+<h3 style="font-size: 24px; font-weight: 600;">
   GIT
-  <img
+  <img 
     src="https://github.com/user-attachments/assets/5e365b99-3577-4276-8f70-c23b6ef9368a"
-    width="25"
-    height="25"
-    style="vertical-align: middle; position: relative; top: 10px; margin-left: 6px;"
+    style="height: 21px; max-height: 21px; vertical-align: middle; position: relative; top: -2px; margin-left: 6px;"
   />
 </h3>
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/git/Main.md#git)
+
 <details>
   <summary>기본</summary>
 
