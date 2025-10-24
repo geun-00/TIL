@@ -76,9 +76,6 @@
 <details>
   <summary>자료구조</summary>
 
-<details style="margin-left: 20px">
-    <summary>1 ~ 10</summary>
-
 - [자료구조와 알고리즘의 개념](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98.md#%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%99%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%97%90-%EA%B0%9C%EB%85%90%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
 - [그래프와 트리의 차이점](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/Graph_Tree.md#%EA%B7%B8%EB%9E%98%ED%94%84%EC%99%80-%ED%8A%B8%EB%A6%AC%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
 - [이진 탐색 트리](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/BST.md#%EC%9D%B4%EC%A7%84-%ED%83%90%EC%83%89-%ED%8A%B8%EB%A6%AC%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
@@ -89,12 +86,6 @@
 - [배열과 연결 리스트의 장단점](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/LinkedList.md)
 - [해시 테이블](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/HashTable.md#%ED%95%B4%EC%8B%9C%ED%85%8C%EC%9D%B4%EB%B8%94hast-table%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
 - [List, Set, Map의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/1_10/List_Set_Map.md#list-set-map-%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%97%90-%EB%8C%80%ED%95%B4-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
-
-</details>
-
-<details style="margin-left: 20px">
-    <summary>11 ~ 22</summary>
-
 - [B+ Tree](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/B%2BTree.md#b-tree%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EC%84%A4%EB%AA%85%ED%95%B4-%EC%A3%BC%EC%84%B8%EC%9A%94)
 - [HashMap 동작 방식](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/HashMap.md#hashmap%EC%9D%80-%EC%96%B4%EB%96%A4-%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EB%8F%99%EC%9E%91%ED%95%98%EB%82%98%EC%9A%94)
 - [Hash 충돌이 발생하는 경우](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/Hash_%EC%B6%A9%EB%8F%8C_1.md#hash-%EC%B6%A9%EB%8F%8C%EC%9D%B4-%EB%B0%9C%EC%83%9D%ED%95%98%EB%8A%94-%EA%B2%BD%EC%9A%B0%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%B8%EA%B0%80%EC%9A%94)
@@ -107,8 +98,7 @@
 - [배열 중복제거 방법](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/%EB%B0%B0%EC%97%B4%EC%A4%91%EB%B3%B5%EC%A0%9C%EA%B1%B0.md)
 - [Enum](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/Enum.md)
 - [Char 타입과 String 타입](https://github.com/genesis12345678/TIL/blob/main/interview/dataStructure/11_20/char_string.md)
-
-</details>
+  
 </details>
 
 <details>
@@ -130,9 +120,6 @@
 <details>
     <summary>네트워크</summary>
 
-<details style="margin-left: 20px">
-    <summary>1 ~ 10</summary>
-
 - [웹 동작 방식](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/Web.md)
 - [Http와 Https의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/Http_Https.md)
 - [OSI 7 계층](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/OSI7Layer.md)
@@ -143,12 +130,6 @@
 - [서버-클라이언트 메시지 확인](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/MessageACK.md)
 - [3-way handshake, 4-way handshake 흐름](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/Handshake.md)
 - [Http 프로토콜](https://github.com/genesis12345678/TIL/blob/main/interview/network/1_10/HTTP.md)
-
-</details>
-
-<details style="margin-left: 20px">
-    <summary>11 ~ 20</summary>
-
 - [HTTPS가 동작하는 방식](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/HTTPS.md)
 - [HTTP 헤더의 구조](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/HttpHeader.md)
 - [Keep-Alive 헤더](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/KeepAlive.md)
@@ -159,23 +140,13 @@
 - [웹 서버와 WAS의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/WebServer.md)
 - [Restful API에서 리소스](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/Resource.md)
 - [REST API란](https://github.com/genesis12345678/TIL/blob/main/interview/network/11_20/RestAPI.md)
-
-</details>
-
-<details style="margin-left: 20px">
-    <summary>21 ~ 22</summary>
-
 - [I/O와 N/I/O 차이](https://github.com/genesis12345678/TIL/blob/main/interview/network/21_22/IO.md)
 - [MQTT 프로토콜이란](https://github.com/genesis12345678/TIL/blob/main/interview/network/21_22/MQTT.md)
-</details>
 
 </details>
 
 <details>
     <summary>운영체제</summary>
-
-<details>
-    <summary>1 ~ 10</summary>
 
 - [운영 체제란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/OS.md)
   - 운영 체제의 주요 목적
@@ -193,11 +164,6 @@
 - [경쟁 상태란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/RaceCondition.md)
 - [Mutex와 SpinLock의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/Mutex_SpinLock.md)
 - [쓰레드 간 접근](https://github.com/genesis12345678/TIL/blob/main/interview/os/1_10/%EC%93%B0%EB%A0%88%EB%93%9C%EC%A0%91%EA%B7%BC.md)
-</details>
-
-<details>
-    <summary>11 ~ 20</summary>
-
 - [CPU 스케줄링이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/CPUScheduling.md)
   - CPU 스케줄링 방법들
 - [최초 적합, 최적 적합, 최악 적합](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/Fit.md)
@@ -214,12 +180,6 @@
 - [페이징이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/Paging.md)
 - [프로세스 & 쓰레드의 동기화란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/Sync.md)
 - [가상 메모리란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/11_20/VirtualMemory.md)
-
-</details>
-
-<details>
-    <summary>21 ~ 27</summary>
-
 - [에이징이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/21_27/Aging.md)
 - [기아 상태란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/21_27/Starvation.md)
 - [문맥 교환이란?](https://github.com/genesis12345678/TIL/blob/main/interview/os/21_27/ContextSwitching.md)
@@ -230,14 +190,8 @@
 
 </details>
 
-
-</details>
-
 <details>
 <summary>데이터베이스</summary>
-
-<details>
-    <summary>1 ~ 10</summary>
 
 - [인덱스(Index)에 대해서](https://github.com/genesis12345678/TIL/blob/main/interview/database/1_10/Index.md)
   - 인덱스를 효과적으로 사용하려면
@@ -257,28 +211,16 @@
 - [트랜잭션이란?](https://github.com/genesis12345678/TIL/blob/main/interview/database/1_10/Transaction.md)
   - 트랜잭션 4가지 원칙(ACID)
   - 트랜잭션 격리 수준
-
-</details>
-
-<details>
-    <summary>11 ~ 16</summary>
-
 - [클러스터링과 리플리케이션 차이](https://github.com/genesis12345678/TIL/blob/main/interview/database/11_16/Cluster.md)
 - [DB 이중화 방식](https://github.com/genesis12345678/TIL/blob/main/interview/database/11_16/Duplication.md)
 - [JPA를 사용하면 좋은 점](https://github.com/genesis12345678/TIL/blob/main/interview/database/11_16/JPA.md)
 - [락(Lock), 공유락과 베타락](https://github.com/genesis12345678/TIL/blob/main/interview/database/11_16/Lock.md)
 - [옵티마이저란?](https://github.com/genesis12345678/TIL/blob/main/interview/database/11_16/Optimizer.md)
 - [DB 종류별 장단점](https://github.com/genesis12345678/TIL/blob/main/interview/database/11_16/PronsAndCons.md)
-
-</details>
-
 </details>
 
 <details>
   <summary>자바</summary>
-
-<details>
-  <summary>1 ~ 10</summary>
 
 - [자바의 장단점](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/ProsAndCons.md)
 - [자바는 call by value? call by reference?](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/Call.md)
@@ -291,12 +233,6 @@
 - [불변 객체란?](https://github.com/genesis12345678/TIL/blob/main/interview/java/11_20/Immutable.md)
 - [`Exception`과 `RuntimeException` 차이](https://github.com/genesis12345678/TIL/blob/main/interview/java/11_20/Exception.md)
 - [래퍼 클래스에 대해](https://github.com/genesis12345678/TIL/blob/main/interview/java/21_25/Wrapper.md)
-
-</details>
-
-<details>
-  <summary>11 ~ 20</summary>
-
 - [`new String()`과 `""` 차이](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/newString.md)
 - [디자인 패턴](https://github.com/genesis12345678/TIL/blob/main/interview/java/11_20/DesignPattern.md)
 - [상속을 이용한 디자인 패턴](https://github.com/genesis12345678/TIL/blob/main/interview/java/1_10/TemplateMethod.md)
@@ -316,12 +252,6 @@
   - 변성 & 와일드카드
 - [`equals`와 `hashCode` 메서드](https://github.com/genesis12345678/TIL/blob/main/interview/java/21_25/EqualsHashcode.md)
 - [연결 리스트와 일반 리스트의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/java/11_20/List.md)
-
-</details>
-
-<details>
-  <summary>21 ~ 26</summary>
-
 - [람다식에 대해](https://github.com/genesis12345678/TIL/blob/main/interview/java/11_20/Lambda.md)
 - [직렬화란?](https://github.com/genesis12345678/TIL/blob/main/interview/java/11_20/Serializable.md)
 - [스트림에 대해](https://github.com/genesis12345678/TIL/blob/main/interview/java/11_20/Stream.md)
@@ -332,13 +262,8 @@
 
 </details>
 
-</details>
-
 <details>
   <summary>스프링</summary>
-
-<details>
-  <summary>1 ~ 10</summary>
 
 - [스프링이란?](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/Spring.md)
   - 스프링의 특징
@@ -351,12 +276,6 @@
 - [스프링 MVC 구조에 대해](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/SpringMVC.md)
 - [스프링 AOP에 대해](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/AOP.md)
 - [`@Controller`와 `@RestController`의 차이](https://github.com/genesis12345678/TIL/blob/main/interview/spring/1_10/Controller.md)
-
-</details>
-
-<details>
-  <summary>11 ~ 20</summary>
-
 - [`Annotation`이란?](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/Annotation.md)
   - 스프링이 `Annotation` 기반인 이유와 주요 `Annotation`
 - [커넥션 풀 & 데이터 소스란?](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/ConnectionPool.md)
@@ -369,19 +288,11 @@
 - [ORM이란?](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/ORM.md)
   - `MyBatis` vs `JPA`
 - [Spring Security에 대해서](https://github.com/genesis12345678/TIL/blob/main/interview/spring/11_20/Security.md)
-
-</details>
-
-<details>
-  <summary>21 ~ 25</summary>
-
 - [트랜잭션을 추상화한 이유](https://github.com/genesis12345678/TIL/blob/main/interview/spring/21_30/TxAbstract.md)
 - [트랜잭션 동기화 매니저의 역할](https://github.com/genesis12345678/TIL/blob/main/interview/spring/21_30/TxSyncManager.md)
 - [선언전 트랜잭션 vs 프로그래밍 방식 트랜잭션](https://github.com/genesis12345678/TIL/blob/main/interview/spring/21_30/Transaction.md)
 - [`@Transactional` 동작 방식](https://github.com/genesis12345678/TIL/blob/main/interview/spring/21_30/%40Transactional.md)
 - [트랜잭션 전파에 대해](https://github.com/genesis12345678/TIL/blob/main/interview/spring/21_30/Propagation.md)
-
-</details>
 
 </details>
 
@@ -409,8 +320,7 @@
 <details>
     <summary>스프링 핵심 원리</summary>
 
-<details style="margin-left: 20px">
-    <summary>기본</summary>
+### 기본
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/basic/spring_basic.md#%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EA%B8%B0%EB%B3%B8-%EC%9B%90%EB%A6%AC)
 - [순수 자바 설계(1)](https://github.com/genesis12345678/TIL/blob/main/Spring/basic/pureJava/java_1.md#%EC%88%9C%EC%88%98%ED%95%9C-%EC%9E%90%EB%B0%94%EB%A7%8C%EC%9C%BC%EB%A1%9C-%EC%84%A4%EA%B3%84---1) - 스프링 기술 없이 자바만으로 설계할 때 문제점
@@ -426,10 +336,7 @@
 - [빈 스코프(1)](https://github.com/genesis12345678/TIL/blob/main/Spring/basic/beanScope/beanScope_1.md#%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B9%88-%EC%8A%A4%EC%BD%94%ED%94%84---1) - 스프링의 다양한 빈 스코프, 프로토타입 스코프
 - [빈 스코프(2)](https://github.com/genesis12345678/TIL/blob/main/Spring/basic/beanScope/beanScope_2.md#%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B9%88-%EC%8A%A4%EC%BD%94%ED%94%84---2) - 스프링이 다양한 빈 스코프, 웹 스코프
 
-</details>
-
-<details style="margin-left: 20px">
-    <summary>고급</summary>
+### 고급
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/LogTrace.md#%EB%A1%9C%EA%B7%B8-%EC%B6%94%EC%A0%81%EA%B8%B0)
 - 로그 추적기 개발
@@ -476,14 +383,14 @@
   - 주의사항 - 스프링 AOP 주의사항
     - [프록시 내부 호출](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/springAOP/warn/Warn_1.md#%EC%8A%A4%ED%94%84%EB%A7%81-aop-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD) - 프록시 내부 호출 문제와 여러가지 대안
     - [프록시 기술과 한계](https://github.com/genesis12345678/TIL/blob/main/Spring/advanced/springAOP/warn/Warn_2.md#%EC%8A%A4%ED%94%84%EB%A7%81-aop-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD) - 프록시 기술의 한계(타입 캐스팅, 의존관계 주입, CGLIB)와 스프링의 해결책
-</details>
+
 </details>
 
 <details>
     <summary>스프링 MVC</summary>
-<details style="margin-left: 20px">
-    <summary>1편</summary>
 
+### 1편
+  
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_1/springmvc_1.md#spring-mvc---1)
 - [웹 애플리케이션](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_1/web_application/web_application.md#web-application) - 웹 애플리케이션에 대한 전반적인 이해
 - [서블릿](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_1/servlet/servlet.md#%EC%84%9C%EB%B8%94%EB%A6%BF) - 서블릿 컨테이너 동작 방식과 `HttpServletRequest`, `HttpServletResponse`에 대해
@@ -491,10 +398,8 @@
 - [MVC 프레임워크 만들기](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_1/make_mvc/mvc.md#%ED%94%84%EB%A1%A0%ED%8A%B8-%EC%BB%A8%ED%8A%B8%EB%A1%A4%EB%9F%AC-%ED%8C%A8%ED%84%B4) - 프론트 컨트롤러 패턴으로 직접 MVC 프레임워크를 만들어보면서 컨트롤러에 대해 이해하기
 - [스프링 MVC 구조](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_1/spring_mvc/spring_mvc.md#%EC%8A%A4%ED%94%84%EB%A7%81-mvc-%EA%B5%AC%EC%A1%B0) - MVC 프레임워크를 직접 만들어 본 것을 기반으로 스프링 MVC 구조 이해하기
 - [스프링 MVC 기본 기능](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_1/springmvc_feature/feature.md#%EC%8A%A4%ED%94%84%EB%A7%81-mvc---%EA%B8%B0%EB%B3%B8-%EA%B8%B0%EB%8A%A5) - 스프링 MVC가 지원하는 요청과 응답의 여러가지 기능
-</details>
 
-<details style="margin-left: 20px">
-    <summary>2편</summary>
+### 2편
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_2/springmvc_2.md#spring-mvc---2)
 - [타임리프 기본 기능](https://github.com/genesis12345678/TIL/blob/main/Spring/springmvc_2/thymeleaf/thymeleaf.md#%ED%83%80%EC%9E%84%EB%A6%AC%ED%94%84) - 타임리프와 타임리프 기본 문법
@@ -510,12 +415,10 @@
 
 </details>
 
-</details>
-
 <details>
     <summary>스프링 DB</summary>
-<details style="margin-left: 20px">
-    <summary>1편</summary>
+
+### 1편
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/database_1.md#%EC%8A%A4%ED%94%84%EB%A7%81-db-1%ED%8E%B8)
 - [JDBC](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/database_1.md#jdbc) - JDBC에 대해
@@ -525,10 +428,7 @@
 - [자바 예외](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/javaException/javaException.md#%EC%9E%90%EB%B0%94-%EC%98%88%EC%99%B8) - 자바의 예외에 대해(체크, 언체크 예외)
 - [스프링 예외 처리](https://github.com/genesis12345678/TIL/blob/main/Spring/database_1/springException/springException.md#%EC%8A%A4%ED%94%84%EB%A7%81%EA%B3%BC-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0---%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%AC-%EB%B0%98%EB%B3%B5) - 스프링에서 예외 추상화를 하는 방법
 
-</details>
-
-<details style="margin-left: 20px">
-    <summary>2편</summary>
+### 2편
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/Spring/database_2/db2.md#db2---%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%91%EA%B7%BC-%EA%B8%B0%EC%88%A0)
 - [JdbcTemplate](https://github.com/genesis12345678/TIL/blob/main/Spring/database_2/jdbcTemplate/jdbcTemplate.md#jdbctemplate) - `JdbcTemplate` 구현하면서 알아보기
@@ -541,7 +441,7 @@
 - [스프링 트랜잭션](https://github.com/genesis12345678/TIL/blob/main/Spring/database_2/transaction/transaction.md#%EC%8A%A4%ED%94%84%EB%A7%81-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EC%9D%B4%ED%95%B4) - 스프링의 트랜잭션에 대해 더 알아보기
 - [트랜잭션 전파(1)](https://github.com/genesis12345678/TIL/blob/main/Spring/database_2/propagation/tx_propagation_1/tx_propagation.md#%EC%8A%A4%ED%94%84%EB%A7%81-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EC%A0%84%ED%8C%8C-1) - 트랜잭션 전파에 대해
 - [트랜잭션 전파(2)](https://github.com/genesis12345678/TIL/blob/main/Spring/database_2/propagation/tx_propagation_2/tx_propagation.md#%EC%8A%A4%ED%94%84%EB%A7%81-%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98-%EC%A0%84%ED%8C%8C-2) - 트랜잭션 전파 활용
-</details>
+
 </details>
 
 <details>
