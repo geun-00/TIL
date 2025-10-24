@@ -1,8 +1,20 @@
 # TIL 📃
 
-## INDEX 🔍
+강의, 책 등을 통해 배운 이론들을 정리한 공간입니다. 목록은 다음과 같습니다.
 
-### Java
+- [Java](https://geun-00.gitbook.io/geun-00-docs#java)
+- [Interview](https://geun-00.gitbook.io/geun-00-docs#interview)
+- [Spring](https://geun-00.gitbook.io/geun-00-docs#spring)
+- [Jpa](https://geun-00.gitbook.io/geun-00-docs#jpa-1)
+- [Spring](https://geun-00.gitbook.io/geun-00-docs#Spring)
+- [CS](https://geun-00.gitbook.io/geun-00-docs#cs)
+- [자료구조](https://geun-00.gitbook.io/geun-00-docs#undefined-20)
+- [Git](https://geun-00.gitbook.io/geun-00-docs#git)
+- [알고리즘](https://geun-00.gitbook.io/geun-00-docs#algorithm)
+
+---
+
+### Java <img width="30" height="50" alt="image" src="https://github.com/user-attachments/assets/7ea087b7-135f-4687-a66b-0f7e2962c56d" />
 
 <details>
   <summary>기본 및 기타</summary>
@@ -315,7 +327,15 @@
 
 ---
 
-### Spring
+<h3>
+  Spring
+  <img
+    src="https://github.com/user-attachments/assets/b0849476-774c-42cd-bbfc-acb113e7410d"
+    width="25"
+    height="25"
+    style="vertical-align: middle; position: relative; top: 10px; margin-left: 6px;"
+  />
+</h3>
 
 <details>
     <summary>스프링 핵심 원리</summary>
@@ -495,7 +515,15 @@
 
 ---
 
-### JPA
+<h3>
+  JPA
+  <img
+    src="https://github.com/user-attachments/assets/332c47d0-b9fe-46bf-9a28-4d11e6677649"
+    width="25"
+    height="25"
+    style="vertical-align: middle; position: relative; top: 10px; margin-left: 6px;"
+  />
+</h3>
 
 <details>
     <summary>기본</summary>
@@ -657,7 +685,15 @@
 
 ---
 
-### GIT
+<h3>
+  GIT
+  <img
+    src="https://github.com/user-attachments/assets/5e365b99-3577-4276-8f70-c23b6ef9368a"
+    width="25"
+    height="25"
+    style="vertical-align: middle; position: relative; top: 10px; margin-left: 6px;"
+  />
+</h3>
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/git/Main.md#git)
 <details>
@@ -728,7 +764,7 @@
 
 ---
 
-### Algorithm 
+### Algorithm 🧠
 
 - [메인](https://github.com/genesis12345678/TIL/blob/main/algorithm/Main.md#%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
 - [시간 복잡도](https://github.com/genesis12345678/TIL/blob/main/algorithm/Algorithm.md#%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84-%ED%91%9C%EA%B8%B0%EB%B2%95) - 시간 복잡도 표기법과 활용에 대해
